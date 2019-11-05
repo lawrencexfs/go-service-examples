@@ -1,0 +1,13 @@
+2019-10-09 15:14:59.421 [ERR] [session.go:286] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:56564: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56564, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-10-09 15:14:59.423 [ERR] [session.go:298] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:56564: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56564,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-10-09 15:18:12.251 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-10-09 15:18:12.256 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[level:1], ret: map[]
+2019-10-09 15:18:12.302 [ERR] [Entity.go:576] AsyncCall GetEntitySrvID error: Entity srvType [3] not existed, methodName: SyncProps
+2019-10-09 15:18:12.303 [ERR] [mongodboperate.go:123] update failed, Invalid namespace specified 'game.'
+2019-10-09 15:46:45.735 [ERR] [session.go:286] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:57439: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:57439, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-10-09 15:46:45.735 [ERR] [session.go:298] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:57439: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:57439,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-10-09 15:50:16.261 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-10-09 15:50:16.266 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[level:1], ret: map[]
+2019-10-09 15:50:16.312 [ERR] [serializerNew.go:343] unserialize error: unserialize: unknow type: int
+2019-10-09 15:50:16.312 [ERR] [RPCHandlers.go:111] doAsyncRPCMsg, method: SyncProps, err: unserialize: unknow type: int
+2019-10-09 15:50:16.315 [ERR] [mongodboperate.go:123] update failed, Invalid namespace specified 'game.'

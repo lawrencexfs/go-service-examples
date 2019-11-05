@@ -1,0 +1,67 @@
+{	
+	"name": "alias",
+	"basic": {
+		"arrayInt32": {
+            "type": "int32"     
+        },
+		"arrayUint32": {
+            "type": "uint32"
+        },	
+		"arrayInt64": {
+            "type": "int64"
+        },
+		"arrayUint64": {
+            "type": "uint64"
+        }
+	},
+	"types": {
+		"HEROINFO": {
+			"type": "struct",
+			"fields": {
+				"HeroName": {
+					"type": "string"
+				},
+				"HeroID": {
+					"type": "int32"
+				},
+				"HeroProficiencyLv": {
+					"type": "int32"
+				},
+				"HeroProficiencyExp": {
+					"type": "int32"
+				},
+				"HeroProficiencyUnlockSkill": {
+					"type": "int32"
+				},
+				"HeroSkinId": {
+					"type": "int32"
+				}
+			}				
+        },
+		"HEROS": {
+            "type": "map",
+			"fields": {
+				"index": {
+					"type": "string"
+				},
+				"value": {
+					"type": "HEROINFO"
+				}
+			}
+        },
+		"FRIENDS": {
+			"type": "struct",
+			"fields": {
+				"MyFriendsDbid": {
+					"type": "arrayuint64"
+				},
+				"ApplyFriendsDbid": {
+					"type": "arrayint32"
+				},
+				"MyFriendsName": {
+					"type": "string"
+				}
+			}
+		}	
+	}
+}

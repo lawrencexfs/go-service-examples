@@ -1,0 +1,2 @@
+- 安装go1.12以上版本
+- 当前工程目录，命令行执行 go mod init serviceA-call-serviceB（在包含包名时要用到）,执行成功后会在根目录生成go.mod, 和go.sum。注:本例子已经提交go.mod, 所以不需要执行go mod init

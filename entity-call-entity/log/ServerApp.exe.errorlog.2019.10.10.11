@@ -1,0 +1,10 @@
+2019-10-10 11:16:37.72 [ERR] [session.go:286] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:56730: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56730, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-10-10 11:16:37.721 [ERR] [session.go:298] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:56730: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56730,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-10-10 11:17:04.158 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: not found , db: game collection: player, condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-10-10 11:17:04.165 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: not found , db: game collection: player, condition: map[dbid:1], select: map[level:1], ret: map[]
+2019-10-10 11:17:04.211 [ERR] [mongodboperate.go:123] update failed, not found
+2019-10-10 11:28:04.596 [ERR] [session.go:286] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:57581: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:57581, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-10-10 11:28:04.597 [ERR] [session.go:298] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:57581: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:57581,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-10-10 11:32:32.393 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect from db: game, collection:player failed, err: not found, condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-10-10 11:32:32.411 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect from db: game, collection:player failed, err: not found, condition: map[dbid:1], select: map[level:1], ret: map[]
+2019-10-10 11:32:32.458 [ERR] [mongodboperate.go:123] update failed, not found

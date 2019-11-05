@@ -1,0 +1,163 @@
+2019-10-25 12:06:44.177 [INF] [app.go:160] services[gateway team]
+2019-10-25 12:06:44.251 [DBG] [app.go:85] App.init, appID: 4294967297
+2019-10-25 12:06:44.275 [INF] [gatewayService.go:23] GatewayService OnInit
+2019-10-25 12:06:44.275 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2019-10-25 12:06:44.413 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2019-10-25 12:06:44.413 [DBG] [localService.go:68] service check : gateway
+2019-10-25 12:06:44.413 [DBG] [localService.go:96] service check success: gateway
+2019-10-25 12:06:44.413 [DBG] [localServiceMgr.go:56] App InitLocalService, name: gateway sid: 4294967298
+2019-10-25 12:06:44.413 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967298 2 4294967297 map[]}
+2019-10-25 12:06:44.414 [DBG] [teamService.go:22] ServiceBService.OnInit
+2019-10-25 12:06:44.414 [DBG] [localService.go:68] service check : team
+2019-10-25 12:06:44.414 [DBG] [localService.go:96] service check success: team
+2019-10-25 12:06:44.414 [DBG] [localServiceMgr.go:56] App InitLocalService, name: team sid: 4294967299
+2019-10-25 12:06:44.414 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967299 3 4294967297 map[]}
+2019-10-25 12:06:44.478 [DBG] [localService.go:210] run service , serviceName: gateway, serviceType: 2, ServerID: 4294967298 tickMS: 2000
+2019-10-25 12:06:44.478 [DBG] [localService.go:210] run service , serviceName: team, serviceType: 3, ServerID: 4294967299 tickMS: 2000
+2019-10-25 12:06:44.479 [INF] [gatewayService.go:53] GatewayService OnConnected, infovec = [0xc0002b44c0]
+2019-10-25 12:06:47.188 [DBG] [ProcGateway.go:49] Begin MsgProcLoginReq, UID: 1, sess: 0xc00005b920
+2019-10-25 12:06:47.188 [INF] [gatewayService.go:60] GatewayService OnLoginHandler, msg.UID = 1
+2019-10-25 12:06:47.188 [DBG] [Entity_Props.go:232] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player
+2019-10-25 12:06:47.205 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-10-25 12:06:47.21 [DBG] [GatewayUser.go:22] GatewayUser.OnUserInit, dbid: 1
+2019-10-25 12:06:47.21 [DBG] [GatewayUserRpc.go:18] RPCHello, name: hello world, id: 1
+2019-10-25 12:06:47.211 [DBG] [GatewayUserRpc.go:37] RPCCreateTeam, name: TestTeam
+2019-10-25 12:06:47.211 [DBG] [GatewayUserRpc.go:28] RPCModifyAttr, name: change coin, index: 1 val: 2
+2019-10-25 12:06:47.211 [DBG] [teamServiceRPC.go:17] RPCCreateTeam: 
+2019-10-25 12:06:47.212 [DBG] [GatewayUserRpc.go:28] RPCModifyAttr, name: change coin, index: 1 val: 2
+2019-10-25 12:06:47.212 [DBG] [Team.go:25] TeamName: test
+2019-10-25 12:06:47.213 [DBG] [Entity_Props.go:232] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player
+2019-10-25 12:06:47.215 [DBG] [Entity_MsgProc.go:9] RPCSyncSrvInfo, ID: 1
+2019-10-25 12:06:47.215 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:ffffffffffffffffffffffff, methodName: SyncEntitySrvInfo, goroutine 39 [running]:
+runtime/debug.Stack(0xc0003539a8, 0xabf960, 0xc9f580)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xbc4fce, 0x11)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
+panic(0xabf960, 0xc9f580)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).RPCSyncEntitySrvInfo(0xc000082590)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_MsgProc.go:9 +0xfc
+reflect.Value.call(0xbb7e20, 0xc000082580, 0x10613, 0xbbabfb, 0x4, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xbb7e20, 0xc000082580, 0x10613, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000082590, 0xbc4fce, 0x11, 0x11edb70, 0x0, 0x0, 0x0, 0x0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000082590, 0xbc4fce, 0x11, 0x11edb70, 0x0, 0x0, 0x0, 0x10, 0xc000353ed8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc000082590, 0xc0002b4c80)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000082590)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
+created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
+
+2019-10-25 12:06:47.215 [DBG] [TeamUser.go:25] PlayerName: Jim
+2019-10-25 12:06:47.217 [DBG] [GatewayUserRpc.go:50] RPCCreateTeamResult, teamID: 4294967300
+2019-10-25 12:06:48.478 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:06:48.478 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:06:50.478 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:06:50.478 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:06:52.478 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:06:52.478 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:06:54.478 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:06:54.478 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:06:56.478 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:06:56.478 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:06:58.478 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:06:58.478 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:00.478 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:00.478 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:02.477 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:02.477 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:04.477 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:04.477 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:06.477 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:06.477 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:08.477 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:08.477 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:10.477 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:10.477 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:12.477 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:12.477 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:14.477 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:14.477 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:16.477 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:16.477 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:18.477 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:18.477 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:20.476 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:20.476 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:22.476 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:22.476 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:24.476 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:24.476 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:26.476 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:26.476 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:28.476 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:28.476 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:30.476 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:30.476 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:32.476 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:32.476 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:34.476 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:34.476 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:36.476 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:36.476 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:38.475 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:38.475 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:40.475 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:40.475 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:42.475 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:42.475 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:44.475 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:44.475 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:46.475 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:46.475 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:48.475 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:48.475 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:50.475 [DBG] [Team.go:32] Team.OnLoop
+2019-10-25 12:07:50.475 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-25 12:07:51.858 [DBG] [teamService.go:36] ServiceBService.OnDestroy
+2019-10-25 12:07:51.858 [DBG] [Team.go:38] OnDestroy
+2019-10-25 12:07:51.865 [DBG] [TeamUser.go:35] OnDestroy
+2019-10-25 12:07:51.865 [INF] [gatewayService.go:42] GatewayService OnDestroy
+2019-10-25 12:07:51.865 [INF] [GatewayBase.go:60] GatewayBase OnDestroy
+2019-10-25 12:07:51.865 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-25 12:07:51.869 [DBG] [Entity_MsgProc.go:9] RPCSyncSrvInfo, ID: 1
+2019-10-25 12:07:51.872 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:ffffffffffffffffffffffff, methodName: SyncEntitySrvInfo, goroutine 39 [running]:
+runtime/debug.Stack(0xc0003539a8, 0xabf960, 0xc9f580)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xbc4fce, 0x11)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
+panic(0xabf960, 0xc9f580)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).RPCSyncEntitySrvInfo(0xc000082590)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_MsgProc.go:9 +0xfc
+reflect.Value.call(0xbb7e20, 0xc000082580, 0x10613, 0xbbabfb, 0x4, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xbb7e20, 0xc000082580, 0x10613, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000082590, 0xbc4fce, 0x11, 0x11edb70, 0x0, 0x0, 0x0, 0x0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000082590, 0xbc4fce, 0x11, 0x11edb70, 0x0, 0x0, 0x0, 0x10, 0xc000353ed8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc000082590, 0xc0003eb440)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000082590)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
+created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
+
+2019-10-25 12:07:51.872 [INF] [GateUserBase.go:125] Logout(), id: 1
+2019-10-25 12:07:51.872 [DBG] [GatewayUser.go:33] GatewayUser.OnUserFini, dbid: 1
+2019-10-25 12:07:51.872 [DBG] [serviceProxyMgr.go:60] SProxyMgr, DelServiceByAppID : 4294967297
+2019-10-25 12:07:51.88 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967298
+2019-10-25 12:07:51.909 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967298
+2019-10-25 12:07:51.936 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967299
+2019-10-25 12:07:51.936 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967299
+2019-10-25 12:07:51.936 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection

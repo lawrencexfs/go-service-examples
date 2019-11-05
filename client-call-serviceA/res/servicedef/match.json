@@ -1,0 +1,15 @@
+{
+	"name": "match",
+    "methods": {
+        "TestMatch": {
+		},
+		"StartMatchReq": {
+			"msg": "struct",
+			"serviceID": "uint64"
+		},
+		"StopMatchReq": {
+			"msg": "struct",
+			"serviceID": "uint64"
+		}
+    }
+}

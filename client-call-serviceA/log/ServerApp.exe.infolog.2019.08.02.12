@@ -1,0 +1,60 @@
+2019-08-02 12:00:32.955 [INF] [app.go:138] services[serviceA]
+2019-08-02 12:00:32.967 [DBG] [app.go:75] App.init, appID: 583
+2019-08-02 12:00:33.027 [INF] [serviceA.go:25] ServiceA OnInit
+2019-08-02 12:00:33.138 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-02 12:00:33.138 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-02 12:00:33.138 [DBG] [localService.go:71] service check : serviceA
+2019-08-02 12:00:33.138 [DBG] [localService.go:101] service check success: serviceA
+2019-08-02 12:00:33.139 [DBG] [localServiceMgr.go:49] App InitLocalService, name: serviceA
+2019-08-02 12:00:33.253 [DBG] [localService.go:186] run service , serviceName: serviceA, serviceType: 2, ServerID: 584 tickMS: 2000
+2019-08-02 12:02:20.152 [INF] [app.go:138] services[serviceA]
+2019-08-02 12:02:20.162 [DBG] [app.go:75] App.init, appID: 585
+2019-08-02 12:02:20.213 [INF] [serviceA.go:25] ServiceA OnInit
+2019-08-02 12:02:20.306 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-02 12:02:20.306 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-02 12:02:20.306 [DBG] [localService.go:71] service check : serviceA
+2019-08-02 12:02:20.306 [DBG] [localService.go:101] service check success: serviceA
+2019-08-02 12:02:20.306 [DBG] [localServiceMgr.go:49] App InitLocalService, name: serviceA
+2019-08-02 12:02:20.408 [DBG] [localService.go:186] run service , serviceName: serviceA, serviceType: 2, ServerID: 586 tickMS: 2000
+2019-08-02 12:02:23.784 [DBG] [serviceProc.go:67] MsgProc_LoginReq, uid: 1
+2019-08-02 12:02:23.801 [INF] [dbservice.go:58] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-02 12:02:23.802 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-02 12:02:23.802 [INF] [Entity_Props.go:170] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-02 12:02:23.803 [DBG] [entitySrvUtil.go:64] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 586
+2019-08-02 12:02:23.803 [DBG] [entitySrvUtil.go:64] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 586
+2019-08-02 12:02:23.804 [DBG] [ServiceAUser.go:20] ServiceAUser.OnUserInit, dbid: 1 isnew: true
+2019-08-02 12:02:23.804 [INF] [serviceA.go:53] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-02 12:02:23.804 [DBG] [ServiceAUserRpcProc.go:14] RPC_Hello, name: hello world, id: 1
+2019-08-02 12:02:23.805 [DBG] [ServiceAUserRpcProc.go:16] err: = <nil>
+2019-08-02 12:02:56.496 [ERR] [session.go:245] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:64241: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:64241, sessionid: 1
+2019-08-02 12:02:56.497 [ERR] [session.go:253] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:64241: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:64241, sessionid: 1
+2019-08-02 12:02:56.502 [INF] [serviceProc.go:105] Proc_ServiceA OnClosed: 1 127.0.0.1:64241
+2019-08-02 12:02:56.502 [DBG] [GateUserBase.go:165] lobby user OnClosed, uid: 1
+2019-08-02 12:03:11.113 [INF] [app.go:138] services[serviceA]
+2019-08-02 12:03:11.125 [DBG] [app.go:75] App.init, appID: 587
+2019-08-02 12:03:11.177 [INF] [serviceA.go:25] ServiceA OnInit
+2019-08-02 12:03:11.294 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-02 12:03:11.295 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-02 12:03:11.295 [DBG] [localService.go:71] service check : serviceA
+2019-08-02 12:03:11.295 [DBG] [localService.go:101] service check success: serviceA
+2019-08-02 12:03:11.295 [DBG] [localServiceMgr.go:49] App InitLocalService, name: serviceA
+2019-08-02 12:03:11.416 [DBG] [localService.go:186] run service , serviceName: serviceA, serviceType: 2, ServerID: 588 tickMS: 2000
+2019-08-02 12:03:14.73 [DBG] [serviceProc.go:67] MsgProc_LoginReq, uid: 1
+2019-08-02 12:03:14.749 [INF] [dbservice.go:58] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-02 12:03:14.75 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-02 12:03:14.75 [INF] [Entity_Props.go:170] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-02 12:03:14.75 [DBG] [entitySrvUtil.go:64] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 588
+2019-08-02 12:03:14.751 [DBG] [entitySrvUtil.go:64] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 588
+2019-08-02 12:03:14.752 [DBG] [ServiceAUser.go:20] ServiceAUser.OnUserInit, dbid: 1 isnew: true
+2019-08-02 12:03:14.752 [INF] [serviceA.go:53] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-02 12:03:14.752 [DBG] [ServiceAUserRpcProc.go:14] RPC_Hello, name: hello world, id: 1
+2019-08-02 12:03:14.753 [DBG] [ServiceAUserRpcProc.go:16] err: = <nil>
+2019-08-02 12:03:50.06 [INF] [app.go:139] services[serviceA]
+2019-08-02 12:03:50.13 [DBG] [app.go:76] App.init, appID: 1
+2019-08-02 12:03:50.13 [INF] [serviceA.go:25] ServiceA OnInit
+2019-08-02 12:03:50.266 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-02 12:03:50.266 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-02 12:03:50.266 [DBG] [localService.go:70] service check : serviceA
+2019-08-02 12:03:50.267 [DBG] [localService.go:100] service check success: serviceA
+2019-08-02 12:03:50.267 [DBG] [localServiceMgr.go:50] App InitLocalService, name: serviceA
+2019-08-02 12:03:50.417 [DBG] [localService.go:185] run service , serviceName: serviceA, serviceType: 2, ServerID: 2 tickMS: 2000

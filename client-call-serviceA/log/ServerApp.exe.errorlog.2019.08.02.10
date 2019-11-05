@@ -1,0 +1,6 @@
+2019-08-02 10:32:17.218 [ERR] [session.go:245] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:51485: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:51485, sessionid: 1
+2019-08-02 10:32:17.226 [ERR] [session.go:253] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:51485: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:51485, sessionid: 1
+2019-08-02 10:32:39.979 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-02 10:36:10.35 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-02 10:36:12.066 [ERR] [session.go:245] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:60892: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:60892, sessionid: 1
+2019-08-02 10:36:12.068 [ERR] [session.go:253] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:60892: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:60892, sessionid: 1

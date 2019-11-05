@@ -1,0 +1,14 @@
+{
+	"name": "ServiceGateway",
+    "methods": {
+        "Test": {
+			"name": "string",
+			"id": "uint32"
+		},
+		"TestSync": {
+			"name": "string",
+			"id": "uint32"
+		}
+		
+    }
+}

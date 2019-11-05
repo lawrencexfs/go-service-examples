@@ -1,0 +1,9 @@
+2019-08-20 12:10:59.581 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:52316->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
+2019-08-20 12:10:59.639 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:52316->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
+2019-08-20 12:10:59.644 [INF] [appProc.go:43] OnClosed sessID:1, remote addr:127.0.0.1:17012
+2019-08-20 12:10:59.645 [DBG] [serviceProxyMgr.go:205] ServiceProxyMgr,  sm.idMap=map[482:0xc00010af60 483:0xc00010b200 485:0xc0000fd2c0] infovec = [0xc0001f24e0]
+2019-08-20 12:10:59.645 [DBG] [serviceProxyMgr.go:61] ServiceProxyMgr, DelServiceByAppID : 484
+2019-08-20 12:10:59.645 [DBG] [serviceProxyMgr.go:126] idx=1 len ss = 2
+2019-08-20 12:10:59.661 [INF] [serviceB.go:33] ServiceB OnDisconnected, infovec = {485 102 484}
+2019-08-20 12:10:59.662 [INF] [serviceA.go:56] ServiceA OnDisconnected, infovec = [0xc00001a580]
+2019-08-20 12:10:59.662 [INF] [serviceA.go:57] ServiceA OnDisconnected, info= {485 102 484}

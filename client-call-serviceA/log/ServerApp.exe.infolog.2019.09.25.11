@@ -1,0 +1,23 @@
+2019-09-25 11:03:02.237 [INF] [app.go:149] services[serviceA]
+2019-09-25 11:03:02.305 [DBG] [app.go:83] App.init, appID: 46
+2019-09-25 11:03:02.305 [INF] [serviceA.go:22] ServiceA OnInit
+2019-09-25 11:03:02.305 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2019-09-25 11:03:02.402 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2019-09-25 11:03:02.402 [DBG] [localService.go:68] service check : serviceA
+2019-09-25 11:03:02.402 [DBG] [localService.go:96] service check success: serviceA
+2019-09-25 11:03:02.402 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-09-25 11:03:02.402 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{47 2 46 map[]}
+2019-09-25 11:03:02.531 [DBG] [localService.go:210] run service , serviceName: serviceA, serviceType: 2, ServerID: 47 tickMS: 2000
+2019-09-25 11:03:05.283 [DBG] [ProcGateway.go:51] Begin MsgProcLoginReq, UID: 1, sess: 0xc0002145a0
+2019-09-25 11:03:05.283 [INF] [serviceA.go:64] ServiceA OnLoginHandler, msg.UID = 1
+2019-09-25 11:03:10.289 [DBG] [dbservice.go:53] connect failed,read tcp 192.168.133.66:55422->192.168.133.33:27017: i/o timeout
+2019-09-25 11:03:10.289 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-09-25 11:03:10.291 [ERR] [Entity.go:597] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo
+2019-09-25 11:03:10.291 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1
+2019-09-25 11:03:10.292 [DBG] [ServiceAUserRpcProc.go:17] RPCHello, name: hello world, id: 1
+2019-09-25 11:05:02.894 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:55421: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:55421, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-09-25 11:05:02.895 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:55421: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:55421,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-09-25 11:05:02.896 [DBG] [ProcGateway.go:175] PGatewayServer OnClosed, ID: 1, sess: 0xc0002145a0
+2019-09-25 11:05:02.896 [INF] [GateUserBase.go:126] Logout(), id: 1
+2019-09-25 11:05:02.897 [DBG] [ServiceAUser.go:32] ServiceAUser.OnUserFini, dbid: 1
+2019-09-25 11:05:02.907 [ERR] [Entity.go:597] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo

@@ -1,0 +1,232 @@
+2019-08-23 15:00:12.766 [INF] [app.go:149] services[serviceA]
+2019-08-23 15:00:12.836 [DBG] [app.go:83] App.init, appID: 580
+2019-08-23 15:00:12.836 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-23 15:00:12.957 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-23 15:00:12.957 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-23 15:00:12.957 [DBG] [localService.go:67] service check : serviceA
+2019-08-23 15:00:12.958 [DBG] [localService.go:95] service check success: serviceA
+2019-08-23 15:00:12.958 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-23 15:00:12.958 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{581 2 580 map[]}
+2019-08-23 15:00:13.107 [DBG] [localService.go:209] run service , serviceName: serviceA, serviceType: 2, ServerID: 581 tickMS: 2000
+2019-08-23 15:00:13.107 [INF] [serviceA.go:60] ServiceA OnConnected, infovec = []
+2019-08-23 15:00:15.397 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-23 15:00:15.413 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-23 15:00:15.413 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:00:15.414 [INF] [Entity_Props.go:175] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-23 15:00:15.414 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 581
+2019-08-23 15:00:15.414 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 581
+2019-08-23 15:00:15.415 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:00:15.415 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-23 15:00:15.415 [INF] [serviceA.go:66] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-23 15:00:15.415 [DBG] [ServiceAUserRpcProc.go:16] RPC_Hello, name: hello world, id: 1
+2019-08-23 15:00:15.415 [DBG] [ServiceAUserRpcProc.go:18] err: = <nil>
+2019-08-23 15:02:29.139 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:61774: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:61774, sessionid: 1
+2019-08-23 15:02:29.141 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:61774: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:61774, sessionid: 1
+2019-08-23 15:02:29.141 [INF] [serviceProc.go:106] ProcServiceA OnClosed: 1 127.0.0.1:61774
+2019-08-23 15:02:29.141 [DBG] [GateUserBase.go:169] lobby user OnClosed, uid: 1
+2019-08-23 15:02:50.316 [INF] [app.go:149] services[serviceA]
+2019-08-23 15:02:50.387 [DBG] [app.go:83] App.init, appID: 582
+2019-08-23 15:02:50.388 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-23 15:02:50.527 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-23 15:02:50.527 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-23 15:02:50.527 [DBG] [localService.go:67] service check : serviceA
+2019-08-23 15:02:50.527 [DBG] [localService.go:95] service check success: serviceA
+2019-08-23 15:02:50.527 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-23 15:02:50.527 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{583 2 582 map[]}
+2019-08-23 15:02:50.678 [DBG] [localService.go:209] run service , serviceName: serviceA, serviceType: 2, ServerID: 583 tickMS: 2000
+2019-08-23 15:02:50.678 [INF] [serviceA.go:60] ServiceA OnConnected, infovec = []
+2019-08-23 15:02:53.009 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-23 15:02:53.025 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-23 15:02:53.026 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:02:53.026 [INF] [Entity_Props.go:175] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-23 15:02:53.026 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 583
+2019-08-23 15:02:53.027 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 583
+2019-08-23 15:02:53.027 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:02:53.027 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-23 15:02:53.028 [INF] [serviceA.go:66] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-23 15:02:53.028 [DBG] [ServiceAUserRpcProc.go:16] RPC_Hello, name: hello world, id: 1
+2019-08-23 15:02:53.028 [DBG] [ServiceAUserRpcProc.go:18] err: = <nil>
+2019-08-23 15:07:37.43 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:61914: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:61914, sessionid: 1
+2019-08-23 15:07:37.43 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:61914: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:61914, sessionid: 1
+2019-08-23 15:07:37.431 [INF] [serviceProc.go:106] ProcServiceA OnClosed: 1 127.0.0.1:61914
+2019-08-23 15:07:37.431 [DBG] [GateUserBase.go:169] lobby user OnClosed, uid: 1
+2019-08-23 15:07:57.672 [INF] [app.go:149] services[serviceA]
+2019-08-23 15:07:57.743 [DBG] [app.go:83] App.init, appID: 584
+2019-08-23 15:07:57.744 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-23 15:07:57.875 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-23 15:07:57.875 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-23 15:07:57.876 [DBG] [localService.go:67] service check : serviceA
+2019-08-23 15:07:57.876 [DBG] [localService.go:95] service check success: serviceA
+2019-08-23 15:07:57.876 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-23 15:07:57.876 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{585 2 584 map[]}
+2019-08-23 15:07:58.027 [DBG] [localService.go:209] run service , serviceName: serviceA, serviceType: 2, ServerID: 585 tickMS: 2000
+2019-08-23 15:07:58.027 [INF] [serviceA.go:60] ServiceA OnConnected, infovec = []
+2019-08-23 15:08:00.333 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-23 15:08:00.349 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-23 15:08:00.35 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:08:00.35 [INF] [Entity_Props.go:175] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-23 15:08:00.35 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 585
+2019-08-23 15:08:00.35 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 585
+2019-08-23 15:08:00.351 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:08:00.351 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-23 15:08:00.351 [INF] [serviceA.go:66] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-23 15:08:00.351 [DBG] [ServiceAUserRpcProc.go:16] RPC_Hello, name: hello world, id: 1
+2019-08-23 15:08:00.351 [DBG] [ServiceAUserRpcProc.go:18] err: = <nil>
+2019-08-23 15:11:29.989 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:62342: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62342, sessionid: 1
+2019-08-23 15:11:29.99 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:62342: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62342, sessionid: 1
+2019-08-23 15:11:29.99 [INF] [serviceProc.go:106] ProcServiceA OnClosed: 1 127.0.0.1:62342
+2019-08-23 15:11:29.99 [DBG] [GateUserBase.go:169] lobby user OnClosed, uid: 1
+2019-08-23 15:12:01.071 [INF] [app.go:149] services[serviceA]
+2019-08-23 15:12:01.146 [DBG] [app.go:83] App.init, appID: 586
+2019-08-23 15:12:01.147 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-23 15:12:01.312 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-23 15:12:01.312 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-23 15:12:01.312 [DBG] [localService.go:67] service check : serviceA
+2019-08-23 15:12:01.312 [DBG] [localService.go:95] service check success: serviceA
+2019-08-23 15:12:01.312 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-23 15:12:01.312 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{587 2 586 map[]}
+2019-08-23 15:12:01.505 [DBG] [localService.go:209] run service , serviceName: serviceA, serviceType: 2, ServerID: 587 tickMS: 2000
+2019-08-23 15:12:01.505 [INF] [serviceA.go:60] ServiceA OnConnected, infovec = []
+2019-08-23 15:12:03.792 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-23 15:12:03.809 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-23 15:12:03.81 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:12:03.81 [INF] [Entity_Props.go:175] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-23 15:12:03.81 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 587
+2019-08-23 15:12:03.811 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 587
+2019-08-23 15:12:03.811 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:12:03.811 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-23 15:12:03.812 [INF] [serviceA.go:66] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-23 15:12:03.812 [DBG] [ServiceAUserRpcProc.go:16] RPC_Hello, name: hello world, id: 1
+2019-08-23 15:12:03.812 [DBG] [ServiceAUserRpcProc.go:18] err: = <nil>
+2019-08-23 15:13:19.479 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:62542: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62542, sessionid: 1
+2019-08-23 15:13:19.48 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:62542: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62542, sessionid: 1
+2019-08-23 15:13:19.482 [INF] [serviceProc.go:106] ProcServiceA OnClosed: 1 127.0.0.1:62542
+2019-08-23 15:13:19.482 [DBG] [GateUserBase.go:169] lobby user OnClosed, uid: 1
+2019-08-23 15:13:37.105 [INF] [app.go:149] services[serviceA]
+2019-08-23 15:13:37.178 [DBG] [app.go:83] App.init, appID: 588
+2019-08-23 15:13:37.179 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-23 15:13:37.314 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-23 15:13:37.314 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-23 15:13:37.315 [DBG] [localService.go:67] service check : serviceA
+2019-08-23 15:13:37.315 [DBG] [localService.go:95] service check success: serviceA
+2019-08-23 15:13:37.315 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-23 15:13:37.315 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{589 2 588 map[]}
+2019-08-23 15:13:37.478 [DBG] [localService.go:209] run service , serviceName: serviceA, serviceType: 2, ServerID: 589 tickMS: 2000
+2019-08-23 15:13:37.478 [INF] [serviceA.go:60] ServiceA OnConnected, infovec = []
+2019-08-23 15:13:40.749 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-23 15:13:40.767 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-23 15:13:40.767 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:13:40.768 [INF] [Entity_Props.go:175] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-23 15:13:40.768 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 589
+2019-08-23 15:13:40.768 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 589
+2019-08-23 15:13:40.769 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:13:40.769 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-23 15:13:40.769 [INF] [serviceA.go:66] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-23 15:13:40.769 [DBG] [ServiceAUserRpcProc.go:16] RPC_Hello, name: hello world, id: 1
+2019-08-23 15:13:40.769 [DBG] [ServiceAUserRpcProc.go:18] err: = <nil>
+2019-08-23 15:14:24.295 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:62777: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62777, sessionid: 1
+2019-08-23 15:14:24.296 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:62777: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62777, sessionid: 1
+2019-08-23 15:14:24.296 [INF] [serviceProc.go:106] ProcServiceA OnClosed: 1 127.0.0.1:62777
+2019-08-23 15:14:24.296 [DBG] [GateUserBase.go:169] lobby user OnClosed, uid: 1
+2019-08-23 15:14:43.132 [INF] [app.go:149] services[serviceA]
+2019-08-23 15:14:43.142 [DBG] [app.go:83] App.init, appID: 590
+2019-08-23 15:14:43.19 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-23 15:14:43.32 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-23 15:14:43.321 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-23 15:14:43.321 [DBG] [localService.go:67] service check : serviceA
+2019-08-23 15:14:43.321 [DBG] [localService.go:95] service check success: serviceA
+2019-08-23 15:14:43.321 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-23 15:14:43.321 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{591 2 590 map[]}
+2019-08-23 15:14:43.467 [DBG] [localService.go:209] run service , serviceName: serviceA, serviceType: 2, ServerID: 591 tickMS: 2000
+2019-08-23 15:14:43.467 [INF] [serviceA.go:60] ServiceA OnConnected, infovec = []
+2019-08-23 15:14:46.788 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-23 15:14:46.803 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-23 15:14:46.804 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:14:46.804 [INF] [Entity_Props.go:175] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-23 15:14:46.804 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 591
+2019-08-23 15:14:46.805 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 591
+2019-08-23 15:14:46.805 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:14:46.805 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-23 15:14:46.806 [INF] [serviceA.go:66] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-23 15:14:46.806 [DBG] [ServiceAUserRpcProc.go:16] RPC_Hello, name: hello world, id: 1
+2019-08-23 15:14:46.806 [DBG] [ServiceAUserRpcProc.go:18] err: = <nil>
+2019-08-23 15:15:00.743 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:62839: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62839, sessionid: 1
+2019-08-23 15:15:00.744 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:62839: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62839, sessionid: 1
+2019-08-23 15:15:00.745 [INF] [serviceProc.go:106] ProcServiceA OnClosed: 1 127.0.0.1:62839
+2019-08-23 15:15:00.745 [DBG] [GateUserBase.go:169] lobby user OnClosed, uid: 1
+2019-08-23 15:15:20.348 [INF] [app.go:149] services[serviceA]
+2019-08-23 15:15:20.424 [DBG] [app.go:83] App.init, appID: 592
+2019-08-23 15:15:20.425 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-23 15:15:20.556 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-23 15:15:20.556 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-23 15:15:20.556 [DBG] [localService.go:67] service check : serviceA
+2019-08-23 15:15:20.557 [DBG] [localService.go:95] service check success: serviceA
+2019-08-23 15:15:20.557 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-23 15:15:20.557 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{593 2 592 map[]}
+2019-08-23 15:15:20.704 [DBG] [localService.go:209] run service , serviceName: serviceA, serviceType: 2, ServerID: 593 tickMS: 2000
+2019-08-23 15:15:20.704 [INF] [serviceA.go:60] ServiceA OnConnected, infovec = []
+2019-08-23 15:15:22.989 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-23 15:15:23.006 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-23 15:15:23.007 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:15:23.007 [INF] [Entity_Props.go:175] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-23 15:15:23.007 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 593
+2019-08-23 15:15:23.007 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 593
+2019-08-23 15:15:23.008 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:15:23.008 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-23 15:15:23.008 [INF] [serviceA.go:66] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-23 15:15:23.008 [DBG] [ServiceAUserRpcProc.go:16] RPC_Hello, name: hello world, id: 1
+2019-08-23 15:15:23.008 [DBG] [ServiceAUserRpcProc.go:18] err: = <nil>
+2019-08-23 15:22:30.628 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:62888: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62888, sessionid: 1
+2019-08-23 15:22:30.629 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:62888: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62888, sessionid: 1
+2019-08-23 15:22:30.629 [INF] [serviceProc.go:106] ProcServiceA OnClosed: 1 127.0.0.1:62888
+2019-08-23 15:22:30.63 [DBG] [GateUserBase.go:169] lobby user OnClosed, uid: 1
+2019-08-23 15:23:28.215 [INF] [app.go:149] services[serviceA]
+2019-08-23 15:23:28.285 [DBG] [app.go:83] App.init, appID: 594
+2019-08-23 15:23:28.285 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-23 15:23:28.422 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-23 15:23:28.422 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-23 15:23:28.422 [DBG] [localService.go:67] service check : serviceA
+2019-08-23 15:23:28.423 [DBG] [localService.go:95] service check success: serviceA
+2019-08-23 15:23:28.423 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-23 15:23:28.423 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{595 2 594 map[]}
+2019-08-23 15:23:28.569 [DBG] [localService.go:210] run service , serviceName: serviceA, serviceType: 2, ServerID: 595 tickMS: 2000
+2019-08-23 15:23:30.863 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-23 15:23:30.882 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-23 15:23:30.883 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:23:30.883 [INF] [Entity_Props.go:175] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-23 15:23:30.883 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 595
+2019-08-23 15:23:30.884 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 595
+2019-08-23 15:23:30.885 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:23:30.885 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-23 15:23:30.885 [INF] [serviceA.go:66] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-23 15:23:30.885 [DBG] [ServiceAUserRpcProc.go:16] RPC_Hello, name: hello world, id: 1
+2019-08-23 15:23:30.885 [DBG] [ServiceAUserRpcProc.go:18] err: = <nil>
+2019-08-23 15:27:41.279 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:63255: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:63255, sessionid: 1
+2019-08-23 15:27:41.282 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:63255: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:63255, sessionid: 1
+2019-08-23 15:27:41.283 [INF] [serviceProc.go:106] ProcServiceA OnClosed: 1 127.0.0.1:63255
+2019-08-23 15:27:41.284 [DBG] [GateUserBase.go:169] lobby user OnClosed, uid: 1
+2019-08-23 15:28:10.535 [INF] [app.go:149] services[serviceA]
+2019-08-23 15:28:10.603 [DBG] [app.go:83] App.init, appID: 596
+2019-08-23 15:28:10.604 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-23 15:28:10.734 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-23 15:28:10.734 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-23 15:28:10.734 [DBG] [localService.go:67] service check : serviceA
+2019-08-23 15:28:10.734 [DBG] [localService.go:95] service check success: serviceA
+2019-08-23 15:28:10.734 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-23 15:28:10.735 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{597 2 596 map[]}
+2019-08-23 15:28:10.894 [DBG] [localService.go:210] run service , serviceName: serviceA, serviceType: 2, ServerID: 597 tickMS: 2000
+2019-08-23 15:28:13.165 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-23 15:28:13.183 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-23 15:28:13.184 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:28:13.184 [INF] [Entity_Props.go:175] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-23 15:28:13.184 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 597
+2019-08-23 15:28:13.184 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 597
+2019-08-23 15:28:13.185 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:28:13.185 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-23 15:28:13.185 [INF] [serviceA.go:66] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-23 15:28:13.186 [DBG] [ServiceAUserRpcProc.go:16] RPC_Hello, name: hello world, id: 1
+2019-08-23 15:28:13.186 [DBG] [ServiceAUserRpcProc.go:18] err: = <nil>
+2019-08-23 15:30:06.714 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:63456: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:63456, sessionid: 1
+2019-08-23 15:30:06.715 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:63456: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:63456, sessionid: 1
+2019-08-23 15:30:06.716 [INF] [serviceProc.go:106] ProcServiceA OnClosed: 1 127.0.0.1:63456
+2019-08-23 15:30:06.716 [DBG] [GateUserBase.go:169] lobby user OnClosed, uid: 1

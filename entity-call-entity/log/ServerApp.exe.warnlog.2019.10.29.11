@@ -1,0 +1,4 @@
+2019-10-29 11:34:47.802 [ERR] [PropInfo.go:319] Unsupport prop typeFRIENDS
+2019-10-29 11:34:47.802 [WRN] [PropInfo.go:292] Unsupport prop typeFRIENDS
+2019-10-29 11:34:51.398 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-29 11:34:51.398 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection

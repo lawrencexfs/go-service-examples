@@ -1,2 +1,4 @@
-# go-service-examples
-基于go-service框架的使用例子
+# go-service-example
+基于“服务”的服务器框架的示例代码
+
+<img src="https://github.com/GA-TECH-SERVER/go-service/blob/master/zeus/resources/zeus.jpg" />

@@ -1,0 +1,156 @@
+2019-08-12 18:01:16.069 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:01:16.078 [DBG] [app.go:76] App.init, appID: 321
+2019-08-12 18:01:16.122 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:01:16.122 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:01:16.122 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:01:16.122 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:01:16.122 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:01:16.122 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:01:16.123 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:01:16.123 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:01:16.212 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 322 tickMS: 2000
+2019-08-12 18:01:16.212 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 323 tickMS: 2000
+2019-08-12 18:03:09.425 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:03:09.438 [DBG] [app.go:76] App.init, appID: 324
+2019-08-12 18:03:09.485 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:03:09.485 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:03:09.485 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:03:09.485 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:03:09.485 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:03:09.485 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:03:09.485 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:03:09.485 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:03:09.583 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 326 tickMS: 2000
+2019-08-12 18:03:09.583 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 325 tickMS: 2000
+2019-08-12 18:07:35.892 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:07:35.901 [DBG] [app.go:76] App.init, appID: 327
+2019-08-12 18:07:35.942 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:07:35.942 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:07:35.942 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:07:35.942 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:07:35.943 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:07:35.943 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:07:35.943 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:07:35.943 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:07:36.034 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 329 tickMS: 2000
+2019-08-12 18:07:36.034 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 328 tickMS: 2000
+2019-08-12 18:08:32.455 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:08:32.466 [DBG] [app.go:76] App.init, appID: 330
+2019-08-12 18:08:32.505 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:08:32.505 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:08:32.505 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:08:32.506 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:08:32.506 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:08:32.506 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:08:32.506 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:08:32.506 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:08:32.619 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 332 tickMS: 2000
+2019-08-12 18:08:32.619 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 331 tickMS: 2000
+2019-08-12 18:18:10.08 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:18:10.092 [DBG] [app.go:76] App.init, appID: 333
+2019-08-12 18:18:10.131 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:18:10.131 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:18:10.132 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:18:10.132 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:18:10.132 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:18:10.132 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:18:10.132 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:18:10.133 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:18:10.266 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 335 tickMS: 2000
+2019-08-12 18:18:10.266 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 334 tickMS: 2000
+2019-08-12 18:23:54.194 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:23:54.204 [DBG] [app.go:76] App.init, appID: 336
+2019-08-12 18:23:54.246 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:23:54.246 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:23:54.246 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:23:54.246 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:23:54.247 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:23:54.247 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:23:54.247 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:23:54.247 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:23:54.349 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 338 tickMS: 2000
+2019-08-12 18:23:54.349 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 337 tickMS: 2000
+2019-08-12 18:30:13.589 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:30:13.599 [DBG] [app.go:76] App.init, appID: 339
+2019-08-12 18:30:13.641 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:30:13.641 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:30:13.641 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:30:13.641 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:30:13.642 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:30:13.642 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:30:13.642 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:30:13.643 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:30:13.737 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 341 tickMS: 2000
+2019-08-12 18:30:13.737 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 340 tickMS: 2000
+2019-08-12 18:31:27.029 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:31:27.037 [DBG] [app.go:76] App.init, appID: 342
+2019-08-12 18:31:27.081 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:31:27.081 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:31:27.081 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:31:27.081 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:31:27.082 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:31:27.082 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:31:27.082 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:31:27.082 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:31:27.173 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 343 tickMS: 2000
+2019-08-12 18:31:27.173 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 344 tickMS: 2000
+2019-08-12 18:40:24.702 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:40:24.712 [DBG] [app.go:76] App.init, appID: 345
+2019-08-12 18:40:24.756 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:40:24.756 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:40:24.756 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:40:24.756 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:40:24.756 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:40:24.756 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:40:24.757 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:40:24.757 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:40:24.847 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 347 tickMS: 2000
+2019-08-12 18:40:24.847 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 346 tickMS: 2000
+2019-08-12 18:43:57.038 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:43:57.048 [DBG] [app.go:76] App.init, appID: 348
+2019-08-12 18:43:57.092 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:43:57.092 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:43:57.092 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:43:57.092 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:43:57.093 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:43:57.093 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:43:57.093 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:43:57.093 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:43:57.184 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 350 tickMS: 2000
+2019-08-12 18:43:57.184 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 349 tickMS: 2000
+2019-08-12 18:44:49.653 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:44:49.661 [DBG] [app.go:76] App.init, appID: 351
+2019-08-12 18:44:49.703 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:44:49.703 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:44:49.703 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:44:49.703 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:44:49.704 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:44:49.704 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:44:49.704 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:44:49.704 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:44:49.792 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 353 tickMS: 2000
+2019-08-12 18:44:49.792 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 352 tickMS: 2000
+2019-08-12 18:50:05.024 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:50:05.097 [DBG] [app.go:76] App.init, appID: 354
+2019-08-12 18:50:05.098 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:50:05.098 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:50:05.117 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:50:05.117 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:50:05.118 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:50:05.118 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:50:05.118 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:50:05.118 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:50:05.211 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 355 tickMS: 2000
+2019-08-12 18:50:05.211 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 356 tickMS: 2000
+2019-08-12 18:54:39.871 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-12 18:54:39.937 [DBG] [app.go:76] App.init, appID: 357
+2019-08-12 18:54:39.938 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-12 18:54:39.938 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 18:54:39.938 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 18:54:39.938 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 18:54:39.938 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-12 18:54:39.938 [DBG] [localService.go:72] service check : serviceB
+2019-08-12 18:54:39.939 [DBG] [localService.go:102] service check success: serviceB
+2019-08-12 18:54:39.939 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-12 18:54:40.029 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 359 tickMS: 2000
+2019-08-12 18:54:40.029 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 358 tickMS: 2000

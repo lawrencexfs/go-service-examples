@@ -1,0 +1,16 @@
+2019-10-31 16:07:31.844 [WRN] [PropInfo.go:328] prop complex type: HEROS
+2019-10-31 16:07:31.844 [WRN] [PropInfo.go:328] prop complex type: FRIENDS
+2019-10-31 16:07:42.696 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-31 16:07:42.704 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2019-10-31 16:11:58.309 [WRN] [PropInfo.go:328] prop complex type: FRIENDS
+2019-10-31 16:11:58.309 [WRN] [PropInfo.go:328] prop complex type: HEROS
+2019-10-31 16:12:00.743 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-31 16:12:00.755 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2019-10-31 16:40:50.299 [WRN] [PropInfo.go:328] prop complex type: FRIENDS
+2019-10-31 16:40:50.3 [WRN] [PropInfo.go:328] prop complex type: HEROS
+2019-10-31 16:40:55.984 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-31 16:40:55.99 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2019-10-31 16:46:50.427 [WRN] [PropInfo.go:328] prop complex type: FRIENDS
+2019-10-31 16:46:50.427 [WRN] [PropInfo.go:328] prop complex type: HEROS
+2019-10-31 16:46:59.246 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-31 16:46:59.248 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection

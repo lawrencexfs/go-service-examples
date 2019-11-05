@@ -1,0 +1,46 @@
+2019-08-23 16:01:59.586 [INF] [app.go:149] services[serviceA]
+2019-08-23 16:01:59.67 [DBG] [app.go:83] App.init, appID: 603
+2019-08-23 16:01:59.73 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-23 16:01:59.905 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-23 16:01:59.905 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-23 16:01:59.905 [DBG] [localService.go:67] service check : serviceA
+2019-08-23 16:01:59.905 [DBG] [localService.go:95] service check success: serviceA
+2019-08-23 16:01:59.905 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-23 16:01:59.906 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{604 2 603 map[]}
+2019-08-23 16:02:00.082 [DBG] [localService.go:210] run service , serviceName: serviceA, serviceType: 2, ServerID: 604 tickMS: 2000
+2019-08-23 16:02:02.692 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-23 16:02:02.71 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-23 16:02:02.71 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 16:02:02.71 [INF] [Entity_Props.go:175] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-23 16:02:02.711 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 604
+2019-08-23 16:02:02.711 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 604
+2019-08-23 16:02:02.712 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 16:02:02.712 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-23 16:02:02.712 [INF] [serviceA.go:66] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-23 16:02:02.712 [DBG] [ServiceAUserRpcProc.go:16] RPC_Hello, name: hello world, id: 1
+2019-08-23 16:02:02.712 [DBG] [ServiceAUserRpcProc.go:18] err: = <nil>
+2019-08-23 16:53:43.97 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:64617: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:64617, sessionid: 1
+2019-08-23 16:53:43.972 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:64617: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:64617, sessionid: 1
+2019-08-23 16:53:43.972 [INF] [serviceProc.go:106] ProcServiceA OnClosed: 1 127.0.0.1:64617
+2019-08-23 16:53:43.972 [DBG] [GateUserBase.go:169] lobby user OnClosed, uid: 1
+2019-08-23 16:54:15.929 [INF] [app.go:149] services[serviceA]
+2019-08-23 16:54:15.997 [DBG] [app.go:83] App.init, appID: 605
+2019-08-23 16:54:15.998 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-23 16:54:16.128 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-23 16:54:16.128 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-23 16:54:16.128 [DBG] [localService.go:67] service check : serviceA
+2019-08-23 16:54:16.128 [DBG] [localService.go:95] service check success: serviceA
+2019-08-23 16:54:16.128 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-23 16:54:16.128 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{606 2 605 map[]}
+2019-08-23 16:54:16.271 [DBG] [localService.go:210] run service , serviceName: serviceA, serviceType: 2, ServerID: 606 tickMS: 2000
+2019-08-23 16:54:18.699 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-23 16:54:18.716 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-23 16:54:18.718 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 16:54:18.718 [INF] [Entity_Props.go:175] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-23 16:54:18.718 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 606
+2019-08-23 16:54:18.718 [DBG] [entitySrvUtil.go:62] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 606
+2019-08-23 16:54:18.719 [ERR] [Entity.go:627] AsyncCall service not exist: 368,  sType: 101 ,methodName: SyncSrvInfo
+2019-08-23 16:54:18.719 [DBG] [ServiceAUser.go:19] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-23 16:54:18.719 [INF] [serviceA.go:66] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-23 16:54:18.719 [DBG] [ServiceAUserRpcProc.go:16] RPC_Hello, name: hello world, id: 1
+2019-08-23 16:54:18.719 [DBG] [ServiceAUserRpcProc.go:18] err: = <nil>

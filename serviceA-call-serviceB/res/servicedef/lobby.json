@@ -1,0 +1,13 @@
+{
+	"name": "lobby",
+    "methods": {
+        "CallMsg": {
+			"msg": "struct"
+		},
+		"PlayerGmReq": {
+			"name": "string",
+			"id": "uint32"
+		}
+		
+    }
+}

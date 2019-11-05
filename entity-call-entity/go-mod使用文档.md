@@ -1,0 +1,3 @@
+- 安装go1.12以上版本
+- 在当前目录命令行执行 go mod init entity-call-entity（在包含包名时要用到）,执行成功后会在根目录生成go.mod 。注:本例子已经提交go.mod , 所以不需要执行go init
+- 执行start.bat，里面会拉取用到的三方包和zeus库，如果一次拉取不成功，多执行几次

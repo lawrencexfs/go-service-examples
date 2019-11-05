@@ -1,0 +1,5 @@
+2019-08-05 17:11:14.37 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-08-05 17:12:11.05 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:60222: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:60222, sessionid: 1
+2019-08-05 17:12:11.051 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:60222: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:60222, sessionid: 1
+2019-08-05 17:12:42.281 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-08-05 17:12:42.284 [ERR] [session.go:315] send message error write tcp 127.0.0.1:17000->127.0.0.1:60290: wsasend: An existing connection was forcibly closed by the remote host.

@@ -1,0 +1,2586 @@
+2019-10-28 10:35:52.739 [INF] [app.go:160] services[gateway team]
+2019-10-28 10:35:52.951 [DBG] [app.go:85] App.init, appID: 4294967297
+2019-10-28 10:35:52.952 [INF] [gatewayService.go:23] GatewayService OnInit
+2019-10-28 10:35:52.952 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2019-10-28 10:35:53.053 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2019-10-28 10:35:53.053 [DBG] [localService.go:68] service check : gateway
+2019-10-28 10:35:53.053 [DBG] [localService.go:96] service check success: gateway
+2019-10-28 10:35:53.053 [DBG] [localServiceMgr.go:56] App InitLocalService, name: gateway sid: 4294967298
+2019-10-28 10:35:53.053 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967298 2 4294967297 map[]}
+2019-10-28 10:35:53.054 [DBG] [teamService.go:22] ServiceBService.OnInit
+2019-10-28 10:35:53.054 [DBG] [localService.go:68] service check : team
+2019-10-28 10:35:53.054 [DBG] [localService.go:96] service check success: team
+2019-10-28 10:35:53.054 [DBG] [localServiceMgr.go:56] App InitLocalService, name: team sid: 4294967299
+2019-10-28 10:35:53.054 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967299 3 4294967297 map[]}
+2019-10-28 10:35:53.115 [DBG] [localService.go:210] run service , serviceName: team, serviceType: 3, ServerID: 4294967299 tickMS: 2000
+2019-10-28 10:35:53.115 [DBG] [localService.go:210] run service , serviceName: gateway, serviceType: 2, ServerID: 4294967298 tickMS: 2000
+2019-10-28 10:35:53.116 [INF] [gatewayService.go:53] GatewayService OnConnected, infovec = [0xc00015f360]
+2019-10-28 10:35:55.653 [DBG] [ProcGateway.go:49] Begin MsgProcLoginReq, UID: 1, sess: 0xc0001d69f0
+2019-10-28 10:35:55.653 [INF] [gatewayService.go:60] GatewayService OnLoginHandler, msg.UID = 1
+2019-10-28 10:35:55.653 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-28 10:35:55.653 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-28 10:35:55.653 [DBG] [Entity_Props.go:38] InitProp   begin3: prop namerating , sType2
+2019-10-28 10:35:55.653 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player
+2019-10-28 10:35:55.669 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-10-28 10:35:55.673 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect from db: game, collection:player failed, err: not found, condition: map[dbid:1], select: map[rating:1], ret: map[]
+2019-10-28 10:35:55.675 [DBG] [GatewayUser.go:22] GatewayUser.OnUserInit, dbid: 1
+2019-10-28 10:35:55.675 [DBG] [GatewayUserRpc.go:18] RPCHello, name: hello world, id: 1
+2019-10-28 10:35:55.675 [DBG] [GatewayUserRpc.go:37] RPCCreateTeam, name: TestTeam
+2019-10-28 10:35:55.675 [DBG] [GatewayUserRpc.go:28] RPCModifyAttr, name: change coin, index: 1 val: 2
+2019-10-28 10:35:55.675 [DBG] [teamServiceRPC.go:17] RPCCreateTeam: 
+2019-10-28 10:35:55.675 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:runtime error: invalid memory address or nil pointer dereference, methodName: ModifyAttr, goroutine 52 [running]:
+runtime/debug.Stack(0xc0003238b0, 0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001bb200, 0xa)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
+panic(0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).SetProp(0xc0000a2b10, 0xbbcc51, 0x5, 0xac0b60, 0xc000194fa8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_Props.go:63 +0x11b
+entity-call-entity/src/entitydef.(*PlayerDef).Setlevel(...)
+	F:/t_work/go-service/examples/entity-call-entity/src/entitydef/PlayerDef.go:77
+entity-call-entity/src/services/gateway/user.(*GatewayUser).RPCModifyAttr(0xc0000a2b00, 0xc000102a00, 0xb, 0x200000001)
+	F:/t_work/go-service/examples/entity-call-entity/src/services/gateway/user/GatewayUserRpc.go:28 +0x1aa
+reflect.Value.call(0xbb8e20, 0xc0000a2b00, 0x10213, 0xbbbbfb, 0x4, 0xc000281440, 0x3, 0x4, 0x15, 0x15, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xbb8e20, 0xc0000a2b00, 0x10213, 0xc000281440, 0x3, 0x4, 0xc000281440, 0x3, 0x4)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0000a2b10, 0xc0001bb200, 0xa, 0xc000206e40, 0x15, 0x15, 0x0, 0x0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0000a2b10, 0xc0001bb200, 0xa, 0xc000206e40, 0x15, 0x15, 0x0, 0x10, 0xc000323ed8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc0000a2b10, 0xc000311180)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0000a2b10)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
+created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
+
+2019-10-28 10:35:55.675 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-28 10:35:55.678 [DBG] [GatewayUserRpc.go:28] RPCModifyAttr, name: change coin, index: 1 val: 2
+2019-10-28 10:35:55.679 [DBG] [Team.go:25] TeamName: test
+2019-10-28 10:35:55.706 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:runtime error: invalid memory address or nil pointer dereference, methodName: ModifyAttr, goroutine 52 [running]:
+runtime/debug.Stack(0xc0003238b0, 0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc000194fc0, 0xa)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
+panic(0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).SetProp(0xc0000a2b10, 0xbbcc51, 0x5, 0xac0b60, 0xc0001bb290)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_Props.go:63 +0x11b
+entity-call-entity/src/entitydef.(*PlayerDef).Setlevel(...)
+	F:/t_work/go-service/examples/entity-call-entity/src/entitydef/PlayerDef.go:77
+entity-call-entity/src/services/gateway/user.(*GatewayUser).RPCModifyAttr(0xc0000a2b00, 0xc000194fd0, 0xb, 0x200000001)
+	F:/t_work/go-service/examples/entity-call-entity/src/services/gateway/user/GatewayUserRpc.go:28 +0x1aa
+reflect.Value.call(0xbb8e20, 0xc0000a2b00, 0x10213, 0xbbbbfb, 0x4, 0xc0002b70e0, 0x3, 0x4, 0x15, 0x15, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xbb8e20, 0xc0000a2b00, 0x10213, 0xc0002b70e0, 0x3, 0x4, 0xc0002b70e0, 0x3, 0x4)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0000a2b10, 0xc000194fc0, 0xa, 0xc00006ba40, 0x15, 0x15, 0x0, 0x0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0000a2b10, 0xc000194fc0, 0xa, 0xc00006ba40, 0x15, 0x15, 0x0, 0x10, 0xc000323ed8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc0000a2b10, 0xc0002e47c0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0000a2b10)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
+created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
+
+2019-10-28 10:35:55.715 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-28 10:35:55.725 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-28 10:35:55.734 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:55.773 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player
+2019-10-28 10:35:55.777 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:55.781 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect from db: game, collection:player failed, err: not found, condition: map[dbid:1], select: map[], ret: map[]
+2019-10-28 10:35:55.787 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-28 10:35:55.789 [DBG] [TeamUser.go:25] PlayerName: Jim
+2019-10-28 10:35:55.79 [DBG] [GatewayUserRpc.go:50] RPCCreateTeamResult, teamID: 4294967300
+2019-10-28 10:35:55.825 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:55.875 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:55.925 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:55.975 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.025 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.075 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.125 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.175 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.225 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.275 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.325 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.375 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.426 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.476 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.526 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.576 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.626 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.676 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.726 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.776 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.826 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.876 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.926 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:56.976 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.026 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.076 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.116 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:35:57.116 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:35:57.126 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.176 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.226 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.276 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.326 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.376 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.426 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.476 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.526 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.576 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.626 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.676 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.726 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.776 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.826 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.876 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.926 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:57.976 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.026 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.076 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.126 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.176 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.226 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.276 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.326 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.376 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.426 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.476 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.526 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.576 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.626 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.676 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.726 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.776 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.826 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.876 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:35:58.888 [DBG] [teamService.go:36] ServiceBService.OnDestroy
+2019-10-28 10:35:58.889 [DBG] [Team.go:38] OnDestroy
+2019-10-28 10:35:58.895 [DBG] [TeamUser.go:35] OnDestroy
+2019-10-28 10:35:58.895 [INF] [gatewayService.go:42] GatewayService OnDestroy
+2019-10-28 10:35:58.895 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-28 10:35:58.896 [INF] [GatewayBase.go:60] GatewayBase OnDestroy
+2019-10-28 10:35:58.897 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-28 10:35:58.897 [INF] [GateUserBase.go:125] Logout(), id: 1
+2019-10-28 10:35:58.897 [DBG] [GatewayUser.go:33] GatewayUser.OnUserFini, dbid: 1
+2019-10-28 10:35:58.898 [DBG] [serviceProxyMgr.go:60] SProxyMgr, DelServiceByAppID : 4294967297
+2019-10-28 10:35:58.899 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967298
+2019-10-28 10:35:58.899 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967298
+2019-10-28 10:35:58.899 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967299
+2019-10-28 10:35:58.899 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967299
+2019-10-28 10:35:58.899 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2019-10-28 10:51:51.204 [INF] [app.go:160] services[gateway team]
+2019-10-28 10:51:51.214 [DBG] [app.go:85] App.init, appID: 4294967297
+2019-10-28 10:51:51.261 [INF] [gatewayService.go:23] GatewayService OnInit
+2019-10-28 10:51:51.261 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2019-10-28 10:51:51.374 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2019-10-28 10:51:51.375 [DBG] [localService.go:68] service check : gateway
+2019-10-28 10:51:51.375 [DBG] [localService.go:96] service check success: gateway
+2019-10-28 10:51:51.375 [DBG] [localServiceMgr.go:56] App InitLocalService, name: gateway sid: 4294967298
+2019-10-28 10:51:51.375 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967298 2 4294967297 map[]}
+2019-10-28 10:51:51.376 [DBG] [teamService.go:22] ServiceBService.OnInit
+2019-10-28 10:51:51.376 [DBG] [localService.go:68] service check : team
+2019-10-28 10:51:51.376 [DBG] [localService.go:96] service check success: team
+2019-10-28 10:51:51.376 [DBG] [localServiceMgr.go:56] App InitLocalService, name: team sid: 4294967299
+2019-10-28 10:51:51.376 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967299 3 4294967297 map[]}
+2019-10-28 10:51:51.44 [DBG] [localService.go:210] run service , serviceName: team, serviceType: 3, ServerID: 4294967299 tickMS: 2000
+2019-10-28 10:51:51.44 [DBG] [localService.go:210] run service , serviceName: gateway, serviceType: 2, ServerID: 4294967298 tickMS: 2000
+2019-10-28 10:51:51.441 [INF] [gatewayService.go:53] GatewayService OnConnected, infovec = [0xc0000055a0]
+2019-10-28 10:51:54.473 [DBG] [ProcGateway.go:49] Begin MsgProcLoginReq, UID: 1, sess: 0xc0001008a0
+2019-10-28 10:51:54.473 [INF] [gatewayService.go:60] GatewayService OnLoginHandler, msg.UID = 1
+2019-10-28 10:51:54.473 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-28 10:51:54.474 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-28 10:51:54.474 [DBG] [Entity_Props.go:38] InitProp   begin3: prop namerating , sType2
+2019-10-28 10:51:54.474 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player
+2019-10-28 10:51:54.491 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-10-28 10:51:54.495 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect from db: game, collection:player failed, err: not found, condition: map[dbid:1], select: map[rating:1], ret: map[]
+2019-10-28 10:51:54.496 [DBG] [GatewayUser.go:22] GatewayUser.OnUserInit, dbid: 1
+2019-10-28 10:51:54.496 [DBG] [GatewayUserRpc.go:18] RPCHello, name: hello world, id: 1
+2019-10-28 10:51:54.496 [DBG] [GatewayUserRpc.go:37] RPCCreateTeam, name: TestTeam
+2019-10-28 10:51:54.496 [DBG] [GatewayUserRpc.go:28] RPCModifyAttr, name: change coin, index: 1 val: 2
+2019-10-28 10:51:54.497 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:runtime error: invalid memory address or nil pointer dereference, methodName: ModifyAttr, goroutine 73 [running]:
+runtime/debug.Stack(0xc0002db8b0, 0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001eb330, 0xa)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
+panic(0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).SetProp(0xc0002e6010, 0xbbcc51, 0x5, 0xac0b60, 0xc0001eb360)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_Props.go:63 +0x11b
+entity-call-entity/src/entitydef.(*PlayerDef).Setlevel(...)
+	F:/t_work/go-service/examples/entity-call-entity/src/entitydef/PlayerDef.go:77
+entity-call-entity/src/services/gateway/user.(*GatewayUser).RPCModifyAttr(0xc0002e6000, 0xc000108690, 0xb, 0x200000001)
+	F:/t_work/go-service/examples/entity-call-entity/src/services/gateway/user/GatewayUserRpc.go:28 +0x1aa
+reflect.Value.call(0xbb8e20, 0xc0002e6000, 0x10213, 0xbbbbfb, 0x4, 0xc0000594a0, 0x3, 0x4, 0x15, 0x15, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xbb8e20, 0xc0002e6000, 0x10213, 0xc0000594a0, 0x3, 0x4, 0xc0000594a0, 0x3, 0x4)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0002e6010, 0xc0001eb330, 0xa, 0xc00011db60, 0x15, 0x15, 0x0, 0x0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0002e6010, 0xc0001eb330, 0xa, 0xc00011db60, 0x15, 0x15, 0x0, 0x10, 0xc0002dbed8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc0002e6010, 0xc00034c1a0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0002e6010)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
+created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
+
+2019-10-28 10:51:54.497 [DBG] [teamServiceRPC.go:17] RPCCreateTeam: 
+2019-10-28 10:51:54.499 [DBG] [GatewayUserRpc.go:28] RPCModifyAttr, name: change level, index: 1 val: 2
+2019-10-28 10:51:54.501 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:runtime error: invalid memory address or nil pointer dereference, methodName: ModifyAttr, goroutine 73 [running]:
+runtime/debug.Stack(0xc0002db8b0, 0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc000070250, 0xa)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
+panic(0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).SetProp(0xc0002e6010, 0xbbcc51, 0x5, 0xac0b60, 0xc0000702b8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_Props.go:63 +0x11b
+entity-call-entity/src/entitydef.(*PlayerDef).Setlevel(...)
+	F:/t_work/go-service/examples/entity-call-entity/src/entitydef/PlayerDef.go:77
+entity-call-entity/src/services/gateway/user.(*GatewayUser).RPCModifyAttr(0xc0002e6000, 0xc000070260, 0xc, 0x200000001)
+	F:/t_work/go-service/examples/entity-call-entity/src/services/gateway/user/GatewayUserRpc.go:28 +0x1aa
+reflect.Value.call(0xbb8e20, 0xc0002e6000, 0x10213, 0xbbbbfb, 0x4, 0xc0000f6960, 0x3, 0x4, 0x16, 0x16, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xbb8e20, 0xc0002e6000, 0x10213, 0xc0000f6960, 0x3, 0x4, 0xc0000f6960, 0x3, 0x4)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0002e6010, 0xc000070250, 0xa, 0xc00006e3e0, 0x16, 0x16, 0x0, 0x0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0002e6010, 0xc000070250, 0xa, 0xc00006e3e0, 0x16, 0x16, 0x0, 0x10, 0xc0002dbed8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc0002e6010, 0xc000066a80)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0002e6010)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
+created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
+
+2019-10-28 10:51:54.501 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-28 10:51:54.502 [DBG] [Team.go:25] TeamName: test
+2019-10-28 10:51:54.537 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-28 10:51:54.586 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-28 10:51:54.587 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:54.595 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player
+2019-10-28 10:51:54.596 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:54.598 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect from db: game, collection:player failed, err: not found, condition: map[dbid:1], select: map[], ret: map[]
+2019-10-28 10:51:54.599 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-28 10:51:54.6 [DBG] [TeamUser.go:25] PlayerName: Jim
+2019-10-28 10:51:54.601 [DBG] [GatewayUserRpc.go:50] RPCCreateTeamResult, teamID: 4294967300
+2019-10-28 10:51:54.646 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:54.696 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:54.746 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:54.796 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:54.846 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:54.896 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:54.946 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:54.996 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.046 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.096 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.146 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.196 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.246 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.296 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.346 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.396 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.44 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:51:55.44 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:51:55.446 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.496 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.546 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.596 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.646 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.696 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.746 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.796 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.846 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.896 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.946 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:55.996 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.046 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.096 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.146 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.196 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.246 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.296 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.346 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.396 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.446 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:56.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.441 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:51:57.441 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:51:57.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:57.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:58.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.441 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:51:59.441 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:51:59.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:51:59.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:00.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.441 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:01.441 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:01.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:01.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:02.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.441 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:03.441 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:03.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:03.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:04.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.441 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:05.441 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:05.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:05.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:06.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:07.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:07.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:07.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:08.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.441 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:09.441 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:09.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:09.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:10.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.441 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:11.441 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:11.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:11.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:12.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.441 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:13.441 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:13.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:13.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:14.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.441 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:15.441 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:15.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.497 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.547 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.597 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.647 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.697 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.747 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.797 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.847 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.897 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.947 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:15.997 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.047 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.097 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.147 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.197 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.247 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.297 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.347 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.397 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.447 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:16.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:17.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:17.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:17.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:18.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:19.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:19.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:19.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:20.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:21.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:21.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:21.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:22.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:23.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:23.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:23.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:24.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:25.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:25.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:25.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:26.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:27.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:27.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:27.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:28.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:29.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:29.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:29.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:30.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:31.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:31.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:31.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:32.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:33.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:33.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:33.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:34.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:35.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:35.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.498 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.548 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.598 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.648 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.698 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.748 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.798 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.848 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.898 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.948 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:35.998 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.048 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.098 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.148 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.198 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.248 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.298 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.348 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.398 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.448 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:36.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:37.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:37.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:37.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:38.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:39.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:39.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:39.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:40.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:41.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:41.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:41.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:42.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:43.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:43.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:43.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:44.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.442 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:45.442 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:45.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:45.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:46.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:47.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:47.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:47.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:48.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:49.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:49.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:49.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:50.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:51.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:51.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:51.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:52.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:53.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:53.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:53.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:54.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:55.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:55.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:55.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:56.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.444 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:57.444 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:57.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:57.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:58.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.444 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:52:59.444 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:52:59.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:52:59.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:00.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:01.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:01.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:01.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:02.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:03.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:03.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:03.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.752 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:04.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.443 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:05.443 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:05.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.499 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.549 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.599 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.649 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.699 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.749 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.799 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.849 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.899 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.949 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:05.999 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.049 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.099 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.149 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.199 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.249 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.299 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.349 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.399 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.449 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:06.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.444 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:07.444 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:07.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:07.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:08.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.444 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:09.444 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:09.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:09.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:10.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.444 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:11.444 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:11.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:11.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:12.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.444 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:13.444 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:13.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:13.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:14.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.444 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:15.444 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:15.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:15.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:16.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.445 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:17.445 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:17.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:17.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:18.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.444 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:19.444 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:19.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:19.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:20.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.444 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:21.444 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:21.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:21.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:22.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.444 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:23.444 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:23.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:23.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:24.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.444 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:25.444 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:25.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.5 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.55 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.6 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.65 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.7 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.75 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.8 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.85 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.9 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:25.95 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.05 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.1 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.15 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.2 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.25 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.3 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.35 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.4 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.45 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:26.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.445 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:27.445 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:27.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:27.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:28.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.445 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:29.445 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:29.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:29.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:30.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.445 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:31.445 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:31.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:31.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:32.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.102 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.445 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:53:33.445 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:53:33.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:33.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.401 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.451 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.501 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.551 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.601 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.651 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.701 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.751 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.801 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.851 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.901 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:34.951 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:35.001 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:35.051 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:35.101 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:35.151 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:35.201 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:35.251 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:35.301 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:35.351 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:53:35.354 [DBG] [teamService.go:36] ServiceBService.OnDestroy
+2019-10-28 10:53:35.354 [DBG] [Team.go:38] OnDestroy
+2019-10-28 10:53:35.361 [DBG] [TeamUser.go:35] OnDestroy
+2019-10-28 10:53:35.361 [INF] [gatewayService.go:42] GatewayService OnDestroy
+2019-10-28 10:53:35.361 [INF] [GatewayBase.go:60] GatewayBase OnDestroy
+2019-10-28 10:53:35.361 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-28 10:53:35.362 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-28 10:53:35.362 [DBG] [serviceProxyMgr.go:60] SProxyMgr, DelServiceByAppID : 4294967297
+2019-10-28 10:53:35.362 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967298
+2019-10-28 10:53:35.363 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967298
+2019-10-28 10:53:35.363 [INF] [GateUserBase.go:125] Logout(), id: 1
+2019-10-28 10:53:35.363 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967299
+2019-10-28 10:53:35.363 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967299
+2019-10-28 10:53:35.363 [DBG] [GatewayUser.go:33] GatewayUser.OnUserFini, dbid: 1
+2019-10-28 10:53:35.363 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2019-10-28 10:55:00.731 [INF] [app.go:160] services[gateway team]
+2019-10-28 10:55:00.741 [DBG] [app.go:85] App.init, appID: 4294967297
+2019-10-28 10:55:00.787 [INF] [gatewayService.go:23] GatewayService OnInit
+2019-10-28 10:55:00.787 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2019-10-28 10:55:00.889 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2019-10-28 10:55:00.889 [DBG] [localService.go:68] service check : gateway
+2019-10-28 10:55:00.889 [DBG] [localService.go:96] service check success: gateway
+2019-10-28 10:55:00.889 [DBG] [localServiceMgr.go:56] App InitLocalService, name: gateway sid: 4294967298
+2019-10-28 10:55:00.889 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967298 2 4294967297 map[]}
+2019-10-28 10:55:00.89 [DBG] [teamService.go:22] ServiceBService.OnInit
+2019-10-28 10:55:00.89 [DBG] [localService.go:68] service check : team
+2019-10-28 10:55:00.89 [DBG] [localService.go:96] service check success: team
+2019-10-28 10:55:00.89 [DBG] [localServiceMgr.go:56] App InitLocalService, name: team sid: 4294967299
+2019-10-28 10:55:00.89 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967299 3 4294967297 map[]}
+2019-10-28 10:55:00.952 [DBG] [localService.go:210] run service , serviceName: team, serviceType: 3, ServerID: 4294967299 tickMS: 2000
+2019-10-28 10:55:00.952 [DBG] [localService.go:210] run service , serviceName: gateway, serviceType: 2, ServerID: 4294967298 tickMS: 2000
+2019-10-28 10:55:00.952 [INF] [gatewayService.go:53] GatewayService OnConnected, infovec = [0xc000005ea0]
+2019-10-28 10:55:03.904 [DBG] [ProcGateway.go:49] Begin MsgProcLoginReq, UID: 1, sess: 0xc0000ffe60
+2019-10-28 10:55:03.904 [INF] [gatewayService.go:60] GatewayService OnLoginHandler, msg.UID = 1
+2019-10-28 10:55:03.904 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-28 10:55:03.904 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-28 10:55:03.904 [DBG] [Entity_Props.go:38] InitProp   begin3: prop namerating , sType2
+2019-10-28 10:55:03.904 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player
+2019-10-28 10:55:03.921 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-10-28 10:55:03.923 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect from db: game, collection:player failed, err: not found, condition: map[dbid:1], select: map[rating:1], ret: map[]
+2019-10-28 10:55:03.924 [DBG] [GatewayUser.go:22] GatewayUser.OnUserInit, dbid: 1
+2019-10-28 10:55:03.924 [DBG] [GatewayUserRpc.go:18] RPCHello, name: hello world, id: 1
+2019-10-28 10:55:03.924 [DBG] [GatewayUserRpc.go:37] RPCCreateTeam, name: TestTeam
+2019-10-28 10:55:03.924 [DBG] [GatewayUserRpc.go:28] RPCModifyAttr, name: change coin, index: 1 val: 2
+2019-10-28 10:55:03.924 [DBG] [teamServiceRPC.go:17] RPCCreateTeam: 
+2019-10-28 10:55:03.925 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:runtime error: invalid memory address or nil pointer dereference, methodName: ModifyAttr, goroutine 9 [running]:
+runtime/debug.Stack(0xc0003158b0, 0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc000019e30, 0xa)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
+panic(0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).SetProp(0xc00027e170, 0xbbcc51, 0x5, 0xac0b60, 0xc00010a8b8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_Props.go:63 +0x11b
+entity-call-entity/src/entitydef.(*PlayerDef).Setlevel(...)
+	F:/t_work/go-service/examples/entity-call-entity/src/entitydef/PlayerDef.go:77
+entity-call-entity/src/services/gateway/user.(*GatewayUser).RPCModifyAttr(0xc00027e160, 0xc0000669f0, 0xb, 0x200000001)
+	F:/t_work/go-service/examples/entity-call-entity/src/services/gateway/user/GatewayUserRpc.go:28 +0x1aa
+reflect.Value.call(0xbb8e20, 0xc00027e160, 0x10213, 0xbbbbfb, 0x4, 0xc0002b2b40, 0x3, 0x4, 0x15, 0x15, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xbb8e20, 0xc00027e160, 0x10213, 0xc0002b2b40, 0x3, 0x4, 0xc0002b2b40, 0x3, 0x4)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc00027e170, 0xc000019e30, 0xa, 0xc0002517c0, 0x15, 0x15, 0x0, 0x0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc00027e170, 0xc000019e30, 0xa, 0xc0002517c0, 0x15, 0x15, 0x0, 0x10, 0xc000315ed8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc00027e170, 0xc0003503c0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc00027e170)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
+created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
+
+2019-10-28 10:55:03.925 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-28 10:55:03.927 [DBG] [GatewayUserRpc.go:28] RPCModifyAttr, name: change level, index: 1 val: 2
+2019-10-28 10:55:03.928 [DBG] [Team.go:25] TeamName: test
+2019-10-28 10:55:03.956 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:runtime error: invalid memory address or nil pointer dereference, methodName: ModifyAttr, goroutine 9 [running]:
+runtime/debug.Stack(0xc0003158b0, 0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc000066a50, 0xa)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
+panic(0xafd860, 0x11bf3c0)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).SetProp(0xc00027e170, 0xbbcc51, 0x5, 0xac0b60, 0xc00017fbe0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_Props.go:63 +0x11b
+entity-call-entity/src/entitydef.(*PlayerDef).Setlevel(...)
+	F:/t_work/go-service/examples/entity-call-entity/src/entitydef/PlayerDef.go:77
+entity-call-entity/src/services/gateway/user.(*GatewayUser).RPCModifyAttr(0xc00027e160, 0xc000066a60, 0xc, 0x200000001)
+	F:/t_work/go-service/examples/entity-call-entity/src/services/gateway/user/GatewayUserRpc.go:28 +0x1aa
+reflect.Value.call(0xbb8e20, 0xc00027e160, 0x10213, 0xbbbbfb, 0x4, 0xc0002b2d20, 0x3, 0x4, 0x16, 0x16, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xbb8e20, 0xc00027e160, 0x10213, 0xc0002b2d20, 0x3, 0x4, 0xc0002b2d20, 0x3, 0x4)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc00027e170, 0xc000066a50, 0xa, 0xc000064b20, 0x16, 0x16, 0x0, 0x0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc00027e170, 0xc000066a50, 0xa, 0xc000064b20, 0x16, 0x16, 0x0, 0x10, 0xc000315ed8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc00027e170, 0xc000336520)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc00027e170)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
+created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
+
+2019-10-28 10:55:03.957 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-28 10:55:03.967 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-28 10:55:03.967 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player
+2019-10-28 10:55:03.971 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect from db: game, collection:player failed, err: not found, condition: map[dbid:1], select: map[], ret: map[]
+2019-10-28 10:55:04.015 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.025 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.026 [DBG] [TeamUser.go:25] PlayerName: Jim
+2019-10-28 10:55:04.028 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-28 10:55:04.03 [DBG] [GatewayUserRpc.go:50] RPCCreateTeamResult, teamID: 4294967300
+2019-10-28 10:55:04.074 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.124 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.174 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.224 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.274 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.324 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.374 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.424 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.474 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.524 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.574 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.624 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.674 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.724 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.774 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.824 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.874 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.924 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:04.952 [DBG] [Team.go:32] Team.OnLoop
+2019-10-28 10:55:04.952 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-28 10:55:04.974 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.024 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.074 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.124 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.174 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.224 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.274 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.324 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.374 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.424 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.474 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.524 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.574 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.624 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.674 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.724 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.774 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.824 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.874 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.924 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:05.974 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.024 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.074 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.124 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.174 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.224 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.274 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.324 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.374 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.424 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.474 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.525 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.575 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.625 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.675 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.715 [DBG] [teamService.go:36] ServiceBService.OnDestroy
+2019-10-28 10:55:06.716 [DBG] [Team.go:38] OnDestroy
+2019-10-28 10:55:06.725 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-28 10:55:06.725 [DBG] [TeamUser.go:35] OnDestroy
+2019-10-28 10:55:06.725 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-28 10:55:06.725 [INF] [gatewayService.go:42] GatewayService OnDestroy
+2019-10-28 10:55:06.725 [INF] [GatewayBase.go:60] GatewayBase OnDestroy
+2019-10-28 10:55:06.725 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-28 10:55:06.728 [INF] [GateUserBase.go:125] Logout(), id: 1
+2019-10-28 10:55:06.734 [DBG] [GatewayUser.go:33] GatewayUser.OnUserFini, dbid: 1
+2019-10-28 10:55:06.735 [DBG] [serviceProxyMgr.go:60] SProxyMgr, DelServiceByAppID : 4294967297
+2019-10-28 10:55:06.735 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967298
+2019-10-28 10:55:06.735 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967298
+2019-10-28 10:55:06.735 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967299
+2019-10-28 10:55:06.735 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967299
+2019-10-28 10:55:06.739 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection

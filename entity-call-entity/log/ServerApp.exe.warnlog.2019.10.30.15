@@ -1,0 +1,6 @@
+2019-10-30 15:19:55.286 [WRN] [PropInfo.go:328] prop complex type: FRIENDS
+2019-10-30 15:20:03.823 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-30 15:20:03.836 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2019-10-30 15:39:21.042 [WRN] [PropInfo.go:328] prop complex type: FRIENDS
+2019-10-30 15:45:41.315 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-30 15:45:41.325 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection

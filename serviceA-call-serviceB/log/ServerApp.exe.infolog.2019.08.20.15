@@ -1,0 +1,544 @@
+2019-08-20 15:08:37.528 [INF] [app.go:143] services[serviceB]
+2019-08-20 15:08:37.595 [DBG] [app.go:77] App.init, appID: 519
+2019-08-20 15:08:37.598 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-20 15:08:37.598 [DBG] [localService.go:67] service check : serviceB
+2019-08-20 15:08:37.598 [DBG] [localService.go:97] service check success: serviceB
+2019-08-20 15:08:37.598 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-20 15:08:37.598 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 519, serviceID: 520
+2019-08-20 15:08:37.598 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:08:37.598 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000065320]
+2019-08-20 15:08:37.742 [DBG] [localService.go:211] run service , serviceName: serviceB, serviceType: 102, ServerID: 520 tickMS: 2000
+2019-08-20 15:08:37.742 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 520 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:08:37.742 [DBG] [localServiceMgr.go:135] GetAllLocalService delete , idx: 0 serviceid: 520 ,slist = [<nil>]
+2019-08-20 15:08:47.619 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:08:47.619 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a440]
+2019-08-20 15:08:57.62 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:08:57.62 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc140]
+2019-08-20 15:09:07.619 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:09:07.619 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc160]
+2019-08-20 15:09:17.617 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:09:17.617 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a7c0]
+2019-08-20 15:09:27.618 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:09:27.618 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a7e0]
+2019-08-20 15:09:37.617 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:09:37.617 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a460]
+2019-08-20 15:09:47.616 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:09:47.616 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc320]
+2019-08-20 15:09:57.616 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:09:57.616 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a480]
+2019-08-20 15:10:07.615 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:10:07.615 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000065860]
+2019-08-20 15:10:17.615 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:10:17.615 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000065880]
+2019-08-20 15:10:27.614 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:10:27.614 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a880]
+2019-08-20 15:10:37.614 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:10:37.614 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a8a0]
+2019-08-20 15:10:47.613 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:10:47.613 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc4c0]
+2019-08-20 15:10:57.615 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:10:57.615 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000659a0]
+2019-08-20 15:11:07.612 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:11:07.612 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc4e0]
+2019-08-20 15:11:17.611 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:11:17.611 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000659c0]
+2019-08-20 15:11:27.611 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:11:27.611 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000659e0]
+2019-08-20 15:11:37.61 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:11:37.61 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a520]
+2019-08-20 15:11:47.61 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:11:47.61 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a540]
+2019-08-20 15:11:57.609 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:11:57.609 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc680]
+2019-08-20 15:12:07.608 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:12:07.608 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a560]
+2019-08-20 15:12:17.608 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:12:17.608 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000065b80]
+2019-08-20 15:12:27.608 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:12:27.608 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a600]
+2019-08-20 15:12:37.608 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:12:37.608 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc6a0]
+2019-08-20 15:12:47.607 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:12:47.607 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a6a0]
+2019-08-20 15:12:57.606 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:12:57.606 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a6c0]
+2019-08-20 15:13:07.605 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:13:07.605 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc6c0]
+2019-08-20 15:13:17.604 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:13:17.604 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a6e0]
+2019-08-20 15:13:27.604 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:13:27.604 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020abc0]
+2019-08-20 15:13:37.603 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:13:37.603 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a780]
+2019-08-20 15:13:47.603 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:13:47.603 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a7a0]
+2019-08-20 15:13:57.602 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:13:57.602 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000065c20]
+2019-08-20 15:14:07.602 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:14:07.602 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a7c0]
+2019-08-20 15:14:17.601 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:14:17.601 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020ac60]
+2019-08-20 15:14:27.6 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:14:27.6 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020ac80]
+2019-08-20 15:14:37.6 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:14:37.6 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000065cc0]
+2019-08-20 15:14:47.599 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:14:47.599 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020aca0]
+2019-08-20 15:14:57.599 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:14:57.599 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020acc0]
+2019-08-20 15:15:07.599 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:15:07.599 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020ace0]
+2019-08-20 15:15:17.598 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:15:17.598 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a960]
+2019-08-20 15:15:27.597 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:15:27.597 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000065e60]
+2019-08-20 15:15:37.596 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:15:37.596 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000065e80]
+2019-08-20 15:15:47.597 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:15:47.597 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000065ea0]
+2019-08-20 15:15:57.595 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:15:57.595 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001aac0]
+2019-08-20 15:16:07.595 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:16:07.595 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001aae0]
+2019-08-20 15:16:17.594 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:16:17.594 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020adc0]
+2019-08-20 15:16:27.594 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:16:27.594 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001ab00]
+2019-08-20 15:16:37.594 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:16:37.594 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc8e0]
+2019-08-20 15:16:47.595 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:16:47.595 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001aba0]
+2019-08-20 15:16:57.595 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:16:57.595 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001abc0]
+2019-08-20 15:17:07.595 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:17:07.596 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020ade0]
+2019-08-20 15:17:17.596 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:17:17.596 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fca00]
+2019-08-20 15:17:27.596 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:17:27.596 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fca20]
+2019-08-20 15:17:37.597 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:17:37.597 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000065fc0]
+2019-08-20 15:17:47.597 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:17:47.597 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000065fe0]
+2019-08-20 15:17:57.598 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:17:57.599 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fcac0]
+2019-08-20 15:18:07.598 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:18:07.598 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001ace0]
+2019-08-20 15:18:17.597 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:18:17.597 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020af80]
+2019-08-20 15:18:27.6 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:18:27.6 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fcb60]
+2019-08-20 15:18:37.599 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:18:37.599 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b020]
+2019-08-20 15:18:47.6 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:18:47.6 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001ad40]
+2019-08-20 15:18:57.599 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:18:57.599 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b0c0]
+2019-08-20 15:19:07.6 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:19:07.6 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fcb80]
+2019-08-20 15:19:17.602 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:19:17.602 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fcba0]
+2019-08-20 15:19:27.601 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:19:27.601 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fcbc0]
+2019-08-20 15:19:37.602 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:19:37.602 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001aee0]
+2019-08-20 15:19:47.602 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:19:47.602 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fcbe0]
+2019-08-20 15:19:57.602 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:19:57.602 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b160]
+2019-08-20 15:20:07.603 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:20:07.603 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000374140]
+2019-08-20 15:20:17.603 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:20:17.603 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fcd00]
+2019-08-20 15:20:27.605 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:20:27.605 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b180]
+2019-08-20 15:20:37.604 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:20:37.604 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b1a0]
+2019-08-20 15:20:47.605 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:20:47.605 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fce20]
+2019-08-20 15:20:57.605 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:20:57.605 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b1c0]
+2019-08-20 15:21:07.607 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:21:07.607 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fcec0]
+2019-08-20 15:21:17.606 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:21:17.606 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b2e0]
+2019-08-20 15:21:27.606 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:21:27.606 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b300]
+2019-08-20 15:21:37.608 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:21:37.608 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b320]
+2019-08-20 15:21:47.607 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:21:47.608 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001b000]
+2019-08-20 15:21:57.608 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:21:57.608 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b3c0]
+2019-08-20 15:22:07.608 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:22:07.608 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001b0a0]
+2019-08-20 15:22:17.609 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:22:17.609 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0003741e0]
+2019-08-20 15:22:27.609 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:22:27.609 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000374200]
+2019-08-20 15:22:37.61 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:22:37.61 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001b140]
+2019-08-20 15:22:47.61 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:22:47.61 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001b160]
+2019-08-20 15:22:57.61 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:22:57.61 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001b180]
+2019-08-20 15:23:07.611 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:23:07.611 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b660]
+2019-08-20 15:23:17.61 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:23:17.61 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000374220]
+2019-08-20 15:23:27.612 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:23:27.612 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000374240]
+2019-08-20 15:23:37.611 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:23:37.611 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001b1a0]
+2019-08-20 15:23:47.613 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:23:47.613 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b780]
+2019-08-20 15:23:57.618 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:23:57.618 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020b7a0]
+2019-08-20 15:24:07.614 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:24:07.614 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001b1c0]
+2019-08-20 15:24:17.614 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:24:17.614 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fd260]
+2019-08-20 15:24:27.614 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:24:27.614 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000374260]
+2019-08-20 15:24:37.614 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:24:37.614 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064000]
+2019-08-20 15:24:47.615 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:24:47.615 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a3e0]
+2019-08-20 15:24:57.615 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:24:57.615 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064100]
+2019-08-20 15:25:07.616 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:25:07.616 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064120]
+2019-08-20 15:25:17.616 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:25:17.616 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a000]
+2019-08-20 15:25:27.617 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:25:27.617 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a500]
+2019-08-20 15:25:37.617 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:25:37.617 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a520]
+2019-08-20 15:25:47.618 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:25:47.618 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a540]
+2019-08-20 15:25:57.618 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:25:57.618 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a140]
+2019-08-20 15:26:07.618 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:26:07.618 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc180]
+2019-08-20 15:26:17.619 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:26:17.619 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc1a0]
+2019-08-20 15:26:27.619 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:26:27.619 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc1c0]
+2019-08-20 15:26:37.62 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:26:37.62 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc020]
+2019-08-20 15:26:47.62 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:26:47.62 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a000]
+2019-08-20 15:26:57.621 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:26:57.621 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc040]
+2019-08-20 15:27:07.621 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:27:07.621 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000640e0]
+2019-08-20 15:27:17.621 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:27:17.622 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064100]
+2019-08-20 15:27:27.622 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:27:27.622 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064120]
+2019-08-20 15:27:37.622 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:27:37.622 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064140]
+2019-08-20 15:27:47.623 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:27:47.623 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc1c0]
+2019-08-20 15:27:57.624 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:27:57.624 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000643c0]
+2019-08-20 15:28:07.624 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:28:07.624 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a240]
+2019-08-20 15:28:17.625 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:28:17.625 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064460]
+2019-08-20 15:28:27.623 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:28:27.623 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a3e0]
+2019-08-20 15:28:37.626 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:28:37.626 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a300]
+2019-08-20 15:28:47.625 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:28:47.625 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a0a0]
+2019-08-20 15:28:57.626 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:28:57.626 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a400]
+2019-08-20 15:29:07.626 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:29:07.626 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a0c0]
+2019-08-20 15:29:17.628 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:29:17.628 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000640e0]
+2019-08-20 15:29:27.627 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:29:27.627 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc020]
+2019-08-20 15:29:37.627 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:29:37.627 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064280]
+2019-08-20 15:29:47.629 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:29:47.629 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000642e0]
+2019-08-20 15:29:57.628 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:29:57.628 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a620]
+2019-08-20 15:30:07.629 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:30:07.629 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064300]
+2019-08-20 15:30:17.63 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:30:17.63 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc040]
+2019-08-20 15:30:27.631 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:30:27.631 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc080]
+2019-08-20 15:30:37.631 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:30:37.631 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064000]
+2019-08-20 15:30:47.63 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:30:47.63 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064100]
+2019-08-20 15:30:57.631 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:30:57.631 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a000]
+2019-08-20 15:31:07.631 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:31:07.631 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a300]
+2019-08-20 15:31:17.635 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:31:17.635 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000642e0]
+2019-08-20 15:31:27.633 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:31:27.633 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a0c0]
+2019-08-20 15:31:37.633 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:31:37.633 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a0e0]
+2019-08-20 15:31:47.632 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:31:47.632 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc180]
+2019-08-20 15:31:57.633 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:31:57.633 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a320]
+2019-08-20 15:32:07.634 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:32:07.634 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc1a0]
+2019-08-20 15:32:17.634 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:32:17.634 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a200]
+2019-08-20 15:32:27.635 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:32:27.635 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a220]
+2019-08-20 15:32:37.635 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:32:37.636 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a000]
+2019-08-20 15:32:47.636 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:32:47.636 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064000]
+2019-08-20 15:32:57.636 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:32:57.636 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064020]
+2019-08-20 15:33:07.637 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:33:07.637 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064040]
+2019-08-20 15:33:17.636 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:33:17.636 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a4e0]
+2019-08-20 15:33:27.637 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:33:27.637 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064060]
+2019-08-20 15:33:37.638 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:33:37.638 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc0e0]
+2019-08-20 15:33:47.638 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:33:47.639 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064080]
+2019-08-20 15:33:57.639 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:33:57.639 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000640e0]
+2019-08-20 15:34:07.639 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:34:07.639 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a0c0]
+2019-08-20 15:34:17.64 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:34:17.64 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000642e0]
+2019-08-20 15:34:27.64 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:34:27.64 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a160]
+2019-08-20 15:34:37.64 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:34:37.64 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a180]
+2019-08-20 15:34:47.641 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:34:47.641 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064000]
+2019-08-20 15:34:57.641 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:34:57.641 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a320]
+2019-08-20 15:35:07.642 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:35:07.642 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a380]
+2019-08-20 15:35:17.642 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:35:17.642 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a3a0]
+2019-08-20 15:35:27.642 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:35:27.642 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a3c0]
+2019-08-20 15:35:37.643 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:35:37.643 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a3e0]
+2019-08-20 15:35:47.643 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:35:47.643 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a400]
+2019-08-20 15:35:57.644 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:35:57.644 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a420]
+2019-08-20 15:36:07.643 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:36:07.643 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc0e0]
+2019-08-20 15:36:17.645 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:36:17.645 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00001a440]
+2019-08-20 15:36:27.645 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:36:27.645 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc00020a340]
+2019-08-20 15:36:37.645 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:36:37.645 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc220]
+2019-08-20 15:36:47.646 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:36:47.646 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064000]
+2019-08-20 15:36:57.646 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:36:57.646 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064100]
+2019-08-20 15:37:07.647 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:37:07.647 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064120]
+2019-08-20 15:37:17.647 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:37:17.647 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064140]
+2019-08-20 15:37:27.648 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:37:27.648 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000fc0e0]
+2019-08-20 15:37:37.648 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:37:37.648 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000643c0]
+2019-08-20 15:37:47.648 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:37:47.648 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc0000643e0]
+2019-08-20 15:37:57.648 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001c65d0]
+2019-08-20 15:37:57.648 [DBG] [localServiceMgr.go:131] GetAllLocalService inner , idx: 0 serviceid:520 ,slist = [0xc000064400]
+2019-08-20 15:38:33.912 [INF] [app.go:143] services[serviceA serviceB]
+2019-08-20 15:38:33.989 [DBG] [app.go:77] App.init, appID: 521
+2019-08-20 15:38:33.99 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-20 15:38:33.99 [DBG] [localService.go:67] service check : serviceA
+2019-08-20 15:38:33.99 [DBG] [localService.go:97] service check success: serviceA
+2019-08-20 15:38:33.99 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-20 15:38:33.99 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 521, serviceID: 522
+2019-08-20 15:38:33.991 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-20 15:38:33.992 [DBG] [localService.go:67] service check : serviceB
+2019-08-20 15:38:33.992 [DBG] [localService.go:97] service check success: serviceB
+2019-08-20 15:38:33.992 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-20 15:38:33.992 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 521, serviceID: 523
+2019-08-20 15:38:33.992 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=2 localServices = [0xc0001f16e0 0xc0002620c0]
+2019-08-20 15:38:34.171 [DBG] [localService.go:211] run service , serviceName: serviceA, serviceType: 101, ServerID: 522 tickMS: 2000
+2019-08-20 15:38:34.171 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 522 slist len=2 localServices = [0xc0001f16e0 0xc0002620c0]
+2019-08-20 15:38:34.171 [INF] [serviceA.go:67] ServiceA OnConnected, infovec = {523 102 521}
+2019-08-20 15:38:34.171 [DBG] [localService.go:211] run service , serviceName: serviceB, serviceType: 102, ServerID: 523 tickMS: 2000
+2019-08-20 15:38:34.171 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 523 slist len=2 localServices = [0xc0001f16e0 0xc0002620c0]
+2019-08-20 15:38:34.171 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {522 101 521}
+2019-08-20 15:38:34.171 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-20 15:38:34.171 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 
+2019-08-20 15:38:34.171 [DBG] [serviceA.go:81] SyncCall result:call success
+2019-08-20 15:38:34.171 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World
+2019-08-20 15:38:35.997 [INF] [app.go:143] services[serviceB]
+2019-08-20 15:38:36.065 [DBG] [app.go:77] App.init, appID: 524
+2019-08-20 15:38:36.066 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-20 15:38:36.066 [DBG] [localService.go:67] service check : serviceB
+2019-08-20 15:38:36.066 [DBG] [localService.go:97] service check success: serviceB
+2019-08-20 15:38:36.066 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-20 15:38:36.066 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 524, serviceID: 525
+2019-08-20 15:38:36.066 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001fa150]
+2019-08-20 15:38:36.229 [DBG] [localService.go:211] run service , serviceName: serviceB, serviceType: 102, ServerID: 525 tickMS: 2000
+2019-08-20 15:38:36.229 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 525 slist len=1 localServices = [0xc0001fa150]
+2019-08-20 15:38:39.013 [INF] [appNet.go:265] SrvNet try connect to 524
+2019-08-20 15:38:39.015 [INF] [appProc.go:88] BaseProcClient.MsgProc_ClientVerifyResp: 
+2019-08-20 15:38:39.015 [INF] [appNet.go:292] Connected to Server succeed !!!  524
+2019-08-20 15:38:39.018 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{525 102 524}
+2019-08-20 15:38:39.018 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 524, serviceID: 525
+2019-08-20 15:38:39.018 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {525 102 524}
+2019-08-20 15:38:39.018 [INF] [serviceA.go:67] ServiceA OnConnected, infovec = {525 102 524}
+2019-08-20 15:38:39.019 [INF] [appProc.go:147] MsgProc_CallRespMsg ErrString:, Seq:1
+2019-08-20 15:38:39.019 [DBG] [serviceA.go:81] SyncCall result:call success
+2019-08-20 15:38:39.019 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World
+2019-08-20 15:38:39.014 [DBG] [appProc.go:55] MsgProc_ClientVerifyReq, token: 524
+2019-08-20 15:38:39.014 [INF] [appNet.go:319] InsertSrvSess  521
+2019-08-20 15:38:39.018 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{522 101 521}
+2019-08-20 15:38:39.018 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 521, serviceID: 522
+2019-08-20 15:38:39.018 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{523 102 521}
+2019-08-20 15:38:39.018 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 521, serviceID: 523
+2019-08-20 15:38:39.018 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {522 101 521}
+2019-08-20 15:38:39.019 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {523 102 521}
+2019-08-20 15:38:39.019 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-20 15:38:39.019 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 
+2019-08-20 15:38:44.007 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=2 localServices = [0xc0001f16e0 0xc0002620c0]
+2019-08-20 15:38:46.086 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0001fa150]
+2019-08-20 15:38:51.403 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:61963->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
+2019-08-20 15:38:51.404 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:61963->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
+2019-08-20 15:38:51.405 [INF] [appProc.go:43] OnClosed sessID:1, remote addr:127.0.0.1:17012
+2019-08-20 15:38:51.405 [DBG] [serviceProxyMgr.go:210] ServiceProxyMgr,  sm.idMap=map[522:0xc0001e75e0 523:0xc000188480] infovec = [0xc0000fd880]
+2019-08-20 15:38:51.405 [DBG] [serviceProxyMgr.go:61] ServiceProxyMgr, DelServiceByAppID : 524
+2019-08-20 15:38:51.405 [DBG] [serviceProxyMgr.go:122] DelServiceByID, serviceID: 525
+2019-08-20 15:38:51.405 [DBG] [serviceProxyMgr.go:130] idx=1 len ss = 2, serviceID: 525
+2019-08-20 15:38:51.407 [INF] [serviceA.go:56] ServiceA OnDisconnected, infovec = [0xc0000fdca0]
+2019-08-20 15:38:51.407 [INF] [serviceA.go:57] ServiceA OnDisconnected, info= {525 102 524}
+2019-08-20 15:38:51.408 [INF] [serviceB.go:33] ServiceB OnDisconnected, infovec = {525 102 524}
+2019-08-20 15:42:00.675 [INF] [app.go:143] services[serviceA serviceB]
+2019-08-20 15:42:00.745 [DBG] [app.go:77] App.init, appID: 526
+2019-08-20 15:42:00.746 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-20 15:42:00.746 [DBG] [localService.go:67] service check : serviceA
+2019-08-20 15:42:00.746 [DBG] [localService.go:97] service check success: serviceA
+2019-08-20 15:42:00.746 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-20 15:42:00.746 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 526, serviceID: 527
+2019-08-20 15:42:00.746 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-20 15:42:00.746 [DBG] [localService.go:67] service check : serviceB
+2019-08-20 15:42:00.746 [DBG] [localService.go:97] service check success: serviceB
+2019-08-20 15:42:00.747 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-20 15:42:00.747 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 526, serviceID: 528
+2019-08-20 15:42:00.747 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=2 localServices = [0xc0001682d0 0xc000168c90]
+2019-08-20 15:42:00.938 [DBG] [localService.go:211] run service , serviceName: serviceA, serviceType: 101, ServerID: 527 tickMS: 2000
+2019-08-20 15:42:00.938 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 527 slist len=2 localServices = [0xc0001682d0 0xc000168c90]
+2019-08-20 15:42:00.938 [INF] [serviceA.go:68] ServiceA OnConnected, infovec = {528 102 526}
+2019-08-20 15:42:00.942 [DBG] [localService.go:211] run service , serviceName: serviceB, serviceType: 102, ServerID: 528 tickMS: 2000
+2019-08-20 15:42:00.945 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 528 slist len=2 localServices = [0xc0001682d0 0xc000168c90]
+2019-08-20 15:42:00.946 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {527 101 526}
+2019-08-20 15:42:00.946 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-20 15:42:00.946 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 
+2019-08-20 15:42:00.946 [DBG] [serviceA.go:79] SyncCall result:call success
+2019-08-20 15:42:00.946 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World
+2019-08-20 15:42:02.784 [INF] [app.go:143] services[serviceB]
+2019-08-20 15:42:02.858 [DBG] [app.go:77] App.init, appID: 529
+2019-08-20 15:42:02.859 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-20 15:42:02.859 [DBG] [localService.go:67] service check : serviceB
+2019-08-20 15:42:02.859 [DBG] [localService.go:97] service check success: serviceB
+2019-08-20 15:42:02.859 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-20 15:42:02.859 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 529, serviceID: 530
+2019-08-20 15:42:02.86 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0000613b0]
+2019-08-20 15:42:03.023 [DBG] [localService.go:211] run service , serviceName: serviceB, serviceType: 102, ServerID: 530 tickMS: 2000
+2019-08-20 15:42:03.023 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 530 slist len=1 localServices = [0xc0000613b0]
+2019-08-20 15:42:05.798 [INF] [appNet.go:265] SrvNet try connect to 529
+2019-08-20 15:42:05.802 [INF] [appProc.go:88] BaseProcClient.MsgProc_ClientVerifyResp: 
+2019-08-20 15:42:05.802 [INF] [appNet.go:292] Connected to Server succeed !!!  529
+2019-08-20 15:42:05.804 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{530 102 529}
+2019-08-20 15:42:05.804 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 529, serviceID: 530
+2019-08-20 15:42:05.804 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {530 102 529}
+2019-08-20 15:42:05.804 [INF] [serviceA.go:68] ServiceA OnConnected, infovec = {530 102 529}
+2019-08-20 15:42:05.805 [INF] [appProc.go:147] MsgProc_CallRespMsg ErrString:, Seq:1
+2019-08-20 15:42:05.805 [DBG] [serviceA.go:79] SyncCall result:call success
+2019-08-20 15:42:05.805 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World
+2019-08-20 15:42:05.8 [DBG] [appProc.go:55] MsgProc_ClientVerifyReq, token: 529
+2019-08-20 15:42:05.8 [INF] [appNet.go:319] InsertSrvSess  526
+2019-08-20 15:42:05.804 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{527 101 526}
+2019-08-20 15:42:05.804 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 526, serviceID: 527
+2019-08-20 15:42:05.804 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{528 102 526}
+2019-08-20 15:42:05.804 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 526, serviceID: 528
+2019-08-20 15:42:05.804 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {527 101 526}
+2019-08-20 15:42:05.804 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {528 102 526}
+2019-08-20 15:42:05.805 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-20 15:42:05.805 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 
+2019-08-20 15:42:10.793 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=2 localServices = [0xc0001682d0 0xc000168c90]
+2019-08-20 15:42:12.874 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0000613b0]
+2019-08-20 15:42:20.794 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=2 localServices = [0xc0001682d0 0xc000168c90]
+2019-08-20 15:42:22.875 [DBG] [localServiceMgr.go:124] GetAllLocalService , sid: 0 slist len=1 localServices = [0xc0000613b0]
+2019-08-20 15:42:28.362 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:62120->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
+2019-08-20 15:42:28.363 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:62120->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
+2019-08-20 15:42:28.365 [INF] [appProc.go:43] OnClosed sessID:1, remote addr:127.0.0.1:17012
+2019-08-20 15:42:28.365 [DBG] [serviceProxyMgr.go:210] ServiceProxyMgr,  sm.idMap=map[527:0xc000005080 528:0xc000005f60] infovec = [0xc000064b40]
+2019-08-20 15:42:28.365 [DBG] [serviceProxyMgr.go:61] ServiceProxyMgr, DelServiceByAppID : 529
+2019-08-20 15:42:28.365 [DBG] [serviceProxyMgr.go:122] DelServiceByID, serviceID: 530
+2019-08-20 15:42:28.365 [DBG] [serviceProxyMgr.go:130] idx=1 len ss = 2, serviceID: 530
+2019-08-20 15:42:28.365 [INF] [serviceA.go:56] ServiceA OnDisconnected, infovec = [0xc000224ba0]
+2019-08-20 15:42:28.367 [INF] [serviceA.go:57] ServiceA OnDisconnected, info= {530 102 529}
+2019-08-20 15:42:28.368 [INF] [serviceB.go:33] ServiceB OnDisconnected, infovec = {530 102 529}
+2019-08-20 15:43:10.77 [INF] [app.go:143] services[serviceA serviceB]
+2019-08-20 15:43:10.844 [DBG] [app.go:77] App.init, appID: 531
+2019-08-20 15:43:10.853 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-20 15:43:10.853 [DBG] [localService.go:67] service check : serviceA
+2019-08-20 15:43:10.853 [DBG] [localService.go:97] service check success: serviceA
+2019-08-20 15:43:10.853 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-20 15:43:10.854 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 531, serviceID: 532
+2019-08-20 15:43:10.854 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-20 15:43:10.854 [DBG] [localService.go:67] service check : serviceB
+2019-08-20 15:43:10.854 [DBG] [localService.go:97] service check success: serviceB
+2019-08-20 15:43:10.854 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-20 15:43:10.854 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 531, serviceID: 533
+2019-08-20 15:43:10.991 [DBG] [localService.go:211] run service , serviceName: serviceA, serviceType: 101, ServerID: 532 tickMS: 2000
+2019-08-20 15:43:10.991 [INF] [serviceA.go:68] ServiceA OnConnected, infovec = {533 102 531}
+2019-08-20 15:43:10.991 [DBG] [localService.go:211] run service , serviceName: serviceB, serviceType: 102, ServerID: 533 tickMS: 2000
+2019-08-20 15:43:10.991 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {532 101 531}
+2019-08-20 15:43:10.991 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-20 15:43:10.991 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 
+2019-08-20 15:43:10.992 [DBG] [serviceA.go:79] SyncCall result:call success
+2019-08-20 15:43:10.992 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World
+2019-08-20 15:43:12.911 [INF] [app.go:143] services[serviceB]
+2019-08-20 15:43:12.982 [DBG] [app.go:77] App.init, appID: 534
+2019-08-20 15:43:12.983 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-20 15:43:12.983 [DBG] [localService.go:67] service check : serviceB
+2019-08-20 15:43:12.983 [DBG] [localService.go:97] service check success: serviceB
+2019-08-20 15:43:12.983 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-20 15:43:12.983 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 534, serviceID: 535
+2019-08-20 15:43:13.139 [DBG] [localService.go:211] run service , serviceName: serviceB, serviceType: 102, ServerID: 535 tickMS: 2000
+2019-08-20 15:43:15.876 [DBG] [appProc.go:55] MsgProc_ClientVerifyReq, token: 534
+2019-08-20 15:43:15.876 [INF] [appNet.go:319] InsertSrvSess  531
+2019-08-20 15:43:15.879 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{532 101 531}
+2019-08-20 15:43:15.879 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 531, serviceID: 532
+2019-08-20 15:43:15.879 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{533 102 531}
+2019-08-20 15:43:15.879 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 531, serviceID: 533
+2019-08-20 15:43:15.879 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {532 101 531}
+2019-08-20 15:43:15.88 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {533 102 531}
+2019-08-20 15:43:15.88 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-20 15:43:15.88 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 
+2019-08-20 15:43:15.875 [INF] [appNet.go:265] SrvNet try connect to 534
+2019-08-20 15:43:15.877 [INF] [appProc.go:88] BaseProcClient.MsgProc_ClientVerifyResp: 
+2019-08-20 15:43:15.877 [INF] [appNet.go:292] Connected to Server succeed !!!  534
+2019-08-20 15:43:15.879 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{535 102 534}
+2019-08-20 15:43:15.879 [DBG] [serviceProxyMgr.go:78] AddServiceProxy, appID: 534, serviceID: 535
+2019-08-20 15:43:15.879 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {535 102 534}
+2019-08-20 15:43:15.879 [INF] [serviceA.go:68] ServiceA OnConnected, infovec = {535 102 534}
+2019-08-20 15:43:15.88 [INF] [appProc.go:147] MsgProc_CallRespMsg ErrString:, Seq:1
+2019-08-20 15:43:15.88 [DBG] [serviceA.go:79] SyncCall result:call success
+2019-08-20 15:43:15.88 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World

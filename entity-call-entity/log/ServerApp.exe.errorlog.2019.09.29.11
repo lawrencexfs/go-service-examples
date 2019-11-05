@@ -1,0 +1,5 @@
+2019-09-29 11:24:59.69 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-09-29 11:24:59.706 [ERR] [Entity.go:601] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo
+2019-09-29 11:24:59.757 [ERR] [session.go:165] message '*msgdef.SyncProps' is not registered
+2019-09-29 11:24:59.759 [ERR] [session.go:143] Encode message error in Send(): message '*msgdef.SyncProps' is not registered
+2019-09-29 11:25:04.774 [ERR] [mongodboperate.go:126] session nil, not connect or auth

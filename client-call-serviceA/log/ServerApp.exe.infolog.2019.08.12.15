@@ -1,0 +1,74 @@
+2019-08-12 15:00:41.609 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:54561: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:54561, sessionid: 1
+2019-08-12 15:00:41.609 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:54561: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:54561, sessionid: 1
+2019-08-12 15:00:41.61 [INF] [serviceProc.go:105] Proc_ServiceA OnClosed: 1 127.0.0.1:54561
+2019-08-12 15:00:41.61 [DBG] [GateUserBase.go:165] lobby user OnClosed, uid: 1
+2019-08-12 15:01:21.031 [INF] [app.go:139] services[serviceA]
+2019-08-12 15:01:21.038 [DBG] [app.go:76] App.init, appID: 218
+2019-08-12 15:01:21.084 [INF] [serviceA.go:24] ServiceA OnInit
+2019-08-12 15:01:21.168 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-12 15:01:21.168 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-12 15:01:21.168 [DBG] [localService.go:70] service check : serviceA
+2019-08-12 15:01:21.168 [DBG] [localService.go:100] service check success: serviceA
+2019-08-12 15:01:21.168 [DBG] [localServiceMgr.go:50] App InitLocalService, name: serviceA
+2019-08-12 15:01:21.265 [DBG] [localService.go:185] run service , serviceName: serviceA, serviceType: 2, ServerID: 219 tickMS: 2000
+2019-08-12 15:01:24.161 [DBG] [serviceProc.go:67] MsgProc_LoginReq, uid: 1
+2019-08-12 15:01:33.98 [DBG] [dbservice.go:52] connect failed,no reachable servers
+2019-08-12 15:01:33.98 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-08-12 15:01:33.98 [INF] [Entity_Props.go:171] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-12 15:01:33.98 [DBG] [entitySrvUtil.go:64] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 219
+2019-08-12 15:01:33.981 [DBG] [entitySrvUtil.go:64] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 219
+2019-08-12 15:01:33.983 [DBG] [ServiceAUser.go:20] ServiceAUser.OnUserInit, dbid: 1 isnew: true
+2019-08-12 15:01:33.983 [INF] [serviceA.go:52] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-12 15:01:33.983 [DBG] [ServiceAUserRpcProc.go:14] RPC_Hello, name: hello world, id: 1
+2019-08-12 15:01:33.983 [DBG] [ServiceAUserRpcProc.go:16] err: = <nil>
+2019-08-12 15:05:29.181 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:54681: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:54681, sessionid: 1
+2019-08-12 15:05:29.181 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:54681: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:54681, sessionid: 1
+2019-08-12 15:05:29.181 [INF] [serviceProc.go:105] Proc_ServiceA OnClosed: 1 127.0.0.1:54681
+2019-08-12 15:05:29.181 [DBG] [GateUserBase.go:165] lobby user OnClosed, uid: 1
+2019-08-12 15:05:43.517 [INF] [app.go:139] services[serviceA]
+2019-08-12 15:05:43.524 [DBG] [app.go:76] App.init, appID: 220
+2019-08-12 15:05:43.569 [INF] [serviceA.go:24] ServiceA OnInit
+2019-08-12 15:05:43.649 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-12 15:05:43.649 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-12 15:05:43.649 [DBG] [localService.go:70] service check : serviceA
+2019-08-12 15:05:43.649 [DBG] [localService.go:100] service check success: serviceA
+2019-08-12 15:05:43.65 [DBG] [localServiceMgr.go:50] App InitLocalService, name: serviceA
+2019-08-12 15:05:43.743 [DBG] [localService.go:185] run service , serviceName: serviceA, serviceType: 2, ServerID: 221 tickMS: 2000
+2019-08-12 15:20:18.622 [INF] [app.go:139] services[serviceA]
+2019-08-12 15:20:18.629 [DBG] [app.go:76] App.init, appID: 222
+2019-08-12 15:20:18.674 [INF] [serviceA.go:24] ServiceA OnInit
+2019-08-12 15:20:18.756 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-12 15:20:18.756 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-12 15:20:18.756 [DBG] [localService.go:70] service check : serviceA
+2019-08-12 15:20:18.756 [DBG] [localService.go:100] service check success: serviceA
+2019-08-12 15:20:18.756 [DBG] [localServiceMgr.go:50] App InitLocalService, name: serviceA
+2019-08-12 15:20:18.871 [DBG] [localService.go:185] run service , serviceName: serviceA, serviceType: 2, ServerID: 223 tickMS: 2000
+2019-08-12 15:21:37.754 [INF] [app.go:139] services[serviceA]
+2019-08-12 15:21:37.821 [DBG] [app.go:76] App.init, appID: 224
+2019-08-12 15:21:37.821 [INF] [serviceA.go:26] ServiceA OnInit
+2019-08-12 15:21:37.899 [DBG] [serviceProc.go:148] set verify msgid, err: 0
+2019-08-12 15:21:37.899 [DBG] [serviceProc.go:152] outer addr: 127.0.0.1:17000
+2019-08-12 15:21:37.899 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 15:21:37.899 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 15:21:37.899 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 15:21:37.995 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 2, ServerID: 225 tickMS: 2000
+2019-08-12 15:21:40.09 [DBG] [serviceProc.go:66] MsgProc_LoginReq, uid: 1
+2019-08-12 15:24:16.722 [INF] [app.go:139] services[serviceA]
+2019-08-12 15:24:16.789 [DBG] [app.go:76] App.init, appID: 226
+2019-08-12 15:24:16.789 [INF] [serviceA.go:26] ServiceA OnInit
+2019-08-12 15:24:16.871 [DBG] [serviceProc.go:148] set verify msgid, err: 0
+2019-08-12 15:24:16.871 [DBG] [serviceProc.go:152] outer addr: 127.0.0.1:17000
+2019-08-12 15:24:16.871 [DBG] [localService.go:72] service check : serviceA
+2019-08-12 15:24:16.872 [DBG] [localService.go:102] service check success: serviceA
+2019-08-12 15:24:16.872 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-12 15:24:16.965 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 2, ServerID: 227 tickMS: 2000
+2019-08-12 15:24:20.118 [DBG] [serviceProc.go:66] MsgProc_LoginReq, uid: 1
+2019-08-12 15:24:29.648 [DBG] [dbservice.go:52] connect failed,no reachable servers
+2019-08-12 15:24:29.648 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-08-12 15:24:29.648 [INF] [Entity_Props.go:171] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-12 15:24:29.648 [DBG] [entitySrvUtil.go:65] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 227
+2019-08-12 15:24:29.649 [DBG] [entitySrvUtil.go:65] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 227
+2019-08-12 15:24:29.65 [DBG] [ServiceAUser.go:20] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-12 15:24:29.651 [INF] [serviceA.go:62] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-12 15:24:29.651 [DBG] [ServiceAUserRpcProc.go:14] RPC_Hello, name: hello world, id: 1
+2019-08-12 15:24:29.651 [DBG] [ServiceAUserRpcProc.go:16] err: = <nil>

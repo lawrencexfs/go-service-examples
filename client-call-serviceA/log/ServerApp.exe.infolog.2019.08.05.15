@@ -1,0 +1,51 @@
+2019-08-05 15:16:58.417 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:54495: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:54495, sessionid: 1
+2019-08-05 15:16:58.417 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:54495: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:54495, sessionid: 1
+2019-08-05 15:16:58.417 [INF] [serviceProc.go:105] Proc_ServiceA OnClosed: 1 127.0.0.1:54495
+2019-08-05 15:16:58.418 [DBG] [GateUserBase.go:165] lobby user OnClosed, uid: 1
+2019-08-05 15:19:28.584 [INF] [app.go:139] services[serviceA]
+2019-08-05 15:19:28.652 [DBG] [app.go:76] App.init, appID: 41
+2019-08-05 15:19:28.652 [INF] [serviceA.go:24] ServiceA OnInit
+2019-08-05 15:19:28.722 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-05 15:19:28.722 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-05 15:19:28.722 [DBG] [localService.go:70] service check : serviceA
+2019-08-05 15:19:28.723 [DBG] [localService.go:100] service check success: serviceA
+2019-08-05 15:19:28.723 [DBG] [localServiceMgr.go:50] App InitLocalService, name: serviceA
+2019-08-05 15:19:28.811 [DBG] [localService.go:185] run service , serviceName: serviceA, serviceType: 2, ServerID: 42 tickMS: 2000
+2019-08-05 15:19:31.733 [DBG] [serviceProc.go:67] MsgProc_LoginReq, uid: 1
+2019-08-05 15:23:50.078 [INF] [app.go:139] services[serviceA]
+2019-08-05 15:23:50.087 [DBG] [app.go:76] App.init, appID: 43
+2019-08-05 15:23:50.128 [INF] [serviceA.go:24] ServiceA OnInit
+2019-08-05 15:23:50.205 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-05 15:23:50.205 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-05 15:23:50.205 [DBG] [localService.go:70] service check : serviceA
+2019-08-05 15:23:50.205 [DBG] [localService.go:100] service check success: serviceA
+2019-08-05 15:23:50.205 [DBG] [localServiceMgr.go:50] App InitLocalService, name: serviceA
+2019-08-05 15:23:50.298 [DBG] [localService.go:185] run service , serviceName: serviceA, serviceType: 2, ServerID: 44 tickMS: 2000
+2019-08-05 15:31:09.924 [INF] [app.go:139] services[serviceA]
+2019-08-05 15:31:09.933 [DBG] [app.go:76] App.init, appID: 45
+2019-08-05 15:31:09.974 [INF] [serviceA.go:24] ServiceA OnInit
+2019-08-05 15:31:10.052 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-05 15:31:10.052 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-05 15:31:10.052 [DBG] [localService.go:70] service check : serviceA
+2019-08-05 15:31:10.052 [DBG] [localService.go:100] service check success: serviceA
+2019-08-05 15:31:10.052 [DBG] [localServiceMgr.go:50] App InitLocalService, name: serviceA
+2019-08-05 15:31:10.137 [DBG] [localService.go:185] run service , serviceName: serviceA, serviceType: 2, ServerID: 46 tickMS: 2000
+2019-08-05 15:32:39.173 [INF] [app.go:139] services[serviceA]
+2019-08-05 15:32:39.183 [DBG] [app.go:76] App.init, appID: 47
+2019-08-05 15:32:39.223 [INF] [serviceA.go:24] ServiceA OnInit
+2019-08-05 15:32:39.334 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-05 15:32:39.334 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-05 15:32:39.334 [DBG] [localService.go:70] service check : serviceA
+2019-08-05 15:32:39.335 [DBG] [localService.go:100] service check success: serviceA
+2019-08-05 15:32:39.335 [DBG] [localServiceMgr.go:50] App InitLocalService, name: serviceA
+2019-08-05 15:32:39.507 [DBG] [localService.go:185] run service , serviceName: serviceA, serviceType: 2, ServerID: 48 tickMS: 2000
+2019-08-05 15:33:38.944 [INF] [app.go:139] services[serviceA]
+2019-08-05 15:33:39.012 [DBG] [app.go:76] App.init, appID: 49
+2019-08-05 15:33:39.012 [INF] [serviceA.go:24] ServiceA OnInit
+2019-08-05 15:33:39.081 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-05 15:33:39.081 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-05 15:33:39.081 [DBG] [localService.go:70] service check : serviceA
+2019-08-05 15:33:39.081 [DBG] [localService.go:100] service check success: serviceA
+2019-08-05 15:33:39.081 [DBG] [localServiceMgr.go:50] App InitLocalService, name: serviceA
+2019-08-05 15:33:39.165 [DBG] [localService.go:185] run service , serviceName: serviceA, serviceType: 2, ServerID: 50 tickMS: 2000
+2019-08-05 15:33:41.713 [DBG] [serviceProc.go:67] MsgProc_LoginReq, uid: 1

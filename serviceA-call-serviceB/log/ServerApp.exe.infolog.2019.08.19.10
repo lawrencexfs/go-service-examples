@@ -1,0 +1,57 @@
+2019-08-19 10:49:31.1 [INF] [app.go:143] services[serviceA serviceB]
+2019-08-19 10:49:31.187 [DBG] [app.go:77] App.init, appID: 414
+2019-08-19 10:49:31.188 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-19 10:49:31.188 [DBG] [localService.go:72] service check : serviceA
+2019-08-19 10:49:31.188 [DBG] [localService.go:102] service check success: serviceA
+2019-08-19 10:49:31.188 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-19 10:49:31.189 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-19 10:49:31.189 [DBG] [localService.go:72] service check : serviceB
+2019-08-19 10:49:31.189 [DBG] [localService.go:102] service check success: serviceB
+2019-08-19 10:49:31.189 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-19 10:49:31.198 [ERR] [appNet.go:186] fetch server info failedredigo.ScanSlice: length not a multiple of struct field count
+2019-08-19 10:49:31.316 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 415 tickMS: 2000
+2019-08-19 10:49:31.316 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 416 tickMS: 2000
+2019-08-19 10:49:36.199 [ERR] [appNet.go:186] fetch server info failedredigo.ScanSlice: length not a multiple of struct field count
+2019-08-19 10:49:41.199 [ERR] [appNet.go:186] fetch server info failedredigo.ScanSlice: length not a multiple of struct field count
+2019-08-19 10:49:46.199 [ERR] [appNet.go:186] fetch server info failedredigo.ScanSlice: length not a multiple of struct field count
+2019-08-19 10:49:51.198 [ERR] [appNet.go:186] fetch server info failedredigo.ScanSlice: length not a multiple of struct field count
+2019-08-19 10:51:58.276 [INF] [app.go:143] services[serviceA serviceB]
+2019-08-19 10:51:58.342 [DBG] [app.go:77] App.init, appID: 417
+2019-08-19 10:51:58.342 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-19 10:51:58.342 [DBG] [localService.go:72] service check : serviceA
+2019-08-19 10:51:58.342 [DBG] [localService.go:102] service check success: serviceA
+2019-08-19 10:51:58.343 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-19 10:51:58.343 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-19 10:51:58.343 [DBG] [localService.go:72] service check : serviceB
+2019-08-19 10:51:58.343 [DBG] [localService.go:102] service check success: serviceB
+2019-08-19 10:51:58.344 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-19 10:51:58.468 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 418 tickMS: 2000
+2019-08-19 10:51:58.468 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 419 tickMS: 2000
+2019-08-19 10:53:38.102 [INF] [app.go:143] services[serviceA]
+2019-08-19 10:53:38.168 [DBG] [app.go:77] App.init, appID: 420
+2019-08-19 10:53:38.169 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-19 10:53:38.169 [DBG] [localService.go:72] service check : serviceA
+2019-08-19 10:53:38.169 [DBG] [localService.go:102] service check success: serviceA
+2019-08-19 10:53:38.169 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-19 10:53:38.286 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 421 tickMS: 2000
+2019-08-19 10:53:40.803 [INF] [app.go:143] services[serviceB]
+2019-08-19 10:53:40.815 [DBG] [app.go:77] App.init, appID: 422
+2019-08-19 10:53:40.856 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-19 10:53:40.856 [DBG] [localService.go:72] service check : serviceB
+2019-08-19 10:53:40.856 [DBG] [localService.go:102] service check success: serviceB
+2019-08-19 10:53:40.857 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-19 10:53:40.994 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 423 tickMS: 2000
+2019-08-19 10:53:43.183 [DBG] [appProc.go:55] MsgProc_ClientVerifyReq, token: 422
+2019-08-19 10:53:43.183 [INF] [appNet.go:317] InsertSrvSess  420
+2019-08-19 10:53:43.19 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{421 101 420}
+2019-08-19 10:53:43.19 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {421 101 420}
+2019-08-19 10:53:43.19 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-19 10:53:43.19 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 
+2019-08-19 10:53:43.182 [INF] [appNet.go:274] SrvNet try connect to 422
+2019-08-19 10:53:43.184 [INF] [appProc.go:90] BaseProc_Client.MsgProc_ClientVerifyResp: 
+2019-08-19 10:53:43.184 [INF] [appNet.go:284] Connected to Server succeed !!!  422
+2019-08-19 10:53:43.19 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{423 102 422}
+2019-08-19 10:53:43.19 [INF] [serviceA.go:68] ServiceA OnConnected, infovec = {423 102 422}
+2019-08-19 10:53:43.191 [INF] [appProc.go:149] MsgProc_CallRespMsg ErrString:, Seq:1
+2019-08-19 10:53:43.191 [DBG] [serviceA.go:79] SyncCall result:call success
+2019-08-19 10:53:43.191 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World

@@ -1,0 +1,6 @@
+2019-10-08 16:31:51.32 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-10-08 16:31:51.324 [ERR] [teamServiceRPC.go:24] team is not EGroup
+2019-10-08 16:46:37.911 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:50314: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:50314, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-10-08 16:46:37.913 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:50314: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:50314,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-10-08 16:47:14.152 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-10-08 16:47:14.157 [ERR] [teamServiceRPC.go:24] team is not EGroup

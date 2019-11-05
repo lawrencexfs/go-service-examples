@@ -1,0 +1,6 @@
+2019-10-08 15:38:19.97 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-10-08 15:38:19.976 [ERR] [teamServiceRPC.go:24] team is not EGroup
+2019-10-08 15:39:13.027 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-10-08 15:39:13.035 [ERR] [teamServiceRPC.go:24] team is not EGroup
+2019-10-08 15:42:06.676 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-10-08 15:42:06.681 [ERR] [teamServiceRPC.go:24] team is not EGroup

@@ -1,0 +1,3 @@
+2019-10-24 11:59:10.892 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect from db: , collection: failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 level:1 rating:1], ret: map[]
+2019-10-24 11:59:10.943 [ERR] [Entity.go:617] AsyncCall GetEntitySrvID error: Entity srvType [3] not existed, methodName: SyncProps
+2019-10-24 11:59:10.944 [ERR] [mongodboperate.go:123] update failed, Invalid namespace specified 'game.'

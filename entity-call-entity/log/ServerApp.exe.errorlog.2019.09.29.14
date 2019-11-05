@@ -1,0 +1,12 @@
+2019-09-29 14:14:22.151 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:62913: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62913, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-09-29 14:14:22.153 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:62913: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62913,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-09-29 14:14:22.174 [ERR] [Entity.go:601] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo
+2019-09-29 14:14:28.45 [ERR] [arq_listener.go:151] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-09-29 14:14:28.461 [ERR] [arq_listener.go:151] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2019-09-29 14:15:09.791 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-09-29 14:15:09.795 [ERR] [Entity.go:601] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo
+2019-09-29 14:15:09.846 [ERR] [Entity.go:573] AsyncCall GetEntitySrvID error: Entity srvType [6] not existed, methodName: SyncProps
+2019-09-29 14:15:09.846 [ERR] [Entity.go:567] AsyncCall Can't call self, methodName: SyncProps
+2019-09-29 14:15:14.854 [ERR] [mongodboperate.go:126] session nil, not connect or auth
+2019-09-29 14:50:12.711 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-09-29 14:50:12.714 [ERR] [Entity.go:601] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo

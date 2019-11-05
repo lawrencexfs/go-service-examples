@@ -1,0 +1,36 @@
+2019-08-23 15:00:15.413 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:00:15.415 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:02:29.139 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:61774: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:61774, sessionid: 1
+2019-08-23 15:02:29.141 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:61774: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:61774, sessionid: 1
+2019-08-23 15:02:53.026 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:02:53.027 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:07:37.43 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:61914: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:61914, sessionid: 1
+2019-08-23 15:07:37.43 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:61914: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:61914, sessionid: 1
+2019-08-23 15:08:00.35 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:08:00.351 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:11:29.989 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:62342: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62342, sessionid: 1
+2019-08-23 15:11:29.99 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:62342: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62342, sessionid: 1
+2019-08-23 15:12:03.81 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:12:03.811 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:13:19.479 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:62542: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62542, sessionid: 1
+2019-08-23 15:13:19.48 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:62542: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62542, sessionid: 1
+2019-08-23 15:13:40.767 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:13:40.769 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:14:24.295 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:62777: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62777, sessionid: 1
+2019-08-23 15:14:24.296 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:62777: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62777, sessionid: 1
+2019-08-23 15:14:46.804 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:14:46.805 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:15:00.743 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:62839: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62839, sessionid: 1
+2019-08-23 15:15:00.744 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:62839: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62839, sessionid: 1
+2019-08-23 15:15:23.007 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:15:23.008 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:22:30.628 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:62888: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62888, sessionid: 1
+2019-08-23 15:22:30.629 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:62888: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:62888, sessionid: 1
+2019-08-23 15:23:30.883 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:23:30.885 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:27:41.279 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:63255: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:63255, sessionid: 1
+2019-08-23 15:27:41.282 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:63255: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:63255, sessionid: 1
+2019-08-23 15:28:13.184 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
+2019-08-23 15:28:13.185 [ERR] [Entity.go:627] AsyncCall service not exist: 368, methodName: SyncSrvInfo
+2019-08-23 15:30:06.714 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:63456: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:63456, sessionid: 1
+2019-08-23 15:30:06.715 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:63456: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:63456, sessionid: 1

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{FE877428-5ED8-42B3-8156-9879C781657B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloService", "HelloService\HelloService.csproj", "{8382EBB2-B615-42CB-B1D5-679173C0190D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE877428-5ED8-42B3-8156-9879C781657B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE877428-5ED8-42B3-8156-9879C781657B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE877428-5ED8-42B3-8156-9879C781657B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE877428-5ED8-42B3-8156-9879C781657B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8382EBB2-B615-42CB-B1D5-679173C0190D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8382EBB2-B615-42CB-B1D5-679173C0190D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8382EBB2-B615-42CB-B1D5-679173C0190D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8382EBB2-B615-42CB-B1D5-679173C0190D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53B41A85-8C36-4415-9BF3-9C2F8FE1F7F4}
+	EndGlobalSection
+EndGlobal

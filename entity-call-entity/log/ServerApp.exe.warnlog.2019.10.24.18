@@ -1,0 +1,7 @@
+2019-10-24 18:42:34.114 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect from db: game, collection:player failed, err: not found, condition: map[dbid:1], select: map[coin:1 level:1 rating:1], ret: map[]
+2019-10-24 18:42:34.119 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect from db: game, collection:player failed, err: not found, condition: map[dbid:1], select: map[level:1], ret: map[]
+2019-10-24 18:42:34.167 [ERR] [mongodboperate.go:123] update failed, not found
+2019-10-24 18:42:46.156 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-24 18:42:46.171 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2019-10-24 18:49:58.004 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-24 18:49:58.004 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection

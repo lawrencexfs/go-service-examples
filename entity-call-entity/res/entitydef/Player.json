@@ -1,0 +1,57 @@
+{
+	"name": "Player",
+    "props": {
+        "Level": {
+            "type": "uint32",
+            "save": "1",
+            "desc": "等级",
+			"default":"1"
+        },
+		"rating": {
+            "type": "int32",
+            "save": "1",
+            "desc": "匹配分数",
+			"default":"1000"
+        },
+		"Coin": {
+            "type": "uint32",
+            "save": "1",
+            "desc": "金币"
+        },
+		"Friends": {
+            "type": "FRIENDS",
+            "save": "1",
+            "desc": "经验"
+        },
+		"Hero": {
+			"type": "HEROS",
+            "save": "1",
+            "desc": "经验"
+		}
+    },
+
+    "sync": {
+        "1": {
+            "desc": "Client",
+            "props": [
+                "Level"
+            ]
+        },
+        "2": {
+            "desc": "gateway",
+            "props": [
+                "Level",
+				"rating",
+				"Coin",
+				"Friends",
+				"Hero"
+			]
+        },
+        "3": {
+            "desc": "team",
+            "props": [
+                "Level"
+            ]
+        }
+    }
+}

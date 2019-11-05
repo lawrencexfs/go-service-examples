@@ -1,0 +1,11 @@
+2019-10-08 10:24:44.503 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-10-08 10:24:44.557 [ERR] [Entity.go:575] AsyncCall GetEntitySrvID error: Entity srvType [3] not existed, methodName: SyncProps
+2019-10-08 10:24:45.05 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:57258: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:57258, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-10-08 10:24:45.051 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:57258: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:57258,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-10-08 10:52:59.08 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-10-08 10:52:59.132 [ERR] [Entity.go:575] AsyncCall GetEntitySrvID error: Entity srvType [3] not existed, methodName: SyncProps
+2019-10-08 10:53:04.137 [ERR] [mongodboperate.go:126] session nil, not connect or auth
+2019-10-08 10:54:44.027 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:58669: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:58669, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-10-08 10:54:44.028 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:58669: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:58669,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-10-08 10:55:17.762 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-10-08 10:55:17.766 [ERR] [teamServiceRPC.go:24] team is not EGroup

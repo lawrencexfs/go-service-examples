@@ -1,0 +1,21 @@
+2019-09-25 11:06:53.486 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-09-25 11:06:53.49 [ERR] [Entity.go:597] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo
+2019-09-25 11:06:53.49 [ERR] [RPCHandlers.go:103] doAsyncRPCMsg, Can't Find Method: Hello
+2019-09-25 11:06:53.49 [ERR] [RPCHandlers.go:103] doAsyncRPCMsg, Can't Find Method: ModifyAttr
+2019-09-25 11:17:45.163 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:55567: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:55567, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-09-25 11:17:45.165 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:55567: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:55567,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-09-25 11:17:45.181 [ERR] [Entity.go:597] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo
+2019-09-25 11:29:26.457 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-09-25 11:29:26.459 [ERR] [Entity.go:599] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo
+2019-09-25 11:29:26.46 [ERR] [RPCHandlers.go:103] doAsyncRPCMsg, Can't Find Method: ModifyAttr
+2019-09-25 11:35:43.293 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:56255: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56255, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-09-25 11:35:43.294 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:56255: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56255,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-09-25 11:35:43.302 [ERR] [Entity.go:599] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo
+2019-09-25 11:36:10.994 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-09-25 11:36:10.997 [ERR] [Entity.go:599] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo
+2019-09-25 11:36:10.998 [ERR] [RPCHandlers.go:103] doAsyncRPCMsg, Can't Find Method: ModifyAttr
+2019-09-25 11:45:03.379 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:56578: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56578, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-09-25 11:45:03.381 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:56578: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56578,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-09-25 11:45:03.399 [ERR] [Entity.go:599] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo
+2019-09-25 11:45:31.521 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-09-25 11:45:31.524 [ERR] [Entity.go:599] AsyncCall service not exist: 39,  sType: 3 ,methodName: SyncEntitySrvInfo

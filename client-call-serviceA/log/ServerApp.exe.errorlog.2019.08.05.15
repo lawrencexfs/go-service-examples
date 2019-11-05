@@ -1,0 +1,2 @@
+2019-08-05 15:16:58.417 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:54495: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:54495, sessionid: 1
+2019-08-05 15:16:58.417 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:54495: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:54495, sessionid: 1

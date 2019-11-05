@@ -1,0 +1,32 @@
+2019-08-05 11:52:10.454 [INF] [app.go:139] services[serviceA]
+2019-08-05 11:52:10.551 [DBG] [app.go:76] App.init, appID: 31
+2019-08-05 11:52:10.552 [INF] [serviceA.go:24] ServiceA OnInit
+2019-08-05 11:52:10.625 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-05 11:52:10.626 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-05 11:52:10.626 [DBG] [localService.go:70] service check : serviceA
+2019-08-05 11:52:10.626 [DBG] [localService.go:100] service check success: serviceA
+2019-08-05 11:52:10.626 [DBG] [localServiceMgr.go:50] App InitLocalService, name: serviceA
+2019-08-05 11:52:10.731 [DBG] [localService.go:185] run service , serviceName: serviceA, serviceType: 2, ServerID: 32 tickMS: 2000
+2019-08-05 11:52:11.231 [INF] [serviceA.go:42] ServiceA OnDestroy
+2019-08-05 11:52:11.231 [DBG] [serviceProxyMgr.go:63] ServiceProxyMgr, DelServiceByAppID : 31
+2019-08-05 11:52:11.231 [DBG] [serviceProxyMgr.go:112] idx=0 len ss = 1
+2019-08-05 11:52:11.232 [ERR] [arq_listener.go:146] accept connection error accept tcp [::]:17010: use of closed network connection
+2019-08-05 11:52:48.632 [INF] [app.go:139] services[serviceA]
+2019-08-05 11:52:48.64 [DBG] [app.go:76] App.init, appID: 33
+2019-08-05 11:52:48.683 [INF] [serviceA.go:24] ServiceA OnInit
+2019-08-05 11:52:48.752 [DBG] [serviceProc.go:149] set verify msgid, err: 0
+2019-08-05 11:52:48.753 [DBG] [serviceProc.go:153] outer addr: 127.0.0.1:17000
+2019-08-05 11:52:48.753 [DBG] [localService.go:70] service check : serviceA
+2019-08-05 11:52:48.753 [DBG] [localService.go:100] service check success: serviceA
+2019-08-05 11:52:48.753 [DBG] [localServiceMgr.go:50] App InitLocalService, name: serviceA
+2019-08-05 11:52:48.831 [DBG] [localService.go:185] run service , serviceName: serviceA, serviceType: 2, ServerID: 34 tickMS: 2000
+2019-08-05 11:52:52.114 [DBG] [serviceProc.go:67] MsgProc_LoginReq, uid: 1
+2019-08-05 11:53:01.649 [DBG] [dbservice.go:52] connect failed,no reachable servers
+2019-08-05 11:53:01.649 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-08-05 11:53:01.649 [INF] [Entity_Props.go:171] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-05 11:53:01.649 [DBG] [entitySrvUtil.go:64] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 34
+2019-08-05 11:53:01.651 [DBG] [entitySrvUtil.go:64] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 34
+2019-08-05 11:53:01.652 [DBG] [ServiceAUser.go:20] ServiceAUser.OnUserInit, dbid: 1 isnew: true
+2019-08-05 11:53:01.652 [INF] [serviceA.go:52] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-05 11:53:01.653 [DBG] [ServiceAUserRpcProc.go:14] RPC_Hello, name: hello world, id: 1
+2019-08-05 11:53:01.653 [DBG] [ServiceAUserRpcProc.go:16] err: = <nil>

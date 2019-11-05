@@ -1,0 +1,171 @@
+2019-08-19 14:08:34.731 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:59776->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
+2019-08-19 14:08:34.734 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:59776->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
+2019-08-19 14:08:34.736 [INF] [appProc.go:43] OnClosed sessID:1, remote addr:127.0.0.1:17012
+2019-08-19 14:08:34.736 [DBG] [serviceProxyMgr.go:205] ServiceProxyMgr,  sm.idMap=map[428:0xc0000044e0] infovec = [0xc00001a800]
+2019-08-19 14:08:34.736 [DBG] [serviceProxyMgr.go:61] ServiceProxyMgr, DelServiceByAppID : 429
+2019-08-19 14:08:34.736 [DBG] [serviceProxyMgr.go:126] idx=0 len ss = 1
+2019-08-19 14:08:34.736 [INF] [serviceA.go:56] ServiceA OnDisconnected, infovec = [0xc000214000]
+2019-08-19 14:08:34.738 [INF] [serviceA.go:57] ServiceA OnDisconnected, info= {430 102 429}
+2019-08-19 14:08:35.47 [WRN] [appNet.go:220] Server disconnected, ID:429 
+
+2019-08-19 14:08:36.481 [ERR] [appNet.go:254] Connect failed. 427 to 429 Addr :17012, error:dial tcp :17012: connectex: No connection could be made because the target machine actively refused it.
+2019-08-19 14:11:17.1 [INF] [app.go:143] services[serviceA serviceB]
+2019-08-19 14:11:17.112 [DBG] [app.go:77] App.init, appID: 431
+2019-08-19 14:11:17.155 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-19 14:11:17.155 [DBG] [localService.go:72] service check : serviceA
+2019-08-19 14:11:17.155 [DBG] [localService.go:102] service check success: serviceA
+2019-08-19 14:11:17.155 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-19 14:11:17.156 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-19 14:11:17.156 [DBG] [localService.go:72] service check : serviceB
+2019-08-19 14:11:17.156 [DBG] [localService.go:102] service check success: serviceB
+2019-08-19 14:11:17.156 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-19 14:11:17.276 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 433 tickMS: 2000
+2019-08-19 14:11:17.276 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 432 tickMS: 2000
+2019-08-19 14:13:09.286 [INF] [app.go:143] services[serviceA serviceB]
+2019-08-19 14:13:09.295 [DBG] [app.go:77] App.init, appID: 434
+2019-08-19 14:13:09.338 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-19 14:13:09.338 [DBG] [localService.go:72] service check : serviceA
+2019-08-19 14:13:09.338 [DBG] [localService.go:102] service check success: serviceA
+2019-08-19 14:13:09.338 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-19 14:13:09.339 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-19 14:13:09.339 [DBG] [localService.go:72] service check : serviceB
+2019-08-19 14:13:09.339 [DBG] [localService.go:102] service check success: serviceB
+2019-08-19 14:13:09.339 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-19 14:13:09.458 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 435 tickMS: 2000
+2019-08-19 14:13:09.458 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 436 tickMS: 2000
+2019-08-19 14:16:16.581 [INF] [app.go:143] services[serviceA serviceB]
+2019-08-19 14:16:16.644 [DBG] [app.go:77] App.init, appID: 437
+2019-08-19 14:16:16.645 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-19 14:16:16.645 [DBG] [localService.go:67] service check : serviceA
+2019-08-19 14:16:16.645 [DBG] [localService.go:97] service check success: serviceA
+2019-08-19 14:16:16.645 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-19 14:16:16.646 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-19 14:16:16.646 [DBG] [localService.go:67] service check : serviceB
+2019-08-19 14:16:16.646 [DBG] [localService.go:97] service check success: serviceB
+2019-08-19 14:16:16.646 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-19 14:16:16.767 [DBG] [localService.go:210] run service , serviceName: serviceA, serviceType: 101, ServerID: 438 tickMS: 2000
+2019-08-19 14:16:16.767 [DBG] [localService.go:210] run service , serviceName: serviceB, serviceType: 102, ServerID: 439 tickMS: 2000
+2019-08-19 14:16:57.299 [INF] [app.go:143] services[serviceA]
+2019-08-19 14:16:57.366 [DBG] [app.go:77] App.init, appID: 440
+2019-08-19 14:16:57.367 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-19 14:16:57.367 [DBG] [localService.go:67] service check : serviceA
+2019-08-19 14:16:57.367 [DBG] [localService.go:97] service check success: serviceA
+2019-08-19 14:16:57.367 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-19 14:16:57.489 [DBG] [localService.go:210] run service , serviceName: serviceA, serviceType: 101, ServerID: 441 tickMS: 2000
+2019-08-19 14:16:59.897 [INF] [app.go:143] services[serviceB]
+2019-08-19 14:16:59.908 [DBG] [app.go:77] App.init, appID: 442
+2019-08-19 14:16:59.95 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-19 14:16:59.95 [DBG] [localService.go:67] service check : serviceB
+2019-08-19 14:16:59.95 [DBG] [localService.go:97] service check success: serviceB
+2019-08-19 14:16:59.95 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-19 14:17:00.087 [DBG] [localService.go:210] run service , serviceName: serviceB, serviceType: 102, ServerID: 443 tickMS: 2000
+2019-08-19 14:17:02.388 [DBG] [appProc.go:55] MsgProc_ClientVerifyReq, token: 442
+2019-08-19 14:17:02.388 [INF] [appNet.go:344] InsertSrvSess  440
+2019-08-19 14:17:02.396 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{441 101 440}
+2019-08-19 14:17:02.396 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {441 101 440}
+2019-08-19 14:17:02.396 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-19 14:17:02.396 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 
+2019-08-19 14:17:02.385 [INF] [appNet.go:274] SrvNet try connect to 442
+2019-08-19 14:17:02.389 [INF] [appProc.go:90] BaseProc_Client.MsgProc_ClientVerifyResp: 
+2019-08-19 14:17:02.389 [INF] [appNet.go:300] Connected to Server succeed !!!  442
+2019-08-19 14:17:02.396 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{443 102 442}
+2019-08-19 14:17:02.396 [INF] [serviceA.go:68] ServiceA OnConnected, infovec = {443 102 442}
+2019-08-19 14:17:02.397 [INF] [appProc.go:149] MsgProc_CallRespMsg ErrString:, Seq:1
+2019-08-19 14:17:02.397 [DBG] [serviceA.go:79] SyncCall result:call success
+2019-08-19 14:17:02.397 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World
+2019-08-19 14:33:32.725 [INF] [app.go:143] services[serviceA serviceB]
+2019-08-19 14:33:32.738 [DBG] [app.go:77] App.init, appID: 444
+2019-08-19 14:33:32.78 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-19 14:33:32.78 [DBG] [localService.go:67] service check : serviceA
+2019-08-19 14:33:32.78 [DBG] [localService.go:97] service check success: serviceA
+2019-08-19 14:33:32.78 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-19 14:33:32.781 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-19 14:33:32.781 [DBG] [localService.go:67] service check : serviceB
+2019-08-19 14:33:32.781 [DBG] [localService.go:97] service check success: serviceB
+2019-08-19 14:33:32.781 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-19 14:33:32.918 [DBG] [localService.go:210] run service , serviceName: serviceB, serviceType: 102, ServerID: 446 tickMS: 2000
+2019-08-19 14:33:32.918 [DBG] [localService.go:210] run service , serviceName: serviceA, serviceType: 101, ServerID: 445 tickMS: 2000
+2019-08-19 14:33:35.325 [INF] [app.go:143] services[serviceB]
+2019-08-19 14:33:35.338 [DBG] [app.go:77] App.init, appID: 447
+2019-08-19 14:33:35.381 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-19 14:33:35.381 [DBG] [localService.go:67] service check : serviceB
+2019-08-19 14:33:35.381 [DBG] [localService.go:97] service check success: serviceB
+2019-08-19 14:33:35.382 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-19 14:33:35.523 [DBG] [localService.go:210] run service , serviceName: serviceB, serviceType: 102, ServerID: 448 tickMS: 2000
+2019-08-19 14:33:37.806 [DBG] [appProc.go:55] MsgProc_ClientVerifyReq, token: 447
+2019-08-19 14:33:37.806 [INF] [appNet.go:344] InsertSrvSess  444
+2019-08-19 14:33:37.811 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{445 101 444}
+2019-08-19 14:33:37.811 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{446 102 444}
+2019-08-19 14:33:37.811 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {445 101 444}
+2019-08-19 14:33:37.812 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {446 102 444}
+2019-08-19 14:33:37.812 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-19 14:33:37.812 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 
+2019-08-19 14:33:37.803 [INF] [appNet.go:274] SrvNet try connect to 447
+2019-08-19 14:33:37.807 [INF] [appProc.go:90] BaseProc_Client.MsgProc_ClientVerifyResp: 
+2019-08-19 14:33:37.807 [INF] [appNet.go:300] Connected to Server succeed !!!  447
+2019-08-19 14:33:37.811 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{448 102 447}
+2019-08-19 14:33:37.811 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {448 102 447}
+2019-08-19 14:33:37.812 [INF] [serviceA.go:68] ServiceA OnConnected, infovec = {448 102 447}
+2019-08-19 14:33:37.813 [INF] [appProc.go:149] MsgProc_CallRespMsg ErrString:, Seq:1
+2019-08-19 14:33:37.813 [DBG] [serviceA.go:79] SyncCall result:call success
+2019-08-19 14:33:37.813 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World
+2019-08-19 14:50:44.662 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:64487->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
+2019-08-19 14:50:44.663 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:64487->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
+2019-08-19 14:50:44.665 [INF] [appProc.go:43] OnClosed sessID:1, remote addr:127.0.0.1:17012
+2019-08-19 14:50:44.665 [DBG] [serviceProxyMgr.go:205] ServiceProxyMgr,  sm.idMap=map[445:0xc00010afa0 446:0xc00010bd00] infovec = [0xc000248ea0]
+2019-08-19 14:50:44.665 [DBG] [serviceProxyMgr.go:61] ServiceProxyMgr, DelServiceByAppID : 447
+2019-08-19 14:50:44.665 [DBG] [serviceProxyMgr.go:126] idx=1 len ss = 2
+2019-08-19 14:50:44.665 [INF] [serviceA.go:56] ServiceA OnDisconnected, infovec = [0xc00001a3e0]
+2019-08-19 14:50:44.666 [INF] [serviceA.go:57] ServiceA OnDisconnected, info= {448 102 447}
+2019-08-19 14:50:44.667 [INF] [serviceB.go:33] ServiceB OnDisconnected, infovec = {448 102 447}
+2019-08-19 14:51:26.398 [INF] [app.go:143] services[serviceA serviceB]
+2019-08-19 14:51:26.464 [DBG] [app.go:77] App.init, appID: 449
+2019-08-19 14:51:26.468 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-19 14:51:26.468 [DBG] [localService.go:67] service check : serviceA
+2019-08-19 14:51:26.468 [DBG] [localService.go:97] service check success: serviceA
+2019-08-19 14:51:26.469 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-19 14:51:26.469 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-19 14:51:26.469 [DBG] [localService.go:67] service check : serviceB
+2019-08-19 14:51:26.469 [DBG] [localService.go:97] service check success: serviceB
+2019-08-19 14:51:26.469 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-19 14:51:26.6 [DBG] [localService.go:210] run service , serviceName: serviceA, serviceType: 101, ServerID: 450 tickMS: 2000
+2019-08-19 14:51:26.6 [DBG] [localService.go:210] run service , serviceName: serviceB, serviceType: 102, ServerID: 451 tickMS: 2000
+2019-08-19 14:51:28.484 [INF] [app.go:143] services[serviceB]
+2019-08-19 14:51:28.55 [DBG] [app.go:77] App.init, appID: 452
+2019-08-19 14:51:28.551 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-19 14:51:28.551 [DBG] [localService.go:67] service check : serviceB
+2019-08-19 14:51:28.551 [DBG] [localService.go:97] service check success: serviceB
+2019-08-19 14:51:28.551 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-19 14:51:28.699 [DBG] [localService.go:210] run service , serviceName: serviceB, serviceType: 102, ServerID: 453 tickMS: 2000
+2019-08-19 14:51:31.488 [INF] [appNet.go:274] SrvNet try connect to 452
+2019-08-19 14:51:31.491 [INF] [appProc.go:90] BaseProc_Client.MsgProc_ClientVerifyResp: 
+2019-08-19 14:51:31.491 [INF] [appNet.go:300] Connected to Server succeed !!!  452
+2019-08-19 14:51:31.494 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{453 102 452}
+2019-08-19 14:51:31.495 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {450 101 449}
+2019-08-19 14:51:31.495 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {451 102 449}
+2019-08-19 14:51:31.495 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {453 102 452}
+2019-08-19 14:51:31.495 [INF] [serviceA.go:68] ServiceA OnConnected, infovec = {450 101 449}
+2019-08-19 14:51:31.496 [INF] [appProc.go:149] MsgProc_CallRespMsg ErrString:, Seq:1
+2019-08-19 14:51:31.496 [DBG] [serviceA.go:79] SyncCall result:call success
+2019-08-19 14:51:31.496 [INF] [serviceA.go:68] ServiceA OnConnected, infovec = {451 102 449}
+2019-08-19 14:51:31.497 [INF] [appProc.go:149] MsgProc_CallRespMsg ErrString:, Seq:2
+2019-08-19 14:51:31.497 [DBG] [serviceA.go:79] SyncCall result:call success
+2019-08-19 14:51:31.497 [INF] [serviceA.go:68] ServiceA OnConnected, infovec = {453 102 452}
+2019-08-19 14:51:31.497 [INF] [appProc.go:149] MsgProc_CallRespMsg ErrString:, Seq:3
+2019-08-19 14:51:31.497 [DBG] [serviceA.go:79] SyncCall result:call success
+2019-08-19 14:51:31.498 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World
+2019-08-19 14:51:31.498 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World
+2019-08-19 14:51:31.498 [DBG] [serviceARPCProc.go:13] RPC_Hello: hello World
+2019-08-19 14:51:31.49 [DBG] [appProc.go:55] MsgProc_ClientVerifyReq, token: 452
+2019-08-19 14:51:31.49 [INF] [appNet.go:344] InsertSrvSess  449
+2019-08-19 14:51:31.494 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{450 101 449}
+2019-08-19 14:51:31.494 [DBG] [serviceProxyMgr.go:48] AddAppServiceProxy, info: &{451 102 449}
+2019-08-19 14:51:31.494 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {450 101 449}
+2019-08-19 14:51:31.495 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {451 102 449}
+2019-08-19 14:51:31.495 [INF] [serviceB.go:41] ServiceB OnConnected, infovec = {453 102 452}
+2019-08-19 14:51:31.496 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-19 14:51:31.496 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 
+2019-08-19 14:51:31.496 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-19 14:51:31.496 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 
+2019-08-19 14:51:31.497 [DBG] [serviceBRPCProc.go:18] RPC_Hello: hello World
+2019-08-19 14:51:31.497 [DBG] [serviceBRPCProc.go:28] RPC_SyncCall: 

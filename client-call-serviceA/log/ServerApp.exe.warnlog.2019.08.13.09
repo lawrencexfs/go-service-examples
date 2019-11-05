@@ -1,0 +1,3 @@
+2019-08-13 09:55:45.081 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-08-13 09:55:45.084 [ERR] [session.go:315] send message error write tcp 127.0.0.1:17000->127.0.0.1:63473: wsasend: An existing connection was forcibly closed by the remote host.
+2019-08-13 09:55:45.084 [ERR] [RPCHandlers.go:91] DoAsyncRPCMsg, Can't Find Method: OnClosed

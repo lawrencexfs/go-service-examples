@@ -1,0 +1,12 @@
+2019-08-15 15:19:45.558 [INF] [app.go:139] services[serviceA serviceB]
+2019-08-15 15:19:45.582 [DBG] [app.go:76] App.init, appID: 397
+2019-08-15 15:19:45.615 [INF] [serviceA.go:22] ServiceA OnInit
+2019-08-15 15:19:45.615 [DBG] [localService.go:72] service check : serviceA
+2019-08-15 15:19:45.615 [DBG] [localService.go:102] service check success: serviceA
+2019-08-15 15:19:45.615 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-15 15:19:45.616 [DBG] [serviceB.go:17] ServiceBService.OnInit
+2019-08-15 15:19:45.616 [DBG] [localService.go:72] service check : serviceB
+2019-08-15 15:19:45.616 [DBG] [localService.go:102] service check success: serviceB
+2019-08-15 15:19:45.616 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceB
+2019-08-15 15:19:45.729 [DBG] [localService.go:225] run service , serviceName: serviceB, serviceType: 102, ServerID: 399 tickMS: 2000
+2019-08-15 15:19:45.729 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 101, ServerID: 398 tickMS: 2000

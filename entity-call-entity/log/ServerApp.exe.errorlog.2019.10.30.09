@@ -1,0 +1,10 @@
+2019-10-30 09:20:02.193 [ERR] [session.go:286] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:51041: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:51041, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-10-30 09:20:02.218 [ERR] [session.go:298] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:51041: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:51041,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-10-30 09:21:38.406 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-30 09:21:38.412 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2019-10-30 09:23:58.795 [ERR] [session.go:286] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:49454: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:49454, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-10-30 09:23:58.798 [ERR] [session.go:298] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:49454: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:49454,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-10-30 09:27:36.581 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-30 09:27:36.584 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2019-10-30 09:31:59.386 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-30 09:31:59.398 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection

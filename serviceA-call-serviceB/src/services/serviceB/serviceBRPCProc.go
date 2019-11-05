@@ -1,0 +1,32 @@
+package serviceB
+
+import (
+	"serviceA-call-serviceB/src/services/servicetype"
+
+	"github.com/GA-TECH-SERVER/zeus/framework/iserver"
+
+	log "github.com/cihub/seelog"
+)
+
+// ServiceBRPCProc serviceB proc
+type ServiceBRPCProc struct {
+	srv *ServiceB
+}
+
+// RPCHello hello
+func (p *ServiceBRPCProc) RPCHello(str string) {
+	log.Debug("RPCHello: ", str)
+
+	randProxy := iserver.GetServiceProxyMgr().GetRandService(servicetype.ServiceTypeA)
+	err := randProxy.AsyncCall("Hello", "hello World")
+	if err != nil {
+		log.Error("AsyncCall: ", err)
+	}
+}
+
+// RPCSyncCall synccall
+func (p *ServiceBRPCProc) RPCSyncCall() string {
+	log.Debug("RPCSyncCall: ")
+
+	return "call success"
+}

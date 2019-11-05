@@ -1,0 +1,72 @@
+2019-08-26 10:46:10.212 [INF] [app.go:149] services[serviceA]
+2019-08-26 10:46:10.278 [DBG] [app.go:83] App.init, appID: 5
+2019-08-26 10:46:10.279 [INF] [serviceA.go:28] ServiceA OnInit
+2019-08-26 10:46:10.355 [DBG] [serviceProc.go:160] set verify msgid, vID: 0
+2019-08-26 10:46:10.355 [DBG] [serviceProc.go:165] outer addr: 127.0.0.1:17000
+2019-08-26 10:46:10.355 [DBG] [localService.go:67] service check : serviceA
+2019-08-26 10:46:10.355 [DBG] [localService.go:95] service check success: serviceA
+2019-08-26 10:46:10.355 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-08-26 10:46:10.355 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{6 2 5 map[]}
+2019-08-26 10:46:10.458 [DBG] [localService.go:210] run service , serviceName: serviceA, serviceType: 2, ServerID: 6 tickMS: 2000
+2019-08-26 10:46:13.217 [DBG] [serviceProc.go:67] MsgProcLoginReq, UID: 1
+2019-08-26 10:46:13.233 [INF] [dbservice.go:57] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-08-26 10:46:13.233 [ERR] [msghdl.go:54] handle msg is panic:1aaaaagoroutine 59 [running]:
+runtime/debug.Stack(0xc0002ff430, 0xaafc00, 0xc8afd0)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal/msghdl.(*MessageHandler).HandleRawMsg.func1(0xc000270001)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/net/internal/internal/msghdl/msghdl.go:53 +0x5e
+panic(0xaafc00, 0xc8afd0)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+gitlab.ztgame.com/tech/public/go-service/zeus/base/mongodbservice.InitDB(0x110)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/mongodbservice/dbservice.go:57 +0x2e0
+gitlab.ztgame.com/tech/public/go-service/zeus/base/mongodbservice.CloneSession(0xc000218000)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/mongodbservice/dbservice.go:70 +0x57
+gitlab.ztgame.com/tech/public/go-service/zeus/base/mongodbservice.MongoDBQueryOneWithSelect(0x0, 0x0, 0x0, 0x0, 0xaeb700, 0xc000213ce0, 0xaeb700, 0xc000213c80, 0xaeb700, 0xc000213cb0, ...)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/mongodbservice/mongodboperate.go:77 +0x14a
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).loadFromDB(0xc00004f980)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/framework/entity/Entity_Props.go:171 +0x276
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).InitProp(0xc00004f980, 0xc0000ea500, 0xba9901)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/framework/entity/Entity_Props.go:42 +0x1a8
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).OnEntityInit(0xc00004f980)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/framework/entity/Entity.go:307 +0x98
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).OnEntityCreated(0xc00004f980, 0x1, 0xba99a2, 0x6, 0x0, 0xba5e20, 0xc00004f980, 0xcb3340, 0xc000046700, 0xb8a680, ...)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/framework/entity/Entity.go:249 +0x2e6
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID(0xc000046700, 0xba99a2, 0x6, 0x1, 0x0, 0xb8a680, 0xc0002139b0, 0xc00027ba01, 0x0, 0xc000046700, ...)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/framework/entity/Entities.go:160 +0x261
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/servicegateway.(*ProcServiceA).MsgProcLoginReq(0xc0002139e0, 0xc000213aa0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/logic/servicegateway/serviceProc.go:77 +0x1c2
+reflect.Value.call(0xb243c0, 0xc0002139e0, 0x613, 0xba80d5, 0x4, 0xc00027be48, 0x1, 0x1, 0x1, 0x1194ff0, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xb243c0, 0xc0002139e0, 0x613, 0xc00027be48, 0x1, 0x1, 0x0, 0x0, 0x11a4080)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal/msghdl.(*MessageHandler).HandleRawMsg(0xc0000ec1e0, 0x2540b0001, 0xc0001008e2, 0xf, 0xf)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/net/internal/internal/msghdl/msghdl.go:79 +0x34d
+gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal.(*Session).readAndHandleOneMsg(0xc0001e80b0, 0xc000194900, 0x92e100)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/net/internal/internal/session.go:430 +0x561
+gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal.(*Session).recvLoop(0xc0001e80b0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/net/internal/internal/session.go:247 +0x66
+created by gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal.(*Session).Start
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/net/internal/internal/session.go:110 +0x62
+
+2019-08-26 10:46:13.234 [ERR] [msghdl.go:54] handle msg is panic:5runtime error: invalid memory address or nil pointer dereferencegoroutine 59 [running]:
+runtime/debug.Stack(0xc0002ff9e8, 0xaec9c0, 0x118d3c0)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal/msghdl.(*MessageHandler).HandleRawMsg.func1(0xc0002f0005)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/net/internal/internal/msghdl/msghdl.go:53 +0x5e
+panic(0xaec9c0, 0x118d3c0)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/servicegateway.(*ProcServiceA).MsgProcCallMsg(0xc0002139e0, 0xc000124780)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/logic/servicegateway/serviceProc.go:125 +0x3a
+reflect.Value.call(0xb243c0, 0xc0002139e0, 0x213, 0xba80d5, 0x4, 0xc0002ffe48, 0x1, 0x1, 0x0, 0x1194ff0, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xb243c0, 0xc0002139e0, 0x213, 0xc0002ffe48, 0x1, 0x1, 0x0, 0x0, 0x11a4180)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal/msghdl.(*MessageHandler).HandleRawMsg(0xc0000ec1e0, 0x2540b0005, 0xc00013e5f2, 0x45, 0x45)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/net/internal/internal/msghdl/msghdl.go:79 +0x34d
+gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal.(*Session).readAndHandleOneMsg(0xc0001e80b0, 0xc000194900, 0x0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/net/internal/internal/session.go:430 +0x561
+gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal.(*Session).recvLoop(0xc0001e80b0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/net/internal/internal/session.go:247 +0x66
+created by gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal.(*Session).Start
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.14/base/net/internal/internal/session.go:110 +0x62
+

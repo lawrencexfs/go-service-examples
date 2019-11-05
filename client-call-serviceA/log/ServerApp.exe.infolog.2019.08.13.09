@@ -1,0 +1,20 @@
+2019-08-13 09:55:32.409 [INF] [app.go:139] services[serviceA]
+2019-08-13 09:55:32.475 [DBG] [app.go:76] App.init, appID: 364
+2019-08-13 09:55:32.475 [INF] [serviceA.go:26] ServiceA OnInit
+2019-08-13 09:55:32.564 [DBG] [serviceProc.go:148] set verify msgid, err: 0
+2019-08-13 09:55:32.564 [DBG] [serviceProc.go:152] outer addr: 127.0.0.1:17000
+2019-08-13 09:55:32.564 [DBG] [localService.go:72] service check : serviceA
+2019-08-13 09:55:32.564 [DBG] [localService.go:102] service check success: serviceA
+2019-08-13 09:55:32.564 [DBG] [localServiceMgr.go:53] App InitLocalService, name: serviceA
+2019-08-13 09:55:32.667 [DBG] [localService.go:225] run service , serviceName: serviceA, serviceType: 2, ServerID: 365 tickMS: 2000
+2019-08-13 09:55:35.545 [DBG] [serviceProc.go:66] MsgProc_LoginReq, uid: 1
+2019-08-13 09:55:45.081 [DBG] [dbservice.go:52] connect failed,no reachable servers
+2019-08-13 09:55:45.081 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2019-08-13 09:55:45.081 [INF] [Entity_Props.go:171] select props: map[coin:1 exp:1 level:1 rating:1]props return: map[]
+2019-08-13 09:55:45.081 [DBG] [entitySrvUtil.go:65] Reg service key: entitysrvinfo:1, serviceType: 2, serviceID: 365
+2019-08-13 09:55:45.082 [DBG] [entitySrvUtil.go:65] Reg service key: entitysrvinfo:1, serviceType: 1, serviceID: 365
+2019-08-13 09:55:45.083 [DBG] [ServiceAUser.go:20] ServiceAUser.OnUserInit, entityID: 1 isnew: true
+2019-08-13 09:55:45.084 [ERR] [session.go:315] send message error write tcp 127.0.0.1:17000->127.0.0.1:63473: wsasend: An existing connection was forcibly closed by the remote host.
+2019-08-13 09:55:45.084 [INF] [serviceProc.go:104] Proc_ServiceA OnClosed: 1 127.0.0.1:63473
+2019-08-13 09:55:45.084 [INF] [serviceA.go:62] ServiceA OnLoginHandler, msg.UID = 1
+2019-08-13 09:55:45.084 [ERR] [RPCHandlers.go:91] DoAsyncRPCMsg, Can't Find Method: OnClosed

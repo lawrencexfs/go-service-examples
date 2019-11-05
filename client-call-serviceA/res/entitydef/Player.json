@@ -1,0 +1,51 @@
+{
+	"name": "Player",
+    "props": {
+        "level": {
+            "type": "uint32",
+            "save": "1",
+            "desc": "等级",
+			"default":"1"
+        },
+		"rating": {
+            "type": "int32",
+            "save": "1",
+            "desc": "匹配分数",
+			"default":"1000"
+        },
+		"coin": {
+            "type": "uint32",
+            "save": "1",
+            "desc": "金币"
+        },
+		"exp": {
+            "type": "uint32",
+            "save": "1",
+            "desc": "经验"
+        }
+    },
+
+    "sync": {
+        "1": {
+            "desc": "Client",
+            "props": [
+                "level"
+            ]
+        },
+        "2": {
+            "desc": "Lobby",
+            "props": [
+                "level",
+				"rating",
+				"coin",
+				"exp"
+			]
+        },
+        "6": {
+            "desc": "Team",
+            "props": [
+                "level"
+            ]
+        }
+    }
+}

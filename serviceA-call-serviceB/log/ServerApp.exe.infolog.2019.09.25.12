@@ -1,0 +1,988 @@
+2019-09-25 12:16:58.285 [INF] [app.go:159] services[serviceA serviceB]
+2019-09-25 12:16:58.348 [DBG] [app.go:84] App.init, appID: 63
+2019-09-25 12:16:58.349 [INF] [baseService.go:71] ServiceA OnInit
+2019-09-25 12:16:58.349 [DBG] [localService.go:68] service check : serviceA
+2019-09-25 12:16:58.349 [DBG] [localService.go:96] service check success: serviceA
+2019-09-25 12:16:58.349 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA
+2019-09-25 12:16:58.349 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{64 101 63 map[OS:Windows Version:1.0.1]}
+2019-09-25 12:16:58.349 [DBG] [baseService.go:71] ServiceBService.OnInit
+2019-09-25 12:16:58.349 [DBG] [localService.go:68] service check : serviceB
+2019-09-25 12:16:58.35 [DBG] [localService.go:96] service check success: serviceB
+2019-09-25 12:16:58.35 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceB
+2019-09-25 12:16:58.35 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{65 102 63 map[OS:Linux Version:1.0.2]}
+2019-09-25 12:16:58.465 [DBG] [localService.go:210] run service , serviceName: serviceA, serviceType: 101, ServerID: 64 tickMS: 2000
+2019-09-25 12:16:58.465 [DBG] [localService.go:210] run service , serviceName: serviceB, serviceType: 102, ServerID: 65 tickMS: 2000
+2019-09-25 12:16:58.466 [INF] [serviceA.go:88] ServiceA OnConnected, infovec = {65 102 63 map[OS:Linux Version:1.0.2]}
+2019-09-25 12:16:58.466 [INF] [serviceB.go:49] ServiceB OnConnected, infovec = {64 101 63 map[OS:Windows Version:1.0.1]}
+2019-09-25 12:16:58.466 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:16:58.466 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:16:58.466 [DBG] [serviceA.go:99] SyncCall result:call success
+2019-09-25 12:16:58.466 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:00.465 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:00.465 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:00.465 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:00.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:02.465 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:02.465 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:02.465 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:02.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:04.465 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:04.465 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:04.465 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:04.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:06.465 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:06.465 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:06.465 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:06.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:08.465 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:08.465 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:08.465 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:08.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:10.465 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:10.465 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:10.465 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:10.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:12.465 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:12.465 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:12.465 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:12.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:14.465 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:14.465 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:14.465 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:14.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:16.464 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:16.464 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:16.464 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:16.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:18.464 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:18.464 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:18.464 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:18.464 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:20.464 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:20.464 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:20.464 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:20.464 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:22.464 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:22.464 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:22.464 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:22.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:24.464 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:24.464 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:24.464 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:24.464 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:26.464 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:26.464 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:26.464 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:26.464 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:28.464 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:28.464 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:28.464 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:28.464 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:30.464 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:30.464 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:30.464 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:30.467 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:32.464 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:32.464 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:32.464 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:32.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:34.463 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:34.463 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:34.463 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:34.463 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:36.463 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:36.463 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:36.463 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:36.464 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:38.463 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:38.463 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:38.463 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:38.463 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:40.463 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:40.463 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:40.463 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:40.463 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:42.463 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:42.463 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:42.463 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:42.465 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:44.463 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:44.463 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:44.463 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:44.463 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:46.463 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:46.463 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:46.463 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:46.463 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:48.463 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:48.463 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:48.463 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:48.464 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:50.463 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:50.463 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:50.463 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:50.463 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:52.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:52.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:52.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:52.463 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:54.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:54.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:54.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:54.462 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:56.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:56.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:56.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:56.462 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:17:58.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:17:58.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:17:58.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:17:58.463 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:00.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:00.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:00.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:00.462 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:02.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:02.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:02.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:02.463 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:04.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:04.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:04.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:04.462 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:06.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:06.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:06.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:06.462 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:08.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:08.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:08.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:08.462 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:10.482 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:10.482 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:10.482 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:10.482 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:12.464 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:12.464 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:12.464 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:12.464 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:14.461 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:14.461 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:14.461 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:14.461 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:16.461 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:16.461 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:16.461 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:16.461 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:18.461 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:18.461 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:18.461 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:18.461 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:20.461 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:20.461 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:20.461 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:20.461 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:22.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:22.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:22.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:22.462 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:24.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:24.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:24.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:24.462 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:26.46 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:26.46 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:26.46 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:26.46 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:28.46 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:28.46 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:28.46 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:28.46 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:30.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:30.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:30.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:30.463 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:32.47 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:32.47 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:32.47 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:32.47 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:34.463 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:34.463 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:34.463 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:34.463 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:36.46 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:36.46 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:36.46 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:36.46 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:38.46 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:38.46 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:38.46 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:38.46 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:40.467 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:40.467 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:40.467 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:40.467 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:42.46 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:42.46 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:42.46 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:42.46 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:44.46 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:44.46 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:44.46 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:44.46 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:46.459 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:46.459 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:46.459 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:46.459 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:48.459 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:48.459 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:48.459 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:48.459 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:50.459 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:50.459 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:50.459 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:50.459 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:52.459 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:52.459 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:52.459 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:52.459 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:54.459 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:54.459 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:54.459 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:54.46 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:56.459 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:56.459 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:56.459 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:56.461 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:18:58.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:18:58.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:18:58.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:18:58.462 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:00.459 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:00.459 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:00.459 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:00.459 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:02.462 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:02.462 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:02.462 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:02.462 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:04.458 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:04.458 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:04.458 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:04.458 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:06.458 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:06.458 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:06.458 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:06.458 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:08.458 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:08.458 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:08.458 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:08.461 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:10.458 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:10.458 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:10.459 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:10.459 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:12.458 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:12.458 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:12.458 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:12.458 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:14.458 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:14.458 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:14.458 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:14.458 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:16.458 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:16.458 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:16.458 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:16.458 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:18.457 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:18.457 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:18.457 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:18.457 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:20.457 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:20.457 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:20.457 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:20.458 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:22.457 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:22.457 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:22.457 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:22.458 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:24.457 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:24.457 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:24.457 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:24.457 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:26.457 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:26.457 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:26.457 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:26.457 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:28.457 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:28.457 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:28.457 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:28.458 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:30.457 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:30.457 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:30.457 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:30.458 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:32.457 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:32.457 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:32.457 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:32.458 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:34.457 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:34.457 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:34.457 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:34.458 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:36.456 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:36.456 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:36.456 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:36.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:38.456 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:38.456 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:38.456 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:38.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:40.456 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:40.456 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:40.456 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:40.457 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:42.456 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:42.456 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:42.456 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:42.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:44.456 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:44.456 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:44.456 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:44.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:46.456 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:46.456 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:46.456 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:46.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:48.456 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:48.456 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:48.456 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:48.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:50.456 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:50.456 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:50.456 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:50.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:52.456 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:52.456 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:52.456 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:52.457 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:54.455 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:54.455 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:54.455 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:54.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:56.455 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:56.455 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:56.455 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:56.455 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:19:58.455 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:19:58.455 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:19:58.455 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:19:58.455 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:00.455 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:00.455 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:00.455 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:00.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:02.455 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:02.455 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:02.455 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:02.455 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:04.455 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:04.455 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:04.455 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:04.455 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:06.455 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:06.455 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:06.455 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:06.455 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:08.455 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:08.455 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:08.455 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:08.455 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:10.455 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:10.455 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:10.455 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:10.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:12.454 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:12.454 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:12.454 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:12.454 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:14.454 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:14.454 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:14.454 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:14.454 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:16.454 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:16.454 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:16.454 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:16.454 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:18.454 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:18.454 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:18.454 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:18.455 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:20.454 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:20.454 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:20.454 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:20.455 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:22.454 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:22.454 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:22.454 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:22.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:24.454 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:24.454 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:24.454 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:24.456 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:26.454 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:26.454 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:26.454 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:26.454 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:28.453 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:28.453 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:28.453 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:28.453 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:30.453 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:30.453 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:30.453 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:30.454 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:32.453 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:32.453 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:32.453 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:32.453 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:34.453 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:34.453 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:34.453 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:34.453 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:36.453 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:36.453 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:36.453 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:36.453 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:38.453 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:38.453 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:38.453 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:38.454 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:40.453 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:40.453 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:40.453 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:40.454 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:42.453 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:42.453 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:42.453 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:42.455 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:44.453 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:44.453 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:44.453 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:44.453 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:46.452 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:46.452 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:46.452 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:46.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:48.452 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:48.452 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:48.452 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:48.453 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:50.452 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:50.452 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:50.452 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:50.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:52.452 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:52.452 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:52.452 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:52.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:54.452 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:54.452 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:54.452 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:54.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:56.452 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:56.452 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:56.452 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:56.454 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:20:58.452 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:20:58.452 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:20:58.452 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:20:58.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:00.452 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:00.452 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:00.452 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:00.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:02.452 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:02.452 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:02.452 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:02.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:04.451 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:04.451 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:04.451 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:04.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:06.451 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:06.451 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:06.451 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:06.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:08.451 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:08.451 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:08.451 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:08.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:10.451 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:10.451 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:10.451 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:10.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:12.451 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:12.451 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:12.451 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:12.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:14.451 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:14.451 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:14.451 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:14.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:16.451 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:16.451 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:16.451 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:16.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:18.451 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:18.451 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:18.451 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:18.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:20.451 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:20.451 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:20.451 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:20.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:22.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:22.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:22.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:22.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:24.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:24.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:24.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:24.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:26.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:26.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:26.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:26.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:28.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:28.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:28.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:28.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:30.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:30.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:30.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:30.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:32.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:32.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:32.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:32.46 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:34.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:34.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:34.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:34.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:36.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:36.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:36.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:36.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:38.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:38.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:38.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:38.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:40.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:40.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:40.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:40.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:42.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:42.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:42.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:42.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:44.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:44.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:44.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:44.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:46.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:46.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:46.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:46.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:48.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:48.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:48.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:48.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:50.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:50.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:50.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:50.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:52.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:52.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:52.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:52.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:54.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:54.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:54.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:54.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:56.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:56.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:56.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:56.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:21:58.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:21:58.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:21:58.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:21:58.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:00.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:00.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:00.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:00.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:02.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:02.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:02.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:02.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:04.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:04.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:04.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:04.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:06.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:06.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:06.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:06.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:08.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:08.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:08.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:08.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:10.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:10.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:10.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:10.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:12.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:12.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:12.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:12.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:14.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:14.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:14.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:14.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:16.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:16.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:16.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:16.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:18.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:18.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:18.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:18.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:20.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:20.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:20.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:20.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:22.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:22.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:22.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:22.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:24.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:24.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:24.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:24.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:26.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:26.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:26.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:26.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:28.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:28.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:28.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:28.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:30.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:30.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:30.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:30.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:32.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:32.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:32.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:32.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:34.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:34.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:34.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:34.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:36.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:36.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:36.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:36.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:38.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:38.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:38.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:38.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:40.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:40.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:40.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:40.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:42.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:42.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:42.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:42.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:44.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:44.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:44.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:44.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:46.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:46.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:46.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:46.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:48.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:48.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:48.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:48.445 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:50.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:50.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:50.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:50.445 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:52.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:52.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:52.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:52.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:54.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:54.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:54.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:54.445 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:56.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:56.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:56.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:56.445 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:22:58.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:22:58.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:22:58.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:22:58.445 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:00.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:00.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:00.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:00.445 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:02.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:02.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:02.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:02.445 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:04.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:04.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:04.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:04.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:06.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:06.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:06.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:06.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:08.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:08.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:08.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:08.445 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:10.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:10.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:10.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:10.445 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:12.445 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:12.445 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:12.445 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:12.445 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:14.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:14.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:14.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:14.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:16.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:16.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:16.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:16.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:18.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:18.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:18.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:18.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:20.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:20.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:20.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:20.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:22.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:22.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:22.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:22.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:24.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:24.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:24.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:24.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:26.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:26.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:26.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:26.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:28.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:28.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:28.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:28.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:30.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:30.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:30.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:30.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:32.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:32.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:32.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:32.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:34.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:34.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:34.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:34.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:36.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:36.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:36.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:36.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:38.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:38.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:38.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:38.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:40.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:40.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:40.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:40.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:42.446 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:42.446 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:42.446 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:42.446 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:44.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:44.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:44.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:44.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:46.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:46.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:46.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:46.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:48.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:48.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:48.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:48.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:50.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:50.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:50.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:50.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:52.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:52.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:52.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:52.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:54.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:54.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:54.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:54.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:56.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:56.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:56.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:56.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:23:58.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:23:58.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:23:58.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:23:58.447 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:00.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:00.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:00.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:00.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:02.447 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:02.447 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:02.447 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:02.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:04.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:04.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:04.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:04.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:06.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:06.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:06.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:06.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:08.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:08.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:08.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:08.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:10.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:10.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:10.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:10.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:12.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:12.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:12.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:12.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:14.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:14.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:14.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:14.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:16.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:16.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:16.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:16.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:18.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:18.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:18.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:18.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:20.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:20.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:20.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:20.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:22.448 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:22.448 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:22.448 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:22.448 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:24.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:24.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:24.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:24.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:26.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:26.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:26.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:26.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:28.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:28.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:28.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:28.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:30.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:30.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:30.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:30.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:32.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:32.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:32.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:32.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:34.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:34.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:34.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:34.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:36.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:36.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:36.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:36.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:38.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:38.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:38.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:38.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:40.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:40.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:40.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:40.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:42.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:42.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:42.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:42.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:44.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:44.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:44.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:44.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:46.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:46.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:46.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:46.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:48.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:48.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:48.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:48.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:50.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:50.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:50.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:50.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:52.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:52.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:52.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:52.452 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:54.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:54.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:54.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:54.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:56.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:56.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:56.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:56.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:24:58.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:24:58.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:24:58.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:24:58.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:25:00.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:25:00.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:25:00.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:25:00.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2019-09-25 12:25:02.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2019-09-25 12:25:02.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2019-09-25 12:25:02.45 [DBG] [serviceA.go:63] SyncCall result:call success
+2019-09-25 12:25:02.45 [DBG] [serviceARPCProc.go:15] RPCHello: hello World

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE877428-5ED8-42B3-8156-9879C781657B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Service</RootNamespace>
+    <AssemblyName>Service</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GameBox.Channel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\GameBox.Channel.dll</HintPath>
+    </Reference>
+    <Reference Include="GameBox.Core, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\GameBox.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GameBox.Network, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\GameBox.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="GameBox.Socket, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\GameBox.Socket.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="3Party\Snappy\Snappy.cs" />
+    <Compile Include="3Party\Snappy\SnappyCompressor.cs" />
+    <Compile Include="3Party\Snappy\SnappyDecompressor.cs" />
+    <Compile Include="3Party\Snappy\SnappyStream.cs" />
+    <Compile Include="3Party\Snappy\Utilities.cs" />
+    <Compile Include="GBoxServiceProvider.cs" />
+    <Compile Include="GBoxService.cs" />
+    <Compile Include="Crypto\DeCrypt.cs" />
+    <Compile Include="Crypto\EnCrypt.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Gaia\Events\Action1.cs" />
+    <Compile Include="Gaia\Events\ActionBase.cs" />
+    <Compile Include="Gaia\Events\Events.cs" />
+    <Compile Include="Gaia\Framework\FilterChain.cs" />
+    <Compile Include="Gaia\Msg\Base\IMsgDefined.cs" />
+    <Compile Include="Gaia\Msg\Base\IMsgInfo.cs" />
+    <Compile Include="Gaia\Msg\Base\MsgDefined.cs" />
+    <Compile Include="Gaia\Msg\Base\MsgInfo.cs" />
+    <Compile Include="Gaia\Msg\Base\MsgTypes.cs" />
+    <Compile Include="Gaia\Msg\BinaryMsg.cs" />
+    <Compile Include="Gaia\Msg\GaiaMsgDefined.cs" />
+    <Compile Include="Gaia\Msg\IMsg.cs" />
+    <Compile Include="Gaia\Msg\MsgConst.cs" />
+    <Compile Include="Gaia\Msg\MsgService.cs" />
+    <Compile Include="Gaia\Network\Sub\ArgType.cs" />
+    <Compile Include="Gaia\Network\Sub\Fragment\GaiaFragment.cs" />
+    <Compile Include="Gaia\Network\Sub\Fragment\XorEncrypt.cs" />
+    <Compile Include="Gaia\Network\Sub\Header.cs" />
+    <Compile Include="Gaia\Network\Sub\MsgHelper.cs" />
+    <Compile Include="Gaia\Network\Sub\Packer\GaiaPacker.cs" />
+    <Compile Include="Gaia\Network\Sub\Packer\Policy\BinaryPacker.cs" />
+    <Compile Include="Gaia\Network\Sub\Packer\Policy\IPackerPolicy.cs" />
+    <Compile Include="Gaia\Network\Sub\Packer\Policy\PackerPolicy.cs" />
+    <Compile Include="Gaia\Network\Sub\Packer\Policy\ProtobufPacker.cs" />
+    <Compile Include="Gaia\Network\Sub\Packer\ReceivePackage.cs" />
+    <Compile Include="Gaia\Network\Sub\Packer\SentPackage.cs" />
+    <Compile Include="Gaia\Pool\Pool.cs" />
+    <Compile Include="Gaia\Support\MMStream.cs" />
+    <Compile Include="msg\common.cs" />
+    <Compile Include="msg\msgid.cs" />
+    <Compile Include="Net\Client.cs" />
+    <Compile Include="Net\IClient.cs" />
+    <Compile Include="Net\IParser.cs" />
+    <Compile Include="Net\IReader.cs" />
+    <Compile Include="Net\TcpClient.cs" />
+    <Compile Include="Net\TcpSocketReader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPCAttribute.cs" />
+    <Compile Include="Utilities\ObjectPool.cs" />
+    <Compile Include="Utils\BytesStream.cs" />
+    <Compile Include="Utils\Const.cs" />
+    <Compile Include="Utils\FixedLengthArray.cs" />
+    <Compile Include="Utils\MessageQueue.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

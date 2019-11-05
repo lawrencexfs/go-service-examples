@@ -1,0 +1,338 @@
+2019-10-29 12:17:54.835 [INF] [app.go:160] services[gateway team]
+2019-10-29 12:17:54.904 [DBG] [app.go:85] App.init, appID: 4294967297
+2019-10-29 12:17:54.905 [INF] [gatewayService.go:23] GatewayService OnInit
+2019-10-29 12:17:54.905 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2019-10-29 12:17:55.028 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2019-10-29 12:17:55.028 [DBG] [localService.go:68] service check : gateway
+2019-10-29 12:17:55.028 [DBG] [localService.go:96] service check success: gateway
+2019-10-29 12:17:55.028 [DBG] [localServiceMgr.go:56] App InitLocalService, name: gateway sid: 4294967298
+2019-10-29 12:17:55.029 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967298 2 4294967297 map[]}
+2019-10-29 12:17:55.03 [DBG] [teamService.go:22] ServiceBService.OnInit
+2019-10-29 12:17:55.03 [DBG] [localService.go:68] service check : team
+2019-10-29 12:17:55.03 [DBG] [localService.go:96] service check success: team
+2019-10-29 12:17:55.03 [DBG] [localServiceMgr.go:56] App InitLocalService, name: team sid: 4294967299
+2019-10-29 12:17:55.03 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967299 3 4294967297 map[]}
+2019-10-29 12:17:55.101 [DBG] [localService.go:210] run service , serviceName: gateway, serviceType: 2, ServerID: 4294967298 tickMS: 2000
+2019-10-29 12:17:55.101 [DBG] [localService.go:210] run service , serviceName: team, serviceType: 3, ServerID: 4294967299 tickMS: 2000
+2019-10-29 12:17:55.101 [INF] [gatewayService.go:53] GatewayService OnConnected, infovec = [0xc0002030c0]
+2019-10-29 12:17:57.881 [DBG] [ProcGateway.go:49] Begin MsgProcLoginReq, UID: 1, sess: 0xc00029f080
+2019-10-29 12:17:57.881 [INF] [gatewayService.go:60] GatewayService OnLoginHandler, msg.UID = 1
+2019-10-29 12:17:57.881 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-29 12:17:57.881 [DBG] [Entity.go:484] InitProp   begin2: sType: 1
+2019-10-29 12:17:57.882 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:17:57.882 [DBG] [Entity_Props.go:38] InitProp   begin3: prop name: Level , sType: 2
+2019-10-29 12:17:57.882 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:17:57.882 [DBG] [Entity_Props.go:38] InitProp   begin3: prop name: rating , sType: 2
+2019-10-29 12:17:57.882 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:17:57.882 [DBG] [Entity_Props.go:38] InitProp   begin3: prop name: Coin , sType: 2
+2019-10-29 12:17:57.882 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:17:57.882 [DBG] [Entity_Props.go:38] InitProp   begin3: prop name: Friends , sType: 2
+2019-10-29 12:17:57.882 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player , selectPropsmap[Coin:1 Friends:1 Level:1 rating:1]
+2019-10-29 12:17:57.899 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-10-29 12:17:57.901 [DBG] [Entity_Props.go:253] loadFromDB, key is : Friends
+2019-10-29 12:17:57.901 [WRN] [PropInfo.go:292] prop complex typeFRIENDS
+2019-10-29 12:17:57.901 [DBG] [Entity_Props.go:253] loadFromDB, key is : Coin
+2019-10-29 12:17:57.901 [DBG] [Entity_Props.go:253] loadFromDB, key is : Level
+2019-10-29 12:17:57.902 [DBG] [GatewayUser.go:22] GatewayUser.OnUserInit, dbid: 1
+2019-10-29 12:17:57.902 [DBG] [GatewayUserRpc.go:26] RPCHello, name: hello world, id: 1
+2019-10-29 12:17:57.902 [DBG] [GatewayUserRpc.go:54] RPCCreateTeam, name: TestTeam
+2019-10-29 12:17:57.902 [DBG] [GatewayUserRpc.go:36] RPCModifyAttr, name: change attr, index: 1 val: 2
+2019-10-29 12:17:57.902 [DBG] [Entity_Props.go:64] SetProp name begin: Level p.value: 2
+2019-10-29 12:17:57.903 [DBG] [teamServiceRPC.go:17] RPCCreateTeam: 
+2019-10-29 12:17:57.903 [DBG] [Entity_Props.go:74] SetProp DeepEqual return: Level
+2019-10-29 12:17:57.903 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-29 12:17:57.904 [DBG] [Team.go:25] TeamName: test
+2019-10-29 12:17:57.904 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-29 12:17:57.904 [DBG] [Entity.go:484] InitProp   begin2: sType: 1
+2019-10-29 12:17:57.904 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:17:57.904 [DBG] [Entity.go:484] InitProp   begin2: sType: 3
+2019-10-29 12:17:57.904 [DBG] [Entity_Props.go:38] InitProp   begin3: prop name: Level , sType: 3
+2019-10-29 12:17:57.904 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:17:57.906 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:17:57.906 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:17:57.906 [DBG] [GatewayUserRpc.go:36] RPCModifyAttr, name: change attr, index: 1 val: 2
+2019-10-29 12:17:57.91 [DBG] [Entity_Props.go:64] SetProp name begin: Level p.value: 2
+2019-10-29 12:17:57.912 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player , selectPropsmap[Level:1]
+2019-10-29 12:17:57.913 [DBG] [Entity_Props.go:74] SetProp DeepEqual return: Level
+2019-10-29 12:17:57.916 [DBG] [Entity_Props.go:253] loadFromDB, key is : Level
+2019-10-29 12:17:57.918 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-29 12:17:57.927 [DBG] [TeamUser.go:25] PlayerName: Jim
+2019-10-29 12:17:57.928 [DBG] [GatewayUserRpc.go:67] RPCCreateTeamResult, teamID: 4294967300
+2019-10-29 12:17:57.952 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.002 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.052 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.102 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.152 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.202 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.252 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.302 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.352 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.402 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.452 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.502 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.552 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.602 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.652 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.702 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.752 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.802 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.852 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.902 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:58.952 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.002 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.052 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.101 [DBG] [Team.go:32] Team.OnLoop
+2019-10-29 12:17:59.101 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-29 12:17:59.102 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.152 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.202 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.252 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.302 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.352 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.402 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.452 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.502 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.552 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.602 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.652 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.702 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.752 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.802 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.852 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.902 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:17:59.952 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.002 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.052 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.102 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.152 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.202 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.252 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.302 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.352 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.402 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.452 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.502 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.552 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.602 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.652 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.702 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.752 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.802 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.852 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.902 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:00.952 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.002 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.052 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.101 [DBG] [Team.go:32] Team.OnLoop
+2019-10-29 12:18:01.101 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-29 12:18:01.102 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.152 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.202 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.252 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.302 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.352 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.402 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.452 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.502 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.552 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.602 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.652 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.702 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.752 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.802 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.852 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.902 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:01.952 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:02 [DBG] [teamService.go:36] ServiceBService.OnDestroy
+2019-10-29 12:18:02.001 [DBG] [Team.go:38] OnDestroy
+2019-10-29 12:18:02.002 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:18:02.011 [DBG] [TeamUser.go:35] OnDestroy
+2019-10-29 12:18:02.011 [INF] [gatewayService.go:42] GatewayService OnDestroy
+2019-10-29 12:18:02.011 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-29 12:18:02.013 [INF] [GatewayBase.go:60] GatewayBase OnDestroy
+2019-10-29 12:18:02.014 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-29 12:18:02.022 [INF] [GateUserBase.go:125] Logout(), id: 1
+2019-10-29 12:18:02.025 [DBG] [GatewayUser.go:33] GatewayUser.OnUserFini, dbid: 1
+2019-10-29 12:18:02.025 [DBG] [serviceProxyMgr.go:60] SProxyMgr, DelServiceByAppID : 4294967297
+2019-10-29 12:18:02.029 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967298
+2019-10-29 12:18:02.03 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967298
+2019-10-29 12:18:02.03 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967299
+2019-10-29 12:18:02.03 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967299
+2019-10-29 12:18:02.031 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2019-10-29 12:20:34.927 [INF] [app.go:160] services[gateway team]
+2019-10-29 12:20:34.997 [DBG] [app.go:85] App.init, appID: 4294967297
+2019-10-29 12:20:34.998 [INF] [gatewayService.go:23] GatewayService OnInit
+2019-10-29 12:20:34.998 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2019-10-29 12:20:35.118 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2019-10-29 12:20:35.118 [DBG] [localService.go:68] service check : gateway
+2019-10-29 12:20:35.119 [DBG] [localService.go:96] service check success: gateway
+2019-10-29 12:20:35.119 [DBG] [localServiceMgr.go:56] App InitLocalService, name: gateway sid: 4294967298
+2019-10-29 12:20:35.119 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967298 2 4294967297 map[]}
+2019-10-29 12:20:35.12 [DBG] [teamService.go:22] ServiceBService.OnInit
+2019-10-29 12:20:35.12 [DBG] [localService.go:68] service check : team
+2019-10-29 12:20:35.12 [DBG] [localService.go:96] service check success: team
+2019-10-29 12:20:35.12 [DBG] [localServiceMgr.go:56] App InitLocalService, name: team sid: 4294967299
+2019-10-29 12:20:35.12 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967299 3 4294967297 map[]}
+2019-10-29 12:20:35.193 [DBG] [localService.go:210] run service , serviceName: team, serviceType: 3, ServerID: 4294967299 tickMS: 2000
+2019-10-29 12:20:35.193 [DBG] [localService.go:210] run service , serviceName: gateway, serviceType: 2, ServerID: 4294967298 tickMS: 2000
+2019-10-29 12:20:35.193 [INF] [gatewayService.go:53] GatewayService OnConnected, infovec = [0xc0001776c0]
+2019-10-29 12:20:37.971 [DBG] [ProcGateway.go:49] Begin MsgProcLoginReq, UID: 1, sess: 0xc0001329f0
+2019-10-29 12:20:37.971 [INF] [gatewayService.go:60] GatewayService OnLoginHandler, msg.UID = 1
+2019-10-29 12:20:37.971 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-29 12:20:37.971 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:20:37.971 [DBG] [Entity_Props.go:38] InitProp   begin3: prop name: rating , sType: 2
+2019-10-29 12:20:37.972 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:20:37.972 [DBG] [Entity_Props.go:38] InitProp   begin3: prop name: Coin , sType: 2
+2019-10-29 12:20:37.972 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:20:37.972 [DBG] [Entity_Props.go:38] InitProp   begin3: prop name: Friends , sType: 2
+2019-10-29 12:20:37.972 [DBG] [Entity.go:484] InitProp   begin2: sType: 3
+2019-10-29 12:20:37.972 [DBG] [Entity.go:484] InitProp   begin2: sType: 1
+2019-10-29 12:20:37.972 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:20:37.972 [DBG] [Entity_Props.go:38] InitProp   begin3: prop name: Level , sType: 2
+2019-10-29 12:20:37.972 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player , selectPropsmap[Coin:1 Friends:1 Level:1 rating:1]
+2019-10-29 12:20:37.989 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-10-29 12:20:37.991 [DBG] [Entity_Props.go:253] loadFromDB, key is : Level
+2019-10-29 12:20:37.991 [DBG] [Entity_Props.go:253] loadFromDB, key is : Friends
+2019-10-29 12:20:37.991 [WRN] [PropInfo.go:292] prop complex typeFRIENDS
+2019-10-29 12:20:37.991 [DBG] [Entity_Props.go:253] loadFromDB, key is : Coin
+2019-10-29 12:20:37.993 [DBG] [GatewayUser.go:22] GatewayUser.OnUserInit, dbid: 1
+2019-10-29 12:20:37.993 [DBG] [GatewayUserRpc.go:26] RPCHello, name: hello world, id: 1
+2019-10-29 12:20:37.993 [DBG] [GatewayUserRpc.go:54] RPCCreateTeam, name: TestTeam
+2019-10-29 12:20:37.993 [DBG] [GatewayUserRpc.go:36] RPCModifyAttr, name: change attr, index: 1 val: 2
+2019-10-29 12:20:37.993 [DBG] [Entity_Props.go:64] SetProp name begin: Level p.value: 2
+2019-10-29 12:20:37.993 [DBG] [Entity_Props.go:74] SetProp DeepEqual return: Level
+2019-10-29 12:20:37.994 [DBG] [teamServiceRPC.go:17] RPCCreateTeam: 
+2019-10-29 12:20:37.994 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-29 12:20:37.995 [DBG] [Team.go:25] TeamName: test
+2019-10-29 12:20:37.995 [DBG] [Entity_Props.go:28] InitProp   begin1: 
+2019-10-29 12:20:37.995 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:20:37.995 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:20:37.995 [DBG] [Entity.go:484] InitProp   begin2: sType: 2
+2019-10-29 12:20:37.995 [DBG] [Entity.go:484] InitProp   begin2: sType: 3
+2019-10-29 12:20:37.995 [DBG] [Entity_Props.go:38] InitProp   begin3: prop name: Level , sType: 3
+2019-10-29 12:20:37.995 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player , selectPropsmap[Level:1]
+2019-10-29 12:20:38.001 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not *entitydef.FRIENDS, methodName: ModifyAttr, goroutine 53 [running]:
+runtime/debug.Stack(0xc00032b910, 0xb035a0, 0xc0002bb620)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001bb190, 0xa)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
+panic(0xb035a0, 0xc0002bb620)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+entity-call-entity/src/entitydef.(*PlayerDef).GetFriends(...)
+	F:/t_work/go-service/examples/entity-call-entity/src/entitydef/PlayerDef.go:52
+entity-call-entity/src/services/gateway/user.(*GatewayUser).RPCModifyAttr(0xc000232160, 0xc0000f2400, 0xb, 0x200000001)
+	F:/t_work/go-service/examples/entity-call-entity/src/services/gateway/user/GatewayUserRpc.go:44 +0x7b9
+reflect.Value.call(0xbb8e20, 0xc000232160, 0x10213, 0xbbbbfb, 0x4, 0xc00026e4e0, 0x3, 0x4, 0x15, 0x15, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xbb8e20, 0xc000232160, 0x10213, 0xc00026e4e0, 0x3, 0x4, 0xc00026e4e0, 0x3, 0x4)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000232170, 0xc0001bb190, 0xa, 0xc0001e2b60, 0x15, 0x15, 0x0, 0x0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000232170, 0xc0001bb190, 0xa, 0xc0001e2b60, 0x15, 0x15, 0x0, 0x10, 0xc000317ed8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc000232170, 0xc0002e90e0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000232170)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
+created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
+
+2019-10-29 12:20:38.004 [DBG] [GatewayUserRpc.go:36] RPCModifyAttr, name: change attr, index: 1 val: 2
+2019-10-29 12:20:38.015 [DBG] [Entity_Props.go:253] loadFromDB, key is : Level
+2019-10-29 12:20:38.016 [DBG] [Entity_Props.go:64] SetProp name begin: Level p.value: 2
+2019-10-29 12:20:38.054 [DBG] [Entity_Props.go:74] SetProp DeepEqual return: Level
+2019-10-29 12:20:38.062 [DBG] [TeamUser.go:25] PlayerName: Jim
+2019-10-29 12:20:38.063 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not *entitydef.FRIENDS, methodName: ModifyAttr, goroutine 53 [running]:
+runtime/debug.Stack(0xc00032b910, 0xb035a0, 0xc0000e5530)
+	D:/Go/src/runtime/debug/stack.go:24 +0xa4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001734c0, 0xa)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
+panic(0xb035a0, 0xc0000e5530)
+	D:/Go/src/runtime/panic.go:522 +0x1c3
+entity-call-entity/src/entitydef.(*PlayerDef).GetFriends(...)
+	F:/t_work/go-service/examples/entity-call-entity/src/entitydef/PlayerDef.go:52
+entity-call-entity/src/services/gateway/user.(*GatewayUser).RPCModifyAttr(0xc000232160, 0xc0000f2580, 0xb, 0x200000001)
+	F:/t_work/go-service/examples/entity-call-entity/src/services/gateway/user/GatewayUserRpc.go:44 +0x7b9
+reflect.Value.call(0xbb8e20, 0xc000232160, 0x10213, 0xbbbbfb, 0x4, 0xc00026eb40, 0x3, 0x4, 0x15, 0x15, ...)
+	D:/Go/src/reflect/value.go:447 +0x468
+reflect.Value.Call(0xbb8e20, 0xc000232160, 0x10213, 0xc00026eb40, 0x3, 0x4, 0xc00026eb40, 0x3, 0x4)
+	D:/Go/src/reflect/value.go:308 +0xab
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000232170, 0xc0001734c0, 0xa, 0xc0002ce700, 0x15, 0x15, 0x0, 0x0)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000232170, 0xc0001734c0, 0xa, 0xc0002ce700, 0x15, 0x15, 0x0, 0x10, 0xc00032bed8)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
+gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc000232170, 0xc0002d0e00)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
+gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000232170)
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
+created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
+
+2019-10-29 12:20:38.064 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.075 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-29 12:20:38.079 [DBG] [GatewayUserRpc.go:67] RPCCreateTeamResult, teamID: 4294967300
+2019-10-29 12:20:38.093 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.143 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.193 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.243 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.293 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.343 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.393 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.443 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.493 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.543 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.593 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.643 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.693 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.743 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.793 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.843 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.893 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.943 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:38.993 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.043 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.093 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.143 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.193 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.193 [DBG] [Team.go:32] Team.OnLoop
+2019-10-29 12:20:39.193 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-29 12:20:39.243 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.293 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.343 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.393 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.443 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.493 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.543 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.593 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.643 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.693 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.743 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.793 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.843 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.893 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.943 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:39.993 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:40.043 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:40.093 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:40.143 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:40.193 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:40.243 [DBG] [Entity_Props.go:179] SyncProps len1: 0
+2019-10-29 12:20:40.277 [DBG] [teamService.go:36] ServiceBService.OnDestroy
+2019-10-29 12:20:40.278 [DBG] [Team.go:38] OnDestroy
+2019-10-29 12:20:40.289 [DBG] [TeamUser.go:35] OnDestroy
+2019-10-29 12:20:40.289 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-29 12:20:40.29 [INF] [gatewayService.go:42] GatewayService OnDestroy
+2019-10-29 12:20:40.291 [INF] [GatewayBase.go:60] GatewayBase OnDestroy
+2019-10-29 12:20:40.292 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2019-10-29 12:20:40.296 [INF] [GateUserBase.go:125] Logout(), id: 1
+2019-10-29 12:20:40.3 [DBG] [GatewayUser.go:33] GatewayUser.OnUserFini, dbid: 1
+2019-10-29 12:20:40.301 [DBG] [serviceProxyMgr.go:60] SProxyMgr, DelServiceByAppID : 4294967297
+2019-10-29 12:20:40.301 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967299
+2019-10-29 12:20:40.301 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967299
+2019-10-29 12:20:40.301 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967298
+2019-10-29 12:20:40.301 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967298
+2019-10-29 12:20:40.301 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection

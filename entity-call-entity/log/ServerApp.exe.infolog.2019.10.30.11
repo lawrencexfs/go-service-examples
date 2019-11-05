@@ -1,0 +1,55 @@
+2019-10-30 11:43:20.715 [INF] [app.go:204] services[gateway team]
+2019-10-30 11:43:20.804 [DBG] [app.go:125] App.init, appID: 4294967297
+2019-10-30 11:43:20.805 [INF] [gatewayService.go:23] GatewayService OnInit
+2019-10-30 11:43:20.805 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2019-10-30 11:43:20.919 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2019-10-30 11:43:20.919 [DBG] [localService.go:68] service check : gateway
+2019-10-30 11:43:20.919 [DBG] [localService.go:96] service check success: gateway
+2019-10-30 11:43:20.919 [DBG] [localServiceMgr.go:56] App InitLocalService, name: gateway sid: 4294967298
+2019-10-30 11:43:20.919 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967298 2 4294967297 map[]}
+2019-10-30 11:43:20.92 [DBG] [teamService.go:22] ServiceBService.OnInit
+2019-10-30 11:43:20.92 [DBG] [localService.go:68] service check : team
+2019-10-30 11:43:20.92 [DBG] [localService.go:96] service check success: team
+2019-10-30 11:43:20.92 [DBG] [localServiceMgr.go:56] App InitLocalService, name: team sid: 4294967299
+2019-10-30 11:43:20.92 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967299 3 4294967297 map[]}
+2019-10-30 11:43:20.987 [DBG] [localService.go:210] run service , serviceName: gateway, serviceType: 2, ServerID: 4294967298 tickMS: 2000
+2019-10-30 11:43:20.987 [INF] [gatewayService.go:53] GatewayService OnConnected, infovec = [0xc0002ac5e0]
+2019-10-30 11:43:20.987 [DBG] [localService.go:210] run service , serviceName: team, serviceType: 3, ServerID: 4294967299 tickMS: 2000
+2019-10-30 11:43:23.867 [DBG] [ProcGateway.go:49] Begin MsgProcLoginReq, UID: 1, sess: 0xc00017c870
+2019-10-30 11:43:23.867 [INF] [gatewayService.go:60] GatewayService OnLoginHandler, msg.UID = 1
+2019-10-30 11:43:23.867 [DBG] [Entity_Props.go:36] InitProp   begin3: prop name: Coin , sType: 2
+2019-10-30 11:43:23.867 [DBG] [Entity_Props.go:36] InitProp   begin3: prop name: Friends , sType: 2
+2019-10-30 11:43:23.867 [DBG] [Entity_Props.go:36] InitProp   begin3: prop name: Level , sType: 2
+2019-10-30 11:43:23.867 [DBG] [Entity_Props.go:36] InitProp   begin3: prop name: rating , sType: 2
+2019-10-30 11:43:23.867 [DBG] [Entity_Props.go:242] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player , selectPropsmap[Coin:1 Friends:1 Level:1 rating:1]
+2019-10-30 11:43:23.885 [INF] [dbservice.go:59] connect MongoDB success, addr = mongodb://game:123456@192.168.133.33:27017/game
+2019-10-30 11:43:23.889 [DBG] [Entity_Props.go:257] loadFromDB, key is : Coin
+2019-10-30 11:43:23.889 [DBG] [Entity_Props.go:257] loadFromDB, key is : Level
+2019-10-30 11:43:23.889 [DBG] [Entity_Props.go:257] loadFromDB, key is : Friends
+2019-10-30 11:43:23.889 [DBG] [PropInfo.go:328] set prop val: [48 0 0 0 4 77 121 70 114 105 101 110 100 115 68 98 105 100 0 5 0 0 0 0 4 65 112 112 108 121 70 114 105 101 110 100 115 68 98 105 100 0 5 0 0 0 0 0] name: Friends typename: FRIENDS elems: [{_id {7 [93 10 239 87 162 254 3 97 124 184 221 26]}} {Friends {3 [48 0 0 0 4 77 121 70 114 105 101 110 100 115 68 98 105 100 0 5 0 0 0 0 4 65 112 112 108 121 70 114 105 101 110 100 115 68 98 105 100 0 5 0 0 0 0 0]}} {Coin {16 [171 31 0 0]}} {Level {16 [2 0 0 0]}}]
+2019-10-30 11:43:23.889 [WRN] [PropInfo.go:328] prop complex type: FRIENDS
+2019-10-30 11:43:23.891 [DBG] [GatewayUser.go:22] GatewayUser.OnUserInit, dbid: 1
+2019-10-30 11:43:23.892 [DBG] [GatewayUserRpc.go:26] RPCHello, name: hello world, id: 1
+2019-10-30 11:43:23.892 [DBG] [GatewayUserRpc.go:54] RPCCreateTeam, name: TestTeam
+2019-10-30 11:43:23.892 [DBG] [GatewayUserRpc.go:36] RPCModifyAttr, name: change attr, index: 1 val: 2
+2019-10-30 11:43:23.892 [DBG] [teamServiceRPC.go:17] RPCCreateTeam: 
+2019-10-30 11:43:23.894 [DBG] [GatewayUserRpc.go:47] RPCModifyAttr, name: change attr, index: 1 val: 2 ,selectProps: map[Friends:1] ,ret: map[Friends:map[ApplyFriendsDbid:[] MyFriendsDbid:[]] _id:ObjectIdHex("5d0aef57a2fe03617cb8dd1a")] ,friends: &{[] [] }
+2019-10-30 11:43:23.894 [DBG] [GatewayUserRpc.go:36] RPCModifyAttr, name: change attr, index: 1 val: 2
+2019-10-30 11:43:23.895 [DBG] [Team.go:25] TeamName: test
+2019-10-30 11:43:23.895 [DBG] [Entity_Props.go:36] InitProp   begin3: prop name: Level , sType: 3
+2019-10-30 11:43:23.895 [DBG] [Entity_Props.go:242] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName: player , selectPropsmap[Level:1]
+2019-10-30 11:43:23.897 [DBG] [GatewayUserRpc.go:47] RPCModifyAttr, name: change attr, index: 1 val: 2 ,selectProps: map[Friends:1] ,ret: map[Friends:map[ApplyFriendsDbid:[] MyFriendsDbid:[]] _id:ObjectIdHex("5d0aef57a2fe03617cb8dd1a")] ,friends: &{[] [] }
+2019-10-30 11:43:23.911 [DBG] [Entity_Props.go:257] loadFromDB, key is : Level
+2019-10-30 11:43:23.912 [DBG] [TeamUser.go:25] PlayerName: Jim
+2019-10-30 11:43:23.912 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-30 11:43:23.912 [DBG] [GatewayUserRpc.go:67] RPCCreateTeamResult, teamID: 4294967300
+2019-10-30 11:43:24.987 [DBG] [Team.go:32] Team.OnLoop
+2019-10-30 11:43:24.987 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2019-10-30 11:43:26.954 [ERR] [session.go:286] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:59309: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:59309, sessionid: 1, localAddr: 127.0.0.1:17000
+2019-10-30 11:43:26.955 [ERR] [session.go:298] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:59309: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:59309,  localAddr: 127.0.0.1:17000, sessionid: 1
+2019-10-30 11:43:26.955 [DBG] [ProcGateway.go:171] PGatewayServer OnClosed, ID: 1, sess: 0xc00017c870
+2019-10-30 11:43:26.955 [INF] [GateUserBase.go:125] Logout(), id: 1
+2019-10-30 11:43:26.958 [DBG] [GatewayUser.go:33] GatewayUser.OnUserFini, dbid: 1
+2019-10-30 11:43:26.97 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2019-10-30 11:43:26.987 [DBG] [Team.go:32] Team.OnLoop
+2019-10-30 11:43:26.987 [DBG] [TeamUser.go:31] TeamUser.OnLoop
