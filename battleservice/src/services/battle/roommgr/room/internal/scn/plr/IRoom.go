@@ -2,7 +2,7 @@ package plr
 
 import (
 	"battleservice/src/services/battle/types"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/base/net/inet"
+	"github.com/giant-tech/go-service/base/net/inet"
 )
 
 type IRoom interface {

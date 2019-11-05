@@ -1,6 +1,6 @@
 package servicetype
 
-import "github.com/GA-TECH-SERVER/zeus/framework/idata"
+import "github.com/giant-tech/go-service//framework/idata"
 
 // ServiceTypeClient 客户端
 const ServiceTypeClient idata.ServiceType = idata.ServiceClient

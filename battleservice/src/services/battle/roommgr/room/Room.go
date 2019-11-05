@@ -12,7 +12,7 @@ import (
 	"runtime/debug"
 	"time"
 	"battleservice/src/services/battle/usercmd"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/base/net/inet"
+	"github.com/giant-tech/go-service/base/net/inet"
 
 	"go.uber.org/atomic"
 

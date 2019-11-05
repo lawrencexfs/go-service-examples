@@ -1,6 +1,6 @@
 package entitydef
 
-import "gitlab.ztgame.com/tech/public/go-service/zeus/framework//iserver"
+import "github.com/giant-tech/go-service/framework//iserver"
 
 // PlayerDef 自动生成的属性包装代码
 type PlayerDef struct {

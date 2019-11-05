@@ -6,12 +6,12 @@ import (
 	"sync"
 	"time"
 
-	"gitlab.ztgame.com/tech/public/go-service/zeus/base/net/client"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/base/net/inet"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/base/serializer"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/idata"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/msgdef"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler"
+	"github.com/giant-tech/go-service/base/net/client"
+	"github.com/giant-tech/go-service/base/net/inet"
+	"github.com/giant-tech/go-service/base/serializer"
+	"github.com/giant-tech/go-service/framework/idata"
+	"github.com/giant-tech/go-service/framework/msgdef"
+	"github.com/giant-tech/go-service/framework/msghandler"
 
 	"go.uber.org/atomic"
 

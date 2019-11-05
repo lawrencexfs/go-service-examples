@@ -10,8 +10,8 @@ import (
 
 	"github.com/cihub/seelog"
 	"github.com/spf13/viper"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/base/net/server"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/service"
+	"github.com/giant-tech/go-service/base/net/server"
+	"github.com/giant-tech/go-service/framework/service"
 )
 
 // BattleService 战斗服务

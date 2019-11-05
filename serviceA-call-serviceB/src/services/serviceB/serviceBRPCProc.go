@@ -3,7 +3,7 @@ package serviceB
 import (
 	"serviceA-call-serviceB/src/services/servicetype"
 
-	"github.com/GA-TECH-SERVER/zeus/framework/iserver"
+	"github.com/giant-tech/go-service//framework/iserver"
 
 	log "github.com/cihub/seelog"
 )

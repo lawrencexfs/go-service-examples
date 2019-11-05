@@ -5,11 +5,11 @@
 2019-10-30 17:38:09.428 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:runtime error: invalid memory address or nil pointer dereference, methodName: ModifyAttr, goroutine 6 [running]:
 runtime/debug.Stack(0xc00036b860, 0xafeb60, 0x11c13c0)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc000066b40, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc000066b40, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.30/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xafeb60, 0x11c13c0)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).GetProp(0xc00009c850, 0xbbdfe0, 0x5, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/entity.(*Entity).GetProp(0xc00009c850, 0xbbdfe0, 0x5, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.30/framework/entity/Entity_Props.go:83 +0x61
 entity-call-entity/src/entitydef.(*PlayerDef).Getheros(0xc00009c840, 0xbbf96d)
 	F:/t_work/go-service/examples/entity-call-entity/src/entitydef/PlayerDef.go:92 +0x53
@@ -19,17 +19,17 @@ reflect.Value.call(0xbba2a0, 0xc00009c840, 0x10213, 0xbbd07b, 0x4, 0xc0002fa5a0,
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbba2a0, 0xc00009c840, 0x10213, 0xc0002fa5a0, 0x3, 0x4, 0xc0002fa5a0, 0x3, 0x4)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc00009c850, 0xc000066b40, 0xa, 0xc000064c40, 0x15, 0x15, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc00009c850, 0xc000066b40, 0xa, 0xc000064c40, 0x15, 0x15, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.30/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc00009c850, 0xc000066b40, 0xa, 0xc000064c40, 0x15, 0x15, 0x0, 0x10, 0xc00035ded8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc00009c850, 0xc000066b40, 0xa, 0xc000064c40, 0x15, 0x15, 0x0, 0x10, 0xc00035ded8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.30/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc00009c850, 0xc000360240)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc00009c850, 0xc000360240)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.30/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.30/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc00009c850)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc00009c850)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.30/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.30/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-30 17:42:28.664 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection

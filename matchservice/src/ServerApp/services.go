@@ -5,7 +5,7 @@ import (
 	"matchservice/src/services/matchclient"
 	"matchservice/src/services/servicetype"
 
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/service"
+	"github.com/giant-tech/go-service/framework/service"
 )
 
 // regAllServices 注册所有的逻辑服务

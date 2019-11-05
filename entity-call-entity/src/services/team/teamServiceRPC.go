@@ -5,8 +5,8 @@ import (
 	"entity-call-entity/src/services/team/teamdata"
 
 	log "github.com/cihub/seelog"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/iserver"
+	"github.com/giant-tech/go-service/framework/entity"
+	"github.com/giant-tech/go-service/framework/iserver"
 )
 
 // RPCCreateTeam 创建队伍

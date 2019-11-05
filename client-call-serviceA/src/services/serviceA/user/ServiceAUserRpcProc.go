@@ -2,7 +2,7 @@ package user
 
 import (
 	log "github.com/cihub/seelog"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/idata"
+	"github.com/giant-tech/go-service/framework/idata"
 )
 
 // RPCHello rpc hello

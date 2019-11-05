@@ -2,8 +2,8 @@ package mf
 
 import (
 	"github.com/cihub/seelog"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/logic/matchbase/matchdata"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/logic/matchbase/matchitf"
+	"github.com/giant-tech/go-service/logic/matchbase/matchdata"
+	"github.com/giant-tech/go-service/logic/matchbase/matchitf"
 )
 
 // MatchNotify 自定义通知函数

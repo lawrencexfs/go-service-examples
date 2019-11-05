@@ -4,9 +4,9 @@ import (
 	"matchservice/src/services/servicetype"
 	"strconv"
 
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/iserver"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/service"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/logic/matchbase/matchdata"
+	"github.com/giant-tech/go-service/framework/iserver"
+	"github.com/giant-tech/go-service/framework/service"
+	"github.com/giant-tech/go-service/logic/matchbase/matchdata"
 
 	log "github.com/cihub/seelog"
 )

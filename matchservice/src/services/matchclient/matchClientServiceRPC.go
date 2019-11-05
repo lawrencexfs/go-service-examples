@@ -2,7 +2,7 @@ package matchclient
 
 import (
 	"github.com/cihub/seelog"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/logic/matchbase/matchdata"
+	"github.com/giant-tech/go-service/logic/matchbase/matchdata"
 )
 
 // RPCMatchResult 匹配结果

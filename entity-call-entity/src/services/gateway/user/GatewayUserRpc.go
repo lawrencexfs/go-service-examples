@@ -4,13 +4,13 @@ import (
 	"entity-call-entity/src/services/servicetype"
 	"entity-call-entity/src/services/team/teamdata"
 
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/idata"
+	"github.com/giant-tech/go-service/framework/idata"
 
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/iserver"
+	"github.com/giant-tech/go-service/framework/iserver"
 
 	log "github.com/cihub/seelog"
 	"github.com/globalsign/mgo/bson"
-	dbservice "gitlab.ztgame.com/tech/public/go-service/zeus/base/mongodbservice"
+	dbservice "github.com/giant-tech/go-service/base/mongodbservice"
 
 	"entity-call-entity/src/entitydef"
 )

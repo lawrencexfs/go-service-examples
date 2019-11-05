@@ -7,7 +7,7 @@ import (
 	"math"
 	"math/rand"
 	"time"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/base/net/inet"
+	"github.com/giant-tech/go-service/base/net/inet"
 
 	"battleservice/src/services/base/ape"
 	"github.com/cihub/seelog"

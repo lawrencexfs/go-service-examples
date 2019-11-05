@@ -2,9 +2,9 @@ package user
 
 import (
 	"github.com/cihub/seelog"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/base/net/inet"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/igateway"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase"
+	"github.com/giant-tech/go-service/base/net/inet"
+	"github.com/giant-tech/go-service/logic/gatewaybase/igateway"
+	"github.com/giant-tech/go-service/logic/gatewaybase/userbase"
 
 	"entity-call-entity/src/entitydef"
 )

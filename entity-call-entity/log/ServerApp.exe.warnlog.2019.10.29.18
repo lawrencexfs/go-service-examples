@@ -2,35 +2,35 @@
 2019-10-29 18:09:04.036 [ERR] [msghdl.go:54] handle msg is panic:1 interface conversion: interface {} is []uint8, not intgoroutine 27 [running]:
 runtime/debug.Stack(0xc000359410, 0xb035a0, 0xc0003203f0)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal/msghdl.(*MessageHandler).HandleRawMsg.func1(0xc0002c0001)
+github.com/giant-tech/go-service/base/net/internal/internal/msghdl.(*MessageHandler).HandleRawMsg.func1(0xc0002c0001)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/base/net/internal/internal/msghdl/msghdl.go:53 +0x5e
 panic(0xb035a0, 0xc0003203f0)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*PropInfo).UnPackMongoValue(0xc0001ed480, 0xab7640, 0xc0001ed920)
+github.com/giant-tech/go-service/framework/entity.(*PropInfo).UnPackMongoValue(0xc0001ed480, 0xab7640, 0xc0001ed920)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/PropInfo.go:308 +0x87c
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).loadFromDB(0xc0002f2010)
+github.com/giant-tech/go-service/framework/entity.(*Entity).loadFromDB(0xc0002f2010)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_Props.go:273 +0x62a
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).InitProp(0xc0002f2010, 0xc0000ff0c0, 0xbbd401)
+github.com/giant-tech/go-service/framework/entity.(*Entity).InitProp(0xc0002f2010, 0xc0000ff0c0, 0xbbd401)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_Props.go:49 +0x4a3
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).OnEntityInit(0xc0002f2010)
+github.com/giant-tech/go-service/framework/entity.(*Entity).OnEntityInit(0xc0002f2010)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:335 +0x98
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).OnEntityCreated(0xc0002f2010, 0x1, 0xbbd4e2, 0x6, 0x0, 0xbb8e20, 0xc0002f2000, 0xcc8660, 0xc00020a280, 0xaa3420, ...)
+github.com/giant-tech/go-service/framework/entity.(*Entity).OnEntityCreated(0xc0002f2010, 0x1, 0xbbd4e2, 0x6, 0x0, 0xbb8e20, 0xc0002f2000, 0xcc8660, 0xc00020a280, 0xaa3420, ...)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:259 +0x2e8
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID(0xc00020a280, 0xbbd4e2, 0x6, 0x1, 0x0, 0xaa3420, 0xc0001955c0, 0xc0002c7901, 0x0, 0x20, ...)
+github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID(0xc00020a280, 0xbbd4e2, 0x6, 0x1, 0x0, 0xaa3420, 0xc0001955c0, 0xc0002c7901, 0x0, 0x20, ...)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:158 +0x26e
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/proc.(*PGatewayServer).MsgProcLoginReq(0xc000062900, 0xc00020ccc0)
+github.com/giant-tech/go-service/logic/gatewaybase/proc.(*PGatewayServer).MsgProcLoginReq(0xc000062900, 0xc00020ccc0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/proc/ProcGateway.go:116 +0x76d
 reflect.Value.call(0xb356c0, 0xc000062900, 0x613, 0xbbbbfb, 0x4, 0xc0002c7e28, 0x1, 0x1, 0x1, 0x11c6ff0, ...)
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xb356c0, 0xc000062900, 0x613, 0xc0002c7e28, 0x1, 0x1, 0x0, 0x0, 0x11d6180)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal/msghdl.(*MessageHandler).HandleRawMsg(0xc000092180, 0x2540b0001, 0xc000240962, 0xf, 0xf)
+github.com/giant-tech/go-service/base/net/internal/internal/msghdl.(*MessageHandler).HandleRawMsg(0xc000092180, 0x2540b0001, 0xc000240962, 0xf, 0xf)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/base/net/internal/internal/msghdl/msghdl.go:79 +0x34d
-gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal.(*Session).readAndHandleOneMsg(0xc0000c0370, 0xc000050660, 0x0)
+github.com/giant-tech/go-service/base/net/internal/internal.(*Session).readAndHandleOneMsg(0xc0000c0370, 0xc000050660, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/base/net/internal/internal/session.go:497 +0x41c
-gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal.(*Session).recvLoop(0xc0000c0370)
+github.com/giant-tech/go-service/base/net/internal/internal.(*Session).recvLoop(0xc0000c0370)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/base/net/internal/internal/session.go:280 +0x9a
-created by gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/internal.(*Session).Start
+created by github.com/giant-tech/go-service/base/net/internal/internal.(*Session).Start
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/base/net/internal/internal/session.go:111 +0x62
 
 2019-10-29 18:09:04.036 [ERR] [session.go:286] recvLoop error: Session verification failed, remoteAddr: 127.0.0.1:61939, sessionid: 1, localAddr: 127.0.0.1:17000
@@ -42,7 +42,7 @@ created by gitlab.ztgame.com/tech/public/go-service/zeus/base/net/internal/inter
 2019-10-29 18:13:38.02 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not *entitydef.FRIENDS, methodName: ModifyAttr, goroutine 38 [running]:
 runtime/debug.Stack(0xc00033f910, 0xb03620, 0xc00010de90)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001dd600, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001dd600, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xb03620, 0xc00010de90)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
@@ -54,23 +54,23 @@ reflect.Value.call(0xbb8ea0, 0xc000164160, 0x10213, 0xbbbc7b, 0x4, 0xc0002f4de0,
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbb8ea0, 0xc000164160, 0x10213, 0xc0002f4de0, 0x3, 0x4, 0xc0002f4de0, 0x3, 0x4)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000164170, 0xc0001dd600, 0xa, 0xc00021ce00, 0x15, 0x15, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000164170, 0xc0001dd600, 0xa, 0xc00021ce00, 0x15, 0x15, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000164170, 0xc0001dd600, 0xa, 0xc00021ce00, 0x15, 0x15, 0x0, 0x10, 0xc0002dfed8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000164170, 0xc0001dd600, 0xa, 0xc00021ce00, 0x15, 0x15, 0x0, 0x10, 0xc0002dfed8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc000164170, 0xc000313c80)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc000164170, 0xc000313c80)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000164170)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000164170)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-29 18:13:38.054 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not *entitydef.FRIENDS, methodName: ModifyAttr, goroutine 38 [running]:
 runtime/debug.Stack(0xc00033f910, 0xb03620, 0xc0003643c0)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001dd680, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001dd680, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xb03620, 0xc0003643c0)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
@@ -82,17 +82,17 @@ reflect.Value.call(0xbb8ea0, 0xc000164160, 0x10213, 0xbbbc7b, 0x4, 0xc000352a80,
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbb8ea0, 0xc000164160, 0x10213, 0xc000352a80, 0x3, 0x4, 0xc000352a80, 0x3, 0x4)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000164170, 0xc0001dd680, 0xa, 0xc00021cf40, 0x15, 0x15, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000164170, 0xc0001dd680, 0xa, 0xc00021cf40, 0x15, 0x15, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000164170, 0xc0001dd680, 0xa, 0xc00021cf40, 0x15, 0x15, 0x0, 0x10, 0xc00033fed8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000164170, 0xc0001dd680, 0xa, 0xc00021cf40, 0x15, 0x15, 0x0, 0x10, 0xc00033fed8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc000164170, 0xc000313d00)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc000164170, 0xc000313d00)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000164170)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000164170)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-29 18:13:40.967 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
@@ -101,7 +101,7 @@ created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Enti
 2019-10-29 18:23:23.457 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not *entitydef.FRIENDS, methodName: ModifyAttr, goroutine 28 [running]:
 runtime/debug.Stack(0xc000367910, 0xb03620, 0xc000368060)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc000066ca0, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc000066ca0, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xb03620, 0xc000368060)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
@@ -113,23 +113,23 @@ reflect.Value.call(0xbb8ea0, 0xc00009c840, 0x10213, 0xbbbc7b, 0x4, 0xc0002690e0,
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbb8ea0, 0xc00009c840, 0x10213, 0xc0002690e0, 0x3, 0x4, 0xc0002690e0, 0x3, 0x4)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc00009c850, 0xc000066ca0, 0xa, 0xc000064a80, 0x15, 0x15, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc00009c850, 0xc000066ca0, 0xa, 0xc000064a80, 0x15, 0x15, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc00009c850, 0xc000066ca0, 0xa, 0xc000064a80, 0x15, 0x15, 0x0, 0x10, 0xc0002e9ed8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc00009c850, 0xc000066ca0, 0xa, 0xc000064a80, 0x15, 0x15, 0x0, 0x10, 0xc0002e9ed8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc00009c850, 0xc0003531a0)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc00009c850, 0xc0003531a0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc00009c850)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc00009c850)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-29 18:23:23.491 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not *entitydef.FRIENDS, methodName: ModifyAttr, goroutine 28 [running]:
 runtime/debug.Stack(0xc000367910, 0xb03620, 0xc0003688a0)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001f4940, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001f4940, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xb03620, 0xc0003688a0)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
@@ -141,17 +141,17 @@ reflect.Value.call(0xbb8ea0, 0xc00009c840, 0x10213, 0xbbbc7b, 0x4, 0xc000373bc0,
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbb8ea0, 0xc00009c840, 0x10213, 0xc000373bc0, 0x3, 0x4, 0xc000373bc0, 0x3, 0x4)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc00009c850, 0xc0001f4940, 0xa, 0xc000115820, 0x15, 0x15, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc00009c850, 0xc0001f4940, 0xa, 0xc000115820, 0x15, 0x15, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc00009c850, 0xc0001f4940, 0xa, 0xc000115820, 0x15, 0x15, 0x0, 0x10, 0xc000367ed8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc00009c850, 0xc0001f4940, 0xa, 0xc000115820, 0x15, 0x15, 0x0, 0x10, 0xc000367ed8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc00009c850, 0xc000209360)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc00009c850, 0xc000209360)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc00009c850)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc00009c850)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-29 18:23:26.634 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
@@ -160,7 +160,7 @@ created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Enti
 2019-10-29 18:36:26.103 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not []uint8, methodName: ModifyAttr, goroutine 7 [running]:
 runtime/debug.Stack(0xc0003578b0, 0xb03620, 0xc00031cc30)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0000195a0, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0000195a0, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xb03620, 0xc00031cc30)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
@@ -172,23 +172,23 @@ reflect.Value.call(0xbb8ea0, 0xc0001822c0, 0x10213, 0xbbbc7b, 0x4, 0xc00033f800,
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbb8ea0, 0xc0001822c0, 0x10213, 0xc00033f800, 0x3, 0x4, 0xc00033f800, 0x3, 0x4)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0001822d0, 0xc0000195a0, 0xa, 0xc00022b580, 0x15, 0x15, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0001822d0, 0xc0000195a0, 0xa, 0xc00022b580, 0x15, 0x15, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0001822d0, 0xc0000195a0, 0xa, 0xc00022b580, 0x15, 0x15, 0x0, 0x10, 0xc00034bed8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0001822d0, 0xc0000195a0, 0xa, 0xc00022b580, 0x15, 0x15, 0x0, 0x10, 0xc00034bed8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc0001822d0, 0xc000331ac0)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc0001822d0, 0xc000331ac0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0001822d0)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0001822d0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-29 18:36:26.113 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not []uint8, methodName: ModifyAttr, goroutine 7 [running]:
 runtime/debug.Stack(0xc0003578b0, 0xb03620, 0xc0001ff140)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc00021e500, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc00021e500, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xb03620, 0xc0001ff140)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
@@ -200,17 +200,17 @@ reflect.Value.call(0xbb8ea0, 0xc0001822c0, 0x10213, 0xbbbc7b, 0x4, 0xc0002f2a20,
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbb8ea0, 0xc0001822c0, 0x10213, 0xc0002f2a20, 0x3, 0x4, 0xc0002f2a20, 0x3, 0x4)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0001822d0, 0xc00021e500, 0xa, 0xc0002025a0, 0x15, 0x15, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0001822d0, 0xc00021e500, 0xa, 0xc0002025a0, 0x15, 0x15, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0001822d0, 0xc00021e500, 0xa, 0xc0002025a0, 0x15, 0x15, 0x0, 0x10, 0xc000357ed8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0001822d0, 0xc00021e500, 0xa, 0xc0002025a0, 0x15, 0x15, 0x0, 0x10, 0xc000357ed8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc0001822d0, 0xc000199440)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc0001822d0, 0xc000199440)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0001822d0)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0001822d0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-29 18:36:28.476 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
@@ -219,7 +219,7 @@ created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Enti
 2019-10-29 18:41:53.264 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not []uint8, methodName: ModifyAttr, goroutine 58 [running]:
 runtime/debug.Stack(0xc0003378b0, 0xb03620, 0xc0000df950)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc00018f700, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc00018f700, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xb03620, 0xc0000df950)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
@@ -231,23 +231,23 @@ reflect.Value.call(0xbb8ea0, 0xc000088b00, 0x10213, 0xbbbc7b, 0x4, 0xc0003149c0,
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbb8ea0, 0xc000088b00, 0x10213, 0xc0003149c0, 0x3, 0x4, 0xc0003149c0, 0x3, 0x4)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000088b10, 0xc00018f700, 0xa, 0xc00001be00, 0x15, 0x15, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000088b10, 0xc00018f700, 0xa, 0xc00001be00, 0x15, 0x15, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000088b10, 0xc00018f700, 0xa, 0xc00001be00, 0x15, 0x15, 0x0, 0x10, 0xc000329ed8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000088b10, 0xc00018f700, 0xa, 0xc00001be00, 0x15, 0x15, 0x0, 0x10, 0xc000329ed8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc000088b10, 0xc000310a80)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc000088b10, 0xc000310a80)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000088b10)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000088b10)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-29 18:41:53.292 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not []uint8, methodName: ModifyAttr, goroutine 58 [running]:
 runtime/debug.Stack(0xc0003378b0, 0xb03620, 0xc0003209f0)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc00018f7d0, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc00018f7d0, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xb03620, 0xc0003209f0)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
@@ -259,17 +259,17 @@ reflect.Value.call(0xbb8ea0, 0xc000088b00, 0x10213, 0xbbbc7b, 0x4, 0xc0000e6a20,
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbb8ea0, 0xc000088b00, 0x10213, 0xc0000e6a20, 0x3, 0x4, 0xc0000e6a20, 0x3, 0x4)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000088b10, 0xc00018f7d0, 0xa, 0xc00001bfa0, 0x15, 0x15, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc000088b10, 0xc00018f7d0, 0xa, 0xc00001bfa0, 0x15, 0x15, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000088b10, 0xc00018f7d0, 0xa, 0xc00001bfa0, 0x15, 0x15, 0x0, 0x10, 0xc000337ed8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc000088b10, 0xc00018f7d0, 0xa, 0xc00001bfa0, 0x15, 0x15, 0x0, 0x10, 0xc000337ed8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc000088b10, 0xc000310c40)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc000088b10, 0xc000310c40)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000088b10)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc000088b10)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-29 18:41:56.515 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
@@ -278,7 +278,7 @@ created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Enti
 2019-10-29 18:47:10.652 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not []uint8, methodName: ModifyAttr, goroutine 70 [running]:
 runtime/debug.Stack(0xc00036f8b0, 0xb03620, 0xc0002afad0)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001ef370, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc0001ef370, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xb03620, 0xc0002afad0)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
@@ -290,23 +290,23 @@ reflect.Value.call(0xbb8ea0, 0xc0001a8160, 0x10213, 0xbbbc7b, 0x4, 0xc0000f75c0,
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbb8ea0, 0xc0001a8160, 0x10213, 0xc0000f75c0, 0x3, 0x4, 0xc0000f75c0, 0x3, 0x4)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0001a8170, 0xc0001ef370, 0xa, 0xc00001bfe0, 0x15, 0x15, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0001a8170, 0xc0001ef370, 0xa, 0xc00001bfe0, 0x15, 0x15, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0001a8170, 0xc0001ef370, 0xa, 0xc00001bfe0, 0x15, 0x15, 0x0, 0x10, 0xc0002c9ed8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0001a8170, 0xc0001ef370, 0xa, 0xc00001bfe0, 0x15, 0x15, 0x0, 0x10, 0xc0002c9ed8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc0001a8170, 0xc0003575a0)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc0001a8170, 0xc0003575a0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0001a8170)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0001a8170)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-29 18:47:10.671 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:interface conversion: interface {} is bson.M, not []uint8, methodName: ModifyAttr, goroutine 70 [running]:
 runtime/debug.Stack(0xc00036f8b0, 0xb03620, 0xc0003d20f0)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc000104c60, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xc000104c60, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xb03620, 0xc0003d20f0)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
@@ -318,17 +318,17 @@ reflect.Value.call(0xbb8ea0, 0xc0001a8160, 0x10213, 0xbbbc7b, 0x4, 0xc0002dd380,
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbb8ea0, 0xc0001a8160, 0x10213, 0xc0002dd380, 0x3, 0x4, 0xc0002dd380, 0x3, 0x4)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0001a8170, 0xc000104c60, 0xa, 0xc00024cca0, 0x15, 0x15, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0001a8170, 0xc000104c60, 0xa, 0xc00024cca0, 0x15, 0x15, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0001a8170, 0xc000104c60, 0xa, 0xc00024cca0, 0x15, 0x15, 0x0, 0x10, 0xc00036fed8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0001a8170, 0xc000104c60, 0xa, 0xc00024cca0, 0x15, 0x15, 0x0, 0x10, 0xc00036fed8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc0001a8170, 0xc000101460)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc0001a8170, 0xc000101460)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0001a8170)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc0001a8170)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-29 18:47:13.3 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection

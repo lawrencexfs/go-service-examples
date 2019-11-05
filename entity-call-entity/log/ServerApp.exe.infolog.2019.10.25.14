@@ -31,27 +31,27 @@
 2019-10-25 14:34:50.637 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:ffffffffffffffffffffffff, methodName: SyncEntitySrvInfo, goroutine 22 [running]:
 runtime/debug.Stack(0xc00033b9a8, 0xabf960, 0xc9f580)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xbc4fce, 0x11)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xbc4fce, 0x11)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xabf960, 0xc9f580)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).RPCSyncEntitySrvInfo(0xc00009c6f0)
+github.com/giant-tech/go-service/framework/entity.(*Entity).RPCSyncEntitySrvInfo(0xc00009c6f0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_MsgProc.go:9 +0xfc
 reflect.Value.call(0xbb7e20, 0xc00009c6e0, 0x10613, 0xbbabfb, 0x4, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xbb7e20, 0xc00009c6e0, 0x10613, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc00009c6f0, 0xbc4fce, 0x11, 0x11edb70, 0x0, 0x0, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc00009c6f0, 0xbc4fce, 0x11, 0x11edb70, 0x0, 0x0, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc00009c6f0, 0xbc4fce, 0x11, 0x11edb70, 0x0, 0x0, 0x0, 0x10, 0xc00033bed8)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc00009c6f0, 0xbc4fce, 0x11, 0x11edb70, 0x0, 0x0, 0x0, 0x10, 0xc00033bed8)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).ProcessCall(0xc00009c6f0, 0xc000345360)
+github.com/giant-tech/go-service/framework/entity.(*Entity).ProcessCall(0xc00009c6f0, 0xc000345360)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:479 +0x8a
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run.func1()
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:79 +0x128
-gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc00009c6f0)
+github.com/giant-tech/go-service/logic/gatewaybase/userbase.(*GateUserBase).Run(0xc00009c6f0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/logic/gatewaybase/userbase/GateUserBase.go:84 +0x121
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID
+created by github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:187 +0x3c3
 
 2019-10-25 14:34:50.637 [DBG] [TeamUser.go:25] PlayerName: Jim
@@ -116,19 +116,19 @@ created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Enti
 2019-10-25 14:37:17.152 [ERR] [RPCHandlers.go:94] doAsyncRPCMsg panic:ffffffffffffffffffffffff, methodName: CreateTeam, goroutine 52 [running]:
 runtime/debug.Stack(0xc000375470, 0xabf960, 0xc9f6b0)
 	D:/Go/src/runtime/debug/stack.go:24 +0xa4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xbbfe7a, 0xa)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg.func1(0xbbfe7a, 0xa)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:93 +0x5e
 panic(0xabf960, 0xc9f6b0)
 	D:/Go/src/runtime/panic.go:522 +0x1c3
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).broadcastSrvInfo(0xc0002e6500)
+github.com/giant-tech/go-service/framework/entity.(*Entity).broadcastSrvInfo(0xc0002e6500)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_SrvInfo.go:113 +0x1eb
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).RegSrvID(0xc0002e6500)
+github.com/giant-tech/go-service/framework/entity.(*Entity).RegSrvID(0xc0002e6500)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity_SrvInfo.go:80 +0x1dd
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).OnEntityInit(0xc0002e6500)
+github.com/giant-tech/go-service/framework/entity.(*Entity).OnEntityInit(0xc0002e6500)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:337 +0xa6
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entity).OnEntityCreated(0xc0002e6500, 0x1, 0xbbc4e3, 0x6, 0x100000004, 0xbb57e0, 0xc0002e6500, 0xcc74e0, 0xc000200dc0, 0xa9cd60, ...)
+github.com/giant-tech/go-service/framework/entity.(*Entity).OnEntityCreated(0xc0002e6500, 0x1, 0xbbc4e3, 0x6, 0x100000004, 0xbb57e0, 0xc0002e6500, 0xcc74e0, 0xc000200dc0, 0xa9cd60, ...)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entity.go:259 +0x2e8
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity.(*Entities).CreateEntityWithID(0xc000200dc0, 0xbbc4e3, 0x6, 0x1, 0x100000004, 0xa9cd60, 0xc0001b19a0, 0x1, 0x0, 0x0, ...)
+github.com/giant-tech/go-service/framework/entity.(*Entities).CreateEntityWithID(0xc000200dc0, 0xbbc4e3, 0x6, 0x1, 0x100000004, 0xa9cd60, 0xc0001b19a0, 0x1, 0x0, 0x0, ...)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/entity/Entities.go:158 +0x26e
 entity-call-entity/src/services/team.(*TeamService).RPCCreateTeam(0xc000188d40, 0xc0001b1980)
 	F:/t_work/go-service/examples/entity-call-entity/src/services/team/teamServiceRPC.go:32 +0x25d
@@ -136,19 +136,19 @@ reflect.Value.call(0xba51a0, 0xc000188d40, 0x7a13, 0xbbabfb, 0x4, 0xc0001b1960, 
 	D:/Go/src/reflect/value.go:447 +0x468
 reflect.Value.Call(0xba51a0, 0xc000188d40, 0x7a13, 0xc0001b1960, 0x1, 0x1, 0xc0001b1960, 0x1, 0x1)
 	D:/Go/src/reflect/value.go:308 +0xab
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0001b2050, 0xbbfe7a, 0xa, 0xc000209320, 0x13, 0x13, 0x0, 0x0)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).doAsyncRPCMsg(0xc0001b2050, 0xbbfe7a, 0xa, 0xc000209320, 0x13, 0x13, 0x0, 0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:114 +0x33d
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0001b2050, 0xbbfe7a, 0xa, 0xc000209320, 0x13, 0x13, 0x0, 0x28, 0x2)
+github.com/giant-tech/go-service/framework/msghandler.(*RPCHandlers).DoRPCMsg(0xc0001b2050, 0xbbfe7a, 0xa, 0xc000209320, 0x13, 0x13, 0x0, 0x28, 0x2)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/msghandler/RPCHandlers.go:82 +0xe4
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/service.(*LocalService).processCall(0xc0001a42d0, 0xc000346040)
+github.com/giant-tech/go-service/framework/service.(*LocalService).processCall(0xc0001a42d0, 0xc000346040)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/service/localService.go:283 +0x501
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/service.(*LocalService).Run.func1(0x0)
+github.com/giant-tech/go-service/framework/service.(*LocalService).Run.func1(0x0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/service/localService.go:243 +0x162
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/service.(*LocalService).Run(0xc0001a42d0, 0xc0000f8070)
+github.com/giant-tech/go-service/framework/service.(*LocalService).Run(0xc0001a42d0, 0xc0000f8070)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/service/localService.go:249 +0x3b7
-gitlab.ztgame.com/tech/public/go-service/zeus/framework/service.(*LocalServiceMgr).run(0xc000123e30, 0xc0001a42d0)
+github.com/giant-tech/go-service/framework/service.(*LocalServiceMgr).run(0xc000123e30, 0xc0001a42d0)
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/service/localServiceMgr.go:109 +0x3b
-created by gitlab.ztgame.com/tech/public/go-service/zeus/framework/service.(*LocalServiceMgr).RunLocalService
+created by github.com/giant-tech/go-service/framework/service.(*LocalServiceMgr).RunLocalService
 	C:/Users/yekoufeng/go/pkg/mod/gitlab.ztgame.com/tech/public/go-service/zeus@v0.0.27/framework/service/localServiceMgr.go:92 +0x7e
 
 2019-10-25 14:37:18.478 [DBG] [Team.go:32] Team.OnLoop

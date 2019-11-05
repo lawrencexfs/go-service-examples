@@ -1,13 +1,13 @@
 package proc
 
 import (
-	"gitlab.ztgame.com/tech/public/go-service/zeus/base/net/inet"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/idata"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/msghandler"
+	"github.com/giant-tech/go-service/base/net/inet"
+	"github.com/giant-tech/go-service/framework/idata"
+	"github.com/giant-tech/go-service/framework/msghandler"
 
 	assert "github.com/aurelien-rainone/assertgo"
 	log "github.com/cihub/seelog"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/msgdef"
+	"github.com/giant-tech/go-service/framework/msgdef"
 )
 
 // IClient Interface to clt.Client.

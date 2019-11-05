@@ -4,8 +4,8 @@ import (
 	"matchservice/src/services/match/mf"
 
 	"github.com/cihub/seelog"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/service"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/logic/matchbase"
+	"github.com/giant-tech/go-service/framework/service"
+	"github.com/giant-tech/go-service/logic/matchbase"
 )
 
 // MatchService 队伍服务

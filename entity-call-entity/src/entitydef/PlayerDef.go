@@ -1,7 +1,7 @@
 package entitydef
 
 import (
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/iserver"
+	"github.com/giant-tech/go-service/framework/iserver"
 	"github.com/globalsign/mgo/bson"
 )
 

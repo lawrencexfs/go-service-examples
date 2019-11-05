@@ -1,13 +1,13 @@
 package team
 
 import (
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/service"
+	"github.com/giant-tech/go-service/framework/service"
 
 	log "github.com/cihub/seelog"
 
 	"entity-call-entity/src/services/team/team"
 
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/idata"
+	"github.com/giant-tech/go-service/framework/idata"
 )
 
 // TeamService 队伍服务

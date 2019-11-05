@@ -132,6 +132,7 @@ gitlab.ztgame.com/tech/public/go-service/zeus v0.0.18 h1:6wvym7dEzypWL4GtiaXfZgC
 gitlab.ztgame.com/tech/public/go-service/zeus v0.0.18/go.mod h1:e+RMf9rCHK36FnT0k8ycp9oHVf/loCHDrZTLa5wi3b8=
 gitlab.ztgame.com/tech/public/go-service/zeus v0.0.22 h1:49rcnJCT6KME/hC+aHWK0du9rUuooxlIFCBmIMChIH0=
 gitlab.ztgame.com/tech/public/go-service/zeus v0.0.22/go.mod h1:e+RMf9rCHK36FnT0k8ycp9oHVf/loCHDrZTLa5wi3b8=
+gitlab.ztgame.com/tech/public/go-service/zeus v0.0.26/go.mod h1:e+RMf9rCHK36FnT0k8ycp9oHVf/loCHDrZTLa5wi3b8=
 go.etcd.io/bbolt v1.3.2/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
 go.uber.org/atomic v1.4.0 h1:cxzIVoETapQEqDhQu3QfnvXAV4AlzcvUCxkVUFw3+EU=
 go.uber.org/atomic v1.4.0/go.mod h1:gD2HeocX3+yG+ygLZcrzQJaqmWj9AIm7n08wl/qW/PE=

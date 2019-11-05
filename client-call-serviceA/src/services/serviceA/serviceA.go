@@ -4,9 +4,9 @@ import (
 	"client-call-serviceA/src/services/serviceA/user"
 
 	log "github.com/cihub/seelog"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/idata"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/msgdef"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/logic/gatewaybase"
+	"github.com/giant-tech/go-service/framework/idata"
+	"github.com/giant-tech/go-service/framework/msgdef"
+	"github.com/giant-tech/go-service/logic/gatewaybase"
 )
 
 // ServiceA serviceA

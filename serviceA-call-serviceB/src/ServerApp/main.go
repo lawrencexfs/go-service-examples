@@ -3,7 +3,7 @@ package main
 import (
 	_ "net/http/pprof"
 
-	"github.com/GA-TECH-SERVER/zeus/framework/app"
+	"github.com/giant-tech/go-service//framework/app"
 )
 
 func main() {

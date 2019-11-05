@@ -15,10 +15,10 @@ import (
 	assert "github.com/aurelien-rainone/assertgo"
 	"github.com/cihub/seelog"
 
-	"gitlab.ztgame.com/tech/public/go-service/zeus/base/net/inet"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/errormsg"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/iserver"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/msgdef"
+	"github.com/giant-tech/go-service/base/net/inet"
+	"github.com/giant-tech/go-service/framework/errormsg"
+	"github.com/giant-tech/go-service/framework/iserver"
+	"github.com/giant-tech/go-service/framework/msgdef"
 )
 
 // ProcBattle 是消息处理类(Processor).

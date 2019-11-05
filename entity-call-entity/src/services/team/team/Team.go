@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	log "github.com/cihub/seelog"
-	"gitlab.ztgame.com/tech/public/go-service/zeus/framework/entity"
+	"github.com/giant-tech/go-service/framework/entity"
 )
 
 // Team 队伍
