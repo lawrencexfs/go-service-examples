@@ -1,9 +1,0 @@
-2019-10-09 12:11:34.07 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
-2019-10-09 12:11:34.073 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[level:1], ret: map[]
-2019-10-09 12:11:34.074 [ERR] [localService.go:273] processCall, entity not exist,methodName: LeaveTeam, groupID: 0, entityID: 1
-2019-10-09 12:12:33.988 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
-2019-10-09 12:12:33.992 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[level:1], ret: map[]
-2019-10-09 12:12:33.993 [ERR] [localService.go:273] processCall, entity not exist,methodName: LeaveTeam, groupID: 0, entityID: 1
-2019-10-09 12:15:35.054 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[coin:1 exp:1 level:1 rating:1], ret: map[]
-2019-10-09 12:15:35.058 [ERR] [mongodboperate.go:85] MongoDBQueryOneWithSelect failed, err: Invalid namespace specified 'game.', condition: map[dbid:1], select: map[level:1], ret: map[]
-2019-10-09 12:15:35.059 [ERR] [localService.go:273] processCall, entity not exist,methodName: LeaveTeam, groupID: 0, entityID: 1

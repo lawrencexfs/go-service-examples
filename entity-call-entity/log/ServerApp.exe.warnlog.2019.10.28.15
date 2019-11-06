@@ -1,2 +1,0 @@
-2019-10-28 15:09:31.841 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
-2019-10-28 15:09:31.853 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection

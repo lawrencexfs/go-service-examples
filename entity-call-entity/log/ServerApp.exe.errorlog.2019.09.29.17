@@ -1,5 +1,0 @@
-2019-09-29 17:55:05.154 [ERR] [session.go:253] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:56275: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56275, sessionid: 1, localAddr: 127.0.0.1:17000
-2019-09-29 17:55:05.195 [ERR] [session.go:265] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:56275: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56275,  localAddr: 127.0.0.1:17000, sessionid: 1
-2019-09-29 17:55:36.515 [ERR] [mongodboperate.go:89] session nil, not connect or auth
-2019-09-29 17:55:36.569 [ERR] [Entity.go:573] AsyncCall GetEntitySrvID error: Entity srvType [6] not existed, methodName: SyncProps
-2019-09-29 17:55:41.576 [ERR] [mongodboperate.go:126] session nil, not connect or auth

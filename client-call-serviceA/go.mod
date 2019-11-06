@@ -11,4 +11,4 @@ require (
 	go.uber.org/atomic v1.4.0
 )
 
-//replace gitlab.ztgame.com/tech/public/go-service/zeus v0.0.26 => D:\work\sourceCode\go-service\zeus
+//replace github.com/giant-tech/go-service v0.0.26 => D:\work\sourceCode\go-service\zeus

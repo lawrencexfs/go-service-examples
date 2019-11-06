@@ -1,3 +1,0 @@
-2019-10-30 11:43:23.889 [WRN] [PropInfo.go:328] prop complex type: FRIENDS
-2019-10-30 11:43:26.954 [ERR] [session.go:286] recvLoop error: read tcp 127.0.0.1:17000->127.0.0.1:59309: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:59309, sessionid: 1, localAddr: 127.0.0.1:17000
-2019-10-30 11:43:26.955 [ERR] [session.go:298] read and handle message error: read tcp 127.0.0.1:17000->127.0.0.1:59309: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:59309,  localAddr: 127.0.0.1:17000, sessionid: 1

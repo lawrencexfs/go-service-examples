@@ -1,5 +1,0 @@
-2019-08-19 14:08:34.731 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:59776->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
-2019-08-19 14:08:34.734 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:59776->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
-2019-08-19 14:08:36.481 [ERR] [appNet.go:254] Connect failed. 427 to 429 Addr :17012, error:dial tcp :17012: connectex: No connection could be made because the target machine actively refused it.
-2019-08-19 14:50:44.662 [ERR] [session.go:246] recvLoop error: read tcp 127.0.0.1:64487->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1
-2019-08-19 14:50:44.663 [ERR] [session.go:254] read and handle message error: read tcp 127.0.0.1:64487->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012, sessionid: 1

@@ -1,2 +1,0 @@
-2019-08-05 11:52:11.232 [ERR] [arq_listener.go:146] accept connection error accept tcp [::]:17010: use of closed network connection
-2019-08-05 11:53:01.649 [ERR] [mongodboperate.go:89] session nil, not connect or auth
