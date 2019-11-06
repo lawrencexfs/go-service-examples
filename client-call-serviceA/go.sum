@@ -29,6 +29,8 @@ github.com/garyburd/redigo v1.6.0/go.mod h1:NR3MbYisc3/PwhQ00EMzDiPmrwpPxAn5GI05
 github.com/ghodss/yaml v1.0.0/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeMEF04=
 github.com/giant-tech/go-service v0.0.0-20191105102225-2c2538189dce h1:l1QYdxHltXCl3/y6EwU3FJX3ddlUlBHdsTi5J2BfB3I=
 github.com/giant-tech/go-service v0.0.0-20191105102225-2c2538189dce/go.mod h1:sxkr3caxPQE/DGoTGD/1EHYzzqMPurfGrUuDY9cUJ/k=
+github.com/giant-tech/go-service v0.0.1 h1:uRMrFbAVYblf7m8tESkuwaCKR+WGqJR56OzEZbWDepM=
+github.com/giant-tech/go-service v0.0.1/go.mod h1:sxkr3caxPQE/DGoTGD/1EHYzzqMPurfGrUuDY9cUJ/k=
 github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8 h1:DujepqpGd1hyOd7aW59XpK7Qymp8iy83xq74fLr21is=
 github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8/go.mod h1:xkRDCp4j0OGD1HRkm4kmhM+pmpv3AKq5SU7GMg4oO/Q=
 github.com/go-kit/kit v0.8.0/go.mod h1:xBxKIO96dXMWWy0MnWVtmwkA9/13aqxPnvrjFYMA2as=
@@ -135,6 +137,8 @@ gitlab.ztgame.com/tech/public/go-service/zeus v0.0.18/go.mod h1:e+RMf9rCHK36FnT0
 gitlab.ztgame.com/tech/public/go-service/zeus v0.0.22 h1:49rcnJCT6KME/hC+aHWK0du9rUuooxlIFCBmIMChIH0=
 gitlab.ztgame.com/tech/public/go-service/zeus v0.0.22/go.mod h1:e+RMf9rCHK36FnT0k8ycp9oHVf/loCHDrZTLa5wi3b8=
 gitlab.ztgame.com/tech/public/go-service/zeus v0.0.26/go.mod h1:e+RMf9rCHK36FnT0k8ycp9oHVf/loCHDrZTLa5wi3b8=
+gitlab.ztgame.com/tech/public/go-service/zeus v0.0.31 h1:zPRKWY5pMX1nTDS+f50bQNyc/WgCKgtq2QQy2+musw8=
+gitlab.ztgame.com/tech/public/go-service/zeus v0.0.31/go.mod h1:e+RMf9rCHK36FnT0k8ycp9oHVf/loCHDrZTLa5wi3b8=
 go.etcd.io/bbolt v1.3.2/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
 go.uber.org/atomic v1.4.0 h1:cxzIVoETapQEqDhQu3QfnvXAV4AlzcvUCxkVUFw3+EU=
 go.uber.org/atomic v1.4.0/go.mod h1:gD2HeocX3+yG+ygLZcrzQJaqmWj9AIm7n08wl/qW/PE=
