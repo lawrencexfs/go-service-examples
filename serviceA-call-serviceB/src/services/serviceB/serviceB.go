@@ -2,8 +2,8 @@ package serviceB
 
 import (
 	log "github.com/cihub/seelog"
-	"github.com/giant-tech/go-service//framework/idata"
-	"github.com/giant-tech/go-service//framework/service"
+	"github.com/giant-tech/go-service/framework/idata"
+	"github.com/giant-tech/go-service/framework/service"
 )
 
 // serviceB 服务

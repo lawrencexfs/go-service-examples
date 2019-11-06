@@ -3,11 +3,11 @@ package serviceA
 import (
 	"serviceA-call-serviceB/src/services/servicetype"
 
-	"github.com/giant-tech/go-service//framework/iserver"
-	"github.com/giant-tech/go-service//framework/service"
+	"github.com/giant-tech/go-service/framework/iserver"
+	"github.com/giant-tech/go-service/framework/service"
 
 	log "github.com/cihub/seelog"
-	"github.com/giant-tech/go-service//framework/idata"
+	"github.com/giant-tech/go-service/framework/idata"
 )
 
 // ServiceA 大厅服务器

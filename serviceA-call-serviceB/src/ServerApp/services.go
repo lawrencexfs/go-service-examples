@@ -5,7 +5,7 @@ import (
 	"serviceA-call-serviceB/src/services/serviceB"
 	"serviceA-call-serviceB/src/services/servicetype"
 
-	"github.com/giant-tech/go-service//framework/service"
+	"github.com/giant-tech/go-service/framework/service"
 )
 
 // regAllServices 注册所有的逻辑服务
