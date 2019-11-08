@@ -58,21 +58,16 @@ var NewISkillPlayer func(player *ScenePlayer) interfaces.ISkillPlayer
 // NewISkillBall = skill.NewISkillBall
 var NewISkillBall func(player *ScenePlayer, ball *bll.BallSkill) interfaces.ISkillBall
 
-func NewScenePlayer(playerID types.PlayerID, name string, scn IScene) *ScenePlayer {
-	p := &ScenePlayer{
-		scn:     scn,
-		ID:      playerID,
-		Name:    name,
-		IsLive:  true,
-		msgPool: internal.NewMsgPool(),
-	}
+func (s *ScenePlayer) OnInit(initData interface{}) error {
+	seelog.Info("ScenePlayer.OnInit, id:", s.ID)
 
-	p.Init()
-	return p
-}
+	// s.scn = scn
+	// s.ID = playerID
+	// s.Name = name
 
-func (s *ScenePlayer) Init() {
-	seelog.Info("ScenePlayer.Init, id:", s.ID)
+	s.IsLive = true
+	s.msgPool = internal.NewMsgPool()
+
 	s.ScenePlayerPool.Init()
 	s.ScenePlayerNetMsgHelper.Init(s)
 	s.ScenePlayerViewHelper.Init()
@@ -83,6 +78,16 @@ func (s *ScenePlayer) Init() {
 	s.SelfBall.SetHP(consts.DefaultMaxHP)
 	s.SelfBall.SetMP(consts.DefaultMaxMP)
 
+	return nil
+}
+
+// OnLoop 每帧调用
+func (s *ScenePlayer) OnLoop() {
+	seelog.Debug("TeamUser.OnLoop")
+}
+
+func (s *ScenePlayer) OnDestroy() {
+	seelog.Debug("OnDestroy")
 }
 
 func (s *ScenePlayer) SendChat(str string) {

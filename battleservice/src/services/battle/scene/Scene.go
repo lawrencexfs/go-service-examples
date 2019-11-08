@@ -195,7 +195,13 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 		return // 已存在
 	}
 
-	scenePlayer := s.NewScenePlayer(playerID, player.Name())
+	playerEntity, err := s.CreateEntityWithID("Player", uint64(playerID), s.GetEntityID(), nil, true, 0)
+	if err != nil {
+		return
+	}
+
+	scenePlayer := playerEntity.(*plr.ScenePlayer)
+
 	s.Players[playerID] = scenePlayer
 	s.playerCount.Store(uint32(len(s.Players)))
 
@@ -381,10 +387,6 @@ func (s *Scene) BroadcastMsgExcept(msg inet.IMsg, uid types.PlayerID) {
 		}
 		c.Send(msg)
 	}
-}
-
-func (s *Scene) NewScenePlayer(playerID types.PlayerID, name string) *plr.ScenePlayer {
-	return plr.NewScenePlayer(playerID, name, s)
 }
 
 func (s *Scene) GetRandPos() (x, y float64) {
