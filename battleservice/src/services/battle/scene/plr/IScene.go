@@ -18,7 +18,8 @@ type IScene interface {
 	RemovePlayerPhysic(player ape.IAbstractParticle)
 	Frame() uint32
 	GetAreaCells(s *util.Square) (cells []*cll.Cell)
-	GetPlayers() map[types.PlayerID]*ScenePlayer
+	GetPlayer(playerID types.PlayerID) *ScenePlayer
+	TravsalPlayers(f func(*ScenePlayer))
 	SceneSize() float64
 	SceneID() types.SceneID
 	GetCell(px, py float64) (*cll.Cell, bool)

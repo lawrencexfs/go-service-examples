@@ -2,10 +2,9 @@ package rank
 
 import (
 	"battleservice/src/services/battle/scene/plr"
-	"battleservice/src/services/battle/types"
+	"battleservice/src/services/battle/usercmd"
 	"sort"
 	"time"
-	"battleservice/src/services/battle/usercmd"
 )
 
 const (
@@ -14,7 +13,7 @@ const (
 
 // BroadcastTopList 发送排行榜.
 // endTime 结束时间, players 玩家对象
-func BroadcastTopList(endTime int64, players map[types.PlayerID]*plr.ScenePlayer) {
+func BroadcastTopList(endTime int64, iscene plr.IScene) {
 	msgTop := &usercmd.MsgTop{}
 	ltime := endTime - time.Now().Unix()
 	if ltime > 0 {
@@ -24,15 +23,17 @@ func BroadcastTopList(endTime int64, players map[types.PlayerID]*plr.ScenePlayer
 	}
 	msgTop.Players = []*usercmd.MsgPlayer{}
 	tmpList := _FreeRankList{}
-	for _, p := range players {
+
+	iscene.TravsalPlayers(func(p *plr.ScenePlayer) {
 		tmpList = append(tmpList, _FreeRank{PlayerID: p.ID, Score: float64(p.GetExp())})
-	}
+	})
+
 	sort.Sort(tmpList)
 
 	var topplayers [MaxTopPlayer]usercmd.MsgPlayer // 排行榜
 	for index, v := range tmpList {
-		p, ok := players[v.PlayerID]
-		if !ok {
+		p := iscene.GetPlayer(v.PlayerID)
+		if p == nil {
 			continue
 		}
 		if len(msgTop.Players) < MaxTopPlayer {
@@ -43,10 +44,11 @@ func BroadcastTopList(endTime int64, players map[types.PlayerID]*plr.ScenePlayer
 		}
 	}
 	for k, v := range tmpList {
-		p, ok := players[v.PlayerID]
-		if !ok {
+		p := iscene.GetPlayer(v.PlayerID)
+		if p == nil {
 			continue
 		}
+		
 		p.Rank = uint32(k + 1)
 		msgTop.Rank = p.Rank
 		msgTop.KillNum = uint32(v.Score)

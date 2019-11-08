@@ -4,7 +4,6 @@ package plr
 
 import (
 	"battleservice/src/services/base/util"
-	"math"
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/internal"
 	"battleservice/src/services/battle/scene/internal/cll"
@@ -12,6 +11,7 @@ import (
 	"battleservice/src/services/battle/scene/internal/interfaces"
 	"battleservice/src/services/battle/types"
 	"battleservice/src/services/battle/usercmd"
+	"math"
 )
 
 type ScenePlayerViewHelper struct {
@@ -168,7 +168,8 @@ func (this *ScenePlayerViewHelper) UpdateVeiwFoods() (addFoods []*usercmd.MsgBal
 func (this *ScenePlayerViewHelper) UpdateViewPlayers(scene IScene, selfBall *bll.BallPlayer) {
 	this.Others = make(map[types.PlayerID]*ScenePlayer)
 	this.RoundPlayers = this.RoundPlayers[:0]
-	for _, player := range scene.GetPlayers() {
+
+	scene.TravsalPlayers(func(player *ScenePlayer) {
 		if selfBall.GetPlayerId() != player.ID {
 			_, _, ok1 := this.RealViewRect.ContainsCircle(player.SelfBall.Pos.X, player.SelfBall.Pos.Y, 0)
 			if ok1 {
@@ -182,7 +183,7 @@ func (this *ScenePlayerViewHelper) UpdateViewPlayers(scene IScene, selfBall *bll
 				this.RoundPlayers = append(this.RoundPlayers, player)
 			}
 		}
-	}
+	})
 }
 
 //寻找最近的类型目标

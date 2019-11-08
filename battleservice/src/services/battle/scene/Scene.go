@@ -26,6 +26,8 @@ import (
 	"github.com/cihub/seelog"
 	"github.com/giant-tech/go-service/base/net/inet"
 	"github.com/giant-tech/go-service/framework/entity"
+	"github.com/giant-tech/go-service/framework/iserver"
+
 	"go.uber.org/atomic"
 )
 
@@ -51,9 +53,7 @@ type Scene struct {
 	cellNumY  int         // 格子最大Y
 	cells     []*cll.Cell // 所有格子
 
-	Players     map[types.PlayerID]*plr.ScenePlayer // 玩家对象
-	playerCount atomic.Uint32                       // 玩家个数，= len(Players)
-	scenePhysic *physic.ScenePhysic                 // 场景物理
+	scenePhysic *physic.ScenePhysic // 场景物理
 }
 
 func NewScene(sceneID types.SceneID) *Scene {
@@ -72,7 +72,7 @@ func (s *Scene) Init() {
 
 	s.mapConfig = conf.GetMapConfigById(s.SceneID())
 	s.scenePhysic = physic.NewScenePhysic()
-	s.Players = make(map[types.PlayerID]*plr.ScenePlayer)
+
 	s.loadMap()
 	for i := 0; i < s.cellNumX*s.cellNumY; i++ {
 		s.cells = append(s.cells, cll.NewCell(i))
@@ -105,9 +105,11 @@ func (s *Scene) Render() {
 	if frame%2 == 0 {
 		s.scenePhysic.Tick()
 	}
-	for _, player := range s.Players {
+
+	s.TravsalPlayers(func(player *plr.ScenePlayer) {
 		player.Update(d, nowNano, s)
-	}
+	})
+
 	for _, cell := range s.cells {
 		cell.Render(s, d, nowNano)
 	}
@@ -121,17 +123,19 @@ func (s *Scene) Render() {
 
 // 发送消息, 100ms发送一次
 func (s *Scene) sendRoomMsg() {
-	for _, player := range s.Players {
+
+	s.TravsalPlayers(func(player *plr.ScenePlayer) {
 		player.SendSceneMsg()
-	}
+	})
 
 	for _, cell := range s.cells {
 		cell.ResetMsg()
 	}
 
-	for _, player := range s.Players {
+	s.TravsalPlayers(func(player *plr.ScenePlayer) {
 		player.ResetMsg()
-	}
+	})
+
 }
 
 //添加球到场景
@@ -180,18 +184,18 @@ func (s *Scene) GetCell(px, py float64) (*cll.Cell, bool) {
 
 //获取场景玩家
 func (s *Scene) GetPlayer(playerID types.PlayerID) *plr.ScenePlayer {
-	player, ok := s.Players[playerID]
-	if !ok {
+	player := s.GetEntity(uint64(playerID))
+	if player == nil {
 		return nil
 	}
-	return player
+	return player.(*plr.ScenePlayer)
 }
 
 //AddPlayer 添加玩家到场景玩家
 func (s *Scene) AddPlayer(player ISessionPlayer) {
 	playerID := player.PlayerID()
-	_, ok := s.Players[playerID]
-	if ok {
+
+	if s.GetEntity(uint64(playerID)) != nil {
 		return // 已存在
 	}
 
@@ -201,9 +205,6 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 	}
 
 	scenePlayer := playerEntity.(*plr.ScenePlayer)
-
-	s.Players[playerID] = scenePlayer
-	s.playerCount.Store(uint32(len(s.Players)))
 
 	scenePlayer.SetExp(0)
 	scenePlayer.Sess = player
@@ -237,7 +238,8 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 	var others []*usercmd.MsgPlayer
 	var balls []*usercmd.MsgBall
 	var playerballs []*usercmd.MsgPlayerBall
-	for _, player := range s.Players {
+
+	s.TravsalPlayers(func(player *plr.ScenePlayer) {
 		others = append(others, &usercmd.MsgPlayer{
 			Id:     uint64(player.ID),
 			BallId: player.SelfBall.GetID(),
@@ -249,7 +251,7 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 			Curmp:    uint32(player.SelfBall.GetMP()),
 			Curexp:   player.GetExp(),
 		})
-	}
+	})
 
 	// 玩家视野中的所有球，发送给自己
 	cells := scenePlayer.LookCells
@@ -295,12 +297,14 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 
 // 删除玩家
 func (s *Scene) RemovePlayer(playerId types.PlayerID) bool {
-	player, ok := s.Players[playerId]
-	if !ok {
+	e := s.GetEntity(uint64(playerId))
+	if e == nil {
 		return false
 	}
-	delete(s.Players, playerId)
-	s.playerCount.Store(uint32(len(s.Players)))
+
+	player := e.(*plr.ScenePlayer)
+
+	s.DestroyEntity(uint64(playerId))
 
 	oldstatus := player.IsLive
 
@@ -312,7 +316,7 @@ func (s *Scene) RemovePlayer(playerId types.PlayerID) bool {
 	player.Dead(nil)
 	player.Sess = nil
 
-	seelog.Info("[注销] 删除玩家成功 [", s.room.GetEntityID(), "],", player.ID, " players:", len(s.Players), ";", oldstatus, ",exp:", player.GetExp())
+	seelog.Info("[注销] 删除玩家成功 [", s.room.GetEntityID(), "],", player.ID, " players:", s.EntityCount(), ";", oldstatus, ",exp:", player.GetExp())
 	return true
 }
 
@@ -368,25 +372,24 @@ func (s *Scene) CellNumY() int {
 	return s.cellNumY
 }
 
-func (s *Scene) GetPlayers() map[types.PlayerID]*plr.ScenePlayer {
-	return s.Players
-}
-
 // 广播 msg
 func (s *Scene) BroadcastMsg(msg inet.IMsg) {
-	for _, c := range s.Players {
-		c.Send(msg)
-	}
+
+	s.TravsalPlayers(func(player *plr.ScenePlayer) {
+		player.Send(msg)
+	})
+
 }
 
 //广播(剔除特定ID)
 func (s *Scene) BroadcastMsgExcept(msg inet.IMsg, uid types.PlayerID) {
-	for _, c := range s.Players {
-		if c.ID == uid {
-			continue
+	s.TravsalPlayers(func(player *plr.ScenePlayer) {
+		if player.ID == uid {
+			return
 		}
-		c.Send(msg)
-	}
+		player.Send(msg)
+	})
+
 }
 
 func (s *Scene) GetRandPos() (x, y float64) {
@@ -433,7 +436,7 @@ func (s *Scene) close() {
 	if !s.isClosed.CAS(false /*old*/, true /*new*/) {
 		return // CompareAndSet()失败说明已经关闭了
 	}
-	seelog.Infof("[房间] 关闭, ID=%d, players=%d", s.GetEntityID(), len(s.Players))
+	seelog.Infof("[房间] 关闭, ID=%d, players=%d", s.GetEntityID(), s.EntityCount())
 
 	// 更新排行榜
 	s.broadcastTopList()
@@ -481,7 +484,7 @@ func (s *Scene) removePlayerById(playerId types.PlayerID) {
 	}
 	s.BroadcastMsg(rmCmd)
 
-	seelog.Info("[房间] 删除玩家 [", s.GetEntityID(), "] ", playerId, ",", len(s.Players))
+	seelog.Info("[房间] 删除玩家 [", s.GetEntityID(), "] ", playerId, ",", s.EntityCount())
 }
 
 // 广播结束消息
@@ -493,7 +496,7 @@ func (s *Scene) broadcastEndMsg() {
 
 // 发送排行榜
 func (s *Scene) broadcastTopList() {
-	rank.BroadcastTopList(s.endTime, s.Players)
+	rank.BroadcastTopList(s.endTime, s)
 }
 
 // 房间帧定时器
@@ -515,14 +518,15 @@ func (s *Scene) render() {
 // 房间定时器 (一秒一次)
 func (s *Scene) timeAction1s() {
 	timeNow := time.Now()
-	if s.endTime < timeNow.Unix() || len(s.Players) == 0 {
+	if s.endTime < timeNow.Unix() || s.EntityCount() == 0 {
 		s.close()
 		return
 	}
 
-	for _, player := range s.Players {
+	s.TravsalPlayers(func(player *plr.ScenePlayer) {
 		player.TimeAction(timeNow)
-	}
+	})
+
 }
 
 func (s *Scene) ID() uint64 {
@@ -545,11 +549,13 @@ func (s *Scene) GetPlayerCount() uint32 {
 	return s.GetPlayerCount()
 }
 
-//获取场景玩家
-func (s *Scene) GetScenePlayer(id types.PlayerID) *plr.ScenePlayer {
-	return s.GetPlayer(id)
-}
-
 func (s *Scene) Frame() uint32 {
 	return s.frame
+}
+
+func (s *Scene) TravsalPlayers(f func(*plr.ScenePlayer)) {
+	s.TravsalEntity("Player", func(e iserver.IEntity) {
+		sp := e.(*plr.ScenePlayer)
+		f(sp)
+	})
 }
