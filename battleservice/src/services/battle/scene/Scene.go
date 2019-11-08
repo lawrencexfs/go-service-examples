@@ -1,16 +1,8 @@
-// 包 scn 有场景类。
 package scene
 
 // 场景类
 
 import (
-	"math"
-	"math/rand"
-	"time"
-
-	"github.com/giant-tech/go-service/base/net/inet"
-	"github.com/giant-tech/go-service/framework/entity"
-
 	"battleservice/src/services/base/ape"
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/conf"
@@ -22,23 +14,28 @@ import (
 	"battleservice/src/services/battle/scene/internal/interfaces"
 	"battleservice/src/services/battle/scene/internal/physic"
 	"battleservice/src/services/battle/scene/plr"
+	"battleservice/src/services/battle/scene/rank"
 	"battleservice/src/services/battle/types"
 	"battleservice/src/services/battle/usercmd"
+	"math"
+	"math/rand"
+	"runtime/debug"
+	"time"
 
+	assert "github.com/aurelien-rainone/assertgo"
 	"github.com/cihub/seelog"
-
+	"github.com/giant-tech/go-service/base/net/inet"
+	"github.com/giant-tech/go-service/framework/entity"
 	"go.uber.org/atomic"
 )
 
 type Scene struct {
 	entity.GroupEntity
-	scn *Scene // 场景信息
 
 	endTime int64  // 结束时间
 	frame   uint32 // 当前帧数
 
-	actC  chan func() // 玩家输入或其他动作，需要在房间协程中执行
-	doneC chan bool   // 用于结束房间协程
+	doneC chan bool // 用于结束房间协程
 
 	isClosed atomic.Bool // 是否关闭标识
 
@@ -71,7 +68,6 @@ func (s *Scene) Init() {
 	seelog.Info("Scene Init")
 
 	s.endTime = time.Now().Unix() + consts.DefaultPlayTime // 10min为一局
-	s.actC = make(chan func(), 1024)
 	s.doneC = make(chan bool)
 
 	s.mapConfig = conf.GetMapConfigById(s.SceneID())
@@ -398,4 +394,160 @@ func (s *Scene) GetRandPos() (x, y float64) {
 func (s *Scene) GenBallID() uint32 {
 	s.genBallID++
 	return s.genBallID
+}
+
+var genRoomID types.RoomID
+
+func Init() bool {
+	return LoadSkillBevTree()
+}
+
+func generateRoomID() types.RoomID {
+	genRoomID++
+	return genRoomID
+}
+
+// OnInit 初始化
+func (s *Scene) OnInit(initData interface{}) error {
+	s.GroupEntity.OnGroupInit()
+
+	return nil
+}
+
+// OnLoop 每帧调用
+func (s *Scene) OnLoop() {
+	seelog.Debug("Team.OnLoop")
+	s.GroupEntity.OnGroupLoop()
+}
+
+// OnDestroy 销毁
+func (s *Scene) OnDestroy() {
+	seelog.Debug("OnDestroy")
+	s.GroupEntity.OnGroupDestroy()
+}
+
+// 关闭房间
+func (s *Scene) close() {
+	if !s.isClosed.CAS(false /*old*/, true /*new*/) {
+		return // CompareAndSet()失败说明已经关闭了
+	}
+	seelog.Infof("[房间] 关闭, ID=%d, players=%d", s.GetEntityID(), len(s.Players))
+
+	// 更新排行榜
+	s.broadcastTopList()
+	// 广播房间结束
+	s.broadcastEndMsg()
+
+	close(s.doneC) // 结束房间协程
+}
+
+func (s *Scene) IsClosed() bool {
+	return s.isClosed.Load()
+}
+
+//主循环
+func (s *Scene) Run() {
+	timeTicker := time.NewTicker(time.Millisecond * consts.FrameTimeMS)
+
+	defer func() {
+		timeTicker.Stop()
+		if err := recover(); err != nil {
+			seelog.Error("[异常] 房间线程出错 [", s.GetEntityID(), "] ", err, "\n", string(debug.Stack()))
+		}
+	}()
+
+	for {
+		select {
+		case <-timeTicker.C:
+			s.render()
+
+		case <-s.doneC:
+			assert.True(s.IsClosed())
+			return
+		}
+	}
+}
+
+// 从房间里删除玩家
+func (s *Scene) removePlayerById(playerId types.PlayerID) {
+	//退出房间处理
+	s.RemovePlayer(playerId)
+
+	// 通知其它人删除玩家
+	rmCmd := &usercmd.MsgRemovePlayer{
+		Id: uint64(playerId),
+	}
+	s.BroadcastMsg(rmCmd)
+
+	seelog.Info("[房间] 删除玩家 [", s.GetEntityID(), "] ", playerId, ",", len(s.Players))
+}
+
+// 广播结束消息
+func (s *Scene) broadcastEndMsg() {
+	// 游戏结束，可以对 MsgEndRoom 字段做修改，发送具体游戏结果
+	msg := &usercmd.MsgEndRoom{}
+	s.BroadcastMsg(msg)
+}
+
+// 发送排行榜
+func (s *Scene) broadcastTopList() {
+	rank.BroadcastTopList(s.endTime, s.Players)
+}
+
+// 房间帧定时器
+func (s *Scene) render() {
+	s.frame++
+	s.Render()
+
+	//1s
+	if s.frame%(consts.FrameCountBy100MS*10) != 0 {
+		return
+	}
+	s.timeAction1s()
+
+	if s.frame%(consts.FrameCountBy100MS*40) == 0 {
+		s.broadcastTopList()
+	}
+}
+
+// 房间定时器 (一秒一次)
+func (s *Scene) timeAction1s() {
+	timeNow := time.Now()
+	if s.endTime < timeNow.Unix() || len(s.Players) == 0 {
+		s.close()
+		return
+	}
+
+	for _, player := range s.Players {
+		player.TimeAction(timeNow)
+	}
+}
+
+func (s *Scene) ID() uint64 {
+	return s.GetEntityID()
+}
+
+// PostToRemovePlayerById 计划移除玩家，将在房间协程中执行动作。
+func (s *Scene) PostToRemovePlayerById(playerID types.PlayerID) {
+	s.PostFunction(func() {
+		s.removePlayerById(playerID)
+	})
+}
+
+func (s *Scene) EndTime() int64 {
+	return s.endTime
+}
+
+// 协程安全
+func (s *Scene) GetPlayerCount() uint32 {
+	return s.GetPlayerCount()
+}
+
+//获取场景玩家
+func (s *Scene) GetScenePlayer(id types.PlayerID) *plr.ScenePlayer {
+	return s.GetPlayer(id)
+}
+
+func (s *Scene) Frame() uint32 {
+	return s.frame
 }

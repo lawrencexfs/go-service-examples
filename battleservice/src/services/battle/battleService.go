@@ -11,9 +11,9 @@ import (
 	"time"
 
 	"github.com/cihub/seelog"
-	"github.com/spf13/viper"
 	"github.com/giant-tech/go-service/base/net/server"
 	"github.com/giant-tech/go-service/framework/service"
+	"github.com/spf13/viper"
 )
 
 // BattleService 战斗服务
@@ -32,6 +32,7 @@ func (bs *BattleService) OnInit() error {
 	bs.TokenMgr.Init()
 
 	// 注册proto
+	bs.RegProtoType("Scene", &scene.Scene{}, false)
 	bs.RegProtoType("Player", &plr.ScenePlayer{}, false)
 
 	// 全局配置
@@ -61,6 +62,8 @@ func (bs *BattleService) OnInit() error {
 		return fmt.Errorf("InitMapConfig failed")
 	}
 
+	go bs.svr.Run()
+
 	seelog.Info("[启动] 完成初始化")
 
 	return nil
@@ -78,5 +81,4 @@ func (bs *BattleService) OnDestroy() {
 	if bs.svr != nil {
 		bs.svr.Close()
 	}
-
 }
