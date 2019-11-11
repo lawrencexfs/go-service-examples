@@ -22,45 +22,6 @@ const (
 	MsgTypeCmd_CastSkill      MsgTypeCmd = 1050
 )
 
-var MsgTypeCmd_name = map[int32]string{
-	1001: "Login",
-	1002: "Top",
-	1003: "AddPlayer",
-	1004: "RemovePlayer",
-	1006: "Move",
-	1007: "Run",
-	1009: "ReLife",
-	1010: "Death",
-	1011: "EndRoom",
-	1013: "RefreshPlayer",
-	1016: "HeartBeat",
-	1020: "SceneChat",
-	1021: "ActCloseSocket",
-	1025: "ErrorMsg",
-	1031: "SceneTCP",
-	1032: "SceneUDP",
-	1050: "CastSkill",
-}
-var MsgTypeCmd_value = map[string]int32{
-	"Login":          1001,
-	"Top":            1002,
-	"AddPlayer":      1003,
-	"RemovePlayer":   1004,
-	"Move":           1006,
-	"Run":            1007,
-	"ReLife":         1009,
-	"Death":          1010,
-	"EndRoom":        1011,
-	"RefreshPlayer":  1013,
-	"HeartBeat":      1016,
-	"SceneChat":      1020,
-	"ActCloseSocket": 1021,
-	"ErrorMsg":       1025,
-	"SceneTCP":       1031,
-	"SceneUDP":       1032,
-	"CastSkill":      1050,
-}
-
 type MapObjectConfigType int32
 
 const (
@@ -85,37 +46,6 @@ const (
 	BallType_SkillBomb   BallType = 32
 	BallType_SkillEnd    BallType = 39
 )
-
-var BallType_name = map[int32]string{
-	1:  "Player",
-	10: "FoodBegin",
-	11: "FoodNormal",
-	12: "FoodHammer",
-	13: "FoodBomb",
-	19: "FoodEnd",
-	20: "FeedBegin",
-	21: "FeedNormal",
-	29: "FeedEnd",
-	30: "SkillBegin",
-	31: "SkillHammer",
-	32: "SkillBomb",
-	39: "SkillEnd",
-}
-var BallType_value = map[string]int32{
-	"Player":      1,
-	"FoodBegin":   10,
-	"FoodNormal":  11,
-	"FoodHammer":  12,
-	"FoodBomb":    13,
-	"FoodEnd":     19,
-	"FeedBegin":   20,
-	"FeedNormal":  21,
-	"FeedEnd":     29,
-	"SkillBegin":  30,
-	"SkillHammer": 31,
-	"SkillBomb":   32,
-	"SkillEnd":    39,
-}
 
 // 请求登录
 type MsgLogin struct {
