@@ -71,11 +71,11 @@ func (sa *ServiceA) OnLoginHandler(sess inet.ISession, msg *msgdef.LoginReq) *ig
 
 	oldEntity := sa.GetEntity(msg.UID)
 	if oldEntity != nil {
-		log.Debugf("MsgProcLoginReq, OnReconnect, UID: %d", msg.UID)
+		log.Debugf("ServiceA.OnLoginHandler, OnReconnect, UID: %d", msg.UID)
 
 		ireconnect, ok := oldEntity.(igateway.IReconnectHandler)
 		if !ok {
-			log.Errorf("MsgProcLoginReq not IReconnectHandler, UID: %d", msg.UID)
+			log.Errorf("ServiceA.OnLoginHandler not IReconnectHandler, UID: %d", msg.UID)
 			loginRetData.Msg.Result = uint32(errormsg.ReturnTypeFAILRELOGIN)
 
 			return loginRetData
@@ -84,7 +84,7 @@ func (sa *ServiceA) OnLoginHandler(sess inet.ISession, msg *msgdef.LoginReq) *ig
 		ret := oldEntity.PostFunctionAndWait(func() interface{} { return ireconnect.OnReconnect(sess) })
 		reData, ok := ret.(*igateway.ReconnectData)
 		if !ok {
-			log.Errorf("MsgProcLoginReq OnReconnect failed, UID: %d", msg.UID)
+			log.Errorf("ServiceA.OnLoginHandler OnReconnect failed, UID: %d", msg.UID)
 
 			loginRetData.Msg.Result = uint32(errormsg.ReturnTypeFAILRELOGIN)
 
@@ -92,7 +92,7 @@ func (sa *ServiceA) OnLoginHandler(sess inet.ISession, msg *msgdef.LoginReq) *ig
 		}
 
 		if reData.Err != nil {
-			log.Error("MsgProcLoginReq OnReconnect failed, UID: ", msg.UID, ", err: ", reData.Err)
+			log.Error("ServiceA.OnLoginHandler OnReconnect failed, UID: ", msg.UID, ", err: ", reData.Err)
 
 			loginRetData.Msg.Result = uint32(errormsg.ReturnTypeFAILRELOGIN)
 
