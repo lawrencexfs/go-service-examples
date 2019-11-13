@@ -22,18 +22,17 @@ func (t *Team) OnInit(initData interface{}) error {
 	}
 
 	log.Debug("TeamName: ", teamData.TeamName)
-	t.GroupEntity.OnGroupInit()
+
 	return nil
 }
 
 // OnLoop 每帧调用
 func (t *Team) OnLoop() {
 	log.Debug("Team.OnLoop")
-	t.GroupEntity.OnGroupLoop()
+
 }
 
 // OnDestroy 销毁
 func (t *Team) OnDestroy() {
 	log.Debug("OnDestroy")
-	t.GroupEntity.OnGroupDestroy()
 }

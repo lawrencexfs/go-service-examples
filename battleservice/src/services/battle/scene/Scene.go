@@ -414,7 +414,6 @@ func generateRoomID() types.RoomID {
 
 // OnInit 初始化
 func (s *Scene) OnInit(initData interface{}) error {
-	s.GroupEntity.OnGroupInit()
 
 	return nil
 }
@@ -422,13 +421,11 @@ func (s *Scene) OnInit(initData interface{}) error {
 // OnLoop 每帧调用
 func (s *Scene) OnLoop() {
 	seelog.Debug("Team.OnLoop")
-	s.GroupEntity.OnGroupLoop()
 }
 
 // OnDestroy 销毁
 func (s *Scene) OnDestroy() {
 	seelog.Debug("OnDestroy")
-	s.GroupEntity.OnGroupDestroy()
 }
 
 // 关闭房间
