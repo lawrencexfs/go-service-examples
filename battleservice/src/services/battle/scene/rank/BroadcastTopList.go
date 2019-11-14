@@ -25,7 +25,7 @@ func BroadcastTopList(endTime int64, iscene plr.IScene) {
 	tmpList := _FreeRankList{}
 
 	iscene.TravsalPlayers(func(p *plr.ScenePlayer) {
-		tmpList = append(tmpList, _FreeRank{PlayerID: p.ID, Score: float64(p.GetExp())})
+		tmpList = append(tmpList, _FreeRank{PlayerID: p.GetEntityID(), Score: float64(p.GetExp())})
 	})
 
 	sort.Sort(tmpList)
@@ -48,7 +48,7 @@ func BroadcastTopList(endTime int64, iscene plr.IScene) {
 		if p == nil {
 			continue
 		}
-		
+
 		p.Rank = uint32(k + 1)
 		msgTop.Rank = p.Rank
 		msgTop.KillNum = uint32(v.Score)

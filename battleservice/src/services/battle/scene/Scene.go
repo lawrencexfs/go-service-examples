@@ -15,7 +15,6 @@ import (
 	"battleservice/src/services/battle/scene/internal/physic"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/scene/rank"
-	"battleservice/src/services/battle/types"
 	"battleservice/src/services/battle/usercmd"
 	"math"
 	"math/rand"
@@ -31,6 +30,7 @@ import (
 	"go.uber.org/atomic"
 )
 
+// Scene 场景
 type Scene struct {
 	entity.GroupEntity
 
@@ -40,8 +40,6 @@ type Scene struct {
 	doneC chan bool // 用于结束房间协程
 
 	isClosed atomic.Bool // 是否关闭标识
-
-	room _IRoom // 所在房间
 
 	genBallID   uint32             // 用于生成唯一BallID
 	birthPoints *birth.BirthPoints // 出生点
@@ -189,7 +187,7 @@ func (s *Scene) GetCell(px, py float64) (*cll.Cell, bool) {
 }
 
 //获取场景玩家
-func (s *Scene) GetPlayer(playerID types.PlayerID) *plr.ScenePlayer {
+func (s *Scene) GetPlayer(playerID uint64) *plr.ScenePlayer {
 	player := s.GetEntity(uint64(playerID))
 	if player == nil {
 		return nil
@@ -218,7 +216,7 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 	// 把玩家发给其它人
 	othermsg := &usercmd.MsgAddPlayer{}
 	othermsg.Player = &usercmd.MsgPlayer{}
-	othermsg.Player.Id = uint64(scenePlayer.ID)
+	othermsg.Player.Id = uint64(scenePlayer.GetEntityID())
 	othermsg.Player.Name = scenePlayer.Name
 	othermsg.Player.IsLive = scenePlayer.IsLive
 	othermsg.Player.SnapInfo = scenePlayer.GetSnapInfo()
@@ -232,7 +230,7 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 
 	// 发送MsgTop消息给玩家(主要是更新EndTime)
 	msgTop := &usercmd.MsgTop{}
-	ltime := s.room.EndTime() - time.Now().Unix()
+	ltime := s.EndTime() - time.Now().Unix()
 	if ltime > 0 {
 		msgTop.EndTime = uint32(ltime)
 	} else {
@@ -247,7 +245,7 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 
 	s.TravsalPlayers(func(player *plr.ScenePlayer) {
 		others = append(others, &usercmd.MsgPlayer{
-			Id:     uint64(player.ID),
+			Id:     uint64(player.GetEntityID()),
 			BallID: player.SelfBall.GetID(),
 			Name:   player.Name,
 			IsLive: player.IsLive,
@@ -284,7 +282,7 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 	}
 
 	msg := &usercmd.MsgLoginResult{}
-	msg.Id = uint64(scenePlayer.ID)
+	msg.Id = uint64(scenePlayer.GetEntityID())
 	msg.BallID = scenePlayer.SelfBall.GetID()
 	msg.Name = scenePlayer.Name
 	msg.Ok = true
@@ -292,17 +290,17 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 	msg.Balls = balls
 	msg.Playerballs = playerballs
 	msg.Others = others
-	msg.LeftTime = uint32(s.room.EndTime() - time.Now().Unix())
+	msg.LeftTime = uint32(s.EndTime() - time.Now().Unix())
 
 	scenePlayer.Sess.Send(msg)
-	seelog.Info("[登录] 添加玩家成功addplayer [", s.room.GetEntityID(), ",", scenePlayer.Name, "],", scenePlayer.ID, ",ballId:", msg.BallID, ",view:", scenePlayer.GetViewRect(), ",cell:", len(cells),
+	seelog.Info("[登录] 添加玩家成功addplayer [", s.GetEntityID(), ",", scenePlayer.Name, "],", scenePlayer.GetEntityID(), ",ballId:", msg.BallID, ",view:", scenePlayer.GetViewRect(), ",cell:", len(cells),
 		",otplayer:", len(others), "so", len(scenePlayer.Others), ",ball:", len(balls))
 
 	s.BroadcastMsg(othermsg)
 }
 
 // 删除玩家
-func (s *Scene) RemovePlayer(playerId types.PlayerID) bool {
+func (s *Scene) RemovePlayer(playerId uint64) bool {
 	e := s.GetEntity(uint64(playerId))
 	if e == nil {
 		return false
@@ -322,7 +320,7 @@ func (s *Scene) RemovePlayer(playerId types.PlayerID) bool {
 	player.Dead(nil)
 	player.Sess = nil
 
-	seelog.Info("[注销] 删除玩家成功 [", s.room.GetEntityID(), "],", player.ID, " players:", s.EntityCount(), ";", oldstatus, ",exp:", player.GetExp())
+	seelog.Info("[注销] 删除玩家成功 [", s.GetEntityID(), "],", player.GetEntityID(), " players:", s.EntityCount(), ";", oldstatus, ",exp:", player.GetExp())
 	return true
 }
 
@@ -384,9 +382,9 @@ func (s *Scene) BroadcastMsg(msg inet.IMsg) {
 }
 
 //广播(剔除特定ID)
-func (s *Scene) BroadcastMsgExcept(msg inet.IMsg, uid types.PlayerID) {
+func (s *Scene) BroadcastMsgExcept(msg inet.IMsg, uid uint64) {
 	s.TravsalPlayers(func(player *plr.ScenePlayer) {
-		if player.ID == uid {
+		if player.GetEntityID() == uid {
 			return
 		}
 		player.Send(msg)
@@ -403,15 +401,8 @@ func (s *Scene) GenBallID() uint32 {
 	return s.genBallID
 }
 
-var genRoomID types.RoomID
-
 func Init() bool {
 	return LoadSkillBevTree()
-}
-
-func generateRoomID() types.RoomID {
-	genRoomID++
-	return genRoomID
 }
 
 // 关闭房间
@@ -457,7 +448,7 @@ func (s *Scene) Run() {
 }
 
 // 从房间里删除玩家
-func (s *Scene) removePlayerById(playerId types.PlayerID) {
+func (s *Scene) removePlayerById(playerId uint64) {
 	//退出房间处理
 	s.RemovePlayer(playerId)
 
@@ -517,7 +508,7 @@ func (s *Scene) ID() uint64 {
 }
 
 // PostToRemovePlayerById 计划移除玩家，将在房间协程中执行动作。
-func (s *Scene) PostToRemovePlayerById(playerID types.PlayerID) {
+func (s *Scene) PostToRemovePlayerById(playerID uint64) {
 	s.PostFunction(func() {
 		s.removePlayerById(playerID)
 	})

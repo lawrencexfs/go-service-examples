@@ -2,12 +2,11 @@ package bll
 
 import (
 	"battleservice/src/services/battle/scene/internal/interfaces"
-	"battleservice/src/services/battle/types"
 )
 
 type IScenePlayer interface {
 	GetBallScene() IScene
-	GetID() types.PlayerID
+	GetID() uint64
 	GetPower() float64
 	IsRunning() bool
 	GetIsLive() bool
