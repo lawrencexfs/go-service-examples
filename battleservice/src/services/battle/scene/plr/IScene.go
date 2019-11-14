@@ -21,7 +21,7 @@ type IScene interface {
 	GetPlayer(playerID types.PlayerID) *ScenePlayer
 	TravsalPlayers(f func(*ScenePlayer))
 	SceneSize() float64
-	SceneID() types.SceneID
+	GetEntityID() uint64
 	GetCell(px, py float64) (*cll.Cell, bool)
 	RemoveFeed(feed *bll.BallFeed)
 

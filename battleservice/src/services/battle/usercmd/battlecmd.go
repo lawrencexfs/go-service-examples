@@ -59,7 +59,7 @@ type MsgLoginResult struct {
 	Name        string           `protobuf:"bytes,3,opt,name=name" json:"name"`
 	Others      []*MsgPlayer     `protobuf:"bytes,4,rep,name=others" json:"others,omitempty"`
 	Frame       uint32           `protobuf:"varint,5,req,name=frame" json:"frame"`
-	BallId      uint32           `protobuf:"varint,8,req,name=ballId" json:"ballId"`
+	BallID      uint32           `protobuf:"varint,8,req,name=ballId" json:"ballId"`
 	Balls       []*MsgBall       `protobuf:"bytes,9,rep,name=balls" json:"balls,omitempty"`
 	Playerballs []*MsgPlayerBall `protobuf:"bytes,10,rep,name=playerballs" json:"playerballs,omitempty"`
 	LeftTime    uint32           `protobuf:"varint,14,opt,name=leftTime" json:"leftTime"`
@@ -93,7 +93,7 @@ type MsgPlayer struct {
 	Name      string         `protobuf:"bytes,2,req,name=name" json:"name"`
 	IsLive    bool           `protobuf:"varint,4,opt,name=IsLive,json=isLive" json:"IsLive"`
 	SnapInfo  *MsgPlayerSnap `protobuf:"bytes,5,opt,name=SnapInfo,json=snapInfo" json:"SnapInfo,omitempty"`
-	BallId    uint32         `protobuf:"varint,6,req,name=ballId" json:"ballId"`
+	BallID    uint32         `protobuf:"varint,6,req,name=ballId" json:"ballId"`
 	Curexp    uint32         `protobuf:"varint,7,opt,name=curexp" json:"curexp"`
 	Curmp     uint32         `protobuf:"varint,8,opt,name=curmp" json:"curmp"`
 	Curhp     uint32         `protobuf:"varint,10,opt,name=curhp" json:"curhp"`

@@ -41,7 +41,6 @@ type Scene struct {
 
 	isClosed atomic.Bool // 是否关闭标识
 
-	id   types.SceneID
 	room _IRoom // 所在房间
 
 	genBallID   uint32             // 用于生成唯一BallID
@@ -56,21 +55,16 @@ type Scene struct {
 	scenePhysic *physic.ScenePhysic // 场景物理
 }
 
-func NewScene(sceneID types.SceneID) *Scene {
-	return &Scene{
-		id:          sceneID,
-		birthPoints: &birth.BirthPoints{},
-	}
-}
-
-//场景初始化
-func (s *Scene) Init() {
+// OnInit 场景初始化
+func (s *Scene) OnInit(initData interface{}) error {
 	seelog.Info("Scene Init")
+
+	s.birthPoints = &birth.BirthPoints{}
 
 	s.endTime = time.Now().Unix() + consts.DefaultPlayTime // 10min为一局
 	s.doneC = make(chan bool)
 
-	s.mapConfig = conf.GetMapConfigById(s.SceneID())
+	s.mapConfig = conf.GetMapConfigById(s.GetEntityID())
 	s.scenePhysic = physic.NewScenePhysic()
 
 	s.loadMap()
@@ -78,6 +72,18 @@ func (s *Scene) Init() {
 		s.cells = append(s.cells, cll.NewCell(i))
 	}
 	s.birthPoints.CreateAllBirthPoint(s)
+
+	return nil
+}
+
+// OnLoop 每帧调用
+func (s *Scene) OnLoop() {
+	seelog.Debug("Scene.OnLoop")
+}
+
+// OnDestroy 销毁
+func (s *Scene) OnDestroy() {
+	seelog.Debug("Scene.OnDestroy")
 }
 
 func (s *Scene) loadMap() {
@@ -216,7 +222,7 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 	othermsg.Player.Name = scenePlayer.Name
 	othermsg.Player.IsLive = scenePlayer.IsLive
 	othermsg.Player.SnapInfo = scenePlayer.GetSnapInfo()
-	othermsg.Player.BallId = scenePlayer.SelfBall.GetID()
+	othermsg.Player.BallID = scenePlayer.SelfBall.GetID()
 	othermsg.Player.Curmp = uint32(scenePlayer.SelfBall.GetMP())
 	othermsg.Player.Curhp = uint32(scenePlayer.SelfBall.GetHP())
 
@@ -242,7 +248,7 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 	s.TravsalPlayers(func(player *plr.ScenePlayer) {
 		others = append(others, &usercmd.MsgPlayer{
 			Id:     uint64(player.ID),
-			BallId: player.SelfBall.GetID(),
+			BallID: player.SelfBall.GetID(),
 			Name:   player.Name,
 			IsLive: player.IsLive,
 
@@ -279,7 +285,7 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 
 	msg := &usercmd.MsgLoginResult{}
 	msg.Id = uint64(scenePlayer.ID)
-	msg.BallId = scenePlayer.SelfBall.GetID()
+	msg.BallID = scenePlayer.SelfBall.GetID()
 	msg.Name = scenePlayer.Name
 	msg.Ok = true
 	msg.Frame = s.Frame()
@@ -289,7 +295,7 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 	msg.LeftTime = uint32(s.room.EndTime() - time.Now().Unix())
 
 	scenePlayer.Sess.Send(msg)
-	seelog.Info("[登录] 添加玩家成功addplayer [", s.room.GetEntityID(), ",", scenePlayer.Name, "],", scenePlayer.ID, ",ballId:", msg.BallId, ",view:", scenePlayer.GetViewRect(), ",cell:", len(cells),
+	seelog.Info("[登录] 添加玩家成功addplayer [", s.room.GetEntityID(), ",", scenePlayer.Name, "],", scenePlayer.ID, ",ballId:", msg.BallID, ",view:", scenePlayer.GetViewRect(), ",cell:", len(cells),
 		",otplayer:", len(others), "so", len(scenePlayer.Others), ",ball:", len(balls))
 
 	s.BroadcastMsg(othermsg)
@@ -318,10 +324,6 @@ func (s *Scene) RemovePlayer(playerId types.PlayerID) bool {
 
 	seelog.Info("[注销] 删除玩家成功 [", s.room.GetEntityID(), "],", player.ID, " players:", s.EntityCount(), ";", oldstatus, ",exp:", player.GetExp())
 	return true
-}
-
-func (s *Scene) SceneID() types.SceneID {
-	return s.id
 }
 
 func (s *Scene) RemoveFeed(feed *bll.BallFeed) {
@@ -410,22 +412,6 @@ func Init() bool {
 func generateRoomID() types.RoomID {
 	genRoomID++
 	return genRoomID
-}
-
-// OnInit 初始化
-func (s *Scene) OnInit(initData interface{}) error {
-
-	return nil
-}
-
-// OnLoop 每帧调用
-func (s *Scene) OnLoop() {
-	seelog.Debug("Team.OnLoop")
-}
-
-// OnDestroy 销毁
-func (s *Scene) OnDestroy() {
-	seelog.Debug("OnDestroy")
 }
 
 // 关闭房间

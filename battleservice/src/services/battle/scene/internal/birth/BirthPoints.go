@@ -4,10 +4,10 @@ package birth
 
 import (
 	bmath "battleservice/src/services/base/math"
-	"math"
-	"math/rand"
 	"battleservice/src/services/battle/conf"
 	"battleservice/src/services/battle/usercmd"
+	"math"
+	"math/rand"
 )
 
 type BirthPoints struct {
@@ -26,13 +26,13 @@ func (b *BirthPoints) RefreshBirthPoint(d float64, scene IScene) {
 
 // 生成食物 、 动态障碍物
 func (b *BirthPoints) CreateAllBirthPoint(scene IScene) {
-	items := conf.ConfigMgr_GetMe().GetXmlFoodItems(scene.SceneID())
+	items := conf.ConfigMgr_GetMe().GetXmlFoodItems(scene.GetEntityID())
 	for _, item := range items.Items {
 		ftype := item.FoodType
 		fid := item.FoodId
 		birthTime := item.BirthTime
-		foodnum := conf.ConfigMgr_GetMe().GetFoodMapNum(scene.SceneID(), fid)
-		size := float64(conf.ConfigMgr_GetMe().GetFoodSize(scene.SceneID(), fid))
+		foodnum := conf.ConfigMgr_GetMe().GetFoodMapNum(scene.GetEntityID(), fid)
+		size := float64(conf.ConfigMgr_GetMe().GetFoodSize(scene.GetEntityID(), fid))
 		if foodnum > 0 {
 			for i := 0; i < int(foodnum); i++ {
 				x, y := scene.GetRandPos()

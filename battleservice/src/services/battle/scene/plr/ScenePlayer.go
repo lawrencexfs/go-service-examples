@@ -31,7 +31,7 @@ type ScenePlayer struct {
 
 	Sess   ISender // 网络会话对应的玩家。 Scene.AddPlayer() 中设置
 	scn    IScene  // 所在场景
-	BallId uint32  // 玩家球id（一次定义，后面不变）
+	BallID uint32  // 玩家球id（一次定义，后面不变）
 	Name   string  // 玩家昵称
 
 	SelfBall *bll.BallPlayer         // 玩家球
@@ -58,6 +58,7 @@ var NewISkillPlayer func(player *ScenePlayer) interfaces.ISkillPlayer
 // NewISkillBall = skill.NewISkillBall
 var NewISkillBall func(player *ScenePlayer, ball *bll.BallSkill) interfaces.ISkillBall
 
+// OnInit 初始化
 func (s *ScenePlayer) OnInit(initData interface{}) error {
 	seelog.Info("ScenePlayer.OnInit, id:", s.ID)
 
@@ -71,9 +72,9 @@ func (s *ScenePlayer) OnInit(initData interface{}) error {
 	s.ScenePlayerPool.Init()
 	s.ScenePlayerNetMsgHelper.Init(s)
 	s.ScenePlayerViewHelper.Init()
-	s.BallId = s.GetScene().GenBallID()
+	s.BallID = s.GetScene().GenBallID()
 	s.Skill = NewISkillPlayer(s)
-	s.SelfBall = bll.NewBallPlayer(s, s.BallId)
+	s.SelfBall = bll.NewBallPlayer(s, s.BallID)
 	s.GetScene().AddBall(s.SelfBall)
 	s.SelfBall.SetHP(consts.DefaultMaxHP)
 	s.SelfBall.SetMP(consts.DefaultMaxMP)
@@ -83,11 +84,12 @@ func (s *ScenePlayer) OnInit(initData interface{}) error {
 
 // OnLoop 每帧调用
 func (s *ScenePlayer) OnLoop() {
-	seelog.Debug("TeamUser.OnLoop")
+	seelog.Debug("ScenePlayer.OnLoop")
 }
 
+// OnDestroy 销毁
 func (s *ScenePlayer) OnDestroy() {
-	seelog.Debug("OnDestroy")
+	seelog.Debug("ScenePlayer.OnDestroy")
 }
 
 func (s *ScenePlayer) SendChat(str string) {
@@ -201,7 +203,7 @@ func (s *ScenePlayer) Relife() {
 	// 添加一个新的玩家球
 	exp := s.GetExp()
 
-	ball := bll.NewBallPlayer(s, s.BallId)
+	ball := bll.NewBallPlayer(s, s.BallID)
 	s.SelfBall = ball
 	s.SetExp(exp)
 
@@ -577,7 +579,7 @@ func (s *ScenePlayer) RefreshPlayer() {
 	msg.Player.IsLive = s.IsLive
 	msg.Player.SnapInfo = s.GetSnapInfo()
 	msg.Player.Curexp = s.GetExp()
-	msg.Player.BallId = s.SelfBall.GetID()
+	msg.Player.BallID = s.SelfBall.GetID()
 	msg.Player.Curmp = uint32(s.SelfBall.GetMP())
 	msg.Player.Curhp = uint32(s.SelfBall.GetHP())
 	msg.Player.BombNum = int32(s.SelfBall.GetAttr(bll.AttrBombNum))

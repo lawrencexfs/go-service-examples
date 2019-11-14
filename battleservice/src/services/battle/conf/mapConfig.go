@@ -1,12 +1,11 @@
 package conf
 
 import (
-	"github.com/cihub/seelog"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"battleservice/src/services/battle/types"
 
+	"github.com/cihub/seelog"
 	"github.com/spf13/viper"
 )
 
@@ -24,7 +23,7 @@ type MapConfig struct {
 	Nodes []*MapNodeConfig `json:"nodes"`
 }
 
-var _mapConfigDic map[types.SceneID]*MapConfig
+var _mapConfigDic map[uint64]*MapConfig
 
 func LoadMapConfig(path string) (*MapConfig, bool) {
 	config := MapConfig{}
@@ -44,7 +43,7 @@ func LoadMapConfig(path string) (*MapConfig, bool) {
 }
 
 func InitMapConfig() bool {
-	_mapConfigDic = make(map[types.SceneID]*MapConfig)
+	_mapConfigDic = make(map[uint64]*MapConfig)
 	for _, m := range ConfigMgr_GetMe().Map.Scenes {
 		path := fmt.Sprintf("%s%d.json", viper.GetString("global.terraincfg"), m.Id)
 		seelog.Info("LoadMapConfig:" + path)
@@ -59,7 +58,7 @@ func InitMapConfig() bool {
 	return true
 }
 
-func GetMapConfigById(sceneID types.SceneID) *MapConfig {
+func GetMapConfigById(sceneID uint64) *MapConfig {
 	val := _mapConfigDic[sceneID]
 	return val
 }
