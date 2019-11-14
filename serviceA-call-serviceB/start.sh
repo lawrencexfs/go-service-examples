@@ -3,15 +3,6 @@
 flag="app"
 bash stop.sh
 
-# set ZEUS=zeus_v2@v0.0.1
-export ZEUS=zeus
-if [ ! -d "$GOPATH/pkg/mod/github.com/tech/public/go-service/$ZEUS" ]; then
-	echo "get zeus start" 
-	set GOPROXY=
-	git config http.extraheader "PRIVATE-TOKEN: AiyKkDd3XFzxmnQjXGgt"
-	go get -v -insecure github.com/tech/public/go-service/$ZEUS
-	echo "get zeus stop"
-fi
 
 export GOPROXY=https://goproxy.io
 export GOBIN=$PWD/bin

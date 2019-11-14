@@ -1,10 +1,8 @@
 package rank
 
-import "battleservice/src/services/battle/types"
-
 // 自由模式排行榜
 type _FreeRank struct {
-	PlayerID types.PlayerID
+	PlayerID uint64
 	Score    float64
 }
 

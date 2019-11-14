@@ -1,7 +1,6 @@
 package conf
 
 import (
-	"battleservice/src/services/battle/types"
 	"battleservice/src/services/battle/usercmd"
 	"encoding/xml"
 	"io/ioutil"
@@ -27,7 +26,7 @@ type XmlFoodPointRefresh struct {
 }
 
 type XmlScene struct {
-	Id types.SceneID `xml:"id,attr"`
+	Id uint64 `xml:"id,attr"`
 }
 
 type XmlMap struct {
@@ -53,7 +52,7 @@ type XmlFoodItem struct {
 }
 
 type XmlFoodItems struct {
-	MapId  types.SceneID `xml:"mapid,attr"`
+	MapId  uint64        `xml:"mapid,attr"`
 	ShotID uint16        `xml:"shotid,attr"`
 	Items  []XmlFoodItem `xml:"item"`
 }
@@ -176,7 +175,7 @@ func (r *ConfigMgr) Init() bool {
 	return true
 }
 
-func (r *ConfigMgr) GetXmlFoodItems(sceneId types.SceneID) *XmlFoodItems {
+func (r *ConfigMgr) GetXmlFoodItems(sceneId uint64) *XmlFoodItems {
 	for _, m := range r.FoodDatas.Foods {
 		if m.MapId == sceneId {
 			return &m
@@ -186,7 +185,7 @@ func (r *ConfigMgr) GetXmlFoodItems(sceneId types.SceneID) *XmlFoodItems {
 }
 
 //food 表
-func (r *ConfigMgr) GetFood(sceneID types.SceneID, foodid uint16) *XmlFoodItem {
+func (r *ConfigMgr) GetFood(sceneID uint64, foodid uint16) *XmlFoodItem {
 	item := r.GetXmlFoodItems(sceneID)
 	for _, val := range item.Items {
 		if val.FoodId == foodid {
@@ -196,42 +195,42 @@ func (r *ConfigMgr) GetFood(sceneID types.SceneID, foodid uint16) *XmlFoodItem {
 	return nil
 }
 
-func (r *ConfigMgr) GetFoodSize(sceneID types.SceneID, typeId uint16) float32 {
+func (r *ConfigMgr) GetFoodSize(sceneID uint64, typeId uint16) float32 {
 	if food := r.GetFood(sceneID, typeId); food != nil {
 		return food.Size
 	}
 	return 0.5
 }
 
-func (r *ConfigMgr) GetFoodMapNum(sceneID types.SceneID, typeId uint16) uint16 {
+func (r *ConfigMgr) GetFoodMapNum(sceneID uint64, typeId uint16) uint16 {
 	if food := r.GetFood(sceneID, typeId); food != nil {
 		return food.MapNum
 	}
 	return 0
 }
 
-func (r *ConfigMgr) GetFoodHP(sceneID types.SceneID, typeId uint16) uint32 {
+func (r *ConfigMgr) GetFoodHP(sceneID uint64, typeId uint16) uint32 {
 	if food := r.GetFood(sceneID, typeId); food != nil {
 		return food.HP
 	}
 	return 0
 }
 
-func (r *ConfigMgr) GetFoodExp(sceneID types.SceneID, typeId uint16) uint32 {
+func (r *ConfigMgr) GetFoodExp(sceneID uint64, typeId uint16) uint32 {
 	if food := r.GetFood(sceneID, typeId); food != nil {
 		return food.Exp
 	}
 	return 0
 }
 
-func (r *ConfigMgr) GetFoodTime(sceneID types.SceneID, typeId uint16) int64 {
+func (r *ConfigMgr) GetFoodTime(sceneID uint64, typeId uint16) int64 {
 	if food := r.GetFood(sceneID, typeId); food != nil {
 		return food.LiveTime
 	}
 	return 0
 }
 
-func (r *ConfigMgr) GetFoodBallType(sceneID types.SceneID, typeId uint16) usercmd.BallType {
+func (r *ConfigMgr) GetFoodBallType(sceneID uint64, typeId uint16) usercmd.BallType {
 	if food := r.GetFood(sceneID, typeId); food != nil {
 		return usercmd.BallType(food.FoodType)
 	}

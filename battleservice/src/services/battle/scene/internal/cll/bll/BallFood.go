@@ -22,8 +22,8 @@ type BallFood struct {
 }
 
 func NewBallFood(id uint32, typeId uint16, x, y float64, scene IScene) *BallFood {
-	var radius float32 = conf.ConfigMgr_GetMe().GetFoodSize(scene.SceneID(), typeId)
-	ballType := conf.ConfigMgr_GetMe().GetFoodBallType(scene.SceneID(), typeId)
+	var radius float32 = conf.ConfigMgr_GetMe().GetFoodSize(scene.GetEntityID(), typeId)
+	ballType := conf.ConfigMgr_GetMe().GetFoodBallType(scene.GetEntityID(), typeId)
 	ball := &BallFood{
 		id:       id,
 		typeID:   typeId,

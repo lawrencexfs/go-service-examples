@@ -2,24 +2,26 @@ package battle
 
 import (
 	"battleservice/src/services/battle/conf"
-	"battleservice/src/services/battle/proc"
+	"battleservice/src/services/battle/itf"
 	"battleservice/src/services/battle/scene"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/token"
+	"battleservice/src/services/battle/types"
 	"fmt"
 	"math/rand"
 	"time"
 
 	"github.com/cihub/seelog"
-	"github.com/spf13/viper"
-	"github.com/giant-tech/go-service/base/net/server"
-	"github.com/giant-tech/go-service/framework/service"
+	"github.com/giant-tech/go-service/base/net/inet"
+	"github.com/giant-tech/go-service/framework/errormsg"
+	"github.com/giant-tech/go-service/framework/msgdef"
+	"github.com/giant-tech/go-service/logic/gatewaybase"
+	"github.com/giant-tech/go-service/logic/gatewaybase/igateway"
 )
 
 // BattleService 战斗服务
 type BattleService struct {
-	service.BaseService
-	svr *server.Server
+	gatewaybase.GatewayBase
 	token.TokenMgr
 }
 
@@ -31,7 +33,14 @@ func (bs *BattleService) OnInit() error {
 
 	bs.TokenMgr.Init()
 
+	var err error
+	err = bs.GatewayBase.OnInit(bs)
+	if err != nil {
+		return err
+	}
+
 	// 注册proto
+	bs.RegProtoType("Scene", &scene.Scene{}, false)
 	bs.RegProtoType("Player", &plr.ScenePlayer{}, false)
 
 	// 全局配置
@@ -40,22 +49,10 @@ func (bs *BattleService) OnInit() error {
 		return fmt.Errorf("conf init failed")
 	}
 
-	// 绑定本地端口
-	address := viper.GetString("room.listen")
-	svr, err := server.New("tcp+kcp", address, 10000)
-	if err != nil {
-		seelog.Error(fmt.Sprintf("创建服务器失败: ", err))
-		return fmt.Errorf("server.New")
-	}
-
-	bs.svr = svr
-
-	// 添加MsgProc, 这样新连接创建时会注册处理函数
-	bs.svr.AddMsgProc(&proc.ProcBattle{IBattleService: bs})
-
 	if !scene.Init() {
 		return fmt.Errorf("scene.Init failed")
 	}
+
 	if !conf.InitMapConfig() {
 		seelog.Error("[启动]InitMapConfig fail! ")
 		return fmt.Errorf("InitMapConfig failed")
@@ -75,8 +72,58 @@ func (bs *BattleService) OnTick() {
 func (bs *BattleService) OnDestroy() {
 	seelog.Debug("BattleService.OnDestroy")
 
-	if bs.svr != nil {
-		bs.svr.Close()
+	bs.GatewayBase.OnDestroy()
+}
+
+// OnLoginHandler 登录处理
+func (bs *BattleService) OnLoginHandler(sess inet.ISession, msg *msgdef.LoginReq) *igateway.LoginRetData {
+	//自己有登录方面的处理就放在这里
+	seelog.Info("OnLoginHandler, msg.UID = ", msg.UID)
+
+	loginRetData := &igateway.LoginRetData{Msg: &msgdef.LoginResp{}}
+
+	token := types.Token(msg.Token)
+	ok, roomID, playerID := bs.LookupToken(token)
+	if !ok {
+		seelog.Error("OnLoginHandler got illegal token ", token)
+		loginRetData.Msg.ErrStr = "illegal token"
+		loginRetData.Msg.Result = uint32(errormsg.ReturnTypeTOKENINVALID)
+
+		return loginRetData
 	}
 
+	eroom := bs.GetEntity(roomID)
+	if eroom == nil {
+		seelog.Error("OnLoginHandler roomID not found: ", roomID)
+		loginRetData.Msg.ErrStr = "illegal token"
+		loginRetData.Msg.Result = uint32(errormsg.ReturnTypeTOKENINVALID)
+
+		return loginRetData
+	}
+
+	scene, ok := eroom.(itf.IScene)
+	if !ok {
+		seelog.Error("OnLoginHandler player is not scene")
+		loginRetData.Msg.ErrStr = "illegal token"
+		loginRetData.Msg.Result = uint32(errormsg.ReturnTypeTOKENINVALID)
+
+		return loginRetData
+	}
+
+	//TODO: 判断是否已经存在
+
+	//创建房间成员
+	player, err := scene.CreateEntityWithID("Player", playerID, scene.GetEntityID(), nil, true, 0)
+	if err != nil {
+		seelog.Error("Create scene player failed, err: ", err)
+
+		loginRetData.Msg.Result = uint32(errormsg.ReturnTypeTOKENINVALID)
+
+		return loginRetData
+	}
+
+	loginRetData.Entity = player
+	loginRetData.Group = scene
+
+	return loginRetData
 }

@@ -4,26 +4,25 @@ package plr
 
 import (
 	"battleservice/src/services/base/util"
-	"math"
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/internal"
 	"battleservice/src/services/battle/scene/internal/cll"
 	"battleservice/src/services/battle/scene/internal/cll/bll"
 	"battleservice/src/services/battle/scene/internal/interfaces"
-	"battleservice/src/services/battle/types"
 	"battleservice/src/services/battle/usercmd"
+	"math"
 )
 
 type ScenePlayerViewHelper struct {
-	ViewRect       *util.Square                    // 玩家视野大小
-	RealViewRect   util.Square                     // 玩家视野（根据玩家原始视野得到所有cell的外边框）
-	LookCells      map[int]*cll.Cell               // 根据玩家原始视野得到所有cell集合
-	LookFeeds      map[uint32]*bll.BallFeed        // 视野中的feed（用于sendSceneMsg）
-	LookBallSkill  map[uint32]*bll.BallSkill       // 视野中的技能球（用于sendSceneMsg）
-	LookBallPlayer map[types.PlayerID]*ScenePlayer // 视野中的玩家 （用于sendSceneMsg）
-	LookBallFoods  map[uint32]*bll.BallFood        // 视野中的food（用于sendSceneMsg）
-	Others         map[types.PlayerID]*ScenePlayer // 视野中其它玩家
-	RoundPlayers   []*ScenePlayer                  // 周围玩家，包含死亡玩家
+	ViewRect       *util.Square              // 玩家视野大小
+	RealViewRect   util.Square               // 玩家视野（根据玩家原始视野得到所有cell的外边框）
+	LookCells      map[int]*cll.Cell         // 根据玩家原始视野得到所有cell集合
+	LookFeeds      map[uint32]*bll.BallFeed  // 视野中的feed（用于sendSceneMsg）
+	LookBallSkill  map[uint32]*bll.BallSkill // 视野中的技能球（用于sendSceneMsg）
+	LookBallPlayer map[uint64]*ScenePlayer   // 视野中的玩家 （用于sendSceneMsg）
+	LookBallFoods  map[uint32]*bll.BallFood  // 视野中的food（用于sendSceneMsg）
+	Others         map[uint64]*ScenePlayer   // 视野中其它玩家
+	RoundPlayers   []*ScenePlayer            // 周围玩家，包含死亡玩家
 }
 
 func (this *ScenePlayerViewHelper) Init() {
@@ -31,9 +30,9 @@ func (this *ScenePlayerViewHelper) Init() {
 	this.LookCells = make(map[int]*cll.Cell)
 	this.LookFeeds = make(map[uint32]*bll.BallFeed)
 	this.LookBallSkill = make(map[uint32]*bll.BallSkill)
-	this.LookBallPlayer = make(map[types.PlayerID]*ScenePlayer)
+	this.LookBallPlayer = make(map[uint64]*ScenePlayer)
 	this.LookBallFoods = make(map[uint32]*bll.BallFood)
-	this.Others = make(map[types.PlayerID]*ScenePlayer)
+	this.Others = make(map[uint64]*ScenePlayer)
 }
 
 // 获取视野大小, 更新视野
@@ -68,7 +67,7 @@ func (this *ScenePlayerViewHelper) UpdateView(scene IScene, selfBall *bll.BallPl
 	}
 }
 func (this *ScenePlayerViewHelper) ResetMsg() {
-	this.LookBallPlayer = make(map[types.PlayerID]*ScenePlayer)
+	this.LookBallPlayer = make(map[uint64]*ScenePlayer)
 	for k, v := range this.Others {
 		this.LookBallPlayer[k] = v
 	}
@@ -127,12 +126,12 @@ func (this *ScenePlayerViewHelper) UpdateVeiwBallSkill() (adds []*usercmd.MsgBal
 func (this *ScenePlayerViewHelper) updateViewBallPlayer() (adds []*usercmd.MsgPlayerBall, dels []uint32) {
 	//add
 	for _, ball := range this.Others {
-		if _, ok := this.LookBallPlayer[ball.ID]; !ok {
+		if _, ok := this.LookBallPlayer[ball.GetEntityID()]; !ok {
 			adds = append(adds, bll.PlayerBallToMsgBall(ball.SelfBall))
 		}
 	}
 	for _, ball := range this.LookBallPlayer {
-		if _, ok := this.Others[ball.ID]; !ok {
+		if _, ok := this.Others[ball.GetEntityID()]; !ok {
 			dels = append(dels, ball.SelfBall.GetID())
 		}
 	}
@@ -166,14 +165,15 @@ func (this *ScenePlayerViewHelper) UpdateVeiwFoods() (addFoods []*usercmd.MsgBal
 
 //更新玩家当前帧视野
 func (this *ScenePlayerViewHelper) UpdateViewPlayers(scene IScene, selfBall *bll.BallPlayer) {
-	this.Others = make(map[types.PlayerID]*ScenePlayer)
+	this.Others = make(map[uint64]*ScenePlayer)
 	this.RoundPlayers = this.RoundPlayers[:0]
-	for _, player := range scene.GetPlayers() {
-		if selfBall.GetPlayerId() != player.ID {
+
+	scene.TravsalPlayers(func(player *ScenePlayer) {
+		if selfBall.GetPlayerId() != player.GetEntityID() {
 			_, _, ok1 := this.RealViewRect.ContainsCircle(player.SelfBall.Pos.X, player.SelfBall.Pos.Y, 0)
 			if ok1 {
 				if player.IsLive {
-					this.Others[player.ID] = player
+					this.Others[player.GetEntityID()] = player
 				}
 			}
 
@@ -182,7 +182,7 @@ func (this *ScenePlayerViewHelper) UpdateViewPlayers(scene IScene, selfBall *bll
 				this.RoundPlayers = append(this.RoundPlayers, player)
 			}
 		}
-	}
+	})
 }
 
 //寻找最近的类型目标

@@ -10,7 +10,6 @@ import (
 	"battleservice/src/services/battle/scene/internal/cll/bll"
 	"battleservice/src/services/battle/scene/internal/interfaces"
 	"battleservice/src/services/battle/scene/plr/internal"
-	"battleservice/src/services/battle/types"
 	"battleservice/src/services/battle/usercmd"
 	"math"
 	"time"
@@ -27,11 +26,9 @@ type ScenePlayer struct {
 	ScenePlayerNetMsgHelper // 房间玩家协议处理辅助类
 	ScenePlayerPool         // 对象池
 
-	ID types.PlayerID // 玩家id
-
 	Sess   ISender // 网络会话对应的玩家。 Scene.AddPlayer() 中设置
 	scn    IScene  // 所在场景
-	BallId uint32  // 玩家球id（一次定义，后面不变）
+	BallID uint32  // 玩家球id（一次定义，后面不变）
 	Name   string  // 玩家昵称
 
 	SelfBall *bll.BallPlayer         // 玩家球
@@ -58,35 +55,42 @@ var NewISkillPlayer func(player *ScenePlayer) interfaces.ISkillPlayer
 // NewISkillBall = skill.NewISkillBall
 var NewISkillBall func(player *ScenePlayer, ball *bll.BallSkill) interfaces.ISkillBall
 
-func NewScenePlayer(playerID types.PlayerID, name string, scn IScene) *ScenePlayer {
-	p := &ScenePlayer{
-		scn:     scn,
-		ID:      playerID,
-		Name:    name,
-		IsLive:  true,
-		msgPool: internal.NewMsgPool(),
-	}
+// OnInit 初始化
+func (s *ScenePlayer) OnInit(initData interface{}) error {
+	seelog.Info("ScenePlayer.OnInit, id:", s.GetEntityID())
 
-	p.Init()
-	return p
-}
+	// s.scn = scn
+	// s.GetEntityID() = playerID
+	// s.Name = name
 
-func (s *ScenePlayer) Init() {
-	seelog.Info("ScenePlayer.Init, id:", s.ID)
+	s.IsLive = true
+	s.msgPool = internal.NewMsgPool()
+
 	s.ScenePlayerPool.Init()
 	s.ScenePlayerNetMsgHelper.Init(s)
 	s.ScenePlayerViewHelper.Init()
-	s.BallId = s.GetScene().GenBallID()
+	s.BallID = s.GetScene().GenBallID()
 	s.Skill = NewISkillPlayer(s)
-	s.SelfBall = bll.NewBallPlayer(s, s.BallId)
+	s.SelfBall = bll.NewBallPlayer(s, s.BallID)
 	s.GetScene().AddBall(s.SelfBall)
 	s.SelfBall.SetHP(consts.DefaultMaxHP)
 	s.SelfBall.SetMP(consts.DefaultMaxMP)
 
+	return nil
+}
+
+// OnLoop 每帧调用
+func (s *ScenePlayer) OnLoop() {
+	seelog.Debug("ScenePlayer.OnLoop")
+}
+
+// OnDestroy 销毁
+func (s *ScenePlayer) OnDestroy() {
+	seelog.Debug("ScenePlayer.OnDestroy")
 }
 
 func (s *ScenePlayer) SendChat(str string) {
-	op := &usercmd.MsgSceneChat{Id: uint64(s.ID), Msg: str}
+	op := &usercmd.MsgSceneChat{Id: uint64(s.GetEntityID()), Msg: str}
 	s.BroadCastMsg(op)
 }
 
@@ -146,17 +150,17 @@ func (s *ScenePlayer) RealDead(killer *ScenePlayer) {
 
 	msg := &s.msgPool.MsgDeath
 	msg.MaxScore = uint32(s.GetExp())
-	msg.Id = uint64(s.ID)
+	msg.Id = uint64(s.GetEntityID())
 	if killer == nil {
 		msg.KillId = 0
 		msg.KillName = ""
 	} else {
 		killer.KillNum++
-		msg.KillId = uint64(killer.ID)
+		msg.KillId = uint64(killer.GetEntityID())
 		msg.KillName = killer.Name
 	}
 	if s.Sess == nil || s.Sess.IsClosed() {
-		s.scn.BroadcastMsgExcept(msg, s.ID)
+		s.scn.BroadcastMsgExcept(msg, s.GetEntityID())
 	} else {
 		s.BroadCastMsg(msg)
 	}
@@ -196,7 +200,7 @@ func (s *ScenePlayer) Relife() {
 	// 添加一个新的玩家球
 	exp := s.GetExp()
 
-	ball := bll.NewBallPlayer(s, s.BallId)
+	ball := bll.NewBallPlayer(s, s.BallID)
 	s.SelfBall = ball
 	s.SetExp(exp)
 
@@ -517,7 +521,7 @@ func (s *ScenePlayer) GetSnapInfo() *usercmd.MsgPlayerSnap {
 	msg.Snapx = float32(s.SelfBall.Pos.X)
 	msg.Snapy = float32(s.SelfBall.Pos.Y)
 	msg.Angle = float32(s.Angle)
-	msg.Id = uint64(s.ID)
+	msg.Id = uint64(s.GetEntityID())
 	return msg
 }
 
@@ -567,12 +571,12 @@ func (s *ScenePlayer) RefreshPlayer() {
 		return
 	}
 	msg := &s.msgPool.MsgRefreshPlayer
-	msg.Player.Id = uint64(s.ID)
+	msg.Player.Id = uint64(s.GetEntityID())
 	msg.Player.Name = s.Name
 	msg.Player.IsLive = s.IsLive
 	msg.Player.SnapInfo = s.GetSnapInfo()
 	msg.Player.Curexp = s.GetExp()
-	msg.Player.BallId = s.SelfBall.GetID()
+	msg.Player.BallID = s.SelfBall.GetID()
 	msg.Player.Curmp = uint32(s.SelfBall.GetMP())
 	msg.Player.Curhp = uint32(s.SelfBall.GetHP())
 	msg.Player.BombNum = int32(s.SelfBall.GetAttr(bll.AttrBombNum))
@@ -591,8 +595,8 @@ func (s *ScenePlayer) SetIsRunning(v bool) {
 	s.isRunning = v
 }
 
-func (s *ScenePlayer) GetId() types.PlayerID {
-	return s.ID
+func (s *ScenePlayer) GetId() uint64 {
+	return s.GetEntityID()
 }
 
 func (s *ScenePlayer) Frame() uint32 {
@@ -630,8 +634,8 @@ func (s *ScenePlayer) UpdateViewPlayers(scene IScene) {
 	s.ScenePlayerViewHelper.UpdateViewPlayers(scene, s.SelfBall)
 }
 
-func (s *ScenePlayer) GetID() types.PlayerID {
-	return s.ID
+func (s *ScenePlayer) GetID() uint64 {
+	return s.GetEntityID()
 }
 
 // 当前摇杆力度（目前恒为0或者1，来简化同步计算）

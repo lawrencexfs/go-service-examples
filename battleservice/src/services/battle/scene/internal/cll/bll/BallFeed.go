@@ -13,8 +13,8 @@ type BallFeed struct {
 }
 
 func NewBallFeed(scene IScene, typeId uint16, id uint32, x, y float64) *BallFeed {
-	radius := float64(conf.ConfigMgr_GetMe().GetFoodSize(scene.SceneID(), typeId))
-	ballType := conf.ConfigMgr_GetMe().GetFoodBallType(scene.SceneID(), typeId)
+	radius := float64(conf.ConfigMgr_GetMe().GetFoodSize(scene.GetEntityID(), typeId))
+	ballType := conf.ConfigMgr_GetMe().GetFoodBallType(scene.GetEntityID(), typeId)
 	ball := &BallFeed{
 		BallMove: BallMove{
 			BallFood: BallFood{

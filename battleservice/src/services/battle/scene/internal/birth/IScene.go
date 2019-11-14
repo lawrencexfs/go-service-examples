@@ -1,11 +1,7 @@
 package birth
 
-import (
-	"battleservice/src/services/battle/types"
-)
-
 type IScene interface {
 	GetRandPos() (x, y float64)
-	SceneID() types.SceneID
+	GetEntityID() uint64
 	GenBallID() uint32
 }

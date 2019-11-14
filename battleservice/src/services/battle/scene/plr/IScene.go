@@ -6,7 +6,6 @@ import (
 	"battleservice/src/services/battle/scene/internal/cll"
 	"battleservice/src/services/battle/scene/internal/cll/bll"
 	"battleservice/src/services/battle/scene/internal/interfaces"
-	"battleservice/src/services/battle/types"
 
 	"github.com/giant-tech/go-service/base/net/inet"
 )
@@ -18,9 +17,10 @@ type IScene interface {
 	RemovePlayerPhysic(player ape.IAbstractParticle)
 	Frame() uint32
 	GetAreaCells(s *util.Square) (cells []*cll.Cell)
-	GetPlayers() map[types.PlayerID]*ScenePlayer
+	GetPlayer(playerID uint64) *ScenePlayer
+	TravsalPlayers(f func(*ScenePlayer))
 	SceneSize() float64
-	SceneID() types.SceneID
+	GetEntityID() uint64
 	GetCell(px, py float64) (*cll.Cell, bool)
 	RemoveFeed(feed *bll.BallFeed)
 
@@ -28,5 +28,5 @@ type IScene interface {
 	CellNumY() int
 
 	BroadcastMsg(msg inet.IMsg)
-	BroadcastMsgExcept(msg inet.IMsg, uid types.PlayerID)
+	BroadcastMsgExcept(msg inet.IMsg, uid uint64)
 }

@@ -22,45 +22,6 @@ const (
 	MsgTypeCmd_CastSkill      MsgTypeCmd = 1050
 )
 
-var MsgTypeCmd_name = map[int32]string{
-	1001: "Login",
-	1002: "Top",
-	1003: "AddPlayer",
-	1004: "RemovePlayer",
-	1006: "Move",
-	1007: "Run",
-	1009: "ReLife",
-	1010: "Death",
-	1011: "EndRoom",
-	1013: "RefreshPlayer",
-	1016: "HeartBeat",
-	1020: "SceneChat",
-	1021: "ActCloseSocket",
-	1025: "ErrorMsg",
-	1031: "SceneTCP",
-	1032: "SceneUDP",
-	1050: "CastSkill",
-}
-var MsgTypeCmd_value = map[string]int32{
-	"Login":          1001,
-	"Top":            1002,
-	"AddPlayer":      1003,
-	"RemovePlayer":   1004,
-	"Move":           1006,
-	"Run":            1007,
-	"ReLife":         1009,
-	"Death":          1010,
-	"EndRoom":        1011,
-	"RefreshPlayer":  1013,
-	"HeartBeat":      1016,
-	"SceneChat":      1020,
-	"ActCloseSocket": 1021,
-	"ErrorMsg":       1025,
-	"SceneTCP":       1031,
-	"SceneUDP":       1032,
-	"CastSkill":      1050,
-}
-
 type MapObjectConfigType int32
 
 const (
@@ -86,37 +47,6 @@ const (
 	BallType_SkillEnd    BallType = 39
 )
 
-var BallType_name = map[int32]string{
-	1:  "Player",
-	10: "FoodBegin",
-	11: "FoodNormal",
-	12: "FoodHammer",
-	13: "FoodBomb",
-	19: "FoodEnd",
-	20: "FeedBegin",
-	21: "FeedNormal",
-	29: "FeedEnd",
-	30: "SkillBegin",
-	31: "SkillHammer",
-	32: "SkillBomb",
-	39: "SkillEnd",
-}
-var BallType_value = map[string]int32{
-	"Player":      1,
-	"FoodBegin":   10,
-	"FoodNormal":  11,
-	"FoodHammer":  12,
-	"FoodBomb":    13,
-	"FoodEnd":     19,
-	"FeedBegin":   20,
-	"FeedNormal":  21,
-	"FeedEnd":     29,
-	"SkillBegin":  30,
-	"SkillHammer": 31,
-	"SkillBomb":   32,
-	"SkillEnd":    39,
-}
-
 // 请求登录
 type MsgLogin struct {
 	Name string `protobuf:"bytes,1,req,name=name" json:"name"`
@@ -129,7 +59,7 @@ type MsgLoginResult struct {
 	Name        string           `protobuf:"bytes,3,opt,name=name" json:"name"`
 	Others      []*MsgPlayer     `protobuf:"bytes,4,rep,name=others" json:"others,omitempty"`
 	Frame       uint32           `protobuf:"varint,5,req,name=frame" json:"frame"`
-	BallId      uint32           `protobuf:"varint,8,req,name=ballId" json:"ballId"`
+	BallID      uint32           `protobuf:"varint,8,req,name=ballId" json:"ballId"`
 	Balls       []*MsgBall       `protobuf:"bytes,9,rep,name=balls" json:"balls,omitempty"`
 	Playerballs []*MsgPlayerBall `protobuf:"bytes,10,rep,name=playerballs" json:"playerballs,omitempty"`
 	LeftTime    uint32           `protobuf:"varint,14,opt,name=leftTime" json:"leftTime"`
@@ -163,7 +93,7 @@ type MsgPlayer struct {
 	Name      string         `protobuf:"bytes,2,req,name=name" json:"name"`
 	IsLive    bool           `protobuf:"varint,4,opt,name=IsLive,json=isLive" json:"IsLive"`
 	SnapInfo  *MsgPlayerSnap `protobuf:"bytes,5,opt,name=SnapInfo,json=snapInfo" json:"SnapInfo,omitempty"`
-	BallId    uint32         `protobuf:"varint,6,req,name=ballId" json:"ballId"`
+	BallID    uint32         `protobuf:"varint,6,req,name=ballId" json:"ballId"`
 	Curexp    uint32         `protobuf:"varint,7,opt,name=curexp" json:"curexp"`
 	Curmp     uint32         `protobuf:"varint,8,opt,name=curmp" json:"curmp"`
 	Curhp     uint32         `protobuf:"varint,10,opt,name=curhp" json:"curhp"`

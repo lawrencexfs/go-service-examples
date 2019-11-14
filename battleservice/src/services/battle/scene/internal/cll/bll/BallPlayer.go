@@ -7,7 +7,6 @@ import (
 	bmath "battleservice/src/services/base/math"
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/scene/consts"
-	"battleservice/src/services/battle/types"
 	"battleservice/src/services/battle/usercmd"
 )
 
@@ -44,7 +43,7 @@ func (this *BallPlayer) Init() {
 	this.player.GetBallScene().AddPlayerPhysic(this.PhysicObj)
 }
 
-func (this *BallPlayer) GetPlayerId() types.PlayerID {
+func (this *BallPlayer) GetPlayerId() uint64 {
 	return this.player.GetID()
 }
 

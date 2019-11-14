@@ -36,7 +36,7 @@ func (this *ActionThrowBall) OnTick(tick *b3core.Tick) b3.Status {
 	scene := player.GetScene()
 	ballid := scene.GenBallID()
 	posx, posy := player.SelfBall.GetPos()
-	radius := float64(conf.ConfigMgr_GetMe().GetFoodSize(scene.SceneID(), this.ball_type))
+	radius := float64(conf.ConfigMgr_GetMe().GetFoodSize(scene.GetEntityID(), this.ball_type))
 
 	angleVel := &bmath.Vector2{}
 	usedefault := true
