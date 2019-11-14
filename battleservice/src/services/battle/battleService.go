@@ -39,7 +39,7 @@ func (bs *BattleService) OnInit() error {
 	}
 
 	// 注册proto
-	bs.RegProtoType("Scene", &scene.Scene{}, false)
+	bs.RegProtoType("Room", &scene.Scene{}, false)
 	bs.RegProtoType("Player", &plr.ScenePlayer{}, false)
 
 	// 全局配置
@@ -107,8 +107,6 @@ func (bs *BattleService) OnLoginHandler(sess inet.ISession, msg *msgdef.LoginReq
 
 		return loginRetData
 	}
-
-	//TODO: 判断是否已经存在
 
 	//创建房间成员
 	player, err := scene.CreateEntityWithID("Player", playerID, scene.GetEntityID(), nil, true, 0)
