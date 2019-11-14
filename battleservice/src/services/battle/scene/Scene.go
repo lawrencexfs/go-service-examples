@@ -23,16 +23,16 @@ import (
 	"github.com/cihub/seelog"
 	"github.com/giant-tech/go-service/base/net/inet"
 	"github.com/giant-tech/go-service/base/serializer"
-	"github.com/giant-tech/go-service/framework/entity"
 	"github.com/giant-tech/go-service/framework/iserver"
 	"github.com/giant-tech/go-service/framework/msgdef"
+	"github.com/giant-tech/go-service/framework/space"
 
 	"go.uber.org/atomic"
 )
 
 // Scene 场景
 type Scene struct {
-	entity.GroupEntity
+	space.Space
 
 	endTime int64  // 结束时间
 	frame   uint32 // 当前帧数
