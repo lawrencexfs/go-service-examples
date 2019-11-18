@@ -15,21 +15,21 @@ type GatewayUser struct {
 	userbase.GateUserBase
 }
 
-// OnUserInit 初始化
-func (gu *GatewayUser) OnUserInit() error {
-	seelog.Debug("GatewayUser.OnUserInit, dbid: ", gu.GetEntityID())
+// OnInit 初始化
+func (gu *GatewayUser) OnInit(interface{}) error {
+	seelog.Debug("GatewayUser.OnInit, dbid: ", gu.GetEntityID())
 
 	return nil
 }
 
-// OnUserTick 每帧调用
-func (gu *GatewayUser) OnUserTick() {
+// OnLoop 每帧调用
+func (gu *GatewayUser) OnLoop() {
 
 }
 
-// OnUserFini 析构
-func (gu *GatewayUser) OnUserFini() {
-	seelog.Debug("GatewayUser.OnUserFini, dbid: ", gu.GetEntityID())
+// OnDestroy 析构
+func (gu *GatewayUser) OnDestroy() {
+	seelog.Debug("GatewayUser.OnDestroy, dbid: ", gu.GetEntityID())
 }
 
 // OnReconnect 断线重连处理

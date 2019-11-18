@@ -67,9 +67,7 @@ func (cli *Client) AsyncCall(sType idata.ServiceType, methodName string, args ..
 		Params:     data,
 	}
 
-	cli.lobbySession.Send(msg)
-
-	return nil
+	return cli.lobbySession.Send(msg)
 }
 
 // SyncCall 同步调用，等待返回

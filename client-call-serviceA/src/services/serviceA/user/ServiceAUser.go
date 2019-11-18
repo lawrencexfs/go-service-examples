@@ -12,21 +12,21 @@ type ServiceAUser struct {
 	userbase.GateUserBase
 }
 
-// OnUserInit 初始化
-func (lu *ServiceAUser) OnUserInit() error {
-	seelog.Debug("ServiceAUser.OnUserInit, entityID: ", lu.GetEntityID())
+// OnInit 初始化
+func (lu *ServiceAUser) OnInit(interface{}) error {
+	seelog.Debug("ServiceAUser.OnInit, entityID: ", lu.GetEntityID())
 
 	return nil
 }
 
-// OnUserTick 每帧调用
-func (lu *ServiceAUser) OnUserTick() {
+// OnLoop 每帧调用
+func (lu *ServiceAUser) OnLoop() {
 
 }
 
-// OnUserFini 析构
-func (lu *ServiceAUser) OnUserFini() {
-	seelog.Debug("ServiceAUser.OnUserFini, dbid: ", lu.GetEntityID())
+// OnDestroy 析构
+func (lu *ServiceAUser) OnDestroy() {
+	seelog.Debug("ServiceAUser.OnDestroy, dbid: ", lu.GetEntityID())
 }
 
 // OnReconnect 断线重连处理
