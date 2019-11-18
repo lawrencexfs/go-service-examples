@@ -36,6 +36,19 @@ namespace GiantPhysX
 		/// </remarks>
 		/// <param name="scene">要销毁的场景对象</param>
 		virtual void DestroyScene(GxIScene* scene) = 0;
+
+		/// <summary>
+		/// 获取层级掩码
+		/// </summary>
+		/// <param name="layer">层级名称</param>
+		/// <returns>层级掩码</returns>
+		virtual int GetMask(const char *layer) = 0;
+
+		/// <summary>
+		/// 获取包含所有层级的掩码
+		/// </summary>
+		/// <returns>掩码</returns>
+		virtual int GetFullMask() = 0;
 	};
 
 } // namespace GiantPhysX
