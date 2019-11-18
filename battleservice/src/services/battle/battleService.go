@@ -6,7 +6,6 @@ import (
 	"battleservice/src/services/battle/scene"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/token"
-	"battleservice/src/services/battle/types"
 	"fmt"
 	"math/rand"
 	"time"
@@ -40,7 +39,7 @@ func (bs *BattleService) OnInit() error {
 	}
 
 	// 注册proto
-	bs.RegProtoType("Scene", &scene.Scene{}, false)
+	bs.RegProtoType("Room", &scene.Scene{}, false)
 	bs.RegProtoType("Player", &plr.ScenePlayer{}, false)
 
 	// 全局配置
@@ -82,10 +81,9 @@ func (bs *BattleService) OnLoginHandler(sess inet.ISession, msg *msgdef.LoginReq
 
 	loginRetData := &igateway.LoginRetData{Msg: &msgdef.LoginResp{}}
 
-	token := types.Token(msg.Token)
-	ok, roomID, playerID := bs.LookupToken(token)
+	ok, roomID, playerID := bs.LookupToken(msg.Token)
 	if !ok {
-		seelog.Error("OnLoginHandler got illegal token ", token)
+		seelog.Error("OnLoginHandler got illegal token ", msg.Token)
 		loginRetData.Msg.ErrStr = "illegal token"
 		loginRetData.Msg.Result = uint32(errormsg.ReturnTypeTOKENINVALID)
 
@@ -109,8 +107,6 @@ func (bs *BattleService) OnLoginHandler(sess inet.ISession, msg *msgdef.LoginReq
 
 		return loginRetData
 	}
-
-	//TODO: 判断是否已经存在
 
 	//创建房间成员
 	player, err := scene.CreateEntityWithID("Player", playerID, scene.GetEntityID(), nil, true, 0)

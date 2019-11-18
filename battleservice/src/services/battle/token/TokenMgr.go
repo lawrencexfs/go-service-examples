@@ -1,7 +1,6 @@
 package token
 
 import (
-	"battleservice/src/services/battle/types"
 	"sync"
 )
 
@@ -11,7 +10,6 @@ type TokenMgr struct {
 	tokenToUserMap *sync.Map // map from token to *userInfo
 }
 
-type Token = types.Token
 type userInfo struct {
 	roomID   uint64
 	playerID uint64
@@ -21,7 +19,7 @@ func (t *TokenMgr) Init() {
 	t.tokenToUserMap = &sync.Map{}
 }
 
-func (t *TokenMgr) InsertToken(token Token, roomID uint64, playerID uint64) {
+func (t *TokenMgr) InsertToken(token string, roomID uint64, playerID uint64) {
 	userInfo := &userInfo{
 		roomID:   roomID,
 		playerID: playerID,
@@ -29,7 +27,7 @@ func (t *TokenMgr) InsertToken(token Token, roomID uint64, playerID uint64) {
 	t.tokenToUserMap.Store(token, userInfo)
 }
 
-func (t *TokenMgr) LookupToken(token Token) (bool, uint64, uint64) {
+func (t *TokenMgr) LookupToken(token string) (bool, uint64, uint64) {
 	info, ok := t.tokenToUserMap.Load(token)
 	if !ok {
 		return ok, 0, 0
@@ -38,6 +36,6 @@ func (t *TokenMgr) LookupToken(token Token) (bool, uint64, uint64) {
 	return ok, u.roomID, u.playerID
 }
 
-func (t *TokenMgr) RemoveToken(token Token) {
+func (t *TokenMgr) RemoveToken(token string) {
 	t.tokenToUserMap.Delete(token)
 }

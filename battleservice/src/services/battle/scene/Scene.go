@@ -1,7 +1,5 @@
 package scene
 
-// 场景类
-
 import (
 	"battleservice/src/services/base/ape"
 	"battleservice/src/services/base/util"
@@ -24,15 +22,17 @@ import (
 	assert "github.com/aurelien-rainone/assertgo"
 	"github.com/cihub/seelog"
 	"github.com/giant-tech/go-service/base/net/inet"
-	"github.com/giant-tech/go-service/framework/entity"
+	"github.com/giant-tech/go-service/base/serializer"
 	"github.com/giant-tech/go-service/framework/iserver"
+	"github.com/giant-tech/go-service/framework/msgdef"
+	"github.com/giant-tech/go-service/framework/space"
 
 	"go.uber.org/atomic"
 )
 
 // Scene 场景
 type Scene struct {
-	entity.GroupEntity
+	space.Space
 
 	endTime int64  // 结束时间
 	frame   uint32 // 当前帧数
@@ -381,6 +381,17 @@ func (s *Scene) BroadcastMsg(msg inet.IMsg) {
 
 }
 
+func (s *Scene) BroadcastCall(methodName string, args ...interface{}) {
+	msg := &msgdef.CallMsg{}
+	msg.MethodName = methodName
+	msg.Params = serializer.SerializeNew(args...)
+
+	s.TravsalPlayers(func(player *plr.ScenePlayer) {
+		player.Send(msg)
+	})
+
+}
+
 //广播(剔除特定ID)
 func (s *Scene) BroadcastMsgExcept(msg inet.IMsg, uid uint64) {
 	s.TravsalPlayers(func(player *plr.ScenePlayer) {
@@ -424,7 +435,7 @@ func (s *Scene) IsClosed() bool {
 	return s.isClosed.Load()
 }
 
-//主循环
+// Run 主循环
 func (s *Scene) Run() {
 	timeTicker := time.NewTicker(time.Millisecond * consts.FrameTimeMS)
 

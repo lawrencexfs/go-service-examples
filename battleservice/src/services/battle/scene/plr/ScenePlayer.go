@@ -16,11 +16,11 @@ import (
 
 	"github.com/cihub/seelog"
 	"github.com/giant-tech/go-service/base/net/inet"
-	"github.com/giant-tech/go-service/framework/entity"
+	"github.com/giant-tech/go-service/framework/space"
 )
 
 type ScenePlayer struct {
-	entity.Entity
+	space.Entity
 	MoveHelper              // 检查移动消息包的辅助类
 	ScenePlayerViewHelper   // 玩家视野相关辅助类
 	ScenePlayerNetMsgHelper // 房间玩家协议处理辅助类
