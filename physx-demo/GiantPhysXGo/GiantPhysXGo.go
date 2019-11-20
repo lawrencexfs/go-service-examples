@@ -77,7 +77,7 @@ extern uintptr_t _wrap_new_GxLayerMask__SWIG_1_GiantPhysXGo_27fd12e0c257ea6e(swi
 extern void _wrap_GxLayerMask_value_set_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, swig_intgo arg2);
 extern swig_intgo _wrap_GxLayerMask_value_get_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
 extern void _wrap_delete_GxLayerMask_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
-extern uintptr_t _wrap_GxCreatePhysics_GiantPhysXGo_27fd12e0c257ea6e(intgo _swig_args, swig_type_6 arg1, swig_type_7 arg2);
+extern uintptr_t _wrap_GxCreatePhysics_GiantPhysXGo_27fd12e0c257ea6e(swig_type_6 arg1, swig_type_7 arg2);
 extern void _wrap_GxDestroyPhysics_GiantPhysXGo_27fd12e0c257ea6e(void);
 #undef intgo
 */
@@ -540,15 +540,11 @@ type GxLayerMask interface {
 	GetValue() (_swig_ret int)
 }
 
-func GxCreatePhysics(arg1 string, _swig_args ...interface{}) (_swig_ret GxIPhysics) {
-	var arg2 string
-	if len(_swig_args) > 0 {
-		arg2 = _swig_args[0].(string)
-	}
+func GxCreatePhysics(arg1 string, arg2 string) (_swig_ret GxIPhysics) {
 	var swig_r GxIPhysics
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (GxIPhysics)(SwigcptrGxIPhysics(C._wrap_GxCreatePhysics_GiantPhysXGo_27fd12e0c257ea6e(C.swig_intgo(len(_swig_args)), *(*C.swig_type_6)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_7)(unsafe.Pointer(&_swig_i_1)))))
+	swig_r = (GxIPhysics)(SwigcptrGxIPhysics(C._wrap_GxCreatePhysics_GiantPhysXGo_27fd12e0c257ea6e(*(*C.swig_type_6)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_7)(unsafe.Pointer(&_swig_i_1)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg1
 	}
