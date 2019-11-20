@@ -1,29 +1,5 @@
 package usercmd
 
-// 给客户端提供的消息
-
-type MsgTypeCmd int32
-
-const (
-	MsgTypeCmd_Login          MsgTypeCmd = 1001
-	MsgTypeCmd_Top            MsgTypeCmd = 1002
-	MsgTypeCmd_AddPlayer      MsgTypeCmd = 1003
-	MsgTypeCmd_RemovePlayer   MsgTypeCmd = 1004
-	MsgTypeCmd_Move           MsgTypeCmd = 1006
-	MsgTypeCmd_Run            MsgTypeCmd = 1007
-	MsgTypeCmd_ReLife         MsgTypeCmd = 1009
-	MsgTypeCmd_Death          MsgTypeCmd = 1010
-	MsgTypeCmd_EndRoom        MsgTypeCmd = 1011
-	MsgTypeCmd_RefreshPlayer  MsgTypeCmd = 1013
-	MsgTypeCmd_HeartBeat      MsgTypeCmd = 1016
-	MsgTypeCmd_SceneChat      MsgTypeCmd = 1020
-	MsgTypeCmd_ActCloseSocket MsgTypeCmd = 1021
-	MsgTypeCmd_ErrorMsg       MsgTypeCmd = 1025
-	MsgTypeCmd_SceneTCP       MsgTypeCmd = 1031
-	MsgTypeCmd_SceneUDP       MsgTypeCmd = 1032
-	MsgTypeCmd_CastSkill      MsgTypeCmd = 1050
-)
-
 type MapObjectConfigType int32
 
 const (

@@ -58,6 +58,10 @@ func (s *Scene) OnInit(initData interface{}) error {
 	seelog.Info("Scene Init")
 
 	s.birthPoints = &birth.BirthPoints{}
+	mapName, ok := initData.(string)
+	if ok {
+		s.SetMap(mapName)
+	}
 
 	s.endTime = time.Now().Unix() + consts.DefaultPlayTime // 10min为一局
 	s.doneC = make(chan bool)

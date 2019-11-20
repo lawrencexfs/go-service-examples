@@ -397,15 +397,6 @@ func (s *ScenePlayer) CanBeEat() bool {
 	return false
 }
 
-// 发送普通消息
-func (s *ScenePlayer) Send(msg inet.IMsg) bool {
-	if s.Sess == nil || s.Sess.IsClosed() {
-		return false
-	}
-	s.Sess.Send(msg)
-	return true
-}
-
 // 广播消息
 func (s *ScenePlayer) BroadCastMsg(msg inet.IMsg) bool {
 	s.scn.BroadcastMsg(msg)

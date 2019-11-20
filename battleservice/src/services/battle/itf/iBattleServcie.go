@@ -11,8 +11,3 @@ type IBattleService interface {
 	//验证token
 	LookupToken(token string) (bool, uint64, uint64)
 }
-
-// IScene 房间接口
-type IScene interface {
-	iserver.IEntityGroup
-}
