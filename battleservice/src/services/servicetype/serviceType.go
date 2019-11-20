@@ -10,6 +10,3 @@ const ServiceTypeGateway idata.ServiceType = idata.ServiceGateway
 
 // ServiceTypeBattle 战斗服
 const ServiceTypeBattle idata.ServiceType = 3
-
-// ServiceTypeBattleClient 战斗服客户端
-const ServiceTypeBattleClient idata.ServiceType = 4
