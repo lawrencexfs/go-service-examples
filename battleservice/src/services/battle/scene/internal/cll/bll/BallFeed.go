@@ -6,10 +6,29 @@ import (
 	"battleservice/src/services/base/ape"
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/conf"
+
+	"github.com/cihub/seelog"
 )
 
 type BallFeed struct {
 	BallMove
+}
+
+// OnInit 初始化
+func (feed *BallFeed) OnInit(initData interface{}) error {
+	seelog.Info("BallFeed.OnInit, id:", feed.GetEntityID())
+
+	return nil
+}
+
+// OnLoop 每帧调用
+func (feed *BallFeed) OnLoop() {
+	seelog.Debug("BallFeed.OnLoop")
+}
+
+// OnDestroy 销毁
+func (feed *BallFeed) OnDestroy() {
+	seelog.Debug("BallFeed.OnDestroy")
 }
 
 func NewBallFeed(scene IScene, typeId uint16, id uint32, x, y float64) *BallFeed {

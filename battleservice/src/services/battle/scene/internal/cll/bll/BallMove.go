@@ -26,7 +26,7 @@ func (ball *BallMove) SetSpeed(v *util.Vector2) {
 	ball.speed.Y = v.Y
 }
 
-func (this *BallPlayer) GetAngleVel() *util.Vector2 {
+func (this *BallMove) GetAngleVel() *util.Vector2 {
 	return &this.angleVel
 }
 

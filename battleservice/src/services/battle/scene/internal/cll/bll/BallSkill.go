@@ -7,12 +7,31 @@ import (
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/scene/internal/interfaces"
 	"battleservice/src/services/battle/usercmd"
+
+	"github.com/cihub/seelog"
 )
 
 type BallSkill struct {
 	BallMove
 	player IScenePlayer
 	Skill  interfaces.ISkillBall
+}
+
+// OnInit 初始化
+func (s *BallSkill) OnInit(initData interface{}) error {
+	seelog.Info("BallFood.OnInit, id:", s.GetEntityID())
+
+	return nil
+}
+
+// OnLoop 每帧调用
+func (s *BallSkill) OnLoop() {
+	seelog.Debug("BallFood.OnLoop")
+}
+
+// OnDestroy 销毁
+func (s *BallSkill) OnDestroy() {
+	seelog.Debug("BallFood.OnDestroy")
 }
 
 func NewBallSkill(_ballType usercmd.BallType, id uint32, x, y, radius float64, player IScenePlayer) *BallSkill {
@@ -34,17 +53,17 @@ func NewBallSkill(_ballType usercmd.BallType, id uint32, x, y, radius float64, p
 	return &ball
 }
 
-func (this *BallSkill) Move(pertime float64, scene IScene) bool {
-	if this.speed.IsEmpty() == false {
-		if this.player.Frame() >= this.Skill.GetBeginFrame() {
+func (s *BallSkill) Move(pertime float64, scene IScene) bool {
+	if s.speed.IsEmpty() == false {
+		if s.player.Frame() >= s.Skill.GetBeginFrame() {
 			if false {
-				pos := this.PhysicObj.GetPostion()
-				this.Pos = util.Vector2{float64(pos.X), float64(pos.Y)}
-				this.PhysicObj.SetVelocity(&bmath.Vector2{float32(this.speed.X), float32(this.speed.Y)})
+				pos := s.PhysicObj.GetPostion()
+				s.Pos = util.Vector2{float64(pos.X), float64(pos.Y)}
+				s.PhysicObj.SetVelocity(&bmath.Vector2{float32(s.speed.X), float32(s.speed.Y)})
 			}
 
-			this.Pos.X = this.Pos.X + this.speed.X/2
-			this.Pos.Y = this.Pos.Y + this.speed.Y/2
+			s.Pos.X = s.Pos.X + s.speed.X/2
+			s.Pos.Y = s.Pos.Y + s.speed.Y/2
 		}
 	}
 	return true

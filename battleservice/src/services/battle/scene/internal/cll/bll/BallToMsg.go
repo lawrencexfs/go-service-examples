@@ -35,17 +35,3 @@ func SkillToMsgBall(ball *BallSkill) *usercmd.MsgBall {
 	}
 	return cmd
 }
-
-func PlayerBallToMsgBall(ball *BallPlayer) *usercmd.MsgPlayerBall {
-	cmd := &usercmd.MsgPlayerBall{
-		Id:    ball.id,
-		Hp:    uint32(ball.GetHP()),
-		Mp:    uint32(ball.GetMP()),
-		X:     int32(ball.Pos.X * consts.MsgPosScaleRate),
-		Y:     int32(ball.Pos.Y * consts.MsgPosScaleRate),
-		Angle: int32(ball.player.GetAngle()),
-		Face:  uint32(ball.player.GetFace()),
-	}
-
-	return cmd
-}

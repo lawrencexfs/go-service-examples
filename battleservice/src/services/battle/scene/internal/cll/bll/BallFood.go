@@ -8,9 +8,13 @@ import (
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/internal/interfaces"
 	"battleservice/src/services/battle/usercmd"
+
+	"github.com/cihub/seelog"
+	"github.com/giant-tech/go-service/framework/space"
 )
 
 type BallFood struct {
+	space.Entity
 	id         uint32           //动态id
 	typeID     uint16           //xml表里id
 	BallType   usercmd.BallType //大类型
@@ -19,6 +23,23 @@ type BallFood struct {
 	rect       util.Square
 	birthPoint interfaces.IBirthPoint
 	exp        int32
+}
+
+// OnInit 初始化
+func (ball *BallFood) OnInit(initData interface{}) error {
+	seelog.Info("BallFood.OnInit, id:", ball.GetEntityID())
+
+	return nil
+}
+
+// OnLoop 每帧调用
+func (ball *BallFood) OnLoop() {
+	seelog.Debug("BallFood.OnLoop")
+}
+
+// OnDestroy 销毁
+func (ball *BallFood) OnDestroy() {
+	seelog.Debug("BallFood.OnDestroy")
 }
 
 func NewBallFood(id uint32, typeId uint16, x, y float64, scene IScene) *BallFood {
