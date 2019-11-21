@@ -31,7 +31,7 @@ func (this *ActionBombTryHit) OnTick(tick *b3core.Tick) b3.Status {
 	cells := scene.GetAreaCells(attckRect)
 
 	scene.TravsalPlayers(func(other *plr.ScenePlayer) {
-		if BallSkillAttack(tick, player, ballskill, this.scale, other.SelfBall) {
+		if BallSkillAttack(tick, player, ballskill, this.scale, &other.BallPlayer) {
 			x, y := ballskill.GetPos()
 			other.Skill.GetHit2(x, y, this.gethit)
 		}

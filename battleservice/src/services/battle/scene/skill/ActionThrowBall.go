@@ -4,13 +4,14 @@ import (
 	b3 "battleservice/src/services/base/behavior3go"
 	b3config "battleservice/src/services/base/behavior3go/config"
 	b3core "battleservice/src/services/base/behavior3go/core"
-	_ "github.com/cihub/seelog"
 	bmath "battleservice/src/services/base/math"
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/conf"
 	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/usercmd"
+
+	_ "github.com/cihub/seelog"
 )
 
 type ActionThrowBall struct {
@@ -35,14 +36,14 @@ func (this *ActionThrowBall) OnTick(tick *b3core.Tick) b3.Status {
 
 	scene := player.GetScene()
 	ballid := scene.GenBallID()
-	posx, posy := player.SelfBall.GetPos()
+	posx, posy := player.GetPos()
 	radius := float64(conf.ConfigMgr_GetMe().GetFoodSize(scene.GetEntityID(), this.ball_type))
 
 	angleVel := &bmath.Vector2{}
 	usedefault := true
 	targetId := tick.Blackboard.GetUInt32("skillTargetId", "", "")
 	if 0 != targetId {
-		tball := player.FindViewPlayer(targetId)
+		tball := player.FindViewPlayer(uint64(targetId))
 		if tball != nil {
 			x, y := tball.GetPos()
 			angleVel.X = float32(x - posx)
@@ -52,12 +53,12 @@ func (this *ActionThrowBall) OnTick(tick *b3core.Tick) b3.Status {
 		}
 	}
 	if usedefault {
-		angleVel.X = float32(player.SelfBall.GetAngleVel().X)
-		angleVel.Y = float32(player.SelfBall.GetAngleVel().Y)
+		angleVel.X = float32(player.GetAngleVel().X)
+		angleVel.Y = float32(player.GetAngleVel().Y)
 	}
 
 	pos := bmath.Vector2{float32(posx), float32(posy)}
-	pos.IncreaseBy(angleVel.Mult(float32(player.SelfBall.GetRadius() + radius)))
+	pos.IncreaseBy(angleVel.Mult(float32(player.GetRadius() + radius)))
 
 	newBall := bll.NewBallSkill(usercmd.BallType(this.ball_type), ballid, float64(pos.X), float64(pos.Y), radius, player)
 	newBall.ResetRect()

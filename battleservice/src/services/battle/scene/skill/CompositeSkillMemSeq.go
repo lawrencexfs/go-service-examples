@@ -28,9 +28,9 @@ func (this *CompositeSkillMemSeq) OnOpen(tick *Tick) {
 	player := tick.Blackboard.Get("player", "", "").(*plr.ScenePlayer)
 	if v, ok := cfg.Properties["skillcost"]; ok {
 		d := int32(v.(float64))
-		curmp := int32(player.SelfBall.GetMP()) - d
+		curmp := int32(player.GetMP()) - d
 		if d > 0 && curmp >= 0 {
-			player.SelfBall.SetMP(float64(curmp))
+			player.SetMP(float64(curmp))
 		} else if d > 0 && curmp < 0 {
 			tick.Blackboard.Set("condfail", int(1), "", "")
 		}

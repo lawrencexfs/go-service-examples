@@ -16,21 +16,7 @@ type BallPlayer struct {
 	player IScenePlayer
 }
 
-func PlayerBallToMsgBall(ball *BallPlayer) *usercmd.MsgPlayerBall {
-	cmd := &usercmd.MsgPlayerBall{
-		Id:    ball.id,
-		Hp:    uint32(ball.GetHP()),
-		Mp:    uint32(ball.GetMP()),
-		X:     int32(ball.Pos.X * consts.MsgPosScaleRate),
-		Y:     int32(ball.Pos.Y * consts.MsgPosScaleRate),
-		Angle: int32(ball.player.GetAngle()),
-		Face:  uint32(ball.player.GetFace()),
-	}
-
-	return cmd
-}
-
-func NewBallPlayer(player IScenePlayer, ballid uint32) *BallPlayer {
+func NewBallPlayer(player IScenePlayer, ballid uint64) *BallPlayer {
 	x, y := player.GetBallScene().GetRandPos()
 	ball := BallPlayer{
 		BallMove: BallMove{
@@ -148,10 +134,10 @@ func (this *BallPlayer) Hit(target *BallPlayer) (int32, bool) {
 }
 
 func (this *BallPlayer) Eat(food *BallFood) uint32 {
-	if food.GetType() == usercmd.BallType_FoodBomb {
+	if food.GetBallType() == usercmd.BallType_FoodBomb {
 		this.SetAttr(AttrBombNum, 1)
 		this.player.RefreshPlayer()
-	} else if food.GetType() == usercmd.BallType_FoodHammer {
+	} else if food.GetBallType() == usercmd.BallType_FoodHammer {
 		this.SetAttr(AttrHammerNum, 1)
 		this.player.RefreshPlayer()
 	}
@@ -170,9 +156,9 @@ func (this *BallPlayer) Eat(food *BallFood) uint32 {
 
 func (this *BallPlayer) PreCanEat(food *BallFood) bool {
 	//是否已经有锤子或者炸弹了
-	if food.GetType() == usercmd.BallType_FoodHammer {
+	if food.GetBallType() == usercmd.BallType_FoodHammer {
 		return this.GetAttr(AttrHammerNum) == 0
-	} else if food.GetType() == usercmd.BallType_FoodBomb {
+	} else if food.GetBallType() == usercmd.BallType_FoodBomb {
 		return this.GetAttr(AttrBombNum) == 0
 	}
 	return true

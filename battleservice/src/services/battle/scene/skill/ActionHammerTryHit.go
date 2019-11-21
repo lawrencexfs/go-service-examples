@@ -24,7 +24,7 @@ func (this *ActionHammerTryHit) Initialize(setting *b3config.BTNodeCfg) {
 func (this *ActionHammerTryHit) OnTick(tick *b3core.Tick) b3.Status {
 	ballskill := tick.Blackboard.Get("ballskill", "", "").(*SkillBall).ball
 	player := tick.Blackboard.Get("player", "", "").(*plr.ScenePlayer)
-	hits := tick.Blackboard.Get("hits", "", "").(map[uint32]int)
+	hits := tick.Blackboard.Get("hits", "", "").(map[uint64]int)
 	scene := player.GetScene()
 
 	attckRect := ballskill.GetRect()
@@ -35,11 +35,11 @@ func (this *ActionHammerTryHit) OnTick(tick *b3core.Tick) b3.Status {
 		if other.GetId() == player.GetId() {
 			return
 		}
-		if _, ok := hits[other.SelfBall.GetID()]; ok {
+		if _, ok := hits[other.GetID()]; ok {
 			return
 		}
-		if BallSkillAttack(tick, player, ballskill, this.scale, other.SelfBall) {
-			hits[other.SelfBall.GetID()] = 1
+		if BallSkillAttack(tick, player, ballskill, this.scale, &other.BallPlayer) {
+			hits[other.GetID()] = 1
 			x, y := ballskill.GetPos()
 			other.Skill.GetHit2(x, y, this.gethit)
 		}

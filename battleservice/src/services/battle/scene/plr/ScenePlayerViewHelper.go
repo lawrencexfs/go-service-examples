@@ -4,8 +4,8 @@ package plr
 
 import (
 	"battleservice/src/services/base/util"
-	"battleservice/src/services/battle/scene/cll"
 	"battleservice/src/services/battle/scene/bll"
+	"battleservice/src/services/battle/scene/cll"
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/scene/typekind"
@@ -17,10 +17,10 @@ type ScenePlayerViewHelper struct {
 	ViewRect       *util.Square              // 玩家视野大小
 	RealViewRect   util.Square               // 玩家视野（根据玩家原始视野得到所有cell的外边框）
 	LookCells      map[int]*cll.Cell         // 根据玩家原始视野得到所有cell集合
-	LookFeeds      map[uint32]*bll.BallFeed  // 视野中的feed（用于sendSceneMsg）
-	LookBallSkill  map[uint32]*bll.BallSkill // 视野中的技能球（用于sendSceneMsg）
+	LookFeeds      map[uint64]*bll.BallFeed  // 视野中的feed（用于sendSceneMsg）
+	LookBallSkill  map[uint64]*bll.BallSkill // 视野中的技能球（用于sendSceneMsg）
 	LookBallPlayer map[uint64]*ScenePlayer   // 视野中的玩家 （用于sendSceneMsg）
-	LookBallFoods  map[uint32]*bll.BallFood  // 视野中的food（用于sendSceneMsg）
+	LookBallFoods  map[uint64]*bll.BallFood  // 视野中的food（用于sendSceneMsg）
 	Others         map[uint64]*ScenePlayer   // 视野中其它玩家
 	RoundPlayers   []*ScenePlayer            // 周围玩家，包含死亡玩家
 }
@@ -28,10 +28,10 @@ type ScenePlayerViewHelper struct {
 func (this *ScenePlayerViewHelper) Init() {
 	this.ViewRect = &util.Square{}
 	this.LookCells = make(map[int]*cll.Cell)
-	this.LookFeeds = make(map[uint32]*bll.BallFeed)
-	this.LookBallSkill = make(map[uint32]*bll.BallSkill)
+	this.LookFeeds = make(map[uint64]*bll.BallFeed)
+	this.LookBallSkill = make(map[uint64]*bll.BallSkill)
 	this.LookBallPlayer = make(map[uint64]*ScenePlayer)
-	this.LookBallFoods = make(map[uint32]*bll.BallFood)
+	this.LookBallFoods = make(map[uint64]*bll.BallFood)
 	this.Others = make(map[uint64]*ScenePlayer)
 }
 
@@ -73,8 +73,8 @@ func (this *ScenePlayerViewHelper) ResetMsg() {
 	}
 }
 
-func (this *ScenePlayerViewHelper) UpdateVeiwFeeds() (addFeeds []*usercmd.MsgBall, delFeeds []uint32) {
-	newFeeds := make(map[uint32]*bll.BallFeed)
+func (this *ScenePlayerViewHelper) UpdateVeiwFeeds() (addFeeds []*usercmd.MsgBall, delFeeds []uint64) {
+	newFeeds := make(map[uint64]*bll.BallFeed)
 	for _, cell := range this.LookCells {
 		for _, feed := range cell.Feeds {
 			newFeeds[feed.GetID()] = feed
@@ -98,8 +98,8 @@ func (this *ScenePlayerViewHelper) UpdateVeiwFeeds() (addFeeds []*usercmd.MsgBal
 	return
 }
 
-func (this *ScenePlayerViewHelper) UpdateVeiwBallSkill() (adds []*usercmd.MsgBall, dels []uint32) {
-	news := make(map[uint32]*bll.BallSkill)
+func (this *ScenePlayerViewHelper) UpdateVeiwBallSkill() (adds []*usercmd.MsgBall, dels []uint64) {
+	news := make(map[uint64]*bll.BallSkill)
 	for _, cell := range this.LookCells {
 		for _, ball := range cell.Skills {
 			news[ball.GetID()] = ball
@@ -123,23 +123,23 @@ func (this *ScenePlayerViewHelper) UpdateVeiwBallSkill() (adds []*usercmd.MsgBal
 	return
 }
 
-func (this *ScenePlayerViewHelper) updateViewBallPlayer() (adds []*usercmd.MsgPlayerBall, dels []uint32) {
+func (this *ScenePlayerViewHelper) updateViewBallPlayer() (adds []*usercmd.MsgPlayerBall, dels []uint64) {
 	//add
 	for _, ball := range this.Others {
 		if _, ok := this.LookBallPlayer[ball.GetEntityID()]; !ok {
-			adds = append(adds, bll.PlayerBallToMsgBall(ball.SelfBall))
+			adds = append(adds, PlayerBallToMsgBall(ball))
 		}
 	}
 	for _, ball := range this.LookBallPlayer {
 		if _, ok := this.Others[ball.GetEntityID()]; !ok {
-			dels = append(dels, ball.SelfBall.GetID())
+			dels = append(dels, ball.GetID())
 		}
 	}
 	return
 }
 
-func (this *ScenePlayerViewHelper) UpdateVeiwFoods() (addFoods []*usercmd.MsgBall, delFoods []uint32) {
-	newFoods := make(map[uint32]*bll.BallFood)
+func (this *ScenePlayerViewHelper) UpdateVeiwFoods() (addFoods []*usercmd.MsgBall, delFoods []uint64) {
+	newFoods := make(map[uint64]*bll.BallFood)
 	for _, cell := range this.LookCells {
 		for _, food := range cell.Foods {
 			newFoods[food.GetID()] = food
@@ -170,7 +170,7 @@ func (this *ScenePlayerViewHelper) UpdateViewPlayers(scene IScene, selfBall *bll
 
 	scene.TravsalPlayers(func(player *ScenePlayer) {
 		if selfBall.GetPlayerId() != player.GetEntityID() {
-			_, _, ok1 := this.RealViewRect.ContainsCircle(player.SelfBall.Pos.X, player.SelfBall.Pos.Y, 0)
+			_, _, ok1 := this.RealViewRect.ContainsCircle(player.Pos.X, player.Pos.Y, 0)
 			if ok1 {
 				if player.IsLive {
 					this.Others[player.GetEntityID()] = player
@@ -205,7 +205,7 @@ func (this *ScenePlayerViewHelper) FindNearBallByKind(selfBall *bll.BallPlayer, 
 			if o.IsLive == false {
 				continue
 			}
-			ball := o.SelfBall
+			ball := &o.BallPlayer
 			if dir != nil && util.IsSameDir(dir, ball.GetPosV(), selfBall.GetPosV()) == false {
 				continue
 			}
@@ -237,7 +237,7 @@ func (this *ScenePlayerViewHelper) FindNearBallByKind(selfBall *bll.BallPlayer, 
 	return minball, min
 }
 
-func (this *ScenePlayerViewHelper) FindNearBall(id uint32) interfaces.IBall {
+func (this *ScenePlayerViewHelper) FindNearBall(id uint64) interfaces.IBall {
 	ani := this.FindViewPlayer(id)
 	if ani != nil {
 		return ani
@@ -251,10 +251,10 @@ func (this *ScenePlayerViewHelper) FindNearBall(id uint32) interfaces.IBall {
 	return nil
 }
 
-func (this *ScenePlayerViewHelper) FindViewPlayer(ballId uint32) *bll.BallPlayer {
+func (this *ScenePlayerViewHelper) FindViewPlayer(ballId uint64) *bll.BallPlayer {
 	for _, viewPlayer := range this.Others {
-		if viewPlayer.SelfBall.GetID() == ballId {
-			return viewPlayer.SelfBall
+		if viewPlayer.GetID() == ballId {
+			return &viewPlayer.BallPlayer
 		}
 	}
 	return nil

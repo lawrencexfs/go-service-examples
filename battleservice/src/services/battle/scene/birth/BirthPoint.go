@@ -14,7 +14,7 @@ import (
 )
 
 type BirthPoint struct {
-	id             uint32
+	id             uint64
 	scene          IScene
 	pos            bmath.Vector2
 	ballTypeId     uint16
@@ -28,7 +28,7 @@ type BirthPoint struct {
 }
 
 //创建动态出生点 食物、 动态障碍物 (BallFood、 BallFeed)
-func NewBirthPoint(id uint32, x, y, rMin, rMax float32, ballTypeId uint16, ballType uint16, birthTime float64, birthMax uint32, scene IScene) *BirthPoint {
+func NewBirthPoint(id uint64, x, y, rMin, rMax float32, ballTypeId uint16, ballType uint16, birthTime float64, birthMax uint32, scene IScene) *BirthPoint {
 
 	point := &BirthPoint{
 		id:         id,

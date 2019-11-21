@@ -37,7 +37,7 @@ type MsgLoginResult struct {
 	Name        string           `protobuf:"bytes,3,opt,name=name" json:"name"`
 	Others      []*MsgPlayer     `protobuf:"bytes,4,rep,name=others" json:"others,omitempty"`
 	Frame       uint32           `protobuf:"varint,5,req,name=frame" json:"frame"`
-	BallID      uint32           `protobuf:"varint,8,req,name=ballId" json:"ballId"`
+	BallID      uint64           `protobuf:"varint,8,req,name=ballId" json:"ballId"`
 	Balls       []*MsgBall       `protobuf:"bytes,9,rep,name=balls" json:"balls,omitempty"`
 	Playerballs []*MsgPlayerBall `protobuf:"bytes,10,rep,name=playerballs" json:"playerballs,omitempty"`
 	LeftTime    uint32           `protobuf:"varint,14,opt,name=leftTime" json:"leftTime"`
@@ -54,10 +54,10 @@ type MsgTop struct {
 type MsgSceneTCP struct {
 	Eats          []*BallEat       `protobuf:"bytes,1,rep,name=eats" json:"eats,omitempty"`
 	Adds          []*MsgBall       `protobuf:"bytes,2,rep,name=adds" json:"adds,omitempty"`
-	Removes       []uint32         `protobuf:"varint,3,rep,name=removes" json:"removes,omitempty"`
+	Removes       []uint64         `protobuf:"varint,3,rep,name=removes" json:"removes,omitempty"`
 	Hits          []*HitMsg        `protobuf:"bytes,4,rep,name=hits" json:"hits,omitempty"`
 	AddPlayers    []*MsgPlayerBall `protobuf:"bytes,5,rep,name=addPlayers" json:"addPlayers,omitempty"`
-	RemovePlayers []uint32         `protobuf:"varint,6,rep,name=removePlayers" json:"removePlayers,omitempty"`
+	RemovePlayers []uint64         `protobuf:"varint,6,rep,name=removePlayers" json:"removePlayers,omitempty"`
 }
 
 type MsgSceneUDP struct {
@@ -71,7 +71,7 @@ type MsgPlayer struct {
 	Name      string         `protobuf:"bytes,2,req,name=name" json:"name"`
 	IsLive    bool           `protobuf:"varint,4,opt,name=IsLive,json=isLive" json:"IsLive"`
 	SnapInfo  *MsgPlayerSnap `protobuf:"bytes,5,opt,name=SnapInfo,json=snapInfo" json:"SnapInfo,omitempty"`
-	BallID    uint32         `protobuf:"varint,6,req,name=ballId" json:"ballId"`
+	BallID    uint64         `protobuf:"varint,6,req,name=ballId" json:"ballId"`
 	Curexp    uint32         `protobuf:"varint,7,opt,name=curexp" json:"curexp"`
 	Curmp     uint32         `protobuf:"varint,8,opt,name=curmp" json:"curmp"`
 	Curhp     uint32         `protobuf:"varint,10,opt,name=curhp" json:"curhp"`
@@ -157,7 +157,7 @@ type MsgPlayerSnap struct {
 }
 
 type MsgBall struct {
-	Id   uint32 `protobuf:"varint,1,req,name=id" json:"id"`
+	Id   uint64 `protobuf:"varint,1,req,name=id" json:"id"`
 	Type int32  `protobuf:"varint,2,req,name=type" json:"type"`
 	X    int32  `protobuf:"varint,3,req,name=x" json:"x"`
 	Y    int32  `protobuf:"varint,4,req,name=y" json:"y"`
@@ -165,7 +165,7 @@ type MsgBall struct {
 
 // 玩家球
 type MsgPlayerBall struct {
-	Id    uint32 `protobuf:"varint,1,req,name=id" json:"id"`
+	Id    uint64 `protobuf:"varint,1,req,name=id" json:"id"`
 	Hp    uint32 `protobuf:"varint,3,opt,name=hp" json:"hp"`
 	Mp    uint32 `protobuf:"varint,4,opt,name=mp" json:"mp"`
 	X     int32  `protobuf:"varint,5,req,name=x" json:"x"`
@@ -176,7 +176,7 @@ type MsgPlayerBall struct {
 
 // 移动数据
 type BallMove struct {
-	Id    uint32 `protobuf:"varint,1,req,name=id" json:"id"`
+	Id    uint64 `protobuf:"varint,1,req,name=id" json:"id"`
 	X     int32  `protobuf:"varint,2,req,name=x" json:"x"`
 	Y     int32  `protobuf:"varint,3,req,name=y" json:"y"`
 	State uint32 `protobuf:"varint,4,opt,name=state" json:"state"`
@@ -186,14 +186,14 @@ type BallMove struct {
 
 // 吃球
 type BallEat struct {
-	Source uint32 `protobuf:"varint,1,req,name=source" json:"source"`
-	Target uint32 `protobuf:"varint,2,req,name=target" json:"target"`
+	Source uint64 `protobuf:"varint,1,req,name=source" json:"source"`
+	Target uint64 `protobuf:"varint,2,req,name=target" json:"target"`
 }
 
 // 攻击
 type HitMsg struct {
-	Source uint32 `protobuf:"varint,1,req,name=source" json:"source"`
-	Target uint32 `protobuf:"varint,2,req,name=target" json:"target"`
+	Source uint64 `protobuf:"varint,1,req,name=source" json:"source"`
+	Target uint64 `protobuf:"varint,2,req,name=target" json:"target"`
 	AddHp  int32  `protobuf:"varint,3,opt,name=addHp" json:"addHp"`
 	CurHp  uint32 `protobuf:"varint,4,opt,name=curHp" json:"curHp"`
 }

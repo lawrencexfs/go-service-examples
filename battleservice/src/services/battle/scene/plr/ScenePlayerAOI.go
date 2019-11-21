@@ -24,8 +24,8 @@ func (s *ScenePlayer) AOIUpdate(aois []iserver.AOIInfo) {
 		if info.IsEnter {
 			num, propBytes := s.PackProps(uint32(servicetype.ServiceTypeClient))
 			m := &usercmd.EnterAOI{
-				EntityID:   s.GetID(),
-				EntityType: s.GetType(),
+				EntityID: s.GetID(),
+				//EntityType: s.GetBallType(),
 				PropNum:    uint16(num),
 				Properties: propBytes,
 			}

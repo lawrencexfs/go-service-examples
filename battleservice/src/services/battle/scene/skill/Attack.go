@@ -5,9 +5,9 @@ package skill
 import (
 	b3core "battleservice/src/services/base/behavior3go/core"
 	"battleservice/src/services/base/util"
+	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/interfaces"
-	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/usercmd"
 )
@@ -72,7 +72,7 @@ func NormalAttack(tick *b3core.Tick, player *plr.ScenePlayer, targetBall interfa
 		bHitFlag = false
 	}
 	if bHitFlag {
-		hits := tick.Blackboard.Get("hits", "", "").(map[uint32]int)
+		hits := tick.Blackboard.Get("hits", "", "").(map[uint64]int)
 		if _, ok := hits[targetBall.GetID()]; ok {
 			hits[targetBall.GetID()] = hits[targetBall.GetID()] + 1
 		} else {
@@ -123,11 +123,11 @@ func BallSkillAttack(tick *b3core.Tick, player *plr.ScenePlayer, ballskill *bll.
 	distance := pos.SqrMagnitudeTo(ballskill.GetPosV())
 	tmp := iball.GetRect().Radius + ballskill.GetRadius() + attackScale
 	if distance <= tmp*tmp {
-		if iball.GetType() == usercmd.BallType_Player {
+		if iball.GetBallType() == usercmd.BallType_Player {
 			targetball := iball.(*bll.BallPlayer)
 			target := targetball.GetPlayer().(*plr.ScenePlayer)
 			return playerHitPlayer(player, target)
-		} else if iball.GetType() > usercmd.BallType_FeedBegin && iball.GetType() < usercmd.BallType_FeedEnd {
+		} else if iball.GetBallType() > usercmd.BallType_FeedBegin && iball.GetBallType() < usercmd.BallType_FeedEnd {
 			return playerHitFeed(player, iball.(*bll.BallFeed))
 		}
 	}
@@ -138,7 +138,7 @@ func playerHitFeed(player *plr.ScenePlayer, feed *bll.BallFeed) bool {
 	x, y := feed.GetPos()
 	cell, ok := player.GetScene().GetCell(x, y)
 	if ok {
-		player.SelfBall.Eat(&feed.BallFood)
+		player.Eat(&feed.BallFood)
 		feedid := feed.GetID()
 
 		if feed.GetBirthPoint() != nil {
@@ -147,8 +147,8 @@ func playerHitFeed(player *plr.ScenePlayer, feed *bll.BallFeed) bool {
 
 		player.GetScene().RemoveFeed(feed)
 
-		cell.Remove(feedid, feed.GetType())
-		player.AddEatMsg(player.SelfBall.GetID(), feedid)
+		cell.Remove(feedid, feed.GetBallType())
+		player.AddEatMsg(player.GetID(), feedid)
 
 		return true
 	}
@@ -156,10 +156,10 @@ func playerHitFeed(player *plr.ScenePlayer, feed *bll.BallFeed) bool {
 }
 
 func playerHitPlayer(player *plr.ScenePlayer, target *plr.ScenePlayer) bool {
-	targetball := target.SelfBall
-	damage, bHit := player.SelfBall.Hit(targetball)
+	targetball := &target.BallPlayer
+	damage, bHit := player.Hit(targetball)
 	if bHit {
-		target.AddHitMsg(player.SelfBall.GetID(), targetball.GetID(), -damage, uint32(targetball.GetAttr(bll.AttrHP)), player.GetScene())
+		target.AddHitMsg(player.GetID(), targetball.GetID(), -damage, uint32(targetball.GetAttr(bll.AttrHP)), player.GetScene())
 		return true
 	}
 	return false

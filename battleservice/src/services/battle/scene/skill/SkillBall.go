@@ -58,7 +58,7 @@ func (this *SkillBall) IsFinish() bool {
 }
 
 func (this *SkillBall) TryGetHit(player *plr.ScenePlayer) bool {
-	if this.ball.GetType() == usercmd.BallType_SkillBomb {
+	if this.ball.GetBallType() == usercmd.BallType_SkillBomb {
 		return true
 	}
 	return false
@@ -70,9 +70,9 @@ func (this *SkillBall) GetHit(player *plr.ScenePlayer) {
 		return
 	}
 
-	if this.ball.GetType() == usercmd.BallType_SkillBomb {
+	if this.ball.GetBallType() == usercmd.BallType_SkillBomb {
 		angleVel := *this.ball.GetPosV()
-		angleVel.DecreaseBy(player.SelfBall.GetPosV())
+		angleVel.DecreaseBy(player.GetPosV())
 		angleVel.NormalizeSelf()
 
 		angleVel.ScaleBy(0.34)

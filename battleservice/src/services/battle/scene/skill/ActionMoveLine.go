@@ -29,7 +29,7 @@ func (this *ActionMoveLine) OnOpen(tick *b3core.Tick) {
 	var speed util.Vector2
 
 	if this.dir_type == 2 {
-		x0, y0 := player.SelfBall.GetPos()
+		x0, y0 := player.GetPos()
 		x1 := tick.Blackboard.GetFloat64("source_pos_x", "", "")
 		y1 := tick.Blackboard.GetFloat64("source_pos_y", "", "")
 
@@ -37,23 +37,23 @@ func (this *ActionMoveLine) OnOpen(tick *b3core.Tick) {
 		hv := v.SubMethod(&util.Vector2{x1, y1})
 		speed = hv.Normalize()
 	} else if this.dir_type == 1 {
-		speed = util.Vector2{float64(player.SelfBall.GetAngleVel().X), float64(player.SelfBall.GetAngleVel().Y)}
+		speed = util.Vector2{float64(player.GetAngleVel().X), float64(player.GetAngleVel().Y)}
 	} else {
 		panic("error dir_type!")
 	}
 
-	player.SelfBall.ClearForce()
+	player.ClearForce()
 
 	force1 := speed
 	force1.ScaleBy(this.d / float64(this.n) * 2)
-	player.SelfBall.AddForce(force1, this.n)
+	player.AddForce(force1, this.n)
 }
 
 func (this *ActionMoveLine) OnTick(tick *b3core.Tick) b3.Status {
 	player := tick.Blackboard.Get("player", "", "").(*plr.ScenePlayer)
-	if player.SelfBall.HasForce() == true {
+	if player.HasForce() == true {
 		return b3.RUNNING
 	}
-	player.SelfBall.ClearForce()
+	player.ClearForce()
 	return b3.SUCCESS
 }

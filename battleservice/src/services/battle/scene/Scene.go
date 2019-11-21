@@ -5,8 +5,8 @@ import (
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/conf"
 	"battleservice/src/services/battle/scene/birth"
-	"battleservice/src/services/battle/scene/cll"
 	"battleservice/src/services/battle/scene/bll"
+	"battleservice/src/services/battle/scene/cll"
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/scene/physic"
@@ -40,7 +40,7 @@ type Scene struct {
 
 	isClosed atomic.Bool // 是否关闭标识
 
-	genBallID   uint32             // 用于生成唯一BallID
+	genBallID   uint64             // 用于生成唯一BallID
 	birthPoints *birth.BirthPoints // 出生点
 	mapConfig   *conf.MapConfig    // 地图配置
 
@@ -160,7 +160,7 @@ func (s *Scene) RemoveBall(ball interfaces.IBall) {
 		return
 	}
 	for _, cell := range s.cells {
-		cell.Remove(ball.GetID(), ball.GetType())
+		cell.Remove(ball.GetID(), ball.GetBallType())
 	}
 }
 
@@ -223,9 +223,9 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 	othermsg.Player.Name = scenePlayer.Name
 	othermsg.Player.IsLive = scenePlayer.IsLive
 	othermsg.Player.SnapInfo = scenePlayer.GetSnapInfo()
-	othermsg.Player.BallID = scenePlayer.SelfBall.GetID()
-	othermsg.Player.Curmp = uint32(scenePlayer.SelfBall.GetMP())
-	othermsg.Player.Curhp = uint32(scenePlayer.SelfBall.GetHP())
+	othermsg.Player.BallID = scenePlayer.GetID()
+	othermsg.Player.Curmp = uint32(scenePlayer.GetMP())
+	othermsg.Player.Curhp = uint32(scenePlayer.GetHP())
 
 	scenePlayer.UpdateView(s)
 	scenePlayer.UpdateViewPlayers(s)
@@ -249,13 +249,13 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 	s.TravsalPlayers(func(player *plr.ScenePlayer) {
 		others = append(others, &usercmd.MsgPlayer{
 			Id:     uint64(player.GetEntityID()),
-			BallID: player.SelfBall.GetID(),
+			BallID: player.GetID(),
 			Name:   player.Name,
 			IsLive: player.IsLive,
 
 			SnapInfo: player.GetSnapInfo(),
-			Curhp:    uint32(player.SelfBall.GetHP()),
-			Curmp:    uint32(player.SelfBall.GetMP()),
+			Curhp:    uint32(player.GetHP()),
+			Curmp:    uint32(player.GetMP()),
 			Curexp:   player.GetExp(),
 		})
 	})
@@ -263,30 +263,30 @@ func (s *Scene) AddPlayer(player ISessionPlayer) {
 	// 玩家视野中的所有球，发送给自己
 	cells := scenePlayer.LookCells
 
-	scenePlayer.LookFeeds = make(map[uint32]*bll.BallFeed)
+	scenePlayer.LookFeeds = make(map[uint64]*bll.BallFeed)
 	addfeeds, _ := scenePlayer.UpdateVeiwFeeds()
 	balls = append(balls, addfeeds...)
 
-	scenePlayer.LookBallSkill = make(map[uint32]*bll.BallSkill)
+	scenePlayer.LookBallSkill = make(map[uint64]*bll.BallSkill)
 	adds, _ := scenePlayer.UpdateVeiwBallSkill()
 	balls = append(balls, adds...)
 
-	scenePlayer.LookBallFoods = make(map[uint32]*bll.BallFood)
+	scenePlayer.LookBallFoods = make(map[uint64]*bll.BallFood)
 	addfoods, _ := scenePlayer.UpdateVeiwFoods()
 	balls = append(balls, addfoods...)
 
 	//自己
-	playerballs = append(playerballs, bll.PlayerBallToMsgBall(scenePlayer.SelfBall))
+	playerballs = append(playerballs, plr.PlayerBallToMsgBall(scenePlayer))
 	//周围玩家
 	for _, other := range scenePlayer.Others {
 		if true == other.IsLive {
-			playerballs = append(playerballs, bll.PlayerBallToMsgBall(other.SelfBall))
+			playerballs = append(playerballs, plr.PlayerBallToMsgBall(other))
 		}
 	}
 
 	msg := &usercmd.MsgLoginResult{}
 	msg.Id = uint64(scenePlayer.GetEntityID())
-	msg.BallID = scenePlayer.SelfBall.GetID()
+	msg.BallID = scenePlayer.GetID()
 	msg.Name = scenePlayer.Name
 	msg.Ok = true
 	msg.Frame = s.Frame()
@@ -315,8 +315,7 @@ func (s *Scene) RemovePlayer(playerId uint64) bool {
 
 	oldstatus := player.IsLive
 
-	s.RemoveBall(player.SelfBall)
-	s.scenePhysic.RemovePlayer(player.SelfBall.PhysicObj)
+	s.scenePhysic.RemovePlayer(player.PhysicObj)
 
 	player.IsLive = false
 	player.SetDeadTime(time.Now().Unix())
@@ -361,7 +360,7 @@ func (s *Scene) UpdateSkillBallCell(ball *bll.BallSkill, oldCellID int) {
 		panic("从Cell ID获取相应Cell算法有误")
 	}
 
-	oldCell.Remove(ball.GetID(), ball.GetType())
+	oldCell.Remove(ball.GetID(), ball.GetBallType())
 	newCell.Add(ball)
 }
 
@@ -410,7 +409,7 @@ func (s *Scene) GetRandPos() (x, y float64) {
 	return s.sceneSize * rand.Float64(), s.sceneSize * rand.Float64()
 }
 
-func (s *Scene) GenBallID() uint32 {
+func (s *Scene) GenBallID() uint64 {
 	s.genBallID++
 	return s.genBallID
 }

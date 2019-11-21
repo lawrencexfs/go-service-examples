@@ -8,10 +8,10 @@ import (
 )
 
 type IBall interface {
-	GetID() uint32
-	SetID(uint32)
+	GetID() uint64
+	SetID(uint64)
 	GetTypeId() uint16
-	GetType() usercmd.BallType
+	GetBallType() usercmd.BallType
 	GetPos() (float64, float64)
 	SetPos(float64, float64)
 	SetBirthPoint(_birthPoint IBirthPoint)

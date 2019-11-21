@@ -5,9 +5,9 @@ package plr
 
 import (
 	"battleservice/src/services/base/util"
-	"battleservice/src/services/battle/scene/consts"
-	"battleservice/src/services/battle/scene/cll"
 	"battleservice/src/services/battle/scene/bll"
+	"battleservice/src/services/battle/scene/cll"
+	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/scene/plr/internal"
 	"battleservice/src/services/battle/usercmd"
@@ -16,11 +16,10 @@ import (
 
 	"github.com/cihub/seelog"
 	"github.com/giant-tech/go-service/base/net/inet"
-	"github.com/giant-tech/go-service/framework/space"
 )
 
 type ScenePlayer struct {
-	space.Entity
+	bll.BallPlayer          // 玩家球
 	MoveHelper              // 检查移动消息包的辅助类
 	ScenePlayerViewHelper   // 玩家视野相关辅助类
 	ScenePlayerNetMsgHelper // 房间玩家协议处理辅助类
@@ -28,20 +27,33 @@ type ScenePlayer struct {
 
 	Sess   ISender // 网络会话对应的玩家。 Scene.AddPlayer() 中设置
 	scn    IScene  // 所在场景
-	BallID uint32  // 玩家球id（一次定义，后面不变）
+	BallID uint64  // 玩家球id（一次定义，后面不变）
 	Name   string  // 玩家昵称
 
-	SelfBall *bll.BallPlayer         // 玩家球
-	KillNum  uint32                  // 击杀数量
-	Rank     uint32                  // 结算排名
-	IsLive   bool                    // 生死
-	Skill    interfaces.ISkillPlayer // 技能信息
+	KillNum uint32                  // 击杀数量
+	Rank    uint32                  // 结算排名
+	IsLive  bool                    // 生死
+	Skill   interfaces.ISkillPlayer // 技能信息
 
 	isMoved    bool  // 是否移动过
 	isRunning  bool  // 当前是否在奔跑
 	IsActClose bool  // 主动断开socket
 	deadTime   int64 // 死亡时间
 	msgPool    *internal.MsgPool
+}
+
+func PlayerBallToMsgBall(ball *ScenePlayer) *usercmd.MsgPlayerBall {
+	cmd := &usercmd.MsgPlayerBall{
+		// Id:    ball.id,
+		// Hp:    uint32(ball.GetHP()),
+		// Mp:    uint32(ball.GetMP()),
+		// X:     int32(ball.Pos.X * consts.MsgPosScaleRate),
+		// Y:     int32(ball.Pos.Y * consts.MsgPosScaleRate),
+		// Angle: int32(ball.player.GetAngle()),
+		// Face:  uint32(ball.player.GetFace()),
+	}
+
+	return cmd
 }
 
 type ISender interface {
@@ -71,10 +83,9 @@ func (s *ScenePlayer) OnInit(initData interface{}) error {
 	s.ScenePlayerViewHelper.Init()
 	s.BallID = s.GetScene().GenBallID()
 	s.Skill = NewISkillPlayer(s)
-	s.SelfBall = bll.NewBallPlayer(s, s.BallID)
-	s.GetScene().AddBall(s.SelfBall)
-	s.SelfBall.SetHP(consts.DefaultMaxHP)
-	s.SelfBall.SetMP(consts.DefaultMaxMP)
+
+	s.SetHP(consts.DefaultMaxHP)
+	s.SetMP(consts.DefaultMaxMP)
 
 	return nil
 }
@@ -168,10 +179,9 @@ func (s *ScenePlayer) RealDead(killer *ScenePlayer) {
 }
 
 func (s *ScenePlayer) OnDead() {
-	s.SelfBall.OnDead()
+	s.OnDead()
 	s.IsLive = false
-	s.GetScene().RemoveBall(s.SelfBall) //移除
-	s.GetScene().RemovePlayerPhysic(s.SelfBall.PhysicObj)
+	s.GetScene().RemovePlayerPhysic(s.PhysicObj)
 }
 
 func (s *ScenePlayer) GetRelifeMsg() *usercmd.MsgS2CRelife {
@@ -179,8 +189,8 @@ func (s *ScenePlayer) GetRelifeMsg() *usercmd.MsgS2CRelife {
 	msg.Name = s.Name
 	msg.Frame = s.GetScene().Frame()
 	msg.SnapInfo = s.GetSnapInfo()
-	msg.Curmp = uint32(s.SelfBall.GetMP())
-	msg.Curhp = uint32(s.SelfBall.GetHP())
+	msg.Curmp = uint32(s.GetMP())
+	msg.Curhp = uint32(s.GetHP())
 	return msg
 }
 
@@ -200,11 +210,7 @@ func (s *ScenePlayer) Relife() {
 	// 添加一个新的玩家球
 	exp := s.GetExp()
 
-	ball := bll.NewBallPlayer(s, s.BallID)
-	s.SelfBall = ball
 	s.SetExp(exp)
-
-	scene.AddBall(s.SelfBall) //添加一个新的
 
 	s.SendRoundMsg(s.GetRelifeMsg()) //通知复活
 
@@ -217,22 +223,22 @@ func (s *ScenePlayer) Relife() {
 	newMsg := &s.msgPool.MsgSceneTCP
 	*newMsg = usercmd.MsgSceneTCP{}
 
-	s.LookFeeds = make(map[uint32]*bll.BallFeed)
+	s.LookFeeds = make(map[uint64]*bll.BallFeed)
 	addfeeds, _ := s.UpdateVeiwFeeds()
 	newMsg.Adds = append(newMsg.Adds, addfeeds...)
 
-	s.LookBallSkill = make(map[uint32]*bll.BallSkill)
+	s.LookBallSkill = make(map[uint64]*bll.BallSkill)
 	adds, _ := s.UpdateVeiwBallSkill()
 	newMsg.Adds = append(newMsg.Adds, adds...)
 
-	s.LookBallFoods = make(map[uint32]*bll.BallFood)
+	s.LookBallFoods = make(map[uint64]*bll.BallFood)
 	addfoods, _ := s.UpdateVeiwFoods()
 	newMsg.Adds = append(newMsg.Adds, addfoods...)
 
-	newMsg.AddPlayers = append(newMsg.AddPlayers, bll.PlayerBallToMsgBall(s.SelfBall))
+	newMsg.AddPlayers = append(newMsg.AddPlayers, PlayerBallToMsgBall(s))
 
 	for _, other := range s.Others {
-		newMsg.AddPlayers = append(newMsg.AddPlayers, bll.PlayerBallToMsgBall(other.SelfBall))
+		newMsg.AddPlayers = append(newMsg.AddPlayers, PlayerBallToMsgBall(other))
 	}
 
 	s.Send(newMsg)
@@ -257,8 +263,8 @@ func (s *ScenePlayer) SendSceneMsg() {
 		AddPlayers    []*usercmd.MsgPlayerBall
 		Moves         []*usercmd.BallMove
 		Hits          []*usercmd.HitMsg
-		Removes       []uint32
-		RemovePlayers []uint32
+		Removes       []uint64
+		RemovePlayers []uint64
 	)
 
 	//feed的添加删除消息单独处理
@@ -281,15 +287,14 @@ func (s *ScenePlayer) SendSceneMsg() {
 	Eats = append(Eats, s.ScenePlayerPool.MsgEats...)
 	Hits = append(Hits, s.ScenePlayerPool.MsgHits...)
 
-	ball := s.SelfBall
 	if s.isMoved {
 		ballmove := s.ScenePlayerPool.MsgBallMove
-		ballmove.Id = ball.GetID()
-		ballmove.X = int32(ball.Pos.X * consts.MsgPosScaleRate)
-		ballmove.Y = int32(ball.Pos.Y * consts.MsgPosScaleRate)
+		ballmove.Id = s.GetID()
+		ballmove.X = int32(s.Pos.X * consts.MsgPosScaleRate)
+		ballmove.Y = int32(s.Pos.Y * consts.MsgPosScaleRate)
 
 		// angle && face
-		if (s.SelfBall.HasForce() == false || s.Power == 0) && s.Face != 0 {
+		if (s.HasForce() == false || s.Power == 0) && s.Face != 0 {
 			ballmove.Face = uint32(s.Face)
 			ballmove.Angle = 0
 		} else {
@@ -313,14 +318,14 @@ func (s *ScenePlayer) SendSceneMsg() {
 		Eats = append(Eats, other.ScenePlayerPool.MsgEats...)
 		Hits = append(Hits, other.ScenePlayerPool.MsgHits...)
 		if other.isMoved {
-			ball = other.SelfBall
+
 			ballmove := other.ScenePlayerPool.MsgBallMove
-			ballmove.Id = ball.GetID()
-			ballmove.X = int32(ball.Pos.X * consts.MsgPosScaleRate)
-			ballmove.Y = int32(ball.Pos.Y * consts.MsgPosScaleRate)
+			ballmove.Id = other.GetID()
+			ballmove.X = int32(other.Pos.X * consts.MsgPosScaleRate)
+			ballmove.Y = int32(other.Pos.Y * consts.MsgPosScaleRate)
 
 			// angle && face
-			if (other.SelfBall.HasForce() == false || other.Power == 0) && other.Face != 0 {
+			if (other.HasForce() == false || other.Power == 0) && other.Face != 0 {
 				ballmove.Face = uint32(other.Face)
 				ballmove.Angle = 0
 			} else {
@@ -351,7 +356,7 @@ func (s *ScenePlayer) SendSceneMsg() {
 		//剔除自己
 		if len(Adds) != 0 {
 			for k, v := range Adds {
-				if v.Id == s.SelfBall.GetID() {
+				if v.Id == s.GetID() {
 					Adds = append(Adds[:k], Adds[k+1:]...)
 					break
 				}
@@ -360,7 +365,7 @@ func (s *ScenePlayer) SendSceneMsg() {
 
 		if len(Removes) != 0 {
 			for k, v := range Removes {
-				if v == s.SelfBall.GetID() {
+				if v == s.GetID() {
 					Removes = append(Removes[:k], Removes[k+1:]...)
 					break
 				}
@@ -422,21 +427,20 @@ func (s *ScenePlayer) UpdateMove(perTime float64, frameRate float64) {
 	}
 
 	// 玩家球移动
-	ball := s.SelfBall
-	ball.UpdateForce(perTime)
-	if ball.Move(perTime, frameRate) {
-		ball.FixMapEdge() //修边
+	s.UpdateForce(perTime)
+	if s.BallPlayer.Move(perTime, frameRate) {
+		s.FixMapEdge() //修边
 		s.isMoved = true
-		ball.ResetRect()
+		s.ResetRect()
 
 		// 扣蓝
 		if s.isRunning {
 			cost := frameRate * float64(consts.FrameTimeMS) * consts.DefaultRunCostMP
-			diff := ball.GetMP() - cost
+			diff := s.GetMP() - cost
 			if diff <= 0 {
 				s.isRunning = false
 			} else {
-				ball.SetMP(diff)
+				s.SetMP(diff)
 			}
 		}
 	}
@@ -448,14 +452,14 @@ func (s *ScenePlayer) Update(perTime float64, now int64, scene IScene) {
 		return
 	}
 
-	curmp := s.SelfBall.GetMP()
+	curmp := s.GetMP()
 	curexp := s.GetExp()
 
 	// 有在释放技能，恢复转向
 	s.Skill.TryTurn(&s.Angle, &s.Face)
 
 	// 角色朝向，每帧只算一次。避免多次计算，因此代码挪至开头
-	s.SelfBall.SetAngleVelAndNormalize(
+	s.SetAngleVelAndNormalize(
 		math.Cos(math.Pi*s.Angle/180),
 		-math.Sin(math.Pi*s.Angle/180))
 
@@ -464,8 +468,6 @@ func (s *ScenePlayer) Update(perTime float64, now int64, scene IScene) {
 	var frameRate float64 = 2
 
 	// 更新球
-	ball := s.SelfBall
-
 	// 玩家球移动
 	s.UpdateMove(perTime, frameRate)
 
@@ -474,17 +476,17 @@ func (s *ScenePlayer) Update(perTime float64, now int64, scene IScene) {
 	if s.IsLive {
 		var rect util.Square
 		rect.CopyFrom(s.GetViewRect())
-		rect.SetRadius(s.SelfBall.GetEatRange())
+		rect.SetRadius(s.GetEatRange())
 		cells := s.GetScene().GetAreaCells(&rect)
 		for _, newcell := range cells {
-			newcell.EatByPlayer(ball, s)
+			newcell.EatByPlayer(&s.BallPlayer, s)
 		}
 	}
 
 	// 更新视野中的玩家
 	s.UpdateViewPlayers(scene)
 
-	if curexp != s.GetExp() || curmp != s.SelfBall.GetMP() {
+	if curexp != s.GetExp() || curmp != s.GetMP() {
 		s.RefreshPlayer()
 	}
 }
@@ -509,8 +511,8 @@ func (s *ScenePlayer) UpdateExp(addexp int32) {
 
 func (s *ScenePlayer) GetSnapInfo() *usercmd.MsgPlayerSnap {
 	msg := &s.msgPool.MsgPlayerSnap
-	msg.Snapx = float32(s.SelfBall.Pos.X)
-	msg.Snapy = float32(s.SelfBall.Pos.Y)
+	msg.Snapx = float32(s.Pos.X)
+	msg.Snapy = float32(s.Pos.Y)
 	msg.Angle = float32(s.Angle)
 	msg.Id = uint64(s.GetEntityID())
 	return msg
@@ -524,10 +526,10 @@ func (s *ScenePlayer) TimeAction(timenow time.Time) bool {
 
 	nowsec := timenow.Unix()
 	// 定时器
-	s.SelfBall.TimeAction(nowsec)
-	mp := int32(s.SelfBall.GetMP())
+	s.BallPlayer.TimeAction(nowsec)
+	mp := int32(s.GetMP())
 	maxmp := consts.DefaultMaxMP
-	curhp := s.SelfBall.GetHP()
+	curhp := s.GetHP()
 	maxhp := consts.DefaultMaxHP
 	addmp := consts.DefaultMpRecover
 	addhp := consts.DefaultHpRecover
@@ -540,16 +542,16 @@ func (s *ScenePlayer) TimeAction(timenow time.Time) bool {
 
 	if 0 != addmp {
 		if mp+int32(addmp) > int32(maxmp) {
-			s.SelfBall.SetMP(float64(maxmp))
+			s.SetMP(float64(maxmp))
 		} else {
-			s.SelfBall.SetMP(float64(mp + int32(addmp)))
+			s.SetMP(float64(mp + int32(addmp)))
 		}
 	}
 	if uint32(curhp) < uint32(maxhp) {
 		if uint32(uint32(curhp)+uint32(addhp)) > uint32(maxhp) {
-			s.SelfBall.SetHP(int32(maxhp))
+			s.SetHP(int32(maxhp))
 		} else {
-			s.SelfBall.SetHP(int32(curhp) + int32(addhp))
+			s.SetHP(int32(curhp) + int32(addhp))
 		}
 	}
 
@@ -567,11 +569,11 @@ func (s *ScenePlayer) RefreshPlayer() {
 	msg.Player.IsLive = s.IsLive
 	msg.Player.SnapInfo = s.GetSnapInfo()
 	msg.Player.Curexp = s.GetExp()
-	msg.Player.BallID = s.SelfBall.GetID()
-	msg.Player.Curmp = uint32(s.SelfBall.GetMP())
-	msg.Player.Curhp = uint32(s.SelfBall.GetHP())
-	msg.Player.BombNum = int32(s.SelfBall.GetAttr(bll.AttrBombNum))
-	msg.Player.HammerNum = int32(s.SelfBall.GetAttr(bll.AttrHammerNum))
+	msg.Player.BallID = s.GetID()
+	msg.Player.Curmp = uint32(s.GetMP())
+	msg.Player.Curhp = uint32(s.GetHP())
+	msg.Player.BombNum = int32(s.GetAttr(bll.AttrBombNum))
+	msg.Player.HammerNum = int32(s.GetAttr(bll.AttrHammerNum))
 
 	s.Sess.Send(msg)
 }
@@ -595,11 +597,11 @@ func (s *ScenePlayer) Frame() uint32 {
 }
 
 func (s *ScenePlayer) GetExp() uint32 {
-	return uint32(s.SelfBall.GetAttr(bll.AttrExp))
+	return uint32(s.GetAttr(bll.AttrExp))
 }
 
 func (s *ScenePlayer) SetExp(exp uint32) {
-	s.SelfBall.SetAttr(bll.AttrExp, float64(exp))
+	s.SetAttr(bll.AttrExp, float64(exp))
 }
 
 func (s *ScenePlayer) GetScene() IScene {
@@ -611,18 +613,18 @@ func (s *ScenePlayer) GetBallScene() bll.IScene {
 }
 
 func (s *ScenePlayer) FindNearBallByKind(kind consts.BallKind, dir *util.Vector2, cells []*cll.Cell, ballType uint32) (interfaces.IBall, float64) {
-	return s.ScenePlayerViewHelper.FindNearBallByKind(s.SelfBall, kind, dir, cells, ballType)
+	return s.ScenePlayerViewHelper.FindNearBallByKind(&s.BallPlayer, kind, dir, cells, ballType)
 }
 
 func (s *ScenePlayer) UpdateView(scene IScene) {
 	if !s.IsLive {
 		return
 	}
-	s.ScenePlayerViewHelper.UpdateView(scene, s.SelfBall, scene.SceneSize(), s.scn.CellNumX(), s.scn.CellNumY())
+	s.ScenePlayerViewHelper.UpdateView(scene, &s.BallPlayer, scene.SceneSize(), s.scn.CellNumX(), s.scn.CellNumY())
 }
 
 func (s *ScenePlayer) UpdateViewPlayers(scene IScene) {
-	s.ScenePlayerViewHelper.UpdateViewPlayers(scene, s.SelfBall)
+	s.ScenePlayerViewHelper.UpdateViewPlayers(scene, &s.BallPlayer)
 }
 
 func (s *ScenePlayer) GetID() uint64 {

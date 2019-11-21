@@ -28,7 +28,7 @@ func (this *ScenePlayerPool) ResetMsg() {
 	this.MsgHits = make([]*usercmd.HitMsg, 0)
 }
 
-func (this *ScenePlayerPool) AddEatMsg(ballid, beEat uint32) {
+func (this *ScenePlayerPool) AddEatMsg(ballid, beEat uint64) {
 	if len(this.eatmsg) < 0 {
 		this.eatmsg = append(this.eatmsg, &usercmd.BallEat{})
 	}
@@ -39,7 +39,7 @@ func (this *ScenePlayerPool) AddEatMsg(ballid, beEat uint32) {
 	this.MsgEats = append(this.MsgEats, msg)
 }
 
-func (this *ScenePlayerPool) AddHitMsg(ballid, beEat uint32, addhp int32, curhp uint32, scene IScene) {
+func (this *ScenePlayerPool) AddHitMsg(ballid, beEat uint64, addhp int32, curhp uint32, scene IScene) {
 	if len(this.hitmsg) < 0 {
 		this.hitmsg = append(this.hitmsg, &usercmd.HitMsg{})
 	}

@@ -1,5 +1,5 @@
 package cll
 
 type IScenePlayer interface {
-	AddEatMsg(ballid, beEat uint32)
+	AddEatMsg(ballid, beEat uint64)
 }

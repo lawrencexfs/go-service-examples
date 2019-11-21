@@ -34,7 +34,7 @@ func (s *BallSkill) OnDestroy() {
 	seelog.Debug("BallFood.OnDestroy")
 }
 
-func NewBallSkill(_ballType usercmd.BallType, id uint32, x, y, radius float64, player IScenePlayer) *BallSkill {
+func NewBallSkill(_ballType usercmd.BallType, id uint64, x, y, radius float64, player IScenePlayer) *BallSkill {
 	ball := BallSkill{
 		BallMove: BallMove{
 			BallFood: BallFood{

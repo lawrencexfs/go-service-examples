@@ -31,7 +31,7 @@ func (feed *BallFeed) OnDestroy() {
 	seelog.Debug("BallFeed.OnDestroy")
 }
 
-func NewBallFeed(scene IScene, typeId uint16, id uint32, x, y float64) *BallFeed {
+func NewBallFeed(scene IScene, typeId uint16, id uint64, x, y float64) *BallFeed {
 	radius := float64(conf.ConfigMgr_GetMe().GetFoodSize(scene.GetEntityID(), typeId))
 	ballType := conf.ConfigMgr_GetMe().GetFoodBallType(scene.GetEntityID(), typeId)
 	ball := &BallFeed{

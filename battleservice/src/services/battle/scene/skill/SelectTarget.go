@@ -4,12 +4,13 @@ package skill
 
 import (
 	b3core "battleservice/src/services/base/behavior3go/core"
-	_ "github.com/cihub/seelog"
 	"battleservice/src/services/base/util"
+	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/interfaces"
-	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/plr"
+
+	_ "github.com/cihub/seelog"
 )
 
 // 获取朝向上最近的目标
@@ -49,8 +50,8 @@ func FindTarget_SemiCircle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interf
 		if o.IsLive == false {
 			continue
 		}
-		ball := o.SelfBall
-		if util.IsSameDir(dir, ball.GetPosV(), player.SelfBall.GetPosV()) == false {
+		ball := &o.BallPlayer
+		if util.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
 			continue
 		}
 		balllist = append(balllist, ball)
@@ -65,7 +66,7 @@ func FindTarget_SemiCircle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interf
 	// ballskill
 	for _, cell := range cells {
 		for _, ball := range cell.Skills {
-			if util.IsSameDir(dir, ball.GetPosV(), player.SelfBall.GetPosV()) == false {
+			if util.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
 				continue
 			}
 			balllist = append(balllist, ball)
@@ -76,7 +77,7 @@ func FindTarget_SemiCircle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interf
 	// feed
 	for _, cell := range cells {
 		for _, ball := range cell.Feeds {
-			if util.IsSameDir(dir, ball.GetPosV(), player.SelfBall.GetPosV()) == false {
+			if util.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
 				continue
 			}
 			balllist = append(balllist, ball)
@@ -97,7 +98,7 @@ func FindTarget_Circle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interfaces
 		if o.IsLive == false {
 			continue
 		}
-		ball := o.SelfBall
+		ball := &o.BallPlayer
 		balllist = append(balllist, ball)
 		balltype = append(balltype, consts.BallKind_Player)
 	}
@@ -129,19 +130,19 @@ func FindTarget_Circle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interfaces
 func GetPlayerDir(tick *b3core.Tick, player *plr.ScenePlayer) *util.Vector2 {
 	angleVel := &util.Vector2{}
 	usedefault := true
-	targetId := tick.Blackboard.GetUInt32("skillTargetId", "", "")
+	targetId := tick.Blackboard.GetUInt64("skillTargetId", "", "")
 	if 0 != targetId {
 		tball := player.FindViewPlayer(targetId)
 		if tball != nil {
 			x, y := tball.GetPos()
-			angleVel.X = x - player.SelfBall.GetPosV().X
-			angleVel.Y = y - player.SelfBall.GetPosV().Y
+			angleVel.X = x - player.GetPosV().X
+			angleVel.Y = y - player.GetPosV().Y
 			usedefault = false
 		}
 	}
 	if usedefault {
-		angleVel.X = player.SelfBall.GetAngleVel().X
-		angleVel.Y = player.SelfBall.GetAngleVel().Y
+		angleVel.X = player.GetAngleVel().X
+		angleVel.Y = player.GetAngleVel().Y
 	}
 	return angleVel
 }
@@ -152,24 +153,24 @@ func GetAttackRange(tick *b3core.Tick, player *plr.ScenePlayer) float64 {
 	if attackRange != nil {
 		r := attackRange.(float64)
 		if r >= 0 {
-			return r * player.SelfBall.GetSizeScale()
+			return r * player.GetSizeScale()
 		}
 	}
-	return player.SelfBall.GetEatRange()
+	return player.GetEatRange()
 }
 
 // 是否可以攻击
 func IsCanAttack(tick *b3core.Tick, player *plr.ScenePlayer, target interfaces.IBall) bool {
-	distance := player.SelfBall.SqrMagnitudeTo(target)
+	distance := player.SqrMagnitudeTo(target)
 	eatRange := GetAttackRange(tick, player)
 	return distance <= (eatRange+target.GetRect().Radius)*(eatRange+target.GetRect().Radius)
 }
 
 func IsCanAttackPlayer(tick *b3core.Tick, player *plr.ScenePlayer, target *bll.BallPlayer) bool {
-	if player.SelfBall.PreTryHit(target) == false {
+	if player.PreTryHit(target) == false {
 		return false
 	}
-	distance := player.SelfBall.SqrMagnitudeTo(target)
+	distance := player.SqrMagnitudeTo(target)
 	eatRange := GetAttackRange(tick, player)
 	return distance <= (eatRange+target.GetRect().Radius)*(eatRange+target.GetRect().Radius)
 }

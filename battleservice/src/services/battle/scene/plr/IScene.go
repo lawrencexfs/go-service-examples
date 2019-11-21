@@ -3,15 +3,15 @@ package plr
 import (
 	"battleservice/src/services/base/ape"
 	"battleservice/src/services/base/util"
-	"battleservice/src/services/battle/scene/cll"
 	"battleservice/src/services/battle/scene/bll"
+	"battleservice/src/services/battle/scene/cll"
 	"battleservice/src/services/battle/scene/interfaces"
 
 	"github.com/giant-tech/go-service/base/net/inet"
 )
 
 type IScene interface {
-	GenBallID() uint32 // 生成一个场景内唯一的BallID
+	GenBallID() uint64 // 生成一个场景内唯一的BallID
 	AddBall(ball interfaces.IBall)
 	RemoveBall(ball interfaces.IBall)
 	RemovePlayerPhysic(player ape.IAbstractParticle)

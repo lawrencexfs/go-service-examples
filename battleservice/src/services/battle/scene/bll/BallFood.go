@@ -15,7 +15,7 @@ import (
 
 type BallFood struct {
 	space.Entity
-	id         uint32           //动态id
+	id         uint64           //动态id
 	typeID     uint16           //xml表里id
 	BallType   usercmd.BallType //大类型
 	Pos        util.Vector2
@@ -42,7 +42,7 @@ func (ball *BallFood) OnDestroy() {
 	seelog.Debug("BallFood.OnDestroy")
 }
 
-func NewBallFood(id uint32, typeId uint16, x, y float64, scene IScene) *BallFood {
+func NewBallFood(id uint64, typeId uint16, x, y float64, scene IScene) *BallFood {
 	var radius float32 = conf.ConfigMgr_GetMe().GetFoodSize(scene.GetEntityID(), typeId)
 	ballType := conf.ConfigMgr_GetMe().GetFoodBallType(scene.GetEntityID(), typeId)
 	ball := &BallFood{
@@ -66,11 +66,11 @@ func (ball *BallFood) OnReset() {
 
 }
 
-func (ball *BallFood) GetID() uint32 {
+func (ball *BallFood) GetID() uint64 {
 	return ball.id
 }
 
-func (ball *BallFood) SetID(id uint32) {
+func (ball *BallFood) SetID(id uint64) {
 	ball.id = id
 }
 
@@ -78,7 +78,7 @@ func (ball *BallFood) GetTypeId() uint16 {
 	return ball.typeID
 }
 
-func (ball *BallFood) GetType() usercmd.BallType {
+func (ball *BallFood) GetBallType() usercmd.BallType {
 	return ball.BallType
 }
 

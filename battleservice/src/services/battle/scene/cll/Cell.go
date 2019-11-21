@@ -4,13 +4,14 @@ package cll
 // 场景中的Cell
 
 import (
-	"github.com/cihub/seelog"
 	"battleservice/src/services/base/util"
-	"fmt"
-	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/bll"
+	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/usercmd"
+	"fmt"
+
+	"github.com/cihub/seelog"
 )
 
 var (
@@ -21,14 +22,14 @@ var (
 type Cell struct {
 	id            int                        // Cell编号
 	rect          util.Square                // Cell地图中的位置、区域
-	Foods         map[uint32]*bll.BallFood   // 该Cell上的食物球
-	playerballs   map[uint32]*bll.BallPlayer // 该Cell上的玩家球
-	Feeds         map[uint32]*bll.BallFeed   // 该Cell上的动态障碍物
-	Skills        map[uint32]*bll.BallSkill  // 该Cell上的技能球
+	Foods         map[uint64]*bll.BallFood   // 该Cell上的食物球
+	playerballs   map[uint64]*bll.BallPlayer // 该Cell上的玩家球
+	Feeds         map[uint64]*bll.BallFeed   // 该Cell上的动态障碍物
+	Skills        map[uint64]*bll.BallSkill  // 该Cell上的技能球
 	MsgMoves      []*usercmd.BallMove        // 语义上非必须，一些优化手段
-	msgMovesMap   map[uint32]int             // 语义上非必须，一些优化手段
-	msgRemovesMap map[uint32]bool            // 语义上非必须，一些优化手段
-	msgAddsMap    map[uint32]bool            // 语义上非必须，一些优化手段
+	msgMovesMap   map[uint64]int             // 语义上非必须，一些优化手段
+	msgRemovesMap map[uint64]bool            // 语义上非必须，一些优化手段
+	msgAddsMap    map[uint64]bool            // 语义上非必须，一些优化手段
 }
 
 func NewCell(id int) *Cell {
@@ -111,18 +112,18 @@ func (cell *Cell) FindNearBallByKind(player *bll.BallPlayer, pos *util.Vector2, 
 }
 
 func (cell *Cell) Clean() {
-	cell.Foods = make(map[uint32]*bll.BallFood)
-	cell.playerballs = make(map[uint32]*bll.BallPlayer)
-	cell.Feeds = make(map[uint32]*bll.BallFeed)
-	cell.Skills = make(map[uint32]*bll.BallSkill)
+	cell.Foods = make(map[uint64]*bll.BallFood)
+	cell.playerballs = make(map[uint64]*bll.BallPlayer)
+	cell.Feeds = make(map[uint64]*bll.BallFeed)
+	cell.Skills = make(map[uint64]*bll.BallSkill)
 	cell.ResetMsg()
 }
 
 func (cell *Cell) ResetMsg() {
 	cell.MsgMoves = cell.MsgMoves[:0]
-	cell.msgAddsMap = make(map[uint32]bool)
-	cell.msgRemovesMap = make(map[uint32]bool)
-	cell.msgMovesMap = make(map[uint32]int)
+	cell.msgAddsMap = make(map[uint64]bool)
+	cell.msgRemovesMap = make(map[uint64]bool)
+	cell.msgMovesMap = make(map[uint64]int)
 }
 
 func (cell *Cell) AddMsgMove(ball interfaces.IBall) {
@@ -134,7 +135,7 @@ func (cell *Cell) AddMsgMove(ball interfaces.IBall) {
 	} else {
 		cell.MsgMoves = append(cell.MsgMoves,
 			&usercmd.BallMove{
-				Id: ball.GetID(),
+				Id: uint64(ball.GetID()),
 				X:  int32(x * consts.MsgPosScaleRate),
 				Y:  int32(y * consts.MsgPosScaleRate),
 			})
@@ -145,7 +146,7 @@ func (cell *Cell) AddMsgMove(ball interfaces.IBall) {
 //添加球球
 func (cell *Cell) Add(ball interfaces.IBall) {
 
-	btype := ball.GetType()
+	btype := ball.GetBallType()
 	if btype == usercmd.BallType_Player {
 		if _, ok := cell.playerballs[ball.GetID()]; !ok {
 			newBall := ball.(*bll.BallPlayer)
@@ -174,12 +175,12 @@ func (cell *Cell) Add(ball interfaces.IBall) {
 			cell.Skills[ball.GetID()] = newBall
 		}
 	} else {
-		seelog.Error("cell.Add,Fail,unknow type: ", ball.GetType(), "  tid:", ball.GetTypeId())
+		seelog.Error("cell.Add,Fail,unknow type: ", ball.GetBallType(), "  tid:", ball.GetTypeId())
 	}
 }
 
 //移除球球
-func (cell *Cell) Remove(id uint32, typ usercmd.BallType) {
+func (cell *Cell) Remove(id uint64, typ usercmd.BallType) {
 	btype := typ
 	if btype == usercmd.BallType_Player {
 		if _, ok := cell.playerballs[id]; ok {
@@ -209,7 +210,7 @@ func (cell *Cell) Remove(id uint32, typ usercmd.BallType) {
 }
 
 //寻找球球
-func (cell *Cell) Find(id uint32, typ usercmd.BallType) (interfaces.IBall, bool) {
+func (cell *Cell) Find(id uint64, typ usercmd.BallType) (interfaces.IBall, bool) {
 	btype := typ
 	if btype == usercmd.BallType_Player {
 		ball, ok := cell.playerballs[id]
@@ -229,7 +230,7 @@ func (cell *Cell) Find(id uint32, typ usercmd.BallType) (interfaces.IBall, bool)
 }
 
 //全局寻找球球
-func (cell *Cell) NoTypeFind(id uint32) (interfaces.IBall, bool) {
+func (cell *Cell) NoTypeFind(id uint64) (interfaces.IBall, bool) {
 	if ball, ok := cell.playerballs[id]; ok {
 		return ball, ok
 	} else if ball, ok := cell.Foods[id]; ok {
@@ -248,7 +249,7 @@ func (cell *Cell) EatByPlayer(playerBall *bll.BallPlayer, player IScenePlayer) b
 		if playerBall.CanEat(food) {
 			playerBall.Eat(food)
 			cell.OnFoodRemoved(food)
-			cell.Remove(food.GetID(), food.GetType())
+			cell.Remove(food.GetID(), food.GetBallType())
 			player.AddEatMsg(playerBall.GetID(), food.GetID())
 			isEat = true
 		}
@@ -272,7 +273,7 @@ func (cell *Cell) Render(scene bll.IScene, per float64, now int64) {
 		}
 	}
 	for _, skill := range delSkills {
-		cell.Remove(skill.GetID(), skill.GetType())
+		cell.Remove(skill.GetID(), skill.GetBallType())
 	}
 	for _, ball := range cell.Skills {
 		// 检查移动是否出格子
@@ -283,7 +284,7 @@ func (cell *Cell) Render(scene bll.IScene, per float64, now int64) {
 			//			x, y := ball.GetPos()
 			//			newCell, ok := scene.GetCell(x, y)
 			//			if ok && newCell.id != cell.id {
-			//				cell.Remove(ball.GetID(), ball.GetType())
+			//				cell.Remove(ball.GetID(), ball.GetBallType())
 			//				newCell.Add(ball)
 			//			}
 			ball.ResetRect()

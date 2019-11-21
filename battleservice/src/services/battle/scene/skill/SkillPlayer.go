@@ -68,15 +68,15 @@ func (this *SkillPlayer) CastSkill(skillid uint32, targetId uint32) bool {
 	}
 
 	if skillid == SKILL_ID_BOMB {
-		if this.player.SelfBall.GetAttr(bll.AttrBombNum) == 0 {
+		if this.player.GetAttr(bll.AttrBombNum) == 0 {
 			return false
 		}
-		this.player.SelfBall.SetAttr(bll.AttrBombNum, 0)
+		this.player.SetAttr(bll.AttrBombNum, 0)
 	} else if skillid == SKILL_ID_HAMMER {
-		if this.player.SelfBall.GetAttr(bll.AttrHammerNum) == 0 {
+		if this.player.GetAttr(bll.AttrHammerNum) == 0 {
 			return false
 		}
-		this.player.SelfBall.SetAttr(bll.AttrHammerNum, 0)
+		this.player.SetAttr(bll.AttrHammerNum, 0)
 	}
 
 	this.nextSkillId = skillid
@@ -86,7 +86,7 @@ func (this *SkillPlayer) CastSkill(skillid uint32, targetId uint32) bool {
 }
 
 func (this *SkillPlayer) GetHit(source *plr.ScenePlayer, skillid uint32) {
-	pos := source.SelfBall.GetPosV()
+	pos := source.GetPosV()
 	this.blackboard.Set("source_pos_x", pos.X, "", "")
 	this.blackboard.Set("source_pos_y", pos.Y, "", "")
 

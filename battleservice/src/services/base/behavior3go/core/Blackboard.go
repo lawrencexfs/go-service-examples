@@ -241,3 +241,11 @@ func (this *Blackboard) GetInt64(key, treeScope, nodeScope string) int64 {
 	}
 	return v.(int64)
 }
+
+func (this *Blackboard) GetUInt64(key, treeScope, nodeScope string) uint64 {
+	v := this.Get(key, treeScope, nodeScope)
+	if v == nil {
+		return 0
+	}
+	return v.(uint64)
+}
