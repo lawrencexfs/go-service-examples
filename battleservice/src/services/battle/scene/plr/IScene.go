@@ -4,7 +4,7 @@ import (
 	"battleservice/src/services/base/ape"
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/scene/cll"
-	"battleservice/src/services/battle/scene/cll/bll"
+	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/interfaces"
 
 	"github.com/giant-tech/go-service/base/net/inet"

@@ -8,7 +8,7 @@ import (
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/interfaces"
-	"battleservice/src/services/battle/scene/cll/bll"
+	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/plr"
 )
 

@@ -5,7 +5,7 @@ package skill
 import (
 	b3core "battleservice/src/services/base/behavior3go/core"
 	_ "github.com/cihub/seelog"
-	"battleservice/src/services/battle/scene/cll/bll"
+	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/scene/plr"
 )

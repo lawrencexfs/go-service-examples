@@ -4,7 +4,7 @@ import (
 	"math"
 
 	bmath "battleservice/src/services/base/math"
-	"battleservice/src/services/battle/scene/cll/bll"
+	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/scene/typekind"

@@ -8,7 +8,7 @@ import (
 	bmath "battleservice/src/services/base/math"
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/conf"
-	"battleservice/src/services/battle/scene/cll/bll"
+	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/usercmd"
 )
