@@ -5,8 +5,8 @@ package bll
 import (
 	"battleservice/src/services/base/ape"
 	"battleservice/src/services/base/util"
-	"battleservice/src/services/battle/scene/internal/cll/bll/internal"
-	"battleservice/src/services/battle/scene/internal/interfaces"
+	"battleservice/src/services/battle/scene/cll/bll/internal"
+	"battleservice/src/services/battle/scene/interfaces"
 )
 
 type BallMove struct {

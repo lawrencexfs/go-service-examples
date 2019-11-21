@@ -4,10 +4,10 @@ import (
 	"math"
 
 	bmath "battleservice/src/services/base/math"
+	"battleservice/src/services/battle/scene/cll/bll"
 	"battleservice/src/services/battle/scene/consts"
-	"battleservice/src/services/battle/scene/internal"
-	"battleservice/src/services/battle/scene/internal/cll/bll"
-	"battleservice/src/services/battle/scene/internal/interfaces"
+	"battleservice/src/services/battle/scene/interfaces"
+	"battleservice/src/services/battle/scene/typekind"
 	"battleservice/src/services/battle/usercmd"
 
 	"github.com/cihub/seelog"
@@ -54,17 +54,16 @@ func (this *BirthPoint) Init() {
 
 func (this *BirthPoint) CreateUnit() interfaces.IBall {
 	this.childrenCount++
-	scene := this.scene
 	var ball interfaces.IBall
-	ballType := internal.BallTypeToKind(usercmd.BallType(this.ballType))
+	ballType := typekind.BallTypeToKind(usercmd.BallType(this.ballType))
 	switch ballType {
 	case consts.BallKind_Food:
 		posNew := BallFood_InitPos(&this.pos, usercmd.BallType(this.ballType), this.birthRadiusMin, this.birthRadiusMax)
-		ball = bll.NewBallFood(this.id, this.ballTypeId, float64(posNew.X), float64(posNew.Y), scene.(bll.IScene))
+		ball = bll.NewBallFood(this.id, this.ballTypeId, float64(posNew.X), float64(posNew.Y), this.scene.(bll.IScene))
 	case consts.BallKind_Feed:
 		x := math.Floor(float64(this.pos.X)) + 0.25
 		y := math.Floor(float64(this.pos.Y)) + 0.25
-		ball = bll.NewBallFeed(scene.(bll.IScene), this.ballTypeId, this.id, x, y)
+		ball = bll.NewBallFeed(this.scene.(bll.IScene), this.ballTypeId, this.id, x, y)
 	default:
 		seelog.Error("CreateUnit unknow ballType:", ballType, "  typeid:", this.ballTypeId)
 	}

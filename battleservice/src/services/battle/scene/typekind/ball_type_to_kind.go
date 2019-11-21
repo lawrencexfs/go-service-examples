@@ -1,4 +1,4 @@
-package internal
+package typekind
 
 import "battleservice/src/services/battle/usercmd"
 import "battleservice/src/services/battle/scene/consts"

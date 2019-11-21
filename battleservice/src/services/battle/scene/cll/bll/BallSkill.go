@@ -5,7 +5,7 @@ package bll
 import (
 	bmath "battleservice/src/services/base/math"
 	"battleservice/src/services/base/util"
-	"battleservice/src/services/battle/scene/internal/interfaces"
+	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/usercmd"
 
 	"github.com/cihub/seelog"

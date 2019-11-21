@@ -3,9 +3,9 @@ package plr
 import (
 	"battleservice/src/services/base/ape"
 	"battleservice/src/services/base/util"
-	"battleservice/src/services/battle/scene/internal/cll"
-	"battleservice/src/services/battle/scene/internal/cll/bll"
-	"battleservice/src/services/battle/scene/internal/interfaces"
+	"battleservice/src/services/battle/scene/cll"
+	"battleservice/src/services/battle/scene/cll/bll"
+	"battleservice/src/services/battle/scene/interfaces"
 
 	"github.com/giant-tech/go-service/base/net/inet"
 )

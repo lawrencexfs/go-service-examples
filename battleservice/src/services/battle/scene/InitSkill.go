@@ -1,7 +1,7 @@
 package scene
 
 import (
-	"battleservice/src/services/battle/scene/internal/skill"
+	"battleservice/src/services/battle/scene/skill"
 	"battleservice/src/services/battle/scene/plr"
 
 	"github.com/cihub/seelog"

@@ -4,8 +4,8 @@ package skill
 
 import (
 	b3core "battleservice/src/services/base/behavior3go/core"
-	"battleservice/src/services/battle/scene/internal/cll/bll"
-	"battleservice/src/services/battle/scene/internal/interfaces"
+	"battleservice/src/services/battle/scene/cll/bll"
+	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/usercmd"
 )

@@ -8,8 +8,8 @@ import (
 	"battleservice/src/services/base/util"
 	"fmt"
 	"battleservice/src/services/battle/scene/consts"
-	"battleservice/src/services/battle/scene/internal/cll/bll"
-	"battleservice/src/services/battle/scene/internal/interfaces"
+	"battleservice/src/services/battle/scene/cll/bll"
+	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/usercmd"
 )
 

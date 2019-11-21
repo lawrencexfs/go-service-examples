@@ -1,11 +1,11 @@
-package internal
+package scene
 
 //地图对象。如阻挡
 
 import (
 	"battleservice/src/services/base/ape"
 	"battleservice/src/services/battle/conf"
-	"battleservice/src/services/battle/scene/internal/physic"
+	"battleservice/src/services/battle/scene/physic"
 	"battleservice/src/services/battle/usercmd"
 )
 

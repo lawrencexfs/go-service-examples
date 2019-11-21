@@ -1,7 +1,7 @@
 package bll
 
 import (
-	"battleservice/src/services/battle/scene/internal/interfaces"
+	"battleservice/src/services/battle/scene/interfaces"
 )
 
 type IScenePlayer interface {

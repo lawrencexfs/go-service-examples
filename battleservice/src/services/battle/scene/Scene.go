@@ -5,12 +5,12 @@ import (
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/conf"
 	"battleservice/src/services/battle/scene/consts"
-	"battleservice/src/services/battle/scene/internal"
-	"battleservice/src/services/battle/scene/internal/birth"
-	"battleservice/src/services/battle/scene/internal/cll"
-	"battleservice/src/services/battle/scene/internal/cll/bll"
-	"battleservice/src/services/battle/scene/internal/interfaces"
-	"battleservice/src/services/battle/scene/internal/physic"
+
+	"battleservice/src/services/battle/scene/birth"
+	"battleservice/src/services/battle/scene/cll"
+	"battleservice/src/services/battle/scene/cll/bll"
+	"battleservice/src/services/battle/scene/interfaces"
+	"battleservice/src/services/battle/scene/physic"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/scene/rank"
 	"battleservice/src/services/battle/usercmd"
@@ -94,7 +94,7 @@ func (s *Scene) loadMap() {
 	s.cellNumY = int(math.Ceil(s.sceneSize / cll.CellHeight))
 	s.scenePhysic.CreateBoard(float32(s.mapConfig.Size))
 	for _, v := range s.mapConfig.Nodes {
-		internal.LoadMapObjectByConfig(v, s.scenePhysic)
+		LoadMapObjectByConfig(v, s.scenePhysic)
 	}
 }
 

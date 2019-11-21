@@ -4,11 +4,11 @@ package plr
 
 import (
 	"battleservice/src/services/base/util"
+	"battleservice/src/services/battle/scene/cll"
+	"battleservice/src/services/battle/scene/cll/bll"
 	"battleservice/src/services/battle/scene/consts"
-	"battleservice/src/services/battle/scene/internal"
-	"battleservice/src/services/battle/scene/internal/cll"
-	"battleservice/src/services/battle/scene/internal/cll/bll"
-	"battleservice/src/services/battle/scene/internal/interfaces"
+	"battleservice/src/services/battle/scene/interfaces"
+	"battleservice/src/services/battle/scene/typekind"
 	"battleservice/src/services/battle/usercmd"
 	"math"
 )
@@ -195,7 +195,7 @@ func (this *ScenePlayerViewHelper) FindNearBallByKind(selfBall *bll.BallPlayer, 
 	}
 
 	if kind == consts.BallKind_None {
-		kind = internal.BallTypeToKind(usercmd.BallType(ballType))
+		kind = typekind.BallTypeToKind(usercmd.BallType(ballType))
 	}
 
 	//寻找最近目标
