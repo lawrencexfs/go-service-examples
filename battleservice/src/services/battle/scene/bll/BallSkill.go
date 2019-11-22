@@ -58,6 +58,10 @@ func (s *BallSkill) OnInit(initData interface{}) error {
 func (s *BallSkill) OnLoop() {
 	seelog.Debug("BallSkill.OnLoop")
 
+	if s.Skill.IsFinish() {
+		//TODO: 删除
+	}
+
 	// 检查移动是否出格子
 	if s.Move(0, nil) {
 		//cell.AddMsgMove(ball)

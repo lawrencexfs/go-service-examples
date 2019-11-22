@@ -16,25 +16,23 @@ type BallPlayer struct {
 	player IScenePlayer
 }
 
-func NewBallPlayer(player IScenePlayer, ballid uint64) *BallPlayer {
-	x, y := player.GetBallScene().GetRandPos()
-	ball := BallPlayer{
-		BallMove: BallMove{
-			BallFood: BallFood{
-				id:       ballid,
-				Pos:      util.Vector2{x, y},
-				radius:   consts.DefaultBallSize,
-				BallType: usercmd.BallType_Player,
-			},
-		},
-		player: player,
-	}
-	ball.Init()
-	ball.ResetRect()
-	return &ball
-}
+func (this *BallPlayer) InitBallPlayer(player IScenePlayer, ballid uint64) {
 
-func (this *BallPlayer) Init() {
+	x, y := player.GetBallScene().GetRandPos()
+
+	this.BallMove = BallMove{
+		BallFood: BallFood{
+			id:       ballid,
+			Pos:      util.Vector2{x, y},
+			radius:   consts.DefaultBallSize,
+			BallType: usercmd.BallType_Player,
+		},
+	}
+
+	this.player = player
+
+	this.ResetRect()
+
 	this.SetMP(consts.DefaultMaxMP)
 	this.SetHpMax(consts.DefaultMaxHP)
 	this.SetHP(consts.DefaultMaxHP)

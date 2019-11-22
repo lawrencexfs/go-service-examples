@@ -71,6 +71,9 @@ var NewISkillBall func(player *ScenePlayer, ball *bll.BallSkill) interfaces.ISki
 func (s *ScenePlayer) OnInit(initData interface{}) error {
 	seelog.Info("ScenePlayer.OnInit, id:", s.GetEntityID())
 
+	s.BallID = s.GetScene().GenBallID()
+
+	s.BallPlayer.InitBallPlayer(s, s.BallID)
 	// s.scn = scn
 	// s.GetEntityID() = playerID
 	// s.Name = name
@@ -81,7 +84,7 @@ func (s *ScenePlayer) OnInit(initData interface{}) error {
 	s.ScenePlayerPool.Init()
 	s.ScenePlayerNetMsgHelper.Init(s)
 	s.ScenePlayerViewHelper.Init()
-	s.BallID = s.GetScene().GenBallID()
+
 	s.Skill = NewISkillPlayer(s)
 
 	s.SetHP(consts.DefaultMaxHP)
