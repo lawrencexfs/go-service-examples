@@ -3,6 +3,7 @@ package battle
 import (
 	"battleservice/src/services/battle/conf"
 	"battleservice/src/services/battle/scene"
+	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/token"
 	"fmt"
@@ -46,6 +47,9 @@ func (bs *BattleService) OnInit() error {
 	// 注册proto
 	bs.RegProtoType("Room", &scene.Scene{}, false)
 	bs.RegProtoType("Player", &plr.ScenePlayer{}, false)
+	bs.RegProtoType("BallFood", &bll.BallFood{}, false)
+	bs.RegProtoType("BallFeed", &bll.BallFeed{}, false)
+	bs.RegProtoType("BallSkill", &bll.BallSkill{}, false)
 
 	// 全局配置
 	if !conf.ConfigMgr_GetMe().Init() {

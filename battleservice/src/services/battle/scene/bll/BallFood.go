@@ -8,11 +8,22 @@ import (
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/usercmd"
+	"fmt"
 
 	"github.com/cihub/seelog"
 	"github.com/giant-tech/go-service/framework/space"
 )
 
+// FoodInitData 初始化数据
+type FoodInitData struct {
+	ID         uint64
+	TypeID     uint16
+	X, Y       float64
+	Scene      IScene
+	BirthPoint interfaces.IBirthPoint
+}
+
+// BallFood 食物球
 type BallFood struct {
 	space.Entity
 	id         uint64           //动态id
@@ -29,6 +40,23 @@ type BallFood struct {
 func (ball *BallFood) OnInit(initData interface{}) error {
 	seelog.Info("BallFood.OnInit, id:", ball.GetEntityID())
 
+	foodInitData, ok := initData.(*FoodInitData)
+	if !ok {
+		return fmt.Errorf("init data error")
+	}
+
+	var radius float32 = conf.ConfigMgr_GetMe().GetFoodSize(foodInitData.Scene.GetEntityID(), foodInitData.TypeID)
+	ballType := conf.ConfigMgr_GetMe().GetFoodBallType(foodInitData.Scene.GetEntityID(), foodInitData.TypeID)
+
+	ball.id = foodInitData.ID
+	ball.typeID = foodInitData.TypeID
+	ball.Pos = util.Vector2{foodInitData.X, foodInitData.Y}
+	ball.BallType = ballType
+	ball.radius = float64(radius)
+
+	ball.ResetRect()
+	ball.SetExp(consts.DefaultBallFoodExp)
+
 	return nil
 }
 
@@ -40,22 +68,6 @@ func (ball *BallFood) OnLoop() {
 // OnDestroy 销毁
 func (ball *BallFood) OnDestroy() {
 	seelog.Debug("BallFood.OnDestroy")
-}
-
-func NewBallFood(id uint64, typeId uint16, x, y float64, scene IScene) *BallFood {
-	var radius float32 = conf.ConfigMgr_GetMe().GetFoodSize(scene.GetEntityID(), typeId)
-	ballType := conf.ConfigMgr_GetMe().GetFoodBallType(scene.GetEntityID(), typeId)
-	ball := &BallFood{
-		id:       id,
-		typeID:   typeId,
-		Pos:      util.Vector2{x, y},
-		BallType: ballType,
-		radius:   float64(radius),
-	}
-	ball.ResetRect()
-	ball.SetExp(consts.DefaultBallFoodExp)
-	scene.AddBall(ball)
-	return ball
 }
 
 func (ball *BallFood) GetRect() *util.Square {

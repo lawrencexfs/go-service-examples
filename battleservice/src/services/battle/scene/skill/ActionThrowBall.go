@@ -60,8 +60,21 @@ func (this *ActionThrowBall) OnTick(tick *b3core.Tick) b3.Status {
 	pos := bmath.Vector2{float32(posx), float32(posy)}
 	pos.IncreaseBy(angleVel.Mult(float32(player.GetRadius() + radius)))
 
-	newBall := bll.NewBallSkill(usercmd.BallType(this.ball_type), ballid, float64(pos.X), float64(pos.Y), radius, player)
-	newBall.ResetRect()
+	initData := &bll.SkillInitData{
+		BallType: usercmd.BallType(this.ball_type),
+		ID:       ballid,
+		X:        float64(pos.X),
+		Y:        float64(pos.Y),
+		Radius:   radius,
+		Player:   player,
+	}
+
+	ballEntity, err := scene.CreateEntity("BallSkill", scene.GetEntityID(), initData, true, 0)
+	if err != nil {
+		return b3.FAILURE
+	}
+
+	newBall := ballEntity.(*bll.BallSkill)
 
 	scene.AddBall(newBall)
 	//	scene.scenePhysic.AddSkill(newBall)

@@ -54,21 +54,45 @@ func (this *BirthPoint) Init() {
 
 func (this *BirthPoint) CreateUnit() interfaces.IBall {
 	this.childrenCount++
+
+	scene := this.scene.(bll.IScene)
+
 	var ball interfaces.IBall
 	ballType := typekind.BallTypeToKind(usercmd.BallType(this.ballType))
+
 	switch ballType {
 	case consts.BallKind_Food:
 		posNew := BallFood_InitPos(&this.pos, usercmd.BallType(this.ballType), this.birthRadiusMin, this.birthRadiusMax)
-		ball = bll.NewBallFood(this.id, this.ballTypeId, float64(posNew.X), float64(posNew.Y), this.scene.(bll.IScene))
+
+		foodInitData := &bll.FoodInitData{
+			ID:         this.id,
+			TypeID:     this.ballTypeId,
+			X:          float64(posNew.X),
+			Y:          float64(posNew.Y),
+			Scene:      scene,
+			BirthPoint: this,
+		}
+
+		scene.CreateEntity("BallFood", scene.GetEntityID(), foodInitData, true, 0)
 	case consts.BallKind_Feed:
 		x := math.Floor(float64(this.pos.X)) + 0.25
 		y := math.Floor(float64(this.pos.Y)) + 0.25
-		ball = bll.NewBallFeed(this.scene.(bll.IScene), this.ballTypeId, this.id, x, y)
+
+		initData := &bll.FeedInitData{
+			Scene:      scene,
+			TypeID:     this.ballTypeId,
+			ID:         this.id,
+			X:          x,
+			Y:          y,
+			BirthPoint: this,
+		}
+
+		scene.CreateEntity("BallFeed", scene.GetEntityID(), initData, true, 0)
+
 	default:
 		seelog.Error("CreateUnit unknow ballType:", ballType, "  typeid:", this.ballTypeId)
 	}
 
-	ball.SetBirthPoint(this)
 	return ball
 }
 

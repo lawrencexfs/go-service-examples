@@ -93,6 +93,12 @@ func (s *ScenePlayer) OnInit(initData interface{}) error {
 // OnLoop 每帧调用
 func (s *ScenePlayer) OnLoop() {
 	seelog.Debug("ScenePlayer.OnLoop")
+
+	now := time.Now()
+	nowNano := now.UnixNano()
+	var d float64 = consts.FrameTime
+
+	s.Update(d, nowNano, s.GetIEntities().(IScene))
 }
 
 // OnDestroy 销毁

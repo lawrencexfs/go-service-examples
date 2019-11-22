@@ -275,22 +275,6 @@ func (cell *Cell) Render(scene bll.IScene, per float64, now int64) {
 	for _, skill := range delSkills {
 		cell.Remove(skill.GetID(), skill.GetBallType())
 	}
-	for _, ball := range cell.Skills {
-		// 检查移动是否出格子
-		if ball.Move(per, scene) {
-			cell.AddMsgMove(ball)
-			// 如果技能球已移动新的格子，则更新，删除旧格中的球，添加到新格。
-			scene.UpdateSkillBallCell(ball, cell.id)
-			//			x, y := ball.GetPos()
-			//			newCell, ok := scene.GetCell(x, y)
-			//			if ok && newCell.id != cell.id {
-			//				cell.Remove(ball.GetID(), ball.GetBallType())
-			//				newCell.Add(ball)
-			//			}
-			ball.ResetRect()
-		}
-		ball.Skill.Update()
-	}
 }
 
 func (cell *Cell) string() string {

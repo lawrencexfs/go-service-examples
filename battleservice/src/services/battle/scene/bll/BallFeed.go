@@ -6,10 +6,22 @@ import (
 	"battleservice/src/services/base/ape"
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/conf"
+	"battleservice/src/services/battle/scene/interfaces"
+	"fmt"
 
 	"github.com/cihub/seelog"
 )
 
+// FeedInitData feed初始化数据
+type FeedInitData struct {
+	Scene      IScene
+	TypeID     uint16
+	ID         uint64
+	X, Y       float64
+	BirthPoint interfaces.IBirthPoint
+}
+
+//BallFeed 动态障碍物
 type BallFeed struct {
 	BallMove
 }
@@ -17,6 +29,29 @@ type BallFeed struct {
 // OnInit 初始化
 func (feed *BallFeed) OnInit(initData interface{}) error {
 	seelog.Info("BallFeed.OnInit, id:", feed.GetEntityID())
+
+	feedInitData, ok := initData.(*FeedInitData)
+	if !ok {
+		return fmt.Errorf("init data error")
+	}
+
+	radius := float64(conf.ConfigMgr_GetMe().GetFoodSize(feedInitData.Scene.GetEntityID(), feedInitData.TypeID))
+	ballType := conf.ConfigMgr_GetMe().GetFoodBallType(feedInitData.Scene.GetEntityID(), feedInitData.TypeID)
+	feed.BallMove = BallMove{
+		BallFood: BallFood{
+			id:       feedInitData.ID,
+			typeID:   feedInitData.TypeID,
+			BallType: ballType,
+			Pos:      util.Vector2{float64(feedInitData.X), float64(feedInitData.Y)},
+			radius:   float64(radius),
+		},
+		PhysicObj: ape.NewCircleParticle(float32(feedInitData.X), float32(feedInitData.Y), float32(radius)),
+	}
+
+	feed.SetBirthPoint(feedInitData.BirthPoint)
+	feed.ResetRect()
+	feed.PhysicObj.SetFixed(true)
+	feedInitData.Scene.AddFeedPhysic(feed.PhysicObj)
 
 	return nil
 }
@@ -29,26 +64,4 @@ func (feed *BallFeed) OnLoop() {
 // OnDestroy 销毁
 func (feed *BallFeed) OnDestroy() {
 	seelog.Debug("BallFeed.OnDestroy")
-}
-
-func NewBallFeed(scene IScene, typeId uint16, id uint64, x, y float64) *BallFeed {
-	radius := float64(conf.ConfigMgr_GetMe().GetFoodSize(scene.GetEntityID(), typeId))
-	ballType := conf.ConfigMgr_GetMe().GetFoodBallType(scene.GetEntityID(), typeId)
-	ball := &BallFeed{
-		BallMove: BallMove{
-			BallFood: BallFood{
-				id:       id,
-				typeID:   typeId,
-				BallType: ballType,
-				Pos:      util.Vector2{float64(x), float64(y)},
-				radius:   float64(radius),
-			},
-			PhysicObj: ape.NewCircleParticle(float32(x), float32(y), float32(radius)),
-		},
-	}
-	ball.ResetRect()
-	ball.PhysicObj.SetFixed(true)
-	scene.AddBall(ball)
-	scene.AddFeedPhysic(ball.PhysicObj)
-	return ball
 }

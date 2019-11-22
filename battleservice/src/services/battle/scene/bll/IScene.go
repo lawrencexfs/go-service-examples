@@ -3,10 +3,13 @@ package bll
 import (
 	"battleservice/src/services/base/ape"
 	"battleservice/src/services/battle/scene/interfaces"
+
+	"github.com/giant-tech/go-service/framework/iserver"
 )
 
 type IScene interface {
-	GetEntityID() uint64
+	iserver.IEntityGroup
+	//GetEntityID() uint64
 	AddBall(ball interfaces.IBall)
 	AddFeedPhysic(feed ape.IAbstractParticle)
 	AddPlayerPhysic(player ape.IAbstractParticle)

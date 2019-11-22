@@ -8,9 +8,11 @@ import (
 	"battleservice/src/services/battle/scene/interfaces"
 
 	"github.com/giant-tech/go-service/base/net/inet"
+	"github.com/giant-tech/go-service/framework/iserver"
 )
 
 type IScene interface {
+	iserver.IEntities
 	GenBallID() uint64 // 生成一个场景内唯一的BallID
 	AddBall(ball interfaces.IBall)
 	RemoveBall(ball interfaces.IBall)

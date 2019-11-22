@@ -113,13 +113,10 @@ func (s *Scene) Render() {
 		s.scenePhysic.Tick()
 	}
 
-	s.TravsalPlayers(func(player *plr.ScenePlayer) {
-		player.Update(d, nowNano, s)
-	})
-
 	for _, cell := range s.cells {
 		cell.Render(s, d, nowNano)
 	}
+
 	s.birthPoints.RefreshBirthPoint(d, s)
 
 	if frame%consts.FrameCountBy100MS == 0 {
