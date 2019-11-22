@@ -15,20 +15,20 @@
 #include "GiantPhysX/GxVec3.h"
 
 /// <summary>
-/// ╢╢╫╗х╚╬жнОюМ╤тоС
+/// О©╫О©╫О©╫О©╫х╚О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
 /// </summary>
 /// <remarks>
-/// нОюМо╣мЁ╤тоСйгн╗р╩╣дё╛╤Ю╢н╣Всц╠╬╫с©з╩А╥╣╩ьм╛р╩╦Ж╤тоС║ё
+/// О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫О©╫О©╫н╗р╩О©╫дёО©╫О©╫О©╫н╣О©╫О©╫ц╠О©╫О©╫с©з╩А╥╣О©╫О©╫м╛р╩О©╫О©╫О©╫О©╫О©╫О©╫
 /// </remarks>
-/// <param name="config">нОюМо╣мЁеДжцнд╪Чб╥╬╤</param>
-/// <param name="debugger">╣ВйтфВ╣дip╣ьж╥</param>
-/// <returns>нОюМо╣мЁ╤тоС</returns>
-GX_C_EXPORT GX_API GiantPhysX::GxIPhysics* GX_CALL_CONV GxCreatePhysics(const char* config, const char *debugger = nullptr);
+/// <param name="config">О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫О©╫д╪О©╫б╥О©╫О©╫</param>
+/// <param name="debugger">О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ipО©╫О©╫ж╥</param>
+/// <returns>О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫</returns>
+GX_C_EXPORT GX_API GiantPhysX::GxIPhysics* GX_CALL_CONV GxCreatePhysics(const char* config, const char *debugger/* = nullptr*/);
 
 /// <summary>
-/// гЕюМнОюМо╣мЁ
+/// О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫о╣мЁ
 /// </summary>
 /// <remarks>
-/// нОюМо╣мЁкЫсп╤тоС╤╪╩А╠╩оЗ╩ы║ё
+/// О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫п╤О©╫О©╫С╤╪╩А╠╩О©╫О©╫О©╫ы║О©╫
 /// </remarks>
 GX_C_EXPORT GX_API void GX_CALL_CONV GxDestroyPhysics();

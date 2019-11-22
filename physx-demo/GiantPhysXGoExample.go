@@ -1,12 +1,20 @@
 package main
 
-import (
-	"physx-demo/GiantPhysXGo"
-	"time"
-)
+//import "C"
+import "time"
+import "physx-demo/GiantPhysXGo"
 
 func main() {
-	var physics = GiantPhysXGo.GxCreatePhysics("TropicalStorm.gxgame", "192.168.133.79")
+	//var physics = GiantPhysXGo.GxCreatePhysics("TropicalStorm.gxgame", "192.168.133.79")
+	var str1 = "TropicalStorm.gxgame"
+	var str2 = "192.168.133.79"
+
+	//cstr1, cstr2 := C.CString(str1), C.CString(str2)
+	var physics = GiantPhysXGo.GxCreatePhysics(str1, str2)
+
+	//defer C.free(unsafe.Pointer(cstr1)) // must call
+	//defer C.free(unsafe.Pointer(cstr2))
+
 	var scene = physics.CreateScene("factory01_area04_01.gxscene")
 
 	for {
@@ -15,4 +23,6 @@ func main() {
 	}
 
 	GiantPhysXGo.GxDestroyPhysics()
+
+	//C.GxCreatePhysics(cstr1, cstr2)
 }

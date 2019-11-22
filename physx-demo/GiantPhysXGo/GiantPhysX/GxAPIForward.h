@@ -42,16 +42,10 @@
 
 namespace GiantPhysX
 {
-	class GxIBoxCollider;
-	class GxICharacterController;
-	class GxICollider;
-	class GxIFactory;
 	class GxIGameObject;
 	class GxIPhysics;
 	class GxIScene;
 
-	class GxLayerMask;
-	class GxRay;
 	class GxVec3;
 
-} // namespace GiantPhysX
+}; // namespace GiantPhysX

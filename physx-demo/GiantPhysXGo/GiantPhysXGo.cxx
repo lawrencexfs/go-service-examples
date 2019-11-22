@@ -456,27 +456,27 @@ void _wrap_GxIGameObject_SetName_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxIGa
 }
 
 
-intgo _wrap_GxIGameObject_GetLayer_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxIGameObject *_swig_go_0) {
+intgo _wrap_GxIGameObject_GetMask_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxIGameObject *_swig_go_0) {
   GiantPhysX::GxIGameObject *arg1 = (GiantPhysX::GxIGameObject *) 0 ;
   int result;
   intgo _swig_go_result;
   
   arg1 = *(GiantPhysX::GxIGameObject **)&_swig_go_0; 
   
-  result = (int)(arg1)->GetLayer();
+  result = (int)(arg1)->GetMask();
   _swig_go_result = result; 
   return _swig_go_result;
 }
 
 
-void _wrap_GxIGameObject_SetLayer_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxIGameObject *_swig_go_0, intgo _swig_go_1) {
+void _wrap_GxIGameObject_SetMask_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxIGameObject *_swig_go_0, intgo _swig_go_1) {
   GiantPhysX::GxIGameObject *arg1 = (GiantPhysX::GxIGameObject *) 0 ;
   int arg2 ;
   
   arg1 = *(GiantPhysX::GxIGameObject **)&_swig_go_0; 
   arg2 = (int)_swig_go_1; 
   
-  (arg1)->SetLayer(arg2);
+  (arg1)->SetMask(arg2);
   
 }
 
@@ -494,19 +494,7 @@ GiantPhysX::GxVec3 *_wrap_GxIGameObject_GetPosition_GiantPhysXGo_27fd12e0c257ea6
 }
 
 
-void _wrap_GxIGameObject_SetPosition__SWIG_0_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxIGameObject *_swig_go_0, GiantPhysX::GxVec3 *_swig_go_1) {
-  GiantPhysX::GxIGameObject *arg1 = (GiantPhysX::GxIGameObject *) 0 ;
-  GiantPhysX::GxVec3 *arg2 = 0 ;
-  
-  arg1 = *(GiantPhysX::GxIGameObject **)&_swig_go_0; 
-  arg2 = *(GiantPhysX::GxVec3 **)&_swig_go_1; 
-  
-  (arg1)->SetPosition((GiantPhysX::GxVec3 const &)*arg2);
-  
-}
-
-
-void _wrap_GxIGameObject_SetPosition__SWIG_1_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxIGameObject *_swig_go_0, float _swig_go_1, float _swig_go_2, float _swig_go_3) {
+void _wrap_GxIGameObject_SetPosition_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxIGameObject *_swig_go_0, float _swig_go_1, float _swig_go_2, float _swig_go_3) {
   GiantPhysX::GxIGameObject *arg1 = (GiantPhysX::GxIGameObject *) 0 ;
   float arg2 ;
   float arg3 ;
@@ -626,6 +614,39 @@ void _wrap_GxIPhysics_DestroyScene_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxI
   
   (arg1)->DestroyScene(arg2);
   
+}
+
+
+intgo _wrap_GxIPhysics_GetMask_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxIPhysics *_swig_go_0, _gostring_ _swig_go_1) {
+  GiantPhysX::GxIPhysics *arg1 = (GiantPhysX::GxIPhysics *) 0 ;
+  char *arg2 = (char *) 0 ;
+  int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(GiantPhysX::GxIPhysics **)&_swig_go_0; 
+  
+  arg2 = (char *)malloc(_swig_go_1.n + 1);
+  memcpy(arg2, _swig_go_1.p, _swig_go_1.n);
+  arg2[_swig_go_1.n] = '\0';
+  
+  
+  result = (int)(arg1)->GetMask((char const *)arg2);
+  _swig_go_result = result; 
+  free(arg2); 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_GxIPhysics_GetFullMask_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxIPhysics *_swig_go_0) {
+  GiantPhysX::GxIPhysics *arg1 = (GiantPhysX::GxIPhysics *) 0 ;
+  int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(GiantPhysX::GxIPhysics **)&_swig_go_0; 
+  
+  result = (int)(arg1)->GetFullMask();
+  _swig_go_result = result; 
+  return _swig_go_result;
 }
 
 
@@ -788,9 +809,9 @@ void _wrap_delete_GxLayerMask_GiantPhysXGo_27fd12e0c257ea6e(GiantPhysX::GxLayerM
 }
 
 
-GiantPhysX::GxIPhysics *_wrap_GxCreatePhysics_GiantPhysXGo_27fd12e0c257ea6e(intgo _swig_optargc, _gostring_ _swig_go_0, _gostring_ _swig_go_1) {
+GiantPhysX::GxIPhysics *_wrap_GxCreatePhysics_GiantPhysXGo_27fd12e0c257ea6e(_gostring_ _swig_go_0, _gostring_ _swig_go_1) {
   char *arg1 = (char *) 0 ;
-  char *arg2 = (char *) nullptr ;
+  char *arg2 = (char *) 0 ;
   GiantPhysX::GxIPhysics *result = 0 ;
   GiantPhysX::GxIPhysics *_swig_go_result;
   
@@ -799,12 +820,11 @@ GiantPhysX::GxIPhysics *_wrap_GxCreatePhysics_GiantPhysXGo_27fd12e0c257ea6e(intg
   memcpy(arg1, _swig_go_0.p, _swig_go_0.n);
   arg1[_swig_go_0.n] = '\0';
   
-  if (_swig_optargc > 0) {
-    arg2 = (char *)malloc(_swig_go_1.n + 1);
-    memcpy(arg2, _swig_go_1.p, _swig_go_1.n);
-    arg2[_swig_go_1.n] = '\0';
-    
-  }
+  
+  arg2 = (char *)malloc(_swig_go_1.n + 1);
+  memcpy(arg2, _swig_go_1.p, _swig_go_1.n);
+  arg2[_swig_go_1.n] = '\0';
+  
   
   result = (GiantPhysX::GxIPhysics *)GxCreatePhysics((char const *)arg1,(char const *)arg2);
   *(GiantPhysX::GxIPhysics **)&_swig_go_result = (GiantPhysX::GxIPhysics *)result; 

@@ -13,6 +13,9 @@
 package GiantPhysXGo
 
 /*
+#cgo CXXFLAGS: -std=c++11
+#cgo CFLAGS: -I .
+#cgo LDFLAGS: -L ../bin -lGiantPhysXRelease_x64
 #define intgo swig_intgo
 typedef void *swig_voidp;
 
@@ -34,6 +37,7 @@ typedef _gostring_ swig_type_3;
 typedef _gostring_ swig_type_4;
 typedef _gostring_ swig_type_5;
 typedef _gostring_ swig_type_6;
+typedef _gostring_ swig_type_7;
 extern void _wrap_Swig_free_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
 extern uintptr_t _wrap_Swig_malloc_GiantPhysXGo_27fd12e0c257ea6e(swig_intgo arg1);
 extern uintptr_t _wrap_new_GxVec3__SWIG_0_GiantPhysXGo_27fd12e0c257ea6e(void);
@@ -50,20 +54,21 @@ extern _Bool _wrap_GxIGameObject_GetActive_GiantPhysXGo_27fd12e0c257ea6e(uintptr
 extern void _wrap_GxIGameObject_SetActive_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, _Bool arg2);
 extern swig_type_1 _wrap_GxIGameObject_GetName_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
 extern void _wrap_GxIGameObject_SetName_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, swig_type_2 arg2);
-extern swig_intgo _wrap_GxIGameObject_GetLayer_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
-extern void _wrap_GxIGameObject_SetLayer_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_GxIGameObject_GetMask_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
+extern void _wrap_GxIGameObject_SetMask_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, swig_intgo arg2);
 extern uintptr_t _wrap_GxIGameObject_GetPosition_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
-extern void _wrap_GxIGameObject_SetPosition__SWIG_0_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, uintptr_t arg2);
-extern void _wrap_GxIGameObject_SetPosition__SWIG_1_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, float arg2, float arg3, float arg4);
+extern void _wrap_GxIGameObject_SetPosition_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, float arg2, float arg3, float arg4);
 extern _Bool _wrap_GxIGameObject_Raycast__SWIG_0_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, uintptr_t arg2, swig_intgo arg3);
 extern _Bool _wrap_GxIGameObject_Raycast__SWIG_1_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3, uintptr_t arg4, swig_intgo arg5);
 extern void _wrap_delete_GxIPhysics_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
 extern uintptr_t _wrap_GxIPhysics_CreateScene__SWIG_0_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, swig_type_3 arg2);
 extern uintptr_t _wrap_GxIPhysics_CreateScene__SWIG_1_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
 extern void _wrap_GxIPhysics_DestroyScene_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, uintptr_t arg2);
+extern swig_intgo _wrap_GxIPhysics_GetMask_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, swig_type_4 arg2);
+extern swig_intgo _wrap_GxIPhysics_GetFullMask_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
 extern void _wrap_delete_GxIScene_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
 extern void _wrap_GxIScene_Update_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
-extern uintptr_t _wrap_GxIScene_CreateGameObject__SWIG_0_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, swig_type_4 arg2);
+extern uintptr_t _wrap_GxIScene_CreateGameObject__SWIG_0_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, swig_type_5 arg2);
 extern uintptr_t _wrap_GxIScene_CreateGameObject__SWIG_1_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
 extern void _wrap_GxIScene_DestroyGameObject_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, uintptr_t arg2);
 extern uintptr_t _wrap_GxIScene_Raycast_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3, float arg4, swig_intgo arg5);
@@ -72,7 +77,7 @@ extern uintptr_t _wrap_new_GxLayerMask__SWIG_1_GiantPhysXGo_27fd12e0c257ea6e(swi
 extern void _wrap_GxLayerMask_value_set_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1, swig_intgo arg2);
 extern swig_intgo _wrap_GxLayerMask_value_get_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
 extern void _wrap_delete_GxLayerMask_GiantPhysXGo_27fd12e0c257ea6e(uintptr_t arg1);
-extern uintptr_t _wrap_GxCreatePhysics_GiantPhysXGo_27fd12e0c257ea6e(intgo _swig_args, swig_type_5 arg1, swig_type_6 arg2);
+extern uintptr_t _wrap_GxCreatePhysics_GiantPhysXGo_27fd12e0c257ea6e(swig_type_6 arg1, swig_type_7 arg2);
 extern void _wrap_GxDestroyPhysics_GiantPhysXGo_27fd12e0c257ea6e(void);
 #undef intgo
 */
@@ -82,28 +87,26 @@ import "unsafe"
 import _ "runtime/cgo"
 import "sync"
 
-
 type _ unsafe.Pointer
-
-
 
 var Swig_escape_always_false bool
 var Swig_escape_val interface{}
 
-
 type _swig_fnptr *byte
 type _swig_memberptr *byte
 
-
 type _ sync.Mutex
 
+type swig_gostring struct {
+	p uintptr
+	n int
+}
 
-type swig_gostring struct { p uintptr; n int }
 func swigCopyString(s string) string {
-  p := *(*swig_gostring)(unsafe.Pointer(&s))
-  r := string((*[0x7fffffff]byte)(unsafe.Pointer(p.p))[:p.n])
-  Swig_free(p.p)
-  return r
+	p := *(*swig_gostring)(unsafe.Pointer(&s))
+	r := string((*[0x7fffffff]byte)(unsafe.Pointer(p.p))[:p.n])
+	Swig_free(p.p)
+	return r
 }
 
 func Swig_free(arg1 uintptr) {
@@ -119,6 +122,7 @@ func Swig_malloc(arg1 int) (_swig_ret uintptr) {
 }
 
 const GX_WINDOWS int = 1
+
 type SwigcptrGxVec3 uintptr
 
 func (p SwigcptrGxVec3) Swigcptr() uintptr {
@@ -242,7 +246,7 @@ func (arg1 SwigcptrGxIGameObject) GetName() (_swig_ret string) {
 	swig_r_p := C._wrap_GxIGameObject_GetName_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
- swig_r_1 = swigCopyString(swig_r) 
+	swig_r_1 = swigCopyString(swig_r)
 	return swig_r_1
 }
 
@@ -255,17 +259,17 @@ func (arg1 SwigcptrGxIGameObject) SetName(arg2 string) {
 	}
 }
 
-func (arg1 SwigcptrGxIGameObject) GetLayer() (_swig_ret int) {
+func (arg1 SwigcptrGxIGameObject) GetMask() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_GxIGameObject_GetLayer_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_GxIGameObject_GetMask_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
-func (arg1 SwigcptrGxIGameObject) SetLayer(arg2 int) {
+func (arg1 SwigcptrGxIGameObject) SetMask(arg2 int) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_GxIGameObject_SetLayer_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	C._wrap_GxIGameObject_SetMask_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 }
 
 func (arg1 SwigcptrGxIGameObject) GetPosition() (_swig_ret GxVec3) {
@@ -275,31 +279,12 @@ func (arg1 SwigcptrGxIGameObject) GetPosition() (_swig_ret GxVec3) {
 	return swig_r
 }
 
-func (arg1 SwigcptrGxIGameObject) SetPosition__SWIG_0(arg2 GxVec3) {
-	_swig_i_0 := arg1
-	_swig_i_1 := arg2.Swigcptr()
-	C._wrap_GxIGameObject_SetPosition__SWIG_0_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
-}
-
-func (arg1 SwigcptrGxIGameObject) SetPosition__SWIG_1(arg2 float32, arg3 float32, arg4 float32) {
+func (arg1 SwigcptrGxIGameObject) SetPosition(arg2 float32, arg3 float32, arg4 float32) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	C._wrap_GxIGameObject_SetPosition__SWIG_1_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0), C.float(_swig_i_1), C.float(_swig_i_2), C.float(_swig_i_3))
-}
-
-func (p SwigcptrGxIGameObject) SetPosition(a ...interface{}) {
-	argc := len(a)
-	if argc == 1 {
-		p.SetPosition__SWIG_0(a[0].(GxVec3))
-		return
-	}
-	if argc == 3 {
-		p.SetPosition__SWIG_1(a[0].(float32), a[1].(float32), a[2].(float32))
-		return
-	}
-	panic("No match for overloaded function call")
+	C._wrap_GxIGameObject_SetPosition_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0), C.float(_swig_i_1), C.float(_swig_i_2), C.float(_swig_i_3))
 }
 
 func (arg1 SwigcptrGxIGameObject) Raycast__SWIG_0(arg2 GxIGameObject, arg3 int) (_swig_ret bool) {
@@ -340,10 +325,10 @@ type GxIGameObject interface {
 	SetActive(arg2 bool)
 	GetName() (_swig_ret string)
 	SetName(arg2 string)
-	GetLayer() (_swig_ret int)
-	SetLayer(arg2 int)
+	GetMask() (_swig_ret int)
+	SetMask(arg2 int)
 	GetPosition() (_swig_ret GxVec3)
-	SetPosition(a ...interface{})
+	SetPosition(arg2 float32, arg3 float32, arg4 float32)
 	Raycast(a ...interface{}) bool
 }
 
@@ -396,11 +381,31 @@ func (arg1 SwigcptrGxIPhysics) DestroyScene(arg2 GxIScene) {
 	C._wrap_GxIPhysics_DestroyScene_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
 }
 
+func (arg1 SwigcptrGxIPhysics) GetMask(arg2 string) (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (int)(C._wrap_GxIPhysics_GetMask_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0), *(*C.swig_type_4)(unsafe.Pointer(&_swig_i_1))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+	return swig_r
+}
+
+func (arg1 SwigcptrGxIPhysics) GetFullMask() (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_GxIPhysics_GetFullMask_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
 type GxIPhysics interface {
 	Swigcptr() uintptr
 	SwigIsGxIPhysics()
 	CreateScene(a ...interface{}) GxIScene
 	DestroyScene(arg2 GxIScene)
+	GetMask(arg2 string) (_swig_ret int)
+	GetFullMask() (_swig_ret int)
 }
 
 type SwigcptrGxIScene uintptr
@@ -426,7 +431,7 @@ func (arg1 SwigcptrGxIScene) CreateGameObject__SWIG_0(arg2 string) (_swig_ret Gx
 	var swig_r GxIGameObject
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (GxIGameObject)(SwigcptrGxIGameObject(C._wrap_GxIScene_CreateGameObject__SWIG_0_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0), *(*C.swig_type_4)(unsafe.Pointer(&_swig_i_1)))))
+	swig_r = (GxIGameObject)(SwigcptrGxIGameObject(C._wrap_GxIScene_CreateGameObject__SWIG_0_GiantPhysXGo_27fd12e0c257ea6e(C.uintptr_t(_swig_i_0), *(*C.swig_type_5)(unsafe.Pointer(&_swig_i_1)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -535,15 +540,11 @@ type GxLayerMask interface {
 	GetValue() (_swig_ret int)
 }
 
-func GxCreatePhysics(arg1 string, _swig_args ...interface{}) (_swig_ret GxIPhysics) {
-	var arg2 string
-	if len(_swig_args) > 0 {
-		arg2 = _swig_args[0].(string)
-	}
+func GxCreatePhysics(arg1 string, arg2 string) (_swig_ret GxIPhysics) {
 	var swig_r GxIPhysics
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (GxIPhysics)(SwigcptrGxIPhysics(C._wrap_GxCreatePhysics_GiantPhysXGo_27fd12e0c257ea6e(C.swig_intgo(len(_swig_args)), *(*C.swig_type_5)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_6)(unsafe.Pointer(&_swig_i_1)))))
+	swig_r = (GxIPhysics)(SwigcptrGxIPhysics(C._wrap_GxCreatePhysics_GiantPhysXGo_27fd12e0c257ea6e(*(*C.swig_type_6)(unsafe.Pointer(&_swig_i_0)), *(*C.swig_type_7)(unsafe.Pointer(&_swig_i_1)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg1
 	}
@@ -556,5 +557,3 @@ func GxCreatePhysics(arg1 string, _swig_args ...interface{}) (_swig_ret GxIPhysi
 func GxDestroyPhysics() {
 	C._wrap_GxDestroyPhysics_GiantPhysXGo_27fd12e0c257ea6e()
 }
-
-
