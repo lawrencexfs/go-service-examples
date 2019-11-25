@@ -29,7 +29,7 @@ func (this *ActionHammerTryHit) OnTick(tick *b3core.Tick) b3.Status {
 
 	attckRect := ballskill.GetRect()
 	attckRect.SetRadius(ballskill.GetRadius() + 0.5)
-	cells := scene.GetAreaCells(attckRect)
+	//cells := scene.GetAreaCells(attckRect)
 
 	scene.TravsalPlayers(func(other *plr.ScenePlayer) {
 		if other.GetId() == player.GetId() {
@@ -45,15 +45,16 @@ func (this *ActionHammerTryHit) OnTick(tick *b3core.Tick) b3.Status {
 		}
 	})
 
-	for _, cell := range cells {
-		for _, feed := range cell.Feeds {
-			distance := feed.GetPosV().SqrMagnitudeTo(ballskill.GetPosV())
-			tmp := feed.GetRadius() + ballskill.GetRadius()
-			if distance <= tmp*tmp {
-				return b3.FAILURE
-			}
-		}
-	}
+	//TODO: cell
+	// for _, cell := range cells {
+	// 	for _, feed := range cell.Feeds {
+	// 		distance := feed.GetPosV().SqrMagnitudeTo(ballskill.GetPosV())
+	// 		tmp := feed.GetRadius() + ballskill.GetRadius()
+	// 		if distance <= tmp*tmp {
+	// 			return b3.FAILURE
+	// 		}
+	// 	}
+	// }
 
 	return b3.SUCCESS
 }

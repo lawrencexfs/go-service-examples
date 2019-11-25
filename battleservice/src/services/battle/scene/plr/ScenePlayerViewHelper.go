@@ -60,11 +60,11 @@ func (this *ScenePlayerViewHelper) UpdateView(scene IScene, selfBall *bll.BallPl
 	this.RealViewRect.Bottom = float64(minY)
 	this.RealViewRect.Top = float64(maxY) + cll.CellHeight
 
-	newCells := scene.GetAreaCells(this.ViewRect)
-	this.LookCells = make(map[int]*cll.Cell)
-	for _, newCell := range newCells {
-		this.LookCells[newCell.ID()] = newCell
-	}
+	// newCells := scene.GetAreaCells(this.ViewRect)
+	// this.LookCells = make(map[int]*cll.Cell)
+	// for _, newCell := range newCells {
+	// 	this.LookCells[newCell.ID()] = newCell
+	// }
 }
 func (this *ScenePlayerViewHelper) ResetMsg() {
 	this.LookBallPlayer = make(map[uint64]*ScenePlayer)
@@ -243,11 +243,11 @@ func (this *ScenePlayerViewHelper) FindNearBall(id uint64) interfaces.IBall {
 		return ani
 	}
 
-	for _, cell := range this.LookCells {
-		if tball, ok := cell.NoTypeFind(id); ok {
-			return tball
-		}
-	}
+	// for _, cell := range this.LookCells {
+	// 	if tball, ok := cell.NoTypeFind(id); ok {
+	// 		return tball
+	// 	}
+	// }
 	return nil
 }
 

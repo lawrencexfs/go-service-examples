@@ -15,27 +15,31 @@ import (
 
 // 获取朝向上最近的目标
 func FindNearTarget(tick *b3core.Tick, player *plr.ScenePlayer) (interfaces.IBall, consts.BallKind) {
-	angleVel := GetPlayerDir(tick, player)
+	//TODO:
 
-	var rect util.Square
-	rect.CopyFrom(player.GetViewRect())
-	rect.SetRadius(GetAttackRange(tick, player))
-	cells := player.GetScene().GetAreaCells(&rect)
+	// angleVel := GetPlayerDir(tick, player)
 
-	minball_feed, min_feed := player.FindNearBallByKind(consts.BallKind_Feed, angleVel, cells, 0)
-	minball_player, min_player := player.FindNearBallByKind(consts.BallKind_Player, angleVel, cells, 0)
-	minball_ballskill, min_ballskill := player.FindNearBallByKind(consts.BallKind_Skill, angleVel, cells, 0)
-	if minball_player == nil && minball_feed == nil && minball_ballskill == nil {
-		return nil, consts.BallKind_None
-	}
+	// var rect util.Square
+	// rect.CopyFrom(player.GetViewRect())
+	// rect.SetRadius(GetAttackRange(tick, player))
+	// cells := player.GetScene().GetAreaCells(&rect)
 
-	if min_feed <= min_player && min_feed <= min_ballskill {
-		return minball_feed, consts.BallKind_Feed
-	} else if min_ballskill <= min_player && min_ballskill <= min_feed {
-		return minball_ballskill, consts.BallKind_Skill
-	} else {
-		return minball_player, consts.BallKind_Player
-	}
+	// minball_feed, min_feed := player.FindNearBallByKind(consts.BallKind_Feed, angleVel, cells, 0)
+	// minball_player, min_player := player.FindNearBallByKind(consts.BallKind_Player, angleVel, cells, 0)
+	// minball_ballskill, min_ballskill := player.FindNearBallByKind(consts.BallKind_Skill, angleVel, cells, 0)
+	// if minball_player == nil && minball_feed == nil && minball_ballskill == nil {
+	// 	return nil, consts.BallKind_None
+	// }
+
+	// if min_feed <= min_player && min_feed <= min_ballskill {
+	// 	return minball_feed, consts.BallKind_Feed
+	// } else if min_ballskill <= min_player && min_ballskill <= min_feed {
+	// 	return minball_ballskill, consts.BallKind_Skill
+	// } else {
+	// 	return minball_player, consts.BallKind_Player
+	// }
+
+	return nil, consts.BallKind_None
 }
 
 // 获取朝向上所有目标
@@ -61,29 +65,31 @@ func FindTarget_SemiCircle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interf
 	var rect util.Square
 	rect.CopyFrom(player.GetViewRect())
 	rect.SetRadius(GetAttackRange(tick, player))
-	cells := player.GetScene().GetAreaCells(&rect)
 
-	// ballskill
-	for _, cell := range cells {
-		for _, ball := range cell.Skills {
-			if util.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
-				continue
-			}
-			balllist = append(balllist, ball)
-			balltype = append(balltype, consts.BallKind_Skill)
-		}
-	}
+	//TODO: cell
+	// cells := player.GetScene().GetAreaCells(&rect)
 
-	// feed
-	for _, cell := range cells {
-		for _, ball := range cell.Feeds {
-			if util.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
-				continue
-			}
-			balllist = append(balllist, ball)
-			balltype = append(balltype, consts.BallKind_Feed)
-		}
-	}
+	// // ballskill
+	// for _, cell := range cells {
+	// 	for _, ball := range cell.Skills {
+	// 		if util.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
+	// 			continue
+	// 		}
+	// 		balllist = append(balllist, ball)
+	// 		balltype = append(balltype, consts.BallKind_Skill)
+	// 	}
+	// }
+
+	// // feed
+	// for _, cell := range cells {
+	// 	for _, ball := range cell.Feeds {
+	// 		if util.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
+	// 			continue
+	// 		}
+	// 		balllist = append(balllist, ball)
+	// 		balltype = append(balltype, consts.BallKind_Feed)
+	// 	}
+	// }
 
 	return balllist, balltype
 }
@@ -106,23 +112,24 @@ func FindTarget_Circle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interfaces
 	var rect util.Square
 	rect.CopyFrom(player.GetViewRect())
 	rect.SetRadius(GetAttackRange(tick, player))
-	cells := player.GetScene().GetAreaCells(&rect)
+	//cells := player.GetScene().GetAreaCells(&rect)
 
-	// ballskill
-	for _, cell := range cells {
-		for _, ball := range cell.Skills {
-			balllist = append(balllist, ball)
-			balltype = append(balltype, consts.BallKind_Skill)
-		}
-	}
+	//TODO: cell
+	// // ballskill
+	// for _, cell := range cells {
+	// 	for _, ball := range cell.Skills {
+	// 		balllist = append(balllist, ball)
+	// 		balltype = append(balltype, consts.BallKind_Skill)
+	// 	}
+	// }
 
-	// feed
-	for _, cell := range cells {
-		for _, ball := range cell.Feeds {
-			balllist = append(balllist, ball)
-			balltype = append(balltype, consts.BallKind_Feed)
-		}
-	}
+	// // feed
+	// for _, cell := range cells {
+	// 	for _, ball := range cell.Feeds {
+	// 		balllist = append(balllist, ball)
+	// 		balltype = append(balltype, consts.BallKind_Feed)
+	// 	}
+	// }
 	return balllist, balltype
 }
 

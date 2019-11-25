@@ -76,9 +76,6 @@ func (this *ActionThrowBall) OnTick(tick *b3core.Tick) b3.Status {
 
 	newBall := ballEntity.(*bll.BallSkill)
 
-	scene.AddBall(newBall)
-	//	scene.scenePhysic.AddSkill(newBall)
-
 	angleVel.ScaleBy(this.speed)
 	newBall.SetSpeed(&util.Vector2{float64(angleVel.X), float64(angleVel.Y)})
 	//	if newBall.PhysicObj != nil {

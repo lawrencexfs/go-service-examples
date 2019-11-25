@@ -486,10 +486,8 @@ func (s *ScenePlayer) Update(perTime float64, now int64, scene IScene) {
 		var rect util.Square
 		rect.CopyFrom(s.GetViewRect())
 		rect.SetRadius(s.GetEatRange())
-		cells := s.GetScene().GetAreaCells(&rect)
-		for _, newcell := range cells {
-			newcell.EatByPlayer(&s.BallPlayer, s)
-		}
+
+		//TODO: newcell.EatByPlayer(&s.BallPlayer, s)
 	}
 
 	// 更新视野中的玩家
@@ -629,7 +627,7 @@ func (s *ScenePlayer) UpdateView(scene IScene) {
 	if !s.IsLive {
 		return
 	}
-	s.ScenePlayerViewHelper.UpdateView(scene, &s.BallPlayer, scene.SceneSize(), s.scn.CellNumX(), s.scn.CellNumY())
+	//s.ScenePlayerViewHelper.UpdateView(scene, &s.BallPlayer, scene.SceneSize(), s.scn.CellNumX(), s.scn.CellNumY())
 }
 
 func (s *ScenePlayer) UpdateViewPlayers(scene IScene) {

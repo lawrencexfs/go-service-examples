@@ -28,7 +28,7 @@ func (this *ActionBombTryHit) OnTick(tick *b3core.Tick) b3.Status {
 
 	attckRect := ballskill.GetRect()
 	attckRect.SetRadius(ballskill.GetRadius() + this.scale)
-	cells := scene.GetAreaCells(attckRect)
+	//cells := scene.GetAreaCells(attckRect)
 
 	scene.TravsalPlayers(func(other *plr.ScenePlayer) {
 		if BallSkillAttack(tick, player, ballskill, this.scale, &other.BallPlayer) {
@@ -37,11 +37,12 @@ func (this *ActionBombTryHit) OnTick(tick *b3core.Tick) b3.Status {
 		}
 	})
 
-	for _, cell := range cells {
-		for _, feed := range cell.Feeds {
-			BallSkillAttack(tick, player, ballskill, this.scale, feed)
-		}
-	}
+	//TODO: skill
+	// for _, cell := range cells {
+	// 	for _, feed := range cell.Feeds {
+	// 		BallSkillAttack(tick, player, ballskill, this.scale, feed)
+	// 	}
+	// }
 
 	return b3.SUCCESS
 }

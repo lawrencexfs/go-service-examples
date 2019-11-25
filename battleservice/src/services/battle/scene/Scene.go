@@ -2,18 +2,14 @@ package scene
 
 import (
 	"battleservice/src/services/base/ape"
-	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/conf"
 	"battleservice/src/services/battle/scene/birth"
 	"battleservice/src/services/battle/scene/bll"
-	"battleservice/src/services/battle/scene/cll"
 	"battleservice/src/services/battle/scene/consts"
-	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/scene/physic"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/scene/rank"
 	"battleservice/src/services/battle/usercmd"
-	"math"
 	"math/rand"
 	"runtime/debug"
 	"time"
@@ -44,10 +40,7 @@ type Scene struct {
 	birthPoints *birth.BirthPoints // 出生点
 	mapConfig   *conf.MapConfig    // 地图配置
 
-	sceneSize float64     // 地图大小（长、宽相等）
-	cellNumX  int         // 格子最大X
-	cellNumY  int         // 格子最大Y
-	cells     []*cll.Cell // 所有格子
+	sceneSize float64 // 地图大小（长、宽相等）
 
 	scenePhysic *physic.ScenePhysic // 场景物理
 }
@@ -69,9 +62,7 @@ func (s *Scene) OnInit(initData interface{}) error {
 	s.scenePhysic = physic.NewScenePhysic()
 
 	s.loadMap()
-	for i := 0; i < s.cellNumX*s.cellNumY; i++ {
-		s.cells = append(s.cells, cll.NewCell(i))
-	}
+
 	s.birthPoints.CreateAllBirthPoint(s)
 
 	return nil
@@ -89,8 +80,7 @@ func (s *Scene) OnDestroy() {
 
 func (s *Scene) loadMap() {
 	s.sceneSize = s.mapConfig.Size
-	s.cellNumX = int(math.Ceil(s.sceneSize / cll.CellWidth))
-	s.cellNumY = int(math.Ceil(s.sceneSize / cll.CellHeight))
+
 	s.scenePhysic.CreateBoard(float32(s.mapConfig.Size))
 	for _, v := range s.mapConfig.Nodes {
 		LoadMapObjectByConfig(v, s.scenePhysic)
@@ -104,20 +94,12 @@ func (s *Scene) render5() {
 
 //时间片渲染
 func (s *Scene) Render() {
-	now := time.Now()
-	nowNano := now.UnixNano()
-	var d float64 = consts.FrameTime
-
 	frame := s.Frame()
 	if frame%2 == 0 {
 		s.scenePhysic.Tick()
 	}
 
-	for _, cell := range s.cells {
-		cell.Render(s, d, nowNano)
-	}
-
-	s.birthPoints.RefreshBirthPoint(d, s)
+	s.birthPoints.RefreshBirthPoint(consts.FrameTime, s)
 
 	if frame%consts.FrameCountBy100MS == 0 {
 		//100ms, 5帧更新
@@ -132,58 +114,6 @@ func (s *Scene) sendRoomMsg() {
 		player.SendSceneMsg()
 	})
 
-	for _, cell := range s.cells {
-		cell.ResetMsg()
-	}
-
-	s.TravsalPlayers(func(player *plr.ScenePlayer) {
-		player.ResetMsg()
-	})
-
-}
-
-//添加球到场景
-func (s *Scene) AddBall(ball interfaces.IBall) {
-	x, y := ball.GetPos()
-	cell, ok := s.GetCell(x, y)
-	if ok {
-		cell.Add(ball)
-	}
-}
-
-//删除球球
-func (s *Scene) RemoveBall(ball interfaces.IBall) {
-	if nil == ball {
-		return
-	}
-	for _, cell := range s.cells {
-		cell.Remove(ball.GetID(), ball.GetBallType())
-	}
-}
-
-//获取区域内的所有格子
-func (s *Scene) GetAreaCells(sqr *util.Square) (cells []*cll.Cell) {
-	minX := int(math.Max(math.Floor(sqr.Left/cll.CellWidth), 0))
-	maxX := int(math.Min(math.Floor(sqr.Right/cll.CellWidth), float64(s.cellNumX-1)))
-	minY := int(math.Max(math.Floor(sqr.Bottom/cll.CellHeight), 0))
-	maxY := int(math.Min(math.Floor(sqr.Top/cll.CellHeight), float64(s.cellNumY-1)))
-	for i := minY; i <= maxY; i++ {
-		for j := minX; j <= maxX; j++ {
-			cells = append(cells, s.cells[i*s.cellNumX+j])
-		}
-	}
-	return
-}
-
-//根据坐标获取格子
-func (s *Scene) GetCell(px, py float64) (*cll.Cell, bool) {
-	idxX := int(math.Max(math.Floor(px/cll.CellWidth), 0))
-	idxY := int(math.Max(math.Floor(py/cll.CellHeight), 0))
-	//seelog.Info("[房间] cells:", px, "---", py, ", " , "-", idxX, "-", idxY)
-	if idxX < s.cellNumX && idxY < s.cellNumY {
-		return s.cells[idxY*s.cellNumX+idxX], true
-	}
-	return nil, false
 }
 
 //获取场景玩家
@@ -347,28 +277,7 @@ func (s *Scene) SceneSize() float64 {
 }
 
 func (s *Scene) UpdateSkillBallCell(ball *bll.BallSkill, oldCellID int) {
-	x, y := ball.GetPos()
-	newCell, ok := s.GetCell(x, y)
-	if !ok || newCell.ID() == oldCellID {
-		return
-	}
-	oldCell := s.cells[oldCellID]
-	if oldCell.ID() != oldCellID {
-		panic("从Cell ID获取相应Cell算法有误")
-	}
 
-	oldCell.Remove(ball.GetID(), ball.GetBallType())
-	newCell.Add(ball)
-}
-
-// 格子最大X
-func (s *Scene) CellNumX() int {
-	return s.cellNumX
-}
-
-// 格子最大Y
-func (s *Scene) CellNumY() int {
-	return s.cellNumY
 }
 
 // 广播 msg

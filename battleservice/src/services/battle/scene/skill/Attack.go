@@ -135,23 +135,24 @@ func BallSkillAttack(tick *b3core.Tick, player *plr.ScenePlayer, ballskill *bll.
 }
 
 func playerHitFeed(player *plr.ScenePlayer, feed *bll.BallFeed) bool {
-	x, y := feed.GetPos()
-	cell, ok := player.GetScene().GetCell(x, y)
-	if ok {
-		player.Eat(&feed.BallFood)
-		feedid := feed.GetID()
+	//TODO:
+	// x, y := feed.GetPos()
+	// _, ok := player.GetScene().GetCell(x, y)
+	// if ok {
+	// 	player.Eat(&feed.BallFood)
+	// 	feedid := feed.GetID()
 
-		if feed.GetBirthPoint() != nil {
-			feed.GetBirthPoint().OnChildRemove(feed)
-		}
+	// 	if feed.GetBirthPoint() != nil {
+	// 		feed.GetBirthPoint().OnChildRemove(feed)
+	// 	}
 
-		player.GetScene().RemoveFeed(feed)
+	// 	player.GetScene().RemoveFeed(feed)
 
-		cell.Remove(feedid, feed.GetBallType())
-		player.AddEatMsg(player.GetID(), feedid)
+	// 	//cell.Remove(feedid, feed.GetBallType())
+	// 	player.AddEatMsg(player.GetID(), feedid)
 
-		return true
-	}
+	// 	return true
+	// }
 	return false
 }
 

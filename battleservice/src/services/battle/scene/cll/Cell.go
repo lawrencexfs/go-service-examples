@@ -10,8 +10,6 @@ import (
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/usercmd"
 	"fmt"
-
-	"github.com/cihub/seelog"
 )
 
 var (
@@ -143,113 +141,13 @@ func (cell *Cell) AddMsgMove(ball interfaces.IBall) {
 	}
 }
 
-//添加球球
-func (cell *Cell) Add(ball interfaces.IBall) {
-
-	btype := ball.GetBallType()
-	if btype == usercmd.BallType_Player {
-		if _, ok := cell.playerballs[ball.GetID()]; !ok {
-			newBall := ball.(*bll.BallPlayer)
-			cell.playerballs[ball.GetID()] = newBall
-
-			//如果已经先删除过，再添加，和之前删除抵消，不再添加
-			if _, ok := cell.msgRemovesMap[ball.GetID()]; ok {
-				delete(cell.msgRemovesMap, ball.GetID())
-			} else {
-				cell.msgAddsMap[ball.GetID()] = true
-			}
-		}
-	} else if btype > usercmd.BallType_FoodBegin && btype < usercmd.BallType_FoodEnd {
-		if _, ok := cell.Foods[ball.GetID()]; !ok {
-			newBall := ball.(*bll.BallFood)
-			cell.Foods[ball.GetID()] = newBall
-		}
-	} else if btype > usercmd.BallType_FeedBegin && btype < usercmd.BallType_FeedEnd {
-		if _, ok := cell.Feeds[ball.GetID()]; !ok {
-			newBall := ball.(*bll.BallFeed)
-			cell.Feeds[ball.GetID()] = newBall
-		}
-	} else if btype > usercmd.BallType_SkillBegin && btype < usercmd.BallType_SkillEnd {
-		if _, ok := cell.Skills[ball.GetID()]; !ok {
-			newBall := ball.(*bll.BallSkill)
-			cell.Skills[ball.GetID()] = newBall
-		}
-	} else {
-		seelog.Error("cell.Add,Fail,unknow type: ", ball.GetBallType(), "  tid:", ball.GetTypeId())
-	}
-}
-
-//移除球球
-func (cell *Cell) Remove(id uint64, typ usercmd.BallType) {
-	btype := typ
-	if btype == usercmd.BallType_Player {
-		if _, ok := cell.playerballs[id]; ok {
-			delete(cell.playerballs, id)
-			//玩家的球，如果已经添加，就把添加消息删除
-			if _, mok := cell.msgAddsMap[id]; mok {
-				delete(cell.msgAddsMap, id)
-			} else {
-				cell.msgRemovesMap[id] = true
-			}
-		}
-	} else if btype > usercmd.BallType_FoodBegin && btype < usercmd.BallType_FoodEnd {
-		if _, ok := cell.Foods[id]; ok {
-			delete(cell.Foods, id)
-		}
-	} else if btype > usercmd.BallType_FeedBegin && btype < usercmd.BallType_FeedEnd {
-		if _, ok := cell.Feeds[id]; ok {
-			delete(cell.Feeds, id)
-		}
-	} else if btype > usercmd.BallType_SkillBegin && btype < usercmd.BallType_SkillEnd {
-		if _, ok := cell.Skills[id]; ok {
-			delete(cell.Skills, id)
-		}
-	} else {
-		seelog.Error("[格子] 删除未知类型 ", id, ",", typ)
-	}
-}
-
-//寻找球球
-func (cell *Cell) Find(id uint64, typ usercmd.BallType) (interfaces.IBall, bool) {
-	btype := typ
-	if btype == usercmd.BallType_Player {
-		ball, ok := cell.playerballs[id]
-		return ball, ok
-	} else if btype > usercmd.BallType_FoodBegin && btype < usercmd.BallType_FoodEnd {
-		ball, ok := cell.Foods[id]
-		return ball, ok
-	} else if btype > usercmd.BallType_FeedBegin && btype < usercmd.BallType_FeedEnd {
-		ball, ok := cell.Feeds[id]
-		return ball, ok
-	} else if btype > usercmd.BallType_SkillBegin && btype < usercmd.BallType_SkillEnd {
-		ball, ok := cell.Skills[id]
-		return ball, ok
-	} else {
-		return nil, false
-	}
-}
-
-//全局寻找球球
-func (cell *Cell) NoTypeFind(id uint64) (interfaces.IBall, bool) {
-	if ball, ok := cell.playerballs[id]; ok {
-		return ball, ok
-	} else if ball, ok := cell.Foods[id]; ok {
-		return ball, ok
-	} else if ball, ok := cell.Feeds[id]; ok {
-		return ball, ok
-	} else if ball, ok := cell.Skills[id]; ok {
-		return ball, ok
-	}
-	return nil, false
-}
-
 func (cell *Cell) EatByPlayer(playerBall *bll.BallPlayer, player IScenePlayer) bool {
 	isEat := false
 	for _, food := range cell.Foods {
 		if playerBall.CanEat(food) {
 			playerBall.Eat(food)
 			cell.OnFoodRemoved(food)
-			cell.Remove(food.GetID(), food.GetBallType())
+			//cell.Remove(food.GetID(), food.GetBallType())
 			player.AddEatMsg(playerBall.GetID(), food.GetID())
 			isEat = true
 		}
@@ -266,15 +164,15 @@ func (cell *Cell) OnFoodRemoved(food *bll.BallFood) {
 
 //渲染
 func (cell *Cell) Render(scene bll.IScene, per float64, now int64) {
-	var delSkills []*bll.BallSkill
-	for _, ball := range cell.Skills {
-		if ball.Skill.IsFinish() {
-			delSkills = append(delSkills, ball)
-		}
-	}
-	for _, skill := range delSkills {
-		cell.Remove(skill.GetID(), skill.GetBallType())
-	}
+	// var delSkills []*bll.BallSkill
+	// for _, ball := range cell.Skills {
+	// 	if ball.Skill.IsFinish() {
+	// 		delSkills = append(delSkills, ball)
+	// 	}
+	// }
+	// for _, skill := range delSkills {
+	// 	cell.Remove(skill.GetID(), skill.GetBallType())
+	// }
 }
 
 func (cell *Cell) string() string {
