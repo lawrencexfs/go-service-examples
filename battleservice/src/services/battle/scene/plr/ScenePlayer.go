@@ -190,7 +190,7 @@ func (s *ScenePlayer) RealDead(killer *ScenePlayer) {
 func (s *ScenePlayer) OnDead() {
 	s.OnDead()
 	s.IsLive = false
-	s.GetScene().RemovePlayerPhysic(s.PhysicObj)
+
 }
 
 func (s *ScenePlayer) GetRelifeMsg() *usercmd.MsgS2CRelife {

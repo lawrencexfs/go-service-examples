@@ -1,12 +1,10 @@
 package scene
 
 import (
-	"battleservice/src/services/base/ape"
 	"battleservice/src/services/battle/conf"
 	"battleservice/src/services/battle/scene/birth"
 	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/consts"
-	"battleservice/src/services/battle/scene/physic"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/scene/rank"
 	"battleservice/src/services/battle/usercmd"
@@ -41,8 +39,6 @@ type Scene struct {
 	mapConfig   *conf.MapConfig    // 地图配置
 
 	sceneSize float64 // 地图大小（长、宽相等）
-
-	scenePhysic *physic.ScenePhysic // 场景物理
 }
 
 // OnInit 场景初始化
@@ -59,7 +55,6 @@ func (s *Scene) OnInit(initData interface{}) error {
 	s.doneC = make(chan bool)
 
 	s.mapConfig = conf.GetMapConfigById(s.GetEntityID())
-	s.scenePhysic = physic.NewScenePhysic()
 
 	s.loadMap()
 
@@ -81,10 +76,6 @@ func (s *Scene) OnDestroy() {
 func (s *Scene) loadMap() {
 	s.sceneSize = s.mapConfig.Size
 
-	s.scenePhysic.CreateBoard(float32(s.mapConfig.Size))
-	for _, v := range s.mapConfig.Nodes {
-		LoadMapObjectByConfig(v, s.scenePhysic)
-	}
 }
 
 //5帧更新
@@ -95,9 +86,6 @@ func (s *Scene) render5() {
 //时间片渲染
 func (s *Scene) Render() {
 	frame := s.Frame()
-	if frame%2 == 0 {
-		s.scenePhysic.Tick()
-	}
 
 	s.birthPoints.RefreshBirthPoint(consts.FrameTime, s)
 
@@ -242,8 +230,6 @@ func (s *Scene) RemovePlayer(playerId uint64) bool {
 
 	oldstatus := player.IsLive
 
-	s.scenePhysic.RemovePlayer(player.PhysicObj)
-
 	player.IsLive = false
 	player.SetDeadTime(time.Now().Unix())
 	player.Dead(nil)
@@ -254,21 +240,7 @@ func (s *Scene) RemovePlayer(playerId uint64) bool {
 }
 
 func (s *Scene) RemoveFeed(feed *bll.BallFeed) {
-	if feed.PhysicObj != nil {
-		s.scenePhysic.RemoveFeed(feed.PhysicObj)
-	}
-}
 
-func (s *Scene) AddFeedPhysic(feed ape.IAbstractParticle) {
-	s.scenePhysic.AddFeed(feed)
-}
-
-func (s *Scene) AddPlayerPhysic(player ape.IAbstractParticle) {
-	s.scenePhysic.AddPlayer(player)
-}
-
-func (s *Scene) RemovePlayerPhysic(player ape.IAbstractParticle) {
-	s.scenePhysic.RemovePlayer(player)
 }
 
 // 地图大小（长、宽相等）
