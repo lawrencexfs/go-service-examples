@@ -37,7 +37,7 @@ func (this *ActionBombTryHit) OnTick(tick *b3core.Tick) b3.Status {
 		}
 	})
 
-	//TODO: skill
+	//TODO wei: skill
 	// for _, cell := range cells {
 	// 	for _, feed := range cell.Feeds {
 	// 		BallSkillAttack(tick, player, ballskill, this.scale, feed)

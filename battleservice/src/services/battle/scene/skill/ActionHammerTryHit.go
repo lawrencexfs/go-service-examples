@@ -45,7 +45,7 @@ func (this *ActionHammerTryHit) OnTick(tick *b3core.Tick) b3.Status {
 		}
 	})
 
-	//TODO: cell
+	//TODO wei: cell
 	// for _, cell := range cells {
 	// 	for _, feed := range cell.Feeds {
 	// 		distance := feed.GetPosV().SqrMagnitudeTo(ballskill.GetPosV())

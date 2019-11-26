@@ -487,7 +487,7 @@ func (s *ScenePlayer) Update(perTime float64, now int64, scene IScene) {
 		rect.CopyFrom(s.GetViewRect())
 		rect.SetRadius(s.GetEatRange())
 
-		//TODO: newcell.EatByPlayer(&s.BallPlayer, s)
+		s.EatByPlayer()
 	}
 
 	// 更新视野中的玩家
@@ -496,6 +496,23 @@ func (s *ScenePlayer) Update(perTime float64, now int64, scene IScene) {
 	if curexp != s.GetExp() || curmp != s.GetMP() {
 		s.RefreshPlayer()
 	}
+}
+
+func (s *ScenePlayer) EatByPlayer() bool {
+	isEat := false
+	//TODO  wei:
+
+	// for _, food := range cell.Foods {
+	// 	if playerBall.CanEat(food) {
+	// 		playerBall.Eat(food)
+	// 		cell.OnFoodRemoved(food)
+	// 		//cell.Remove(food.GetID(), food.GetBallType())
+	// 		player.AddEatMsg(playerBall.GetID(), food.GetID())
+	// 		isEat = true
+	// 	}
+	// }
+
+	return isEat
 }
 
 // 增加经验

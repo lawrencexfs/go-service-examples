@@ -135,7 +135,7 @@ func BallSkillAttack(tick *b3core.Tick, player *plr.ScenePlayer, ballskill *bll.
 }
 
 func playerHitFeed(player *plr.ScenePlayer, feed *bll.BallFeed) bool {
-	//TODO:
+	//TODO wei:
 	// x, y := feed.GetPos()
 	// _, ok := player.GetScene().GetCell(x, y)
 	// if ok {

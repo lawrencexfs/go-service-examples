@@ -15,7 +15,7 @@ import (
 
 // 获取朝向上最近的目标
 func FindNearTarget(tick *b3core.Tick, player *plr.ScenePlayer) (interfaces.IBall, consts.BallKind) {
-	//TODO:
+	//TODO wei:
 
 	// angleVel := GetPlayerDir(tick, player)
 
@@ -66,7 +66,7 @@ func FindTarget_SemiCircle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interf
 	rect.CopyFrom(player.GetViewRect())
 	rect.SetRadius(GetAttackRange(tick, player))
 
-	//TODO: cell
+	//TODO wei: cell
 	// cells := player.GetScene().GetAreaCells(&rect)
 
 	// // ballskill
@@ -114,7 +114,7 @@ func FindTarget_Circle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interfaces
 	rect.SetRadius(GetAttackRange(tick, player))
 	//cells := player.GetScene().GetAreaCells(&rect)
 
-	//TODO: cell
+	//TODO wei: cell
 	// // ballskill
 	// for _, cell := range cells {
 	// 	for _, ball := range cell.Skills {

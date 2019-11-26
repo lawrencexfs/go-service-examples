@@ -59,7 +59,7 @@ func (s *BallSkill) OnLoop() {
 	seelog.Debug("BallSkill.OnLoop")
 
 	if s.Skill.IsFinish() {
-		//TODO: 删除
+		//TODO: skill删除
 	}
 
 	// 检查移动是否出格子
