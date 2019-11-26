@@ -5,6 +5,8 @@ package interfaces
 import (
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/usercmd"
+
+	"github.com/giant-tech/go-service/base/linmath"
 )
 
 type IBall interface {
@@ -12,8 +14,9 @@ type IBall interface {
 	SetID(uint64)
 	GetTypeId() uint16
 	GetBallType() usercmd.BallType
-	GetPos() (float32, float32, float32)
-	SetPos(float32, float32, float32)
+	GetPos() linmath.Vector3
+	GetPosPtr() *linmath.Vector3
+	SetPos(linmath.Vector3)
 	SetBirthPoint(_birthPoint IBirthPoint)
 	GetRect() *util.Square
 	OnReset()

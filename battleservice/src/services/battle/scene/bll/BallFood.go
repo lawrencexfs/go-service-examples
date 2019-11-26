@@ -30,7 +30,6 @@ type BallFood struct {
 	id         uint64           //动态id
 	typeID     uint16           //xml表里id
 	BallType   usercmd.BallType //大类型
-	Pos        linmath.Vector3
 	radius     float32
 	rect       util.Square
 	birthPoint interfaces.IBirthPoint
@@ -51,7 +50,7 @@ func (ball *BallFood) OnInit(initData interface{}) error {
 
 	ball.id = foodInitData.ID
 	ball.typeID = foodInitData.TypeID
-	ball.Pos = foodInitData.Pos
+	ball.SetPos(foodInitData.Pos)
 	ball.BallType = ballType
 	ball.radius = radius
 
@@ -95,31 +94,13 @@ func (ball *BallFood) GetBallType() usercmd.BallType {
 	return ball.BallType
 }
 
-func (ball *BallFood) GetPos() (float32, float32, float32) {
-	return ball.Pos.X, ball.Pos.Y, ball.Pos.Z
-}
-
-func (ball *BallFood) SetPos(x, y, z float32) {
-	ball.Pos.X = x
-	ball.Pos.Y = y
-	ball.Pos.Z = z
-}
-
-func (ball *BallFood) GetPosV() *linmath.Vector3 {
-	return &ball.Pos
-}
-
-func (this *BallFood) SetPosV(pos linmath.Vector3) {
-	this.Pos = pos
-}
-
 func (ball *BallFood) SetExp(exp int32) {
 	ball.exp = exp
 }
 
 func (ball *BallFood) ResetRect() {
-	ball.rect.X = float64(ball.Pos.X)
-	ball.rect.Z = float64(ball.Pos.Z)
+	ball.rect.X = float64(ball.GetPos().X)
+	ball.rect.Z = float64(ball.GetPos().Z)
 	ball.rect.SetRadius(float64(ball.radius))
 }
 

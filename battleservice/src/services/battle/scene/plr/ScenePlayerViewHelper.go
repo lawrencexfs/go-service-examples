@@ -172,14 +172,14 @@ func (this *ScenePlayerViewHelper) UpdateViewPlayers(scene IScene, selfBall *bll
 
 	scene.TravsalPlayers(func(player *ScenePlayer) {
 		if selfBall.GetPlayerId() != player.GetEntityID() {
-			_, _, ok1 := this.RealViewRect.ContainsCircle(float64(player.Pos.X), float64(player.Pos.Z), 0)
+			_, _, ok1 := this.RealViewRect.ContainsCircle(float64(player.GetPos().X), float64(player.GetPos().Z), 0)
 			if ok1 {
 				if player.IsLive {
 					this.Others[player.GetEntityID()] = player
 				}
 			}
 
-			_, _, ok2 := player.RealViewRect.ContainsCircle(float64(selfBall.Pos.X), float64(selfBall.Pos.Z), 0)
+			_, _, ok2 := player.RealViewRect.ContainsCircle(float64(selfBall.GetPos().X), float64(selfBall.GetPos().Z), 0)
 			if ok2 {
 				this.RoundPlayers = append(this.RoundPlayers, player)
 			}
@@ -201,17 +201,17 @@ func (this *ScenePlayerViewHelper) FindNearBallByKind(selfBall *bll.BallPlayer, 
 	}
 
 	//寻找最近目标
-	pos := selfBall.GetPosV()
+	pos := selfBall.GetPosPtr()
 	if kind == consts.BallKind_Player {
 		for _, o := range this.Others {
 			if o.IsLive == false {
 				continue
 			}
 			ball := &o.BallPlayer
-			if dir != nil && linmath.IsSameDir(dir, ball.GetPosV(), selfBall.GetPosV()) == false {
+			if dir != nil && linmath.IsSameDir(dir, ball.GetPosPtr(), selfBall.GetPosPtr()) == false {
 				continue
 			}
-			dis := ball.Pos.SqrMagnitudeTo(pos)
+			dis := ball.GetPosPtr().SqrMagnitudeTo(pos)
 			if minball == nil || dis < min {
 				min = dis
 				minball = ball

@@ -30,11 +30,11 @@ func (this *ActionMoveLine) OnOpen(tick *b3core.Tick) {
 	var speed linmath.Vector3
 
 	if this.dir_type == 2 {
-		x0, y0, z0 := player.GetPos()
+		pos := player.GetPos()
 		x1 := tick.Blackboard.GetFloat64("source_pos_x", "", "")
 		z1 := tick.Blackboard.GetFloat64("source_pos_z", "", "")
 
-		v := &linmath.Vector3{x0, y0, z0}
+		v := &linmath.Vector3{pos.X, pos.Y, pos.Z}
 		hv := v.Sub(linmath.Vector3{float32(x1), 0, float32(z1)})
 		hv.Normalize()
 		speed = hv

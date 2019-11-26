@@ -9,8 +9,6 @@ import (
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/usercmd"
-
-	"github.com/giant-tech/go-service/base/linmath"
 )
 
 type AttackType uint8
@@ -119,9 +117,7 @@ func NormalAttack_Player(tick *b3core.Tick, player *plr.ScenePlayer, ball *bll.B
 }
 
 func BallSkillAttack(tick *b3core.Tick, player *plr.ScenePlayer, ballskill *bll.BallSkill, attackScale float64, iball interfaces.IBall) bool {
-	x, y, z := iball.GetPos()
-	pos := &linmath.Vector3{x, y, z}
-	distance := pos.SqrMagnitudeTo(ballskill.GetPosV())
+	distance := iball.GetPosPtr().SqrMagnitudeTo(ballskill.GetPosPtr())
 	tmp := iball.GetRect().Radius + float64(ballskill.GetRadius()) + attackScale
 	if float64(distance) <= tmp*tmp {
 		if iball.GetBallType() == usercmd.BallType_Player {

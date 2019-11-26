@@ -71,8 +71,8 @@ func (this *SkillBall) GetHit(player *plr.ScenePlayer) {
 	}
 
 	if this.ball.GetBallType() == usercmd.BallType_SkillBomb {
-		angleVel := *this.ball.GetPosV()
-		angleVel.SubS(*player.GetPosV())
+		angleVel := this.ball.GetPos()
+		angleVel.SubS(player.GetPos())
 		angleVel.Normalize()
 
 		angleVel.MulS(0.34)

@@ -87,7 +87,7 @@ func (this *SkillPlayer) CastSkill(skillid uint32, targetId uint32) bool {
 }
 
 func (this *SkillPlayer) GetHit(source *plr.ScenePlayer, skillid uint32) {
-	pos := source.GetPosV()
+	pos := source.GetPos()
 	this.blackboard.Set("source_pos_x", pos.X, "", "")
 	this.blackboard.Set("source_pos_z", pos.Z, "", "")
 

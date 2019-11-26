@@ -24,12 +24,14 @@ func (this *BallPlayer) InitBallPlayer(player IScenePlayer, ballid uint64) {
 
 	this.BallMove = BallMove{
 		BallFood: BallFood{
-			id:       ballid,
-			Pos:      linmath.Vector3{x, 0, z},
+			id: ballid,
+
 			radius:   consts.DefaultBallSize,
 			BallType: usercmd.BallType_Player,
 		},
 	}
+
+	this.SetPos(linmath.Vector3{x, 0, z})
 
 	this.player = player
 
@@ -39,7 +41,7 @@ func (this *BallPlayer) InitBallPlayer(player IScenePlayer, ballid uint64) {
 	this.SetHpMax(consts.DefaultMaxHP)
 	this.SetHP(consts.DefaultMaxHP)
 
-	this.PhysicObj = ape.NewCircleParticle(float32(this.Pos.X), float32(this.Pos.Z), float32(this.radius))
+	this.PhysicObj = ape.NewCircleParticle(float32(this.GetPos().X), float32(this.GetPos().Z), float32(this.radius))
 	this.player.GetBallScene().AddPlayerPhysic(this.PhysicObj)
 }
 
@@ -61,13 +63,13 @@ func (this *BallPlayer) Move(perTime float64, frameRate float64) bool {
 	if this.HasForce() == true {
 		force := this.GetForce()
 		pos := this.PhysicObj.GetPostion()
-		this.Pos = linmath.Vector3{pos.X, 0, pos.Y}
+		this.SetPos(linmath.Vector3{pos.X, 0, pos.Y})
 		this.PhysicObj.SetVelocity(&bmath.Vector2{float32(force.X), float32(force.Z)})
 		return true
 	}
 
 	pos := this.PhysicObj.GetPostion()
-	this.Pos = linmath.Vector3{pos.X, 0, pos.Y}
+	this.SetPos(linmath.Vector3{pos.X, 0, pos.Y})
 
 	speed := consts.DefaultBallSpeed
 
@@ -94,24 +96,27 @@ func (this *BallPlayer) Move(perTime float64, frameRate float64) bool {
 func (this *BallPlayer) FixMapEdge() bool {
 	SceneSize := this.player.GetBallScene().SceneSize()
 	halfRadius := this.radius * 0.5
+	pos := linmath.Vector3{}
 
-	if this.Pos.X < halfRadius {
-		this.Pos.X = halfRadius
+	if this.GetPos().X < halfRadius {
+		pos.X = halfRadius
 		this.speed.X = -this.speed.X * 0.1
-	} else if this.Pos.X > SceneSize-halfRadius {
-		this.Pos.X = SceneSize - halfRadius
+	} else if this.GetPos().X > SceneSize-halfRadius {
+		pos.X = SceneSize - halfRadius
 		this.speed.X = -this.speed.X * 0.1
 	}
-	if this.Pos.Z < halfRadius {
-		this.Pos.Z = halfRadius
+	if this.GetPos().Z < halfRadius {
+		pos.Z = halfRadius
 		this.speed.Z = -this.speed.Z * 0.1
-	} else if this.Pos.Z > SceneSize-halfRadius {
-		this.Pos.Z = SceneSize - halfRadius
+	} else if this.GetPos().Z > SceneSize-halfRadius {
+		pos.Z = SceneSize - halfRadius
 		this.speed.Z = -this.speed.Z * 0.1
 	}
 
-	this.rect.X = float64(this.Pos.X)
-	this.rect.Z = float64(this.Pos.Z)
+	this.SetPos(pos)
+
+	this.rect.X = float64(this.GetPos().X)
+	this.rect.Z = float64(this.GetPos().Z)
 
 	return true
 }

@@ -42,9 +42,9 @@ func (cell *Cell) FindNearFood(player *bll.BallPlayer, pos *linmath.Vector3, bal
 	var min float32 = 10000
 	var minball *bll.BallFood
 	for _, ball := range cell.Foods {
-		dis := ball.Pos.SqrMagnitudeTo(pos)
+		dis := ball.GetPosPtr().SqrMagnitudeTo(pos)
 		if ballType == uint32(ball.BallType) || ballType == 0 {
-			if dir != nil && linmath.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
+			if dir != nil && linmath.IsSameDir(dir, ball.GetPosPtr(), player.GetPosPtr()) == false {
 				continue
 			}
 			if player.PreCanEat(ball) {
@@ -62,11 +62,11 @@ func (cell *Cell) FindNearFeed(player *bll.BallPlayer, pos *linmath.Vector3, dir
 	var min float32
 	var minball *bll.BallFeed
 	for _, ball := range cell.Feeds {
-		if dir != nil && linmath.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
+		if dir != nil && linmath.IsSameDir(dir, ball.GetPosPtr(), player.GetPosPtr()) == false {
 			continue
 		}
 		if player.PreCanEat(&ball.BallFood) {
-			dis := ball.Pos.SqrMagnitudeTo(pos)
+			dis := ball.GetPosPtr().SqrMagnitudeTo(pos)
 			if minball == nil || dis < min {
 				min = dis
 				minball = ball
@@ -81,10 +81,10 @@ func (cell *Cell) FindNearSkill(player *bll.BallPlayer, pos *linmath.Vector3, ba
 	var minball *bll.BallSkill
 	for _, ball := range cell.Skills {
 		if (ballType == uint32(ball.BallType) || ballType == 0) && player.PreCanEat(&ball.BallFood) {
-			if dir != nil && linmath.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
+			if dir != nil && linmath.IsSameDir(dir, ball.GetPosPtr(), player.GetPosPtr()) == false {
 				continue
 			}
-			dis := ball.Pos.SqrMagnitudeTo(pos)
+			dis := ball.GetPosPtr().SqrMagnitudeTo(pos)
 			if minball == nil || dis < min {
 				min = dis
 				minball = ball
@@ -127,17 +127,17 @@ func (cell *Cell) ResetMsg() {
 }
 
 func (cell *Cell) AddMsgMove(ball interfaces.IBall) {
-	x, _, z := ball.GetPos()
+	pos := ball.GetPos()
 	if msgIndex, ok := cell.msgMovesMap[ball.GetID()]; ok {
 		msg := cell.MsgMoves[msgIndex]
-		msg.X = int32(x * consts.MsgPosScaleRate)
-		msg.Z = int32(z * consts.MsgPosScaleRate)
+		msg.X = int32(pos.X * consts.MsgPosScaleRate)
+		msg.Z = int32(pos.Z * consts.MsgPosScaleRate)
 	} else {
 		cell.MsgMoves = append(cell.MsgMoves,
 			&usercmd.BallMove{
 				Id: uint64(ball.GetID()),
-				X:  int32(x * consts.MsgPosScaleRate),
-				Z:  int32(z * consts.MsgPosScaleRate),
+				X:  int32(pos.X * consts.MsgPosScaleRate),
+				Z:  int32(pos.Z * consts.MsgPosScaleRate),
 			})
 		cell.msgMovesMap[ball.GetID()] = len(cell.MsgMoves) - 1
 	}

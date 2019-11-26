@@ -42,10 +42,11 @@ func (s *BallSkill) OnInit(initData interface{}) error {
 			id:       SkillInitData.ID,
 			typeID:   uint16(SkillInitData.BallType),
 			BallType: SkillInitData.BallType,
-			Pos:      SkillInitData.Pos,
 			radius:   SkillInitData.Radius,
 		},
 	}
+
+	s.SetPos(SkillInitData.Pos)
 
 	s.player = SkillInitData.Player
 
@@ -85,12 +86,15 @@ func (s *BallSkill) Move(pertime float64, scene IScene) bool {
 		if s.player.Frame() >= s.Skill.GetBeginFrame() {
 			if false {
 				pos := s.PhysicObj.GetPostion()
-				s.Pos = linmath.Vector3{pos.X, 0, pos.Y}
+				s.SetPos(linmath.Vector3{pos.X, 0, pos.Y})
 				s.PhysicObj.SetVelocity(&bmath.Vector2{float32(s.speed.X), float32(s.speed.Z)})
 			}
 
-			s.Pos.X = s.Pos.X + s.speed.X/2
-			s.Pos.Z = s.Pos.Z + s.speed.Z/2
+			tmpPos := s.GetPos()
+			tmpPos.X = tmpPos.X + s.speed.X/2
+			tmpPos.Z = tmpPos.Z + s.speed.Z/2
+
+			s.SetPos(tmpPos)
 		}
 	}
 	return true

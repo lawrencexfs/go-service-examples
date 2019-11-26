@@ -35,7 +35,7 @@ func (this *ActionThrowBall) OnTick(tick *b3core.Tick) b3.Status {
 
 	scene := player.GetScene()
 	ballid := scene.GenBallID()
-	posx, _, posz := player.GetPos()
+	playerPos := player.GetPos()
 	radius := float64(conf.ConfigMgr_GetMe().GetFoodSize(scene.GetEntityID(), this.ball_type))
 
 	angleVel := &linmath.Vector3{}
@@ -44,9 +44,9 @@ func (this *ActionThrowBall) OnTick(tick *b3core.Tick) b3.Status {
 	if 0 != targetId {
 		tball := player.FindViewPlayer(uint64(targetId))
 		if tball != nil {
-			x, _, z := tball.GetPos()
-			angleVel.X = float32(x - posx)
-			angleVel.Z = float32(z - posz)
+			pos := tball.GetPos()
+			angleVel.X = float32(pos.X - playerPos.X)
+			angleVel.Z = float32(pos.Z - playerPos.Z)
 			angleVel.Normalize()
 			usedefault = false
 		}
@@ -56,7 +56,7 @@ func (this *ActionThrowBall) OnTick(tick *b3core.Tick) b3.Status {
 		angleVel.Z = float32(player.GetAngleVel().Z)
 	}
 
-	pos := linmath.Vector3{X: float32(posx), Z: float32(posz)}
+	pos := linmath.Vector3{X: float32(playerPos.X), Z: float32(playerPos.Z)}
 	pos.Add(angleVel.Mul(float32(player.GetRadius() + float32(radius))))
 
 	initData := &bll.SkillInitData{

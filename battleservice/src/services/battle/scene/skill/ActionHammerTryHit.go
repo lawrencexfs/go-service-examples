@@ -40,8 +40,8 @@ func (this *ActionHammerTryHit) OnTick(tick *b3core.Tick) b3.Status {
 		}
 		if BallSkillAttack(tick, player, ballskill, this.scale, &other.BallPlayer) {
 			hits[other.GetID()] = 1
-			x, _, z := ballskill.GetPos()
-			other.Skill.GetHit2(float64(x), float64(z), this.gethit)
+			pos := ballskill.GetPos()
+			other.Skill.GetHit2(float64(pos.X), float64(pos.Z), this.gethit)
 		}
 	})
 

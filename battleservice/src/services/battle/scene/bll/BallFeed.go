@@ -42,11 +42,12 @@ func (feed *BallFeed) OnInit(initData interface{}) error {
 			id:       feedInitData.ID,
 			typeID:   feedInitData.TypeID,
 			BallType: ballType,
-			Pos:      feedInitData.Pos,
 			radius:   radius,
 		},
 		PhysicObj: ape.NewCircleParticle(feedInitData.Pos.X, feedInitData.Pos.Z, float32(radius)),
 	}
+
+	feed.SetPos(feedInitData.Pos)
 
 	feed.SetBirthPoint(feedInitData.BirthPoint)
 	feed.ResetRect()

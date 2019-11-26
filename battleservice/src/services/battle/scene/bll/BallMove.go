@@ -31,6 +31,6 @@ func (this *BallMove) GetAngleVel() *linmath.Vector3 {
 }
 
 func (ball *BallMove) SqrMagnitudeTo(target interfaces.IBall) float32 {
-	x, y, z := target.GetPos()
-	return (ball.Pos.X-x)*(ball.Pos.X-x) + (ball.Pos.Y-y)*(ball.Pos.Y-y) + (ball.Pos.Z-z)*(ball.Pos.Z-z)
+	pos := target.GetPos()
+	return (ball.GetPos().X-pos.X)*(ball.GetPos().X-pos.X) + (ball.GetPos().Y-pos.Y)*(ball.GetPos().Y-pos.Y) + (ball.GetPos().Z-pos.Z)*(ball.GetPos().Z-pos.Z)
 }

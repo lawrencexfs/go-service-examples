@@ -56,7 +56,7 @@ func FindTarget_SemiCircle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interf
 			continue
 		}
 		ball := &o.BallPlayer
-		if linmath.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
+		if linmath.IsSameDir(dir, ball.GetPosPtr(), player.GetPosPtr()) == false {
 			continue
 		}
 		balllist = append(balllist, ball)
@@ -142,9 +142,7 @@ func GetPlayerDir(tick *b3core.Tick, player *plr.ScenePlayer) *linmath.Vector3 {
 	if 0 != targetId {
 		tball := player.FindViewPlayer(targetId)
 		if tball != nil {
-			x, _, z := tball.GetPos()
-			angleVel.X = x - player.GetPosV().X
-			angleVel.Z = z - player.GetPosV().Z
+			*angleVel = player.GetPos()
 			usedefault = false
 		}
 	}
