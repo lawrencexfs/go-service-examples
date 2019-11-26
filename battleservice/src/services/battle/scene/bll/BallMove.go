@@ -23,8 +23,7 @@ func (ball *BallMove) GetSpeed() *linmath.Vector3 {
 }
 
 func (ball *BallMove) SetSpeed(v *linmath.Vector3) {
-	ball.speed.X = v.X
-	ball.speed.Y = v.Y
+	ball.speed = *v
 }
 
 func (this *BallMove) GetAngleVel() *linmath.Vector3 {

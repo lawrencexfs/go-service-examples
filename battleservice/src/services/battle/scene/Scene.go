@@ -311,7 +311,7 @@ func (s *Scene) BroadcastMsgExcept(msg inet.IMsg, uid uint64) {
 
 }
 
-func (s *Scene) GetRandPos() (x, y float64) {
+func (s *Scene) GetRandPos() (x, z float64) {
 	return s.sceneSize * rand.Float64(), s.sceneSize * rand.Float64()
 }
 

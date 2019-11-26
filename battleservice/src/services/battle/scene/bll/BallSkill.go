@@ -15,10 +15,11 @@ import (
 
 // SkillInitData 初始化数据
 type SkillInitData struct {
-	BallType     usercmd.BallType
-	ID           uint64
-	X, Y, Radius float32
-	Player       IScenePlayer
+	BallType usercmd.BallType
+	ID       uint64
+	Pos      linmath.Vector3
+	Radius   float32
+	Player   IScenePlayer
 }
 
 // BallSkill 技能球
@@ -41,7 +42,7 @@ func (s *BallSkill) OnInit(initData interface{}) error {
 			id:       SkillInitData.ID,
 			typeID:   uint16(SkillInitData.BallType),
 			BallType: SkillInitData.BallType,
-			Pos:      linmath.Vector3{SkillInitData.X, 0, SkillInitData.Y},
+			Pos:      SkillInitData.Pos,
 			radius:   SkillInitData.Radius,
 		},
 	}
@@ -85,11 +86,11 @@ func (s *BallSkill) Move(pertime float64, scene IScene) bool {
 			if false {
 				pos := s.PhysicObj.GetPostion()
 				s.Pos = linmath.Vector3{pos.X, 0, pos.Y}
-				s.PhysicObj.SetVelocity(&bmath.Vector2{float32(s.speed.X), float32(s.speed.Y)})
+				s.PhysicObj.SetVelocity(&bmath.Vector2{float32(s.speed.X), float32(s.speed.Z)})
 			}
 
 			s.Pos.X = s.Pos.X + s.speed.X/2
-			s.Pos.Y = s.Pos.Y + s.speed.Y/2
+			s.Pos.Z = s.Pos.Z + s.speed.Z/2
 		}
 	}
 	return true

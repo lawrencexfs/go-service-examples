@@ -4,7 +4,6 @@ import (
 	b3 "battleservice/src/services/base/behavior3go"
 	b3config "battleservice/src/services/base/behavior3go/config"
 	b3core "battleservice/src/services/base/behavior3go/core"
-	bmath "battleservice/src/services/base/math"
 	"battleservice/src/services/battle/conf"
 	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/plr"
@@ -36,35 +35,34 @@ func (this *ActionThrowBall) OnTick(tick *b3core.Tick) b3.Status {
 
 	scene := player.GetScene()
 	ballid := scene.GenBallID()
-	posx, posy, _ := player.GetPos()
+	posx, _, posz := player.GetPos()
 	radius := float64(conf.ConfigMgr_GetMe().GetFoodSize(scene.GetEntityID(), this.ball_type))
 
-	angleVel := &bmath.Vector2{}
+	angleVel := &linmath.Vector3{}
 	usedefault := true
 	targetId := tick.Blackboard.GetUInt32("skillTargetId", "", "")
 	if 0 != targetId {
 		tball := player.FindViewPlayer(uint64(targetId))
 		if tball != nil {
-			x, y, _ := tball.GetPos()
+			x, _, z := tball.GetPos()
 			angleVel.X = float32(x - posx)
-			angleVel.Y = float32(y - posy)
-			angleVel.NormalizeSelf()
+			angleVel.Z = float32(z - posz)
+			angleVel.Normalize()
 			usedefault = false
 		}
 	}
 	if usedefault {
 		angleVel.X = float32(player.GetAngleVel().X)
-		angleVel.Y = float32(player.GetAngleVel().Y)
+		angleVel.Z = float32(player.GetAngleVel().Z)
 	}
 
-	pos := bmath.Vector2{float32(posx), float32(posy)}
-	pos.IncreaseBy(angleVel.Mult(float32(player.GetRadius() + float32(radius))))
+	pos := linmath.Vector3{X: float32(posx), Z: float32(posz)}
+	pos.Add(angleVel.Mul(float32(player.GetRadius() + float32(radius))))
 
 	initData := &bll.SkillInitData{
 		BallType: usercmd.BallType(this.ball_type),
 		ID:       ballid,
-		X:        pos.X,
-		Y:        pos.Y,
+		Pos:      pos,
 		Radius:   float32(radius),
 		Player:   player,
 	}
@@ -76,8 +74,8 @@ func (this *ActionThrowBall) OnTick(tick *b3core.Tick) b3.Status {
 
 	newBall := ballEntity.(*bll.BallSkill)
 
-	angleVel.ScaleBy(this.speed)
-	newBall.SetSpeed(&linmath.Vector3{angleVel.X, 0, angleVel.Y})
+	angleVel.MulS(this.speed)
+	newBall.SetSpeed(angleVel)
 	//	if newBall.PhysicObj != nil {
 	//		newBall.PhysicObj.SetVelocity(angleVel)
 	//		newBall.PhysicObj.SetCollidable(false)

@@ -12,22 +12,22 @@ import (
 // Point represents a point in n-dimensional Euclidean space.
 type Point struct {
 	X float64
-	Y float64
+	Z float64
 }
 
 func (r Point) Equal(other Point) bool {
-	return r.X == other.X && r.Y == other.Y
+	return r.X == other.X && r.Z == other.Z
 }
 
 func (r Point) String() string {
-	return fmt.Sprintf("[%.2f, %.2f]", r.X, r.Y)
+	return fmt.Sprintf("[%.2f, %.2f]", r.X, r.Z)
 }
 
 // Dist computes the Euclidean distance between two points p and q.
 func (p Point) dist(q Point) float64 {
 	dx := p.X - q.X
 	sum := dx * dx
-	dx = p.Y - q.Y
+	dx = p.Z - q.Z
 	sum = sum + dx*dx
 	return math.Sqrt(sum)
 }

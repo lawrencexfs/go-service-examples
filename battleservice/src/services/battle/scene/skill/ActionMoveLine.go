@@ -32,14 +32,14 @@ func (this *ActionMoveLine) OnOpen(tick *b3core.Tick) {
 	if this.dir_type == 2 {
 		x0, y0, z0 := player.GetPos()
 		x1 := tick.Blackboard.GetFloat64("source_pos_x", "", "")
-		y1 := tick.Blackboard.GetFloat64("source_pos_y", "", "")
+		z1 := tick.Blackboard.GetFloat64("source_pos_z", "", "")
 
 		v := &linmath.Vector3{x0, y0, z0}
-		hv := v.Sub(linmath.Vector3{float32(x1), 0, float32(y1)})
+		hv := v.Sub(linmath.Vector3{float32(x1), 0, float32(z1)})
 		hv.Normalize()
 		speed = hv
 	} else if this.dir_type == 1 {
-		speed = linmath.Vector3{player.GetAngleVel().X, 0, player.GetAngleVel().Y}
+		speed = linmath.Vector3{player.GetAngleVel().X, 0, player.GetAngleVel().Z}
 	} else {
 		panic("error dir_type!")
 	}

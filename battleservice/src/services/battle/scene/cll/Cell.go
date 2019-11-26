@@ -127,17 +127,17 @@ func (cell *Cell) ResetMsg() {
 }
 
 func (cell *Cell) AddMsgMove(ball interfaces.IBall) {
-	x, y, _ := ball.GetPos()
+	x, _, z := ball.GetPos()
 	if msgIndex, ok := cell.msgMovesMap[ball.GetID()]; ok {
 		msg := cell.MsgMoves[msgIndex]
 		msg.X = int32(x * consts.MsgPosScaleRate)
-		msg.Y = int32(y * consts.MsgPosScaleRate)
+		msg.Z = int32(z * consts.MsgPosScaleRate)
 	} else {
 		cell.MsgMoves = append(cell.MsgMoves,
 			&usercmd.BallMove{
 				Id: uint64(ball.GetID()),
 				X:  int32(x * consts.MsgPosScaleRate),
-				Y:  int32(y * consts.MsgPosScaleRate),
+				Z:  int32(z * consts.MsgPosScaleRate),
 			})
 		cell.msgMovesMap[ball.GetID()] = len(cell.MsgMoves) - 1
 	}

@@ -32,8 +32,8 @@ func (this *ActionBombTryHit) OnTick(tick *b3core.Tick) b3.Status {
 
 	scene.TravsalPlayers(func(other *plr.ScenePlayer) {
 		if BallSkillAttack(tick, player, ballskill, this.scale, &other.BallPlayer) {
-			x, y, _ := ballskill.GetPos()
-			other.Skill.GetHit2(float64(x), float64(y), this.gethit)
+			x, _, z := ballskill.GetPos()
+			other.Skill.GetHit2(float64(x), float64(z), this.gethit)
 		}
 	})
 

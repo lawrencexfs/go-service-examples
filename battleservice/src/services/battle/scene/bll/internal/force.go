@@ -20,7 +20,7 @@ type Force struct {
 
 func (this *Force) ClearForce() {
 	this.currForce.X = 0
-	this.currForce.Y = 0
+	this.currForce.Z = 0
 	this.addonForceDatas = this.addonForceDatas[:0]
 }
 
@@ -35,7 +35,7 @@ func (this *Force) AddForce(force linmath.Vector3, time uint64) {
 
 func (this *Force) UpdateForce(detaTime float64) {
 	this.currForce.X = 0
-	this.currForce.Y = 0
+	this.currForce.Z = 0
 
 	if len(this.addonForceDatas) < 1 {
 		return

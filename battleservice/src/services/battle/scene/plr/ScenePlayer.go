@@ -301,7 +301,7 @@ func (s *ScenePlayer) SendSceneMsg() {
 		ballmove := s.ScenePlayerPool.MsgBallMove
 		ballmove.Id = s.GetID()
 		ballmove.X = int32(s.Pos.X * consts.MsgPosScaleRate)
-		ballmove.Y = int32(s.Pos.Y * consts.MsgPosScaleRate)
+		ballmove.Z = int32(s.Pos.Z * consts.MsgPosScaleRate)
 
 		// angle && face
 		if (s.HasForce() == false || s.Power == 0) && s.Face != 0 {
@@ -332,7 +332,7 @@ func (s *ScenePlayer) SendSceneMsg() {
 			ballmove := other.ScenePlayerPool.MsgBallMove
 			ballmove.Id = other.GetID()
 			ballmove.X = int32(other.Pos.X * consts.MsgPosScaleRate)
-			ballmove.Y = int32(other.Pos.Y * consts.MsgPosScaleRate)
+			ballmove.Z = int32(other.Pos.Z * consts.MsgPosScaleRate)
 
 			// angle && face
 			if (other.HasForce() == false || other.Power == 0) && other.Face != 0 {
@@ -537,7 +537,7 @@ func (s *ScenePlayer) UpdateExp(addexp int32) {
 func (s *ScenePlayer) GetSnapInfo() *usercmd.MsgPlayerSnap {
 	msg := &s.msgPool.MsgPlayerSnap
 	msg.Snapx = float32(s.Pos.X)
-	msg.Snapy = float32(s.Pos.Y)
+	msg.Snapz = float32(s.Pos.Z)
 	msg.Angle = float32(s.Angle)
 	msg.Id = uint64(s.GetEntityID())
 	return msg

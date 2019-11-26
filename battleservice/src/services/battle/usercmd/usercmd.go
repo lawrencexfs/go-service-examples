@@ -151,7 +151,7 @@ type MsgSceneChat struct {
 // 位置同步
 type MsgPlayerSnap struct {
 	Snapx float32 `protobuf:"fixed32,1,req,name=Snapx,json=snapx" json:"Snapx"`
-	Snapy float32 `protobuf:"fixed32,2,req,name=Snapy,json=snapy" json:"Snapy"`
+	Snapz float32 `protobuf:"fixed32,2,req,name=Snapy,json=snapy" json:"Snapy"`
 	Angle float32 `protobuf:"fixed32,3,req,name=Angle,json=angle" json:"Angle"`
 	Id    uint64  `protobuf:"varint,4,req,name=Id,json=id" json:"Id"`
 }
@@ -160,7 +160,7 @@ type MsgBall struct {
 	Id   uint64 `protobuf:"varint,1,req,name=id" json:"id"`
 	Type int32  `protobuf:"varint,2,req,name=type" json:"type"`
 	X    int32  `protobuf:"varint,3,req,name=x" json:"x"`
-	Y    int32  `protobuf:"varint,4,req,name=y" json:"y"`
+	Z    int32  `protobuf:"varint,4,req,name=y" json:"y"`
 }
 
 // 玩家球
@@ -169,7 +169,7 @@ type MsgPlayerBall struct {
 	Hp    uint32 `protobuf:"varint,3,opt,name=hp" json:"hp"`
 	Mp    uint32 `protobuf:"varint,4,opt,name=mp" json:"mp"`
 	X     int32  `protobuf:"varint,5,req,name=x" json:"x"`
-	Y     int32  `protobuf:"varint,6,req,name=y" json:"y"`
+	Z     int32  `protobuf:"varint,6,req,name=y" json:"y"`
 	Angle int32  `protobuf:"varint,7,opt,name=angle" json:"angle"`
 	Face  uint32 `protobuf:"varint,8,opt,name=face" json:"face"`
 }
@@ -178,7 +178,7 @@ type MsgPlayerBall struct {
 type BallMove struct {
 	Id    uint64 `protobuf:"varint,1,req,name=id" json:"id"`
 	X     int32  `protobuf:"varint,2,req,name=x" json:"x"`
-	Y     int32  `protobuf:"varint,3,req,name=y" json:"y"`
+	Z     int32  `protobuf:"varint,3,req,name=y" json:"y"`
 	State uint32 `protobuf:"varint,4,opt,name=state" json:"state"`
 	Angle int32  `protobuf:"varint,5,opt,name=angle" json:"angle"`
 	Face  uint32 `protobuf:"varint,6,opt,name=face" json:"face"`

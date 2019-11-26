@@ -3,7 +3,6 @@ package birth
 import (
 	"math"
 
-	bmath "battleservice/src/services/base/math"
 	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/interfaces"
@@ -11,12 +10,13 @@ import (
 	"battleservice/src/services/battle/usercmd"
 
 	"github.com/cihub/seelog"
+	"github.com/giant-tech/go-service/base/linmath"
 )
 
 type BirthPoint struct {
 	id             uint64
 	scene          IScene
-	pos            bmath.Vector2
+	pos            linmath.Vector3
 	ballTypeId     uint16
 	ballType       uint16
 	birthTime      float64
@@ -28,11 +28,11 @@ type BirthPoint struct {
 }
 
 //创建动态出生点 食物、 动态障碍物 (BallFood、 BallFeed)
-func NewBirthPoint(id uint64, x, y, rMin, rMax float32, ballTypeId uint16, ballType uint16, birthTime float64, birthMax uint32, scene IScene) *BirthPoint {
+func NewBirthPoint(id uint64, x, z, rMin, rMax float32, ballTypeId uint16, ballType uint16, birthTime float64, birthMax uint32, scene IScene) *BirthPoint {
 
 	point := &BirthPoint{
 		id:         id,
-		pos:        bmath.Vector2{x, y},
+		pos:        linmath.Vector3{x, 0, z},
 		ballTypeId: ballTypeId,
 		ballType:   ballType,
 		birthTime:  birthTime,
@@ -67,8 +67,7 @@ func (this *BirthPoint) CreateUnit() interfaces.IBall {
 		foodInitData := &bll.FoodInitData{
 			ID:         this.id,
 			TypeID:     this.ballTypeId,
-			X:          posNew.X,
-			Y:          posNew.Y,
+			Pos:        *posNew,
 			Scene:      scene,
 			BirthPoint: this,
 		}
@@ -76,14 +75,13 @@ func (this *BirthPoint) CreateUnit() interfaces.IBall {
 		scene.CreateEntity("BallFood", scene.GetEntityID(), foodInitData, true, 0)
 	case consts.BallKind_Feed:
 		x := math.Floor(float64(this.pos.X)) + 0.25
-		y := math.Floor(float64(this.pos.Y)) + 0.25
+		z := math.Floor(float64(this.pos.Z)) + 0.25
 
 		initData := &bll.FeedInitData{
 			Scene:      scene,
 			TypeID:     this.ballTypeId,
 			ID:         this.id,
-			X:          float32(x),
-			Y:          float32(y),
+			Pos:        linmath.Vector3{X: float32(x), Y: 0, Z: float32(z)},
 			BirthPoint: this,
 		}
 

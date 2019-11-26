@@ -12,7 +12,7 @@ func FoodToMsgBall(ball *BallFood) *usercmd.MsgBall {
 		Id:   ball.id,
 		Type: int32(ball.typeID),
 		X:    int32(ball.Pos.X * consts.MsgPosScaleRate),
-		Y:    int32(ball.Pos.Y * consts.MsgPosScaleRate),
+		Z:    int32(ball.Pos.Z * consts.MsgPosScaleRate),
 	}
 }
 
@@ -21,7 +21,7 @@ func FeedToMsgBall(ball *BallFeed) *usercmd.MsgBall {
 		Id:   ball.id,
 		Type: int32(ball.typeID),
 		X:    int32(ball.Pos.X * consts.MsgPosScaleRate),
-		Y:    int32(ball.Pos.Y * consts.MsgPosScaleRate),
+		Z:    int32(ball.Pos.Z * consts.MsgPosScaleRate),
 	}
 	return cmd
 }
@@ -31,7 +31,7 @@ func SkillToMsgBall(ball *BallSkill) *usercmd.MsgBall {
 		Id:   ball.id,
 		Type: int32(ball.BallType),
 		X:    int32(ball.Pos.X * consts.MsgPosScaleRate),
-		Y:    int32(ball.Pos.Y * consts.MsgPosScaleRate),
+		Z:    int32(ball.Pos.Z * consts.MsgPosScaleRate),
 	}
 	return cmd
 }

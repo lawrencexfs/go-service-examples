@@ -19,7 +19,7 @@ import (
 type FoodInitData struct {
 	ID         uint64
 	TypeID     uint16
-	X, Y       float32
+	Pos        linmath.Vector3
 	Scene      IScene
 	BirthPoint interfaces.IBirthPoint
 }
@@ -51,7 +51,7 @@ func (ball *BallFood) OnInit(initData interface{}) error {
 
 	ball.id = foodInitData.ID
 	ball.typeID = foodInitData.TypeID
-	ball.Pos = linmath.Vector3{foodInitData.X, 0, foodInitData.Y}
+	ball.Pos = foodInitData.Pos
 	ball.BallType = ballType
 	ball.radius = radius
 
@@ -119,7 +119,7 @@ func (ball *BallFood) SetExp(exp int32) {
 
 func (ball *BallFood) ResetRect() {
 	ball.rect.X = float64(ball.Pos.X)
-	ball.rect.Y = float64(ball.Pos.Y)
+	ball.rect.Z = float64(ball.Pos.Z)
 	ball.rect.SetRadius(float64(ball.radius))
 }
 

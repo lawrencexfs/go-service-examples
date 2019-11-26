@@ -142,16 +142,17 @@ func GetPlayerDir(tick *b3core.Tick, player *plr.ScenePlayer) *linmath.Vector3 {
 	if 0 != targetId {
 		tball := player.FindViewPlayer(targetId)
 		if tball != nil {
-			x, y, _ := tball.GetPos()
+			x, _, z := tball.GetPos()
 			angleVel.X = x - player.GetPosV().X
-			angleVel.Y = y - player.GetPosV().Y
+			angleVel.Z = z - player.GetPosV().Z
 			usedefault = false
 		}
 	}
 	if usedefault {
 		angleVel.X = player.GetAngleVel().X
-		angleVel.Y = player.GetAngleVel().Y
+		angleVel.Z = player.GetAngleVel().Z
 	}
+
 	return angleVel
 }
 

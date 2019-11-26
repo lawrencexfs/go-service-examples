@@ -20,12 +20,12 @@ type BallPlayer struct {
 
 func (this *BallPlayer) InitBallPlayer(player IScenePlayer, ballid uint64) {
 
-	x, y := player.GetBallScene().GetRandPos()
+	x, z := player.GetBallScene().GetRandPos()
 
 	this.BallMove = BallMove{
 		BallFood: BallFood{
 			id:       ballid,
-			Pos:      linmath.Vector3{x, 0, y},
+			Pos:      linmath.Vector3{x, 0, z},
 			radius:   consts.DefaultBallSize,
 			BallType: usercmd.BallType_Player,
 		},
@@ -39,7 +39,7 @@ func (this *BallPlayer) InitBallPlayer(player IScenePlayer, ballid uint64) {
 	this.SetHpMax(consts.DefaultMaxHP)
 	this.SetHP(consts.DefaultMaxHP)
 
-	this.PhysicObj = ape.NewCircleParticle(float32(this.Pos.X), float32(this.Pos.Y), float32(this.radius))
+	this.PhysicObj = ape.NewCircleParticle(float32(this.Pos.X), float32(this.Pos.Z), float32(this.radius))
 	this.player.GetBallScene().AddPlayerPhysic(this.PhysicObj)
 }
 
@@ -62,7 +62,7 @@ func (this *BallPlayer) Move(perTime float64, frameRate float64) bool {
 		force := this.GetForce()
 		pos := this.PhysicObj.GetPostion()
 		this.Pos = linmath.Vector3{pos.X, 0, pos.Y}
-		this.PhysicObj.SetVelocity(&bmath.Vector2{float32(force.X), float32(force.Y)})
+		this.PhysicObj.SetVelocity(&bmath.Vector2{float32(force.X), float32(force.Z)})
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (this *BallPlayer) Move(perTime float64, frameRate float64) bool {
 	if 0 == this.player.GetPower() {
 		this.PhysicObj.SetVelocity(&bmath.Vector2{0, 0})
 	} else {
-		this.PhysicObj.SetVelocity(&bmath.Vector2{float32(vel.X) / 30, float32(vel.Y) / 30})
+		this.PhysicObj.SetVelocity(&bmath.Vector2{float32(vel.X) / 30, float32(vel.Z) / 30})
 	}
 
 	return true
@@ -102,16 +102,16 @@ func (this *BallPlayer) FixMapEdge() bool {
 		this.Pos.X = SceneSize - halfRadius
 		this.speed.X = -this.speed.X * 0.1
 	}
-	if this.Pos.Y < halfRadius {
-		this.Pos.Y = halfRadius
-		this.speed.Y = -this.speed.Y * 0.1
-	} else if this.Pos.Y > SceneSize-halfRadius {
-		this.Pos.Y = SceneSize - halfRadius
-		this.speed.Y = -this.speed.Y * 0.1
+	if this.Pos.Z < halfRadius {
+		this.Pos.Z = halfRadius
+		this.speed.Z = -this.speed.Z * 0.1
+	} else if this.Pos.Z > SceneSize-halfRadius {
+		this.Pos.Z = SceneSize - halfRadius
+		this.speed.Z = -this.speed.Z * 0.1
 	}
 
 	this.rect.X = float64(this.Pos.X)
-	this.rect.Y = float64(this.Pos.Z)
+	this.rect.Z = float64(this.Pos.Z)
 
 	return true
 }
@@ -193,8 +193,8 @@ func (this *BallPlayer) GetSizeScale() float64 {
 	return 1.0
 }
 
-func (this *BallPlayer) SetAngleVelAndNormalize(x, y float64) {
+func (this *BallPlayer) SetAngleVelAndNormalize(x, z float64) {
 	this.angleVel.X = float32(x)
-	this.angleVel.Y = float32(y)
+	this.angleVel.Z = float32(z)
 	this.angleVel.Normalize()
 }

@@ -4,10 +4,11 @@ package skill
 
 import (
 	b3core "battleservice/src/services/base/behavior3go/core"
-	_ "github.com/cihub/seelog"
 	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/scene/plr"
+
+	_ "github.com/cihub/seelog"
 )
 
 type SkillPlayer struct {
@@ -88,7 +89,7 @@ func (this *SkillPlayer) CastSkill(skillid uint32, targetId uint32) bool {
 func (this *SkillPlayer) GetHit(source *plr.ScenePlayer, skillid uint32) {
 	pos := source.GetPosV()
 	this.blackboard.Set("source_pos_x", pos.X, "", "")
-	this.blackboard.Set("source_pos_y", pos.Y, "", "")
+	this.blackboard.Set("source_pos_z", pos.Z, "", "")
 
 	if this.bevTree != nil {
 		this.bevTree.Close(nil, this.blackboard)
@@ -97,9 +98,9 @@ func (this *SkillPlayer) GetHit(source *plr.ScenePlayer, skillid uint32) {
 	this.bevTree.Tick(nil, this.blackboard)
 }
 
-func (this *SkillPlayer) GetHit2(sourceX, sourceY float64, skillid uint32) {
+func (this *SkillPlayer) GetHit2(sourceX, sourceZ float64, skillid uint32) {
 	this.blackboard.Set("source_pos_x", sourceX, "", "")
-	this.blackboard.Set("source_pos_y", sourceY, "", "")
+	this.blackboard.Set("source_pos_z", sourceZ, "", "")
 
 	if this.bevTree != nil {
 		this.bevTree.Close(nil, this.blackboard)

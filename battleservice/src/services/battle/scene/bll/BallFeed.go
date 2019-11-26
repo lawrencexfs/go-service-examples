@@ -17,7 +17,7 @@ type FeedInitData struct {
 	Scene      IScene
 	TypeID     uint16
 	ID         uint64
-	X, Y       float32
+	Pos        linmath.Vector3
 	BirthPoint interfaces.IBirthPoint
 }
 
@@ -42,10 +42,10 @@ func (feed *BallFeed) OnInit(initData interface{}) error {
 			id:       feedInitData.ID,
 			typeID:   feedInitData.TypeID,
 			BallType: ballType,
-			Pos:      linmath.Vector3{feedInitData.X, 0.0, feedInitData.Y},
+			Pos:      feedInitData.Pos,
 			radius:   radius,
 		},
-		PhysicObj: ape.NewCircleParticle(feedInitData.X, feedInitData.Y, float32(radius)),
+		PhysicObj: ape.NewCircleParticle(feedInitData.Pos.X, feedInitData.Pos.Z, float32(radius)),
 	}
 
 	feed.SetBirthPoint(feedInitData.BirthPoint)

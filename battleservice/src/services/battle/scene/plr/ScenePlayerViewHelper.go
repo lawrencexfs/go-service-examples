@@ -41,7 +41,7 @@ func (this *ScenePlayerViewHelper) Init() {
 func (this *ScenePlayerViewHelper) UpdateView(scene IScene, selfBall *bll.BallPlayer, sceneSize float64, cellNumX, cellNumY int) {
 	// 没有动过，直接返回
 	if math.Abs(selfBall.GetRect().X-this.ViewRect.X) < util.EPSILON &&
-		math.Abs(selfBall.GetRect().Y-this.ViewRect.Y) < util.EPSILON {
+		math.Abs(selfBall.GetRect().Z-this.ViewRect.Z) < util.EPSILON {
 		return
 	}
 
@@ -172,14 +172,14 @@ func (this *ScenePlayerViewHelper) UpdateViewPlayers(scene IScene, selfBall *bll
 
 	scene.TravsalPlayers(func(player *ScenePlayer) {
 		if selfBall.GetPlayerId() != player.GetEntityID() {
-			_, _, ok1 := this.RealViewRect.ContainsCircle(float64(player.Pos.X), float64(player.Pos.Y), 0)
+			_, _, ok1 := this.RealViewRect.ContainsCircle(float64(player.Pos.X), float64(player.Pos.Z), 0)
 			if ok1 {
 				if player.IsLive {
 					this.Others[player.GetEntityID()] = player
 				}
 			}
 
-			_, _, ok2 := player.RealViewRect.ContainsCircle(float64(selfBall.Pos.X), float64(selfBall.Pos.Y), 0)
+			_, _, ok2 := player.RealViewRect.ContainsCircle(float64(selfBall.Pos.X), float64(selfBall.Pos.Z), 0)
 			if ok2 {
 				this.RoundPlayers = append(this.RoundPlayers, player)
 			}
