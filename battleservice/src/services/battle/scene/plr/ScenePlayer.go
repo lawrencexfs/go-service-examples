@@ -15,6 +15,7 @@ import (
 	"time"
 
 	"github.com/cihub/seelog"
+	"github.com/giant-tech/go-service/base/linmath"
 	"github.com/giant-tech/go-service/base/net/inet"
 )
 
@@ -190,7 +191,7 @@ func (s *ScenePlayer) RealDead(killer *ScenePlayer) {
 func (s *ScenePlayer) OnDead() {
 	s.OnDead()
 	s.IsLive = false
-
+	s.GetScene().RemovePlayerPhysic(s.PhysicObj)
 }
 
 func (s *ScenePlayer) GetRelifeMsg() *usercmd.MsgS2CRelife {
@@ -636,7 +637,7 @@ func (s *ScenePlayer) GetBallScene() bll.IScene {
 	return s.scn.(bll.IScene)
 }
 
-func (s *ScenePlayer) FindNearBallByKind(kind consts.BallKind, dir *util.Vector2, cells []*cll.Cell, ballType uint32) (interfaces.IBall, float64) {
+func (s *ScenePlayer) FindNearBallByKind(kind consts.BallKind, dir *linmath.Vector3, cells []*cll.Cell, ballType uint32) (interfaces.IBall, float32) {
 	return s.ScenePlayerViewHelper.FindNearBallByKind(&s.BallPlayer, kind, dir, cells, ballType)
 }
 

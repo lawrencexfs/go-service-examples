@@ -67,8 +67,8 @@ func (this *BirthPoint) CreateUnit() interfaces.IBall {
 		foodInitData := &bll.FoodInitData{
 			ID:         this.id,
 			TypeID:     this.ballTypeId,
-			X:          float64(posNew.X),
-			Y:          float64(posNew.Y),
+			X:          posNew.X,
+			Y:          posNew.Y,
 			Scene:      scene,
 			BirthPoint: this,
 		}
@@ -82,8 +82,8 @@ func (this *BirthPoint) CreateUnit() interfaces.IBall {
 			Scene:      scene,
 			TypeID:     this.ballTypeId,
 			ID:         this.id,
-			X:          x,
-			Y:          y,
+			X:          float32(x),
+			Y:          float32(y),
 			BirthPoint: this,
 		}
 

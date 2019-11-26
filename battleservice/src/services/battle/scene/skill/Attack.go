@@ -4,12 +4,13 @@ package skill
 
 import (
 	b3core "battleservice/src/services/base/behavior3go/core"
-	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/scene/bll"
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/scene/plr"
 	"battleservice/src/services/battle/usercmd"
+
+	"github.com/giant-tech/go-service/base/linmath"
 )
 
 type AttackType uint8
@@ -118,11 +119,11 @@ func NormalAttack_Player(tick *b3core.Tick, player *plr.ScenePlayer, ball *bll.B
 }
 
 func BallSkillAttack(tick *b3core.Tick, player *plr.ScenePlayer, ballskill *bll.BallSkill, attackScale float64, iball interfaces.IBall) bool {
-	x, y := iball.GetPos()
-	pos := &util.Vector2{x, y}
+	x, y, z := iball.GetPos()
+	pos := &linmath.Vector3{x, y, z}
 	distance := pos.SqrMagnitudeTo(ballskill.GetPosV())
-	tmp := iball.GetRect().Radius + ballskill.GetRadius() + attackScale
-	if distance <= tmp*tmp {
+	tmp := iball.GetRect().Radius + float64(ballskill.GetRadius()) + attackScale
+	if float64(distance) <= tmp*tmp {
 		if iball.GetBallType() == usercmd.BallType_Player {
 			targetball := iball.(*bll.BallPlayer)
 			target := targetball.GetPlayer().(*plr.ScenePlayer)

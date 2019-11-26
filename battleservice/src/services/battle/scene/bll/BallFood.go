@@ -11,6 +11,7 @@ import (
 	"fmt"
 
 	"github.com/cihub/seelog"
+	"github.com/giant-tech/go-service/base/linmath"
 	"github.com/giant-tech/go-service/framework/space"
 )
 
@@ -18,7 +19,7 @@ import (
 type FoodInitData struct {
 	ID         uint64
 	TypeID     uint16
-	X, Y       float64
+	X, Y       float32
 	Scene      IScene
 	BirthPoint interfaces.IBirthPoint
 }
@@ -29,8 +30,8 @@ type BallFood struct {
 	id         uint64           //动态id
 	typeID     uint16           //xml表里id
 	BallType   usercmd.BallType //大类型
-	Pos        util.Vector2
-	radius     float64
+	Pos        linmath.Vector3
+	radius     float32
 	rect       util.Square
 	birthPoint interfaces.IBirthPoint
 	exp        int32
@@ -50,9 +51,9 @@ func (ball *BallFood) OnInit(initData interface{}) error {
 
 	ball.id = foodInitData.ID
 	ball.typeID = foodInitData.TypeID
-	ball.Pos = util.Vector2{foodInitData.X, foodInitData.Y}
+	ball.Pos = linmath.Vector3{foodInitData.X, 0, foodInitData.Y}
 	ball.BallType = ballType
-	ball.radius = float64(radius)
+	ball.radius = radius
 
 	ball.ResetRect()
 	ball.SetExp(consts.DefaultBallFoodExp)
@@ -94,20 +95,21 @@ func (ball *BallFood) GetBallType() usercmd.BallType {
 	return ball.BallType
 }
 
-func (ball *BallFood) GetPos() (float64, float64) {
-	return ball.Pos.X, ball.Pos.Y
+func (ball *BallFood) GetPos() (float32, float32, float32) {
+	return ball.Pos.X, ball.Pos.Y, ball.Pos.Z
 }
 
-func (ball *BallFood) SetPos(x, y float64) {
+func (ball *BallFood) SetPos(x, y, z float32) {
 	ball.Pos.X = x
 	ball.Pos.Y = y
+	ball.Pos.Z = z
 }
 
-func (ball *BallFood) GetPosV() *util.Vector2 {
+func (ball *BallFood) GetPosV() *linmath.Vector3 {
 	return &ball.Pos
 }
 
-func (this *BallFood) SetPosV(pos util.Vector2) {
+func (this *BallFood) SetPosV(pos linmath.Vector3) {
 	this.Pos = pos
 }
 
@@ -116,9 +118,9 @@ func (ball *BallFood) SetExp(exp int32) {
 }
 
 func (ball *BallFood) ResetRect() {
-	ball.rect.X = ball.Pos.X
-	ball.rect.Y = ball.Pos.Y
-	ball.rect.SetRadius(ball.radius)
+	ball.rect.X = float64(ball.Pos.X)
+	ball.rect.Y = float64(ball.Pos.Y)
+	ball.rect.SetRadius(float64(ball.radius))
 }
 
 func (ball *BallFood) SetBirthPoint(birthPoint interfaces.IBirthPoint) {
@@ -129,6 +131,6 @@ func (ball *BallFood) GetBirthPoint() interfaces.IBirthPoint {
 	return ball.birthPoint
 }
 
-func (ball *BallFood) GetRadius() float64 {
+func (ball *BallFood) GetRadius() float32 {
 	return ball.radius
 }

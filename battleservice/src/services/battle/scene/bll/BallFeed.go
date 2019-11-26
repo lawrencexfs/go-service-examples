@@ -4,12 +4,12 @@ package bll
 
 import (
 	"battleservice/src/services/base/ape"
-	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/conf"
 	"battleservice/src/services/battle/scene/interfaces"
 	"fmt"
 
 	"github.com/cihub/seelog"
+	"github.com/giant-tech/go-service/base/linmath"
 )
 
 // FeedInitData feed初始化数据
@@ -17,7 +17,7 @@ type FeedInitData struct {
 	Scene      IScene
 	TypeID     uint16
 	ID         uint64
-	X, Y       float64
+	X, Y       float32
 	BirthPoint interfaces.IBirthPoint
 }
 
@@ -35,17 +35,17 @@ func (feed *BallFeed) OnInit(initData interface{}) error {
 		return fmt.Errorf("init data error")
 	}
 
-	radius := float64(conf.ConfigMgr_GetMe().GetFoodSize(feedInitData.Scene.GetEntityID(), feedInitData.TypeID))
+	radius := conf.ConfigMgr_GetMe().GetFoodSize(feedInitData.Scene.GetEntityID(), feedInitData.TypeID)
 	ballType := conf.ConfigMgr_GetMe().GetFoodBallType(feedInitData.Scene.GetEntityID(), feedInitData.TypeID)
 	feed.BallMove = BallMove{
 		BallFood: BallFood{
 			id:       feedInitData.ID,
 			typeID:   feedInitData.TypeID,
 			BallType: ballType,
-			Pos:      util.Vector2{float64(feedInitData.X), float64(feedInitData.Y)},
-			radius:   float64(radius),
+			Pos:      linmath.Vector3{feedInitData.X, 0.0, feedInitData.Y},
+			radius:   radius,
 		},
-		PhysicObj: ape.NewCircleParticle(float32(feedInitData.X), float32(feedInitData.Y), float32(radius)),
+		PhysicObj: ape.NewCircleParticle(feedInitData.X, feedInitData.Y, float32(radius)),
 	}
 
 	feed.SetBirthPoint(feedInitData.BirthPoint)

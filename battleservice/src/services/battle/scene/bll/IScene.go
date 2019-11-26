@@ -12,7 +12,7 @@ type IScene interface {
 
 	AddFeedPhysic(feed ape.IAbstractParticle)
 	AddPlayerPhysic(player ape.IAbstractParticle)
-	GetRandPos() (x, y float64)
-	SceneSize() float64
+	GetRandPos() (x, y float32)
+	SceneSize() float32
 	UpdateSkillBallCell(ball *BallSkill, oldCellID int)
 }

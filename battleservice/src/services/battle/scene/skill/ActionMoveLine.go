@@ -4,9 +4,10 @@ import (
 	b3 "battleservice/src/services/base/behavior3go"
 	b3config "battleservice/src/services/base/behavior3go/config"
 	b3core "battleservice/src/services/base/behavior3go/core"
-	_ "github.com/cihub/seelog"
-	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/scene/plr"
+
+	_ "github.com/cihub/seelog"
+	"github.com/giant-tech/go-service/base/linmath"
 )
 
 type ActionMoveLine struct {
@@ -26,18 +27,19 @@ func (this *ActionMoveLine) Initialize(setting *b3config.BTNodeCfg) {
 func (this *ActionMoveLine) OnOpen(tick *b3core.Tick) {
 	player := tick.Blackboard.Get("player", "", "").(*plr.ScenePlayer)
 
-	var speed util.Vector2
+	var speed linmath.Vector3
 
 	if this.dir_type == 2 {
-		x0, y0 := player.GetPos()
+		x0, y0, z0 := player.GetPos()
 		x1 := tick.Blackboard.GetFloat64("source_pos_x", "", "")
 		y1 := tick.Blackboard.GetFloat64("source_pos_y", "", "")
 
-		v := &util.Vector2{float64(x0), float64(y0)}
-		hv := v.SubMethod(&util.Vector2{x1, y1})
-		speed = hv.Normalize()
+		v := &linmath.Vector3{x0, y0, z0}
+		hv := v.Sub(linmath.Vector3{float32(x1), 0, float32(y1)})
+		hv.Normalize()
+		speed = hv
 	} else if this.dir_type == 1 {
-		speed = util.Vector2{float64(player.GetAngleVel().X), float64(player.GetAngleVel().Y)}
+		speed = linmath.Vector3{player.GetAngleVel().X, 0, player.GetAngleVel().Y}
 	} else {
 		panic("error dir_type!")
 	}
@@ -45,7 +47,7 @@ func (this *ActionMoveLine) OnOpen(tick *b3core.Tick) {
 	player.ClearForce()
 
 	force1 := speed
-	force1.ScaleBy(this.d / float64(this.n) * 2)
+	force1.Mul(float32(this.d / float64(this.n) * 2))
 	player.AddForce(force1, this.n)
 }
 

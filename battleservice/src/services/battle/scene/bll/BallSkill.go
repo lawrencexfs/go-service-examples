@@ -4,10 +4,11 @@ package bll
 
 import (
 	bmath "battleservice/src/services/base/math"
-	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/usercmd"
 	"fmt"
+
+	"github.com/giant-tech/go-service/base/linmath"
 
 	"github.com/cihub/seelog"
 )
@@ -16,7 +17,7 @@ import (
 type SkillInitData struct {
 	BallType     usercmd.BallType
 	ID           uint64
-	X, Y, Radius float64
+	X, Y, Radius float32
 	Player       IScenePlayer
 }
 
@@ -40,8 +41,8 @@ func (s *BallSkill) OnInit(initData interface{}) error {
 			id:       SkillInitData.ID,
 			typeID:   uint16(SkillInitData.BallType),
 			BallType: SkillInitData.BallType,
-			Pos:      util.Vector2{float64(SkillInitData.X), float64(SkillInitData.Y)},
-			radius:   float64(SkillInitData.Radius),
+			Pos:      linmath.Vector3{SkillInitData.X, 0, SkillInitData.Y},
+			radius:   SkillInitData.Radius,
 		},
 	}
 
@@ -79,11 +80,11 @@ func (s *BallSkill) OnDestroy() {
 }
 
 func (s *BallSkill) Move(pertime float64, scene IScene) bool {
-	if s.speed.IsEmpty() == false {
+	if !s.speed.IsEqual(linmath.Vector3{0, 0, 0}) {
 		if s.player.Frame() >= s.Skill.GetBeginFrame() {
 			if false {
 				pos := s.PhysicObj.GetPostion()
-				s.Pos = util.Vector2{float64(pos.X), float64(pos.Y)}
+				s.Pos = linmath.Vector3{pos.X, 0, pos.Y}
 				s.PhysicObj.SetVelocity(&bmath.Vector2{float32(s.speed.X), float32(s.speed.Y)})
 			}
 

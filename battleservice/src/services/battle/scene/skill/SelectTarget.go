@@ -11,6 +11,7 @@ import (
 	"battleservice/src/services/battle/scene/plr"
 
 	_ "github.com/cihub/seelog"
+	"github.com/giant-tech/go-service/base/linmath"
 )
 
 // 获取朝向上最近的目标
@@ -55,7 +56,7 @@ func FindTarget_SemiCircle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interf
 			continue
 		}
 		ball := &o.BallPlayer
-		if util.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
+		if linmath.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
 			continue
 		}
 		balllist = append(balllist, ball)
@@ -134,14 +135,14 @@ func FindTarget_Circle(tick *b3core.Tick, player *plr.ScenePlayer) ([]interfaces
 }
 
 // 获取玩家朝向
-func GetPlayerDir(tick *b3core.Tick, player *plr.ScenePlayer) *util.Vector2 {
-	angleVel := &util.Vector2{}
+func GetPlayerDir(tick *b3core.Tick, player *plr.ScenePlayer) *linmath.Vector3 {
+	angleVel := &linmath.Vector3{}
 	usedefault := true
 	targetId := tick.Blackboard.GetUInt64("skillTargetId", "", "")
 	if 0 != targetId {
 		tball := player.FindViewPlayer(targetId)
 		if tball != nil {
-			x, y := tball.GetPos()
+			x, y, _ := tball.GetPos()
 			angleVel.X = x - player.GetPosV().X
 			angleVel.Y = y - player.GetPosV().Y
 			usedefault = false
@@ -170,7 +171,7 @@ func GetAttackRange(tick *b3core.Tick, player *plr.ScenePlayer) float64 {
 func IsCanAttack(tick *b3core.Tick, player *plr.ScenePlayer, target interfaces.IBall) bool {
 	distance := player.SqrMagnitudeTo(target)
 	eatRange := GetAttackRange(tick, player)
-	return distance <= (eatRange+target.GetRect().Radius)*(eatRange+target.GetRect().Radius)
+	return float64(distance) <= (eatRange+target.GetRect().Radius)*(eatRange+target.GetRect().Radius)
 }
 
 func IsCanAttackPlayer(tick *b3core.Tick, player *plr.ScenePlayer, target *bll.BallPlayer) bool {
@@ -179,5 +180,5 @@ func IsCanAttackPlayer(tick *b3core.Tick, player *plr.ScenePlayer, target *bll.B
 	}
 	distance := player.SqrMagnitudeTo(target)
 	eatRange := GetAttackRange(tick, player)
-	return distance <= (eatRange+target.GetRect().Radius)*(eatRange+target.GetRect().Radius)
+	return float64(distance) <= (eatRange+target.GetRect().Radius)*(eatRange+target.GetRect().Radius)
 }

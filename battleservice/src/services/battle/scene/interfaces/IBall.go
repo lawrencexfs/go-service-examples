@@ -12,8 +12,8 @@ type IBall interface {
 	SetID(uint64)
 	GetTypeId() uint16
 	GetBallType() usercmd.BallType
-	GetPos() (float64, float64)
-	SetPos(float64, float64)
+	GetPos() (float32, float32, float32)
+	SetPos(float32, float32, float32)
 	SetBirthPoint(_birthPoint IBirthPoint)
 	GetRect() *util.Square
 	OnReset()

@@ -12,7 +12,7 @@ type ActionBallSkillStopMove struct {
 
 func (this *ActionBallSkillStopMove) OnTick(tick *b3core.Tick) b3.Status {
 	ballskill := tick.Blackboard.Get("ballskill", "", "").(*SkillBall).ball
-	ballskill.GetSpeed().ScaleBy(0)
+	ballskill.GetSpeed().Mul(0)
 	//	if ballskill.PhysicObj != nil {
 	//		ballskill.PhysicObj.SetVelocity(&bmath.Vector2{0, 0})
 	//	}

@@ -4,18 +4,18 @@ package internal
 
 import (
 	"github.com/cihub/seelog"
-	"battleservice/src/services/base/util"
+	"github.com/giant-tech/go-service/base/linmath"
 )
 
 //附加力
 type AddonForceData struct {
 	leftTime uint64
-	force    util.Vector2
+	force    linmath.Vector3
 }
 
 type Force struct {
 	addonForceDatas []*AddonForceData //附加力数据
-	currForce       util.Vector2      //附加力
+	currForce       linmath.Vector3   //附加力
 }
 
 func (this *Force) ClearForce() {
@@ -28,7 +28,7 @@ func (this *Force) HasForce() bool {
 	return len(this.addonForceDatas) != 0
 }
 
-func (this *Force) AddForce(force util.Vector2, time uint64) {
+func (this *Force) AddForce(force linmath.Vector3, time uint64) {
 	data := &AddonForceData{force: force, leftTime: time}
 	this.addonForceDatas = append(this.addonForceDatas, data)
 }
@@ -45,8 +45,8 @@ func (this *Force) UpdateForce(detaTime float64) {
 
 	for _, data := range this.addonForceDatas {
 		if data.leftTime > 0 {
-			data.leftTime -= 1
-			this.currForce.IncreaseBy(&data.force)
+			data.leftTime--
+			this.currForce.Add(data.force)
 			tempList = append(tempList, data)
 		}
 	}
@@ -60,6 +60,6 @@ func (this *Force) UpdateForce(detaTime float64) {
 		this.ClearForce()
 	}
 }
-func (this *Force) GetForce() *util.Vector2 {
+func (this *Force) GetForce() *linmath.Vector3 {
 	return &this.currForce
 }

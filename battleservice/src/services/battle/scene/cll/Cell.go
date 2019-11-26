@@ -10,6 +10,8 @@ import (
 	"battleservice/src/services/battle/scene/interfaces"
 	"battleservice/src/services/battle/usercmd"
 	"fmt"
+
+	"github.com/giant-tech/go-service/base/linmath"
 )
 
 var (
@@ -36,13 +38,13 @@ func NewCell(id int) *Cell {
 	return &cell
 }
 
-func (cell *Cell) FindNearFood(player *bll.BallPlayer, pos *util.Vector2, ballType uint32, dir *util.Vector2) (*bll.BallFood, float64) {
-	var min float64 = 10000
+func (cell *Cell) FindNearFood(player *bll.BallPlayer, pos *linmath.Vector3, ballType uint32, dir *linmath.Vector3) (*bll.BallFood, float32) {
+	var min float32 = 10000
 	var minball *bll.BallFood
 	for _, ball := range cell.Foods {
 		dis := ball.Pos.SqrMagnitudeTo(pos)
 		if ballType == uint32(ball.BallType) || ballType == 0 {
-			if dir != nil && util.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
+			if dir != nil && linmath.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
 				continue
 			}
 			if player.PreCanEat(ball) {
@@ -56,11 +58,11 @@ func (cell *Cell) FindNearFood(player *bll.BallPlayer, pos *util.Vector2, ballTy
 	return minball, min
 }
 
-func (cell *Cell) FindNearFeed(player *bll.BallPlayer, pos *util.Vector2, dir *util.Vector2) (*bll.BallFeed, float64) {
-	var min float64
+func (cell *Cell) FindNearFeed(player *bll.BallPlayer, pos *linmath.Vector3, dir *linmath.Vector3) (*bll.BallFeed, float32) {
+	var min float32
 	var minball *bll.BallFeed
 	for _, ball := range cell.Feeds {
-		if dir != nil && util.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
+		if dir != nil && linmath.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
 			continue
 		}
 		if player.PreCanEat(&ball.BallFood) {
@@ -74,12 +76,12 @@ func (cell *Cell) FindNearFeed(player *bll.BallPlayer, pos *util.Vector2, dir *u
 	return minball, min
 }
 
-func (cell *Cell) FindNearSkill(player *bll.BallPlayer, pos *util.Vector2, ballType uint32, dir *util.Vector2) (*bll.BallSkill, float64) {
-	var min float64
+func (cell *Cell) FindNearSkill(player *bll.BallPlayer, pos *linmath.Vector3, ballType uint32, dir *linmath.Vector3) (*bll.BallSkill, float32) {
+	var min float32
 	var minball *bll.BallSkill
 	for _, ball := range cell.Skills {
 		if (ballType == uint32(ball.BallType) || ballType == 0) && player.PreCanEat(&ball.BallFood) {
-			if dir != nil && util.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
+			if dir != nil && linmath.IsSameDir(dir, ball.GetPosV(), player.GetPosV()) == false {
 				continue
 			}
 			dis := ball.Pos.SqrMagnitudeTo(pos)
@@ -92,7 +94,7 @@ func (cell *Cell) FindNearSkill(player *bll.BallPlayer, pos *util.Vector2, ballT
 	return minball, min
 }
 
-func (cell *Cell) FindNearBallByKind(player *bll.BallPlayer, pos *util.Vector2, kind consts.BallKind, dir *util.Vector2, ballType uint32) (interfaces.IBall, float64) {
+func (cell *Cell) FindNearBallByKind(player *bll.BallPlayer, pos *linmath.Vector3, kind consts.BallKind, dir *linmath.Vector3, ballType uint32) (interfaces.IBall, float32) {
 	if kind == consts.BallKind_Food {
 		if ball, dis := cell.FindNearFood(player, pos, ballType, dir); ball != nil {
 			return ball, dis
@@ -125,7 +127,7 @@ func (cell *Cell) ResetMsg() {
 }
 
 func (cell *Cell) AddMsgMove(ball interfaces.IBall) {
-	x, y := ball.GetPos()
+	x, y, _ := ball.GetPos()
 	if msgIndex, ok := cell.msgMovesMap[ball.GetID()]; ok {
 		msg := cell.MsgMoves[msgIndex]
 		msg.X = int32(x * consts.MsgPosScaleRate)

@@ -72,10 +72,10 @@ func (this *SkillBall) GetHit(player *plr.ScenePlayer) {
 
 	if this.ball.GetBallType() == usercmd.BallType_SkillBomb {
 		angleVel := *this.ball.GetPosV()
-		angleVel.DecreaseBy(player.GetPosV())
-		angleVel.NormalizeSelf()
+		angleVel.SubS(*player.GetPosV())
+		angleVel.Normalize()
 
-		angleVel.ScaleBy(0.34)
+		angleVel.MulS(0.34)
 		this.ball.SetSpeed(&angleVel)
 		if this.bevTree != nil {
 			this.bevTree.Close(nil, this.blackboard)

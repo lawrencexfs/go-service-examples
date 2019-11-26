@@ -4,33 +4,34 @@ package bll
 
 import (
 	"battleservice/src/services/base/ape"
-	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/scene/bll/internal"
 	"battleservice/src/services/battle/scene/interfaces"
+
+	"github.com/giant-tech/go-service/base/linmath"
 )
 
 type BallMove struct {
 	BallFood
 	internal.Force
-	speed     util.Vector2        //速度
-	angleVel  util.Vector2        //单位速度向量
+	speed     linmath.Vector3     //速度
+	angleVel  linmath.Vector3     //单位速度向量
 	PhysicObj *ape.CircleParticle //物理体
 }
 
-func (ball *BallMove) GetSpeed() *util.Vector2 {
+func (ball *BallMove) GetSpeed() *linmath.Vector3 {
 	return &ball.speed
 }
 
-func (ball *BallMove) SetSpeed(v *util.Vector2) {
+func (ball *BallMove) SetSpeed(v *linmath.Vector3) {
 	ball.speed.X = v.X
 	ball.speed.Y = v.Y
 }
 
-func (this *BallMove) GetAngleVel() *util.Vector2 {
+func (this *BallMove) GetAngleVel() *linmath.Vector3 {
 	return &this.angleVel
 }
 
-func (ball *BallMove) SqrMagnitudeTo(target interfaces.IBall) float64 {
-	x, y := target.GetPos()
-	return (ball.Pos.X-x)*(ball.Pos.X-x) + (ball.Pos.Y-y)*(ball.Pos.Y-y)
+func (ball *BallMove) SqrMagnitudeTo(target interfaces.IBall) float32 {
+	x, y, z := target.GetPos()
+	return (ball.Pos.X-x)*(ball.Pos.X-x) + (ball.Pos.Y-y)*(ball.Pos.Y-y) + (ball.Pos.Z-z)*(ball.Pos.Z-z)
 }

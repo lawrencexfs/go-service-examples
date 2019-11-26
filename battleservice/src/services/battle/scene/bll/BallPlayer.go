@@ -8,6 +8,8 @@ import (
 	"battleservice/src/services/base/util"
 	"battleservice/src/services/battle/scene/consts"
 	"battleservice/src/services/battle/usercmd"
+
+	"github.com/giant-tech/go-service/base/linmath"
 )
 
 type BallPlayer struct {
@@ -23,7 +25,7 @@ func (this *BallPlayer) InitBallPlayer(player IScenePlayer, ballid uint64) {
 	this.BallMove = BallMove{
 		BallFood: BallFood{
 			id:       ballid,
-			Pos:      util.Vector2{x, y},
+			Pos:      linmath.Vector3{x, 0, y},
 			radius:   consts.DefaultBallSize,
 			BallType: usercmd.BallType_Player,
 		},
@@ -59,13 +61,13 @@ func (this *BallPlayer) Move(perTime float64, frameRate float64) bool {
 	if this.HasForce() == true {
 		force := this.GetForce()
 		pos := this.PhysicObj.GetPostion()
-		this.Pos = util.Vector2{float64(pos.X), float64(pos.Y)}
+		this.Pos = linmath.Vector3{pos.X, 0, pos.Y}
 		this.PhysicObj.SetVelocity(&bmath.Vector2{float32(force.X), float32(force.Y)})
 		return true
 	}
 
 	pos := this.PhysicObj.GetPostion()
-	this.Pos = util.Vector2{float64(pos.X), float64(pos.Y)}
+	this.Pos = linmath.Vector3{pos.X, 0, pos.Y}
 
 	speed := consts.DefaultBallSpeed
 
@@ -77,10 +79,10 @@ func (this *BallPlayer) Move(perTime float64, frameRate float64) bool {
 	}
 
 	speed *= powerMul
-	this.speed = *this.angleVel.MultiMethod(speed)
+	this.speed = this.angleVel.Mul(float32(speed))
 
 	vel := this.speed
-	vel.ScaleBy(frameRate) //几帧执行一次物理tick
+	vel.MulS(float32(frameRate)) //几帧执行一次物理tick
 	if 0 == this.player.GetPower() {
 		this.PhysicObj.SetVelocity(&bmath.Vector2{0, 0})
 	} else {
@@ -108,8 +110,8 @@ func (this *BallPlayer) FixMapEdge() bool {
 		this.speed.Y = -this.speed.Y * 0.1
 	}
 
-	this.rect.X = this.Pos.X
-	this.rect.Y = this.Pos.Y
+	this.rect.X = float64(this.Pos.X)
+	this.rect.Y = float64(this.Pos.Z)
 
 	return true
 }
@@ -165,14 +167,14 @@ func (this *BallPlayer) PreCanEat(food *BallFood) bool {
 func (this *BallPlayer) GetEatRange() float64 {
 	r := consts.DefaultEatFoodRange
 	if r == 0 {
-		return this.radius
+		return float64(this.radius)
 	}
 	return r * this.GetSizeScale()
 }
 
 func (this *BallPlayer) isNear(target *BallFood) bool {
 	distance := this.SqrMagnitudeTo(target)
-	eatRange := this.GetEatRange()
+	eatRange := float32(this.GetEatRange())
 	return distance <= (eatRange+target.radius)*(eatRange+target.radius)
 }
 
@@ -192,7 +194,7 @@ func (this *BallPlayer) GetSizeScale() float64 {
 }
 
 func (this *BallPlayer) SetAngleVelAndNormalize(x, y float64) {
-	this.angleVel.X = x
-	this.angleVel.Y = y
-	this.angleVel.NormalizeSelf()
+	this.angleVel.X = float32(x)
+	this.angleVel.Y = float32(y)
+	this.angleVel.Normalize()
 }

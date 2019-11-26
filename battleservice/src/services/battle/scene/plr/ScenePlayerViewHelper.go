@@ -11,6 +11,8 @@ import (
 	"battleservice/src/services/battle/scene/typekind"
 	"battleservice/src/services/battle/usercmd"
 	"math"
+
+	"github.com/giant-tech/go-service/base/linmath"
 )
 
 type ScenePlayerViewHelper struct {
@@ -170,14 +172,14 @@ func (this *ScenePlayerViewHelper) UpdateViewPlayers(scene IScene, selfBall *bll
 
 	scene.TravsalPlayers(func(player *ScenePlayer) {
 		if selfBall.GetPlayerId() != player.GetEntityID() {
-			_, _, ok1 := this.RealViewRect.ContainsCircle(player.Pos.X, player.Pos.Y, 0)
+			_, _, ok1 := this.RealViewRect.ContainsCircle(float64(player.Pos.X), float64(player.Pos.Y), 0)
 			if ok1 {
 				if player.IsLive {
 					this.Others[player.GetEntityID()] = player
 				}
 			}
 
-			_, _, ok2 := player.RealViewRect.ContainsCircle(selfBall.Pos.X, selfBall.Pos.Y, 0)
+			_, _, ok2 := player.RealViewRect.ContainsCircle(float64(selfBall.Pos.X), float64(selfBall.Pos.Y), 0)
 			if ok2 {
 				this.RoundPlayers = append(this.RoundPlayers, player)
 			}
@@ -186,9 +188,9 @@ func (this *ScenePlayerViewHelper) UpdateViewPlayers(scene IScene, selfBall *bll
 }
 
 //寻找最近的类型目标
-func (this *ScenePlayerViewHelper) FindNearBallByKind(selfBall *bll.BallPlayer, kind consts.BallKind, dir *util.Vector2, cells []*cll.Cell, ballType uint32) (interfaces.IBall, float64) {
+func (this *ScenePlayerViewHelper) FindNearBallByKind(selfBall *bll.BallPlayer, kind consts.BallKind, dir *linmath.Vector3, cells []*cll.Cell, ballType uint32) (interfaces.IBall, float32) {
 	var minball interfaces.IBall
-	var min float64 = 10000
+	var min float32 = 10000
 
 	if kind == consts.BallKind_None && ballType == 0 {
 		return nil, min
@@ -206,7 +208,7 @@ func (this *ScenePlayerViewHelper) FindNearBallByKind(selfBall *bll.BallPlayer, 
 				continue
 			}
 			ball := &o.BallPlayer
-			if dir != nil && util.IsSameDir(dir, ball.GetPosV(), selfBall.GetPosV()) == false {
+			if dir != nil && linmath.IsSameDir(dir, ball.GetPosV(), selfBall.GetPosV()) == false {
 				continue
 			}
 			dis := ball.Pos.SqrMagnitudeTo(pos)
