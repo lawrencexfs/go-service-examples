@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 5bb52e2200c235f4e8fa5077c6e79f1c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 120
+  forceTextureCase: 3
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: FZShuTi
+  fontNames:
+  - FZShuTi
+  fallbackFontReferences: []
+  customCharacters: "\u6B66\u9053\u5927\u4E71\u6597"
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

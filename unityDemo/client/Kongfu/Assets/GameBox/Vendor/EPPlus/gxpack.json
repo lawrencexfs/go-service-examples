@@ -1,0 +1,11 @@
+{
+    "name": "EPPlus",
+    "description": "Excel表格读写模块",
+    "keywords": ["Excel", "EPPlus"],
+    "icon": "http://gitlab.ztgame.com/tech/Client/GameBox.ThirdLib/Releases/EPPlus/raw/master/favicon.png",
+    "tags" : ["Excel", "EPPlus"],
+    "license": "MIT",
+    "type": "lib",
+    "required": {
+    }
+}

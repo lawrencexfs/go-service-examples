@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -295826295, guid: fd0f5ca810f52fe43b6875aec6f949f7, type: 3}
+  m_Name: NameMap
+  m_EditorClassIdentifier: 
+  m_names:
+  - LoadName: NameMap
+    BundleName: namemap
+    LoadPath: Assets/LoadableResources/NameMap.asset
+  - LoadName: Audio/Attack
+    BundleName: 1906b235_attack
+    LoadPath: Assets/LoadableResources/Audio/Attack.wav
+  - LoadName: Audio/Attack01
+    BundleName: b412d1ea_attack01
+    LoadPath: Assets/LoadableResources/Audio/Attack01.wav
+  - LoadName: Audio/Background
+    BundleName: 5f297588_background
+    LoadPath: Assets/LoadableResources/Audio/Background.mp3
+  - LoadName: Audio/Pickup
+    BundleName: 126b9288_pickup
+    LoadPath: Assets/LoadableResources/Audio/Pickup.mp3
+  - LoadName: Character/Player
+    BundleName: 8c06a023_player
+    LoadPath: Assets/LoadableResources/Character/Player.prefab
+  - LoadName: Config/Configuration
+    BundleName: 6d50bfe6_configuration
+    LoadPath: Assets/LoadableResources/Config/Configuration.bytes
+  - LoadName: Effect/AttackEffect0
+    BundleName: effects
+    LoadPath: Assets/LoadableResources/Effect/AttackEffect0.prefab
+  - LoadName: Item/Energy
+    BundleName: d74cc574_energy
+    LoadPath: Assets/LoadableResources/Item/Energy.prefab
+  - LoadName: Item/Sculpture
+    BundleName: 6dbd3981_sculpture
+    LoadPath: Assets/LoadableResources/Item/Sculpture.prefab
+  - LoadName: Map
+    BundleName: a5ec53ed_map
+    LoadPath: Assets/LoadableResources/Map.prefab
+  - LoadName: UI/Battle
+    BundleName: 2702b2be_battle
+    LoadPath: Assets/LoadableResources/UI/Battle.prefab
+  - LoadName: UI/Death
+    BundleName: 902b4da6_death
+    LoadPath: Assets/LoadableResources/UI/Death.prefab
+  - LoadName: UI/Loading
+    BundleName: 06abbecf_loading
+    LoadPath: Assets/LoadableResources/UI/Loading.prefab
+  - LoadName: UI/Login
+    BundleName: 976c6ea7_login
+    LoadPath: Assets/LoadableResources/UI/Login.prefab
+  - LoadName: UI/Message
+    BundleName: 73dfcd15_message
+    LoadPath: Assets/LoadableResources/UI/Message.prefab
+  - LoadName: MainScene
+    BundleName: 99c9720a_mainscene
+    LoadPath: Assets/Scenes/MainScene.unity
+  - LoadName: allshaders
+    BundleName: all_shaders
+    LoadPath: 
+  m_variantPaths: []
+  m_variantBundles: []

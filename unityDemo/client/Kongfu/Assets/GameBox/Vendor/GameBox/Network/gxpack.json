@@ -1,0 +1,15 @@
+{
+    "name": "GameBox.Network",
+    "description": "GameBox Network是GameBox网络应用层模块，方便开发者快速接入网络通信，与服务器进行交互。",
+    "keywords": ["GameBox", "Network", "网络"],
+    "icon": "http://gitlab.ztgame.com/tech/Client/GameBox/Releases/GameBox.Pioneer/raw/master/favicon.png",
+    "tags" : ["GameBox", "Network", "网络"],
+    "license": "MIT",
+    "type": "lib",
+    "required":
+    {
+        "GameBox.Core": ">=2.0.0",
+        "GameBox.Socket": ">=0.1.0",
+        "GameBox.Channel": ">=0.1.0"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "name": "GameBox.Core",
+    "description": "GameBox Core 是一套渐进式的服务提供者框架。框架为客户端提供多个实现，并把他们从多个实现中解耦出来。服务提供者的改变对它们的客户端是透明的，这样提供了更好的可扩展性。她不仅易于上手，还便于与第三方库或既有项目整合。",
+    "keywords": [ "gamebox", "core" , "framework" ],
+    "icon": "http://gitlab.ztgame.com/tech/Client/GameBox/Releases/GameBox.Core/raw/master/favicon.png",
+    "tags" : ["gamebox", "core" , "framework"],
+    "license": "MIT",
+    "type": "lib",
+    "required": {}
+}

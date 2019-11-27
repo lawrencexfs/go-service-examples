@@ -1,0 +1,13 @@
+{
+    "name": "GameBox.Socket",
+    "description": "GameBox Socket是GameBox基础Socket模块",
+    "keywords": ["GameBox", "Socket"],
+    "icon": "http://gitlab.ztgame.com/tech/Client/GameBox/Releases/GameBox.Socket/raw/master/favicon.png",
+    "tags" : ["GameBox", "Socket"],
+    "license": "MIT",
+    "type": "lib",
+    "required":
+    {
+        "GameBox.Core": ">=2.0.0"
+    }
+}

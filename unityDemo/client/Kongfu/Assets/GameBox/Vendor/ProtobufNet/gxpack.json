@@ -1,0 +1,12 @@
+{
+    "name": "ProtobufNet",
+    "description": "ProtobufNet是谷歌Protobuf C#类库",
+    "keywords": ["GameBox", "ProtobufNet"],
+    "icon": "http://gitlab.ztgame.com/tech/Client/GameBox.ThirdLib/Releases/ProtobufNet/raw/master/favicon.png",
+    "tags" : ["GameBox", "ProtobufNet"],
+    "license": "MIT",
+    "type": "lib",
+    "required":
+    {
+    }
+}

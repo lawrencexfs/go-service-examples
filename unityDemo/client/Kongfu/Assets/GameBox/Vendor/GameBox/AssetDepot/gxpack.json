@@ -1,0 +1,15 @@
+{
+    "name": "GameBox.AssetDepot",
+    "description": "GameBox AssetDepot是运行时资产管理",
+    "keywords": ["GameBox", "Asset"],
+    "icon": "http://gitlab.ztgame.com/tech/Client/GameBox/Releases/GameBox.AssetDepot/raw/master/favicon.png",
+    "tags" : ["GameBox", "Asset"],
+    "license": "MIT",
+    "type": "lib",
+    "required":
+    {
+        "GameBox.Core": "~2.0.0",
+        "GameBox.LoopDriver": "~0.1.1",
+        "GameBox.MonoDriver": "~0.4.2"
+    }
+}

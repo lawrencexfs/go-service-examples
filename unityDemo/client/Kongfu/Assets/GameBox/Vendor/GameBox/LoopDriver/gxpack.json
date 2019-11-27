@@ -1,0 +1,11 @@
+{
+    "name": "GameBox.LoopDriver",
+    "description": "GameBox LoopDriver定义了基础逻辑循环所需的各种API入口",
+    "keywords": ["GameBox", "Loop", "Driver"],
+    "icon": "http://gitlab.ztgame.com/tech/Client/GameBox/Releases/GameBox.LoopDriver/raw/master/favicon.png",
+    "tags" : ["GameBox", "Loop", "Driver"],
+    "license": "MIT",
+    "type": "lib",
+    "required": {
+	}
+}

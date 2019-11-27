@@ -1,0 +1,1 @@
+go test example2_test.go -v -test.bench=".*" -count=1

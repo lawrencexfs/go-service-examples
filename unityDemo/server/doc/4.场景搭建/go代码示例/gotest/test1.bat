@@ -1,0 +1,1 @@
+go test -v example1_test.go
