@@ -1,5 +1,6 @@
 # 武道大乱斗（Kongfu）
 
+todo: 此例子的服务器会改成battleservice
 
 服务器文档见：[server/doc/README](server/doc/README.md)
 
