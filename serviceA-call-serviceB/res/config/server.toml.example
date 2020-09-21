@@ -22,7 +22,7 @@ LogConfig = "../res/config/logConfig.xml"
 
 #底层App用到的配置
 [ServerApp]
-#实际部署生产环境时,此处ip需要实际的局域网ip
+#实际部署生产环境时,此处ip需要实际的局域网ip,这个监听地址主要用于service之间的服务发现
 ListenAddr = "127.0.0.1:17010"
 SvrMaxConn = 10000
 IsEncrypt = false
@@ -34,6 +34,7 @@ Services = "serviceA, serviceB"
 
 
 [serviceA]
+#服务器真正的监听地址，比如lobby service要监听客户端的连接
 SvrListenAddr = ":17000"
 OuterIP="127.0.0.1"
 VerifyMsgID = 0
@@ -41,8 +42,8 @@ VerifyMsgID = 0
 TickInterval = 1000 
 
 [serviceB]
-ListenAddr = ":18001"
-OuterIP="127.0.0.1"
+#ListenAddr = ":18001"
+#OuterIP="127.0.0.1"
 
 
 [DB]
