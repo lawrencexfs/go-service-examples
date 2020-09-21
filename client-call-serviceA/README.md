@@ -12,6 +12,7 @@
 - go mod支持，能够自动下载需要的三方库，和框架的底层库
 
 ### 本例子功能
+- client是go语言写的client的例子
 - client连接serviceA(app只有servcieA一个service)
 - client往服务器发送登录消息，登录之后服务器会创建entity,并且通知client创建entity
 - client entity往服务器发送hello的rpc消息, 服务器entity回一个hello的rpc消息
