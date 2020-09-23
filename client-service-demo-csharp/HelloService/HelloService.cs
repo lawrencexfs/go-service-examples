@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Configuration;
 using System.Text;
 
 namespace HelloService
@@ -25,9 +26,11 @@ namespace HelloService
     // Client ==> LobbyServer
     public class LoginReq
     {
+        public string account;
         public string token;
         public ulong uid;
         public string version;
+        public byte[] extdata;
     }
 
     // LoginResp 登录返回
@@ -35,6 +38,8 @@ namespace HelloService
     public class LoginResp
     {
         public ReturnType result;
+        public string errstr;
+        public byte[] extdata;
     }
 
     public class HelloService : GBoxService
@@ -73,6 +78,7 @@ namespace HelloService
         private void sendLoginMsg(string token, ulong uid)
         {
             var loginreq = new LoginReq();
+            loginreq.account = "fengge";
             loginreq.token = token;
             loginreq.uid = uid;
             loginreq.version = "1.0.0.0";

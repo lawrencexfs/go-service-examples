@@ -52,7 +52,7 @@ namespace GameBox.Service
 
             for (var i = 0; i < args.Length; i++)
             {
-                doPack(stream, args[i]);
+                doPack(stream, args[i].GetType(), args[i]);
             }
 
             msgBuf = new byte[stream.WPos];
@@ -67,77 +67,77 @@ namespace GameBox.Service
             stream.WPos = 0;
             stream.RPos = 0;
 
-            doPack(stream, obj);
+            doPack(stream, obj.GetType(), obj);
 
             buf = new byte[stream.WPos];
             Buffer.BlockCopy(stream.Buf, 0, buf, 0, stream.WPos);
             MMStreamPool.Put(stream);
         }
 
-        private static void doPack(MMStream stream, object arg)
+        private static void doPack(MMStream stream, Type type, object arg)
         {
-            if (arg == null)
-                return;
+            //if (arg == null)
+            //    return;
             //Debug.Log("doPack arg.GetType():" + arg.GetType() + " arg.GetType().IsValueType:" + arg.GetType().IsValueType + " arg.GetType().IsArray:" + arg.GetType().IsArray);
-            if (arg is byte)
+            if (type == typeof(byte))
             {
                 stream.WriteByte((byte)arg);
             }
-            else if (arg is sbyte)
+            else if (type == typeof(sbyte))
             {
                 stream.WriteByte((byte)arg);
             }
-            else if (arg is ushort)
+            else if (type == typeof(ushort))
             {
                 stream.WriteUInt16((ushort)arg);
             }
-            else if (arg is uint)
+            else if (type == typeof(uint))
             {
                 stream.WriteUInt32((uint)arg);
             }
-            else if (arg is ulong)
+            else if (type == typeof(ulong))
             {
                 stream.WriteUInt64((ulong)arg);
             }
-            else if (arg is short)
+            else if (type == typeof(short))
             {
                 stream.WriteInt16((short)arg);
             }
-            else if (arg is int)
+            else if (type == typeof(int))
             {
                 stream.WriteInt32((int)arg);
             }
-            else if (arg is long)
+            else if (type == typeof(long))
             {
                 stream.WriteInt64((long)arg);
             }
-            else if (arg is float)
+            else if (type == typeof(float))
             {
                 stream.WriteFloat((float)arg);
             }
-            else if (arg is double)
+            else if (type == typeof(double))
             {
                 stream.WriteDouble((double)arg);
             }
-            else if (arg is string)
+            else if (type == typeof(string))
             {
                 stream.WriteString((string)arg);
             }
-            else if (arg.GetType() == typeof(byte[]))
+            else if (type == typeof(byte[]))
             {
                 stream.WriteBytes((byte[])arg);
             }
-            else if (arg.GetType() == typeof(sbyte[]))
+            else if (type == typeof(sbyte[]))
             {
                 var buff = new byte[((sbyte[])arg).Length];
                 Array.Copy((sbyte[])arg, buff, buff.Length);
                 stream.WriteBytes(buff);
             }
-            else if (arg is bool)
+            else if (type == typeof(bool))
             {
                 stream.WriteBool((bool)arg);
             }
-            else if (arg is global::ProtoBuf.IExtensible)
+            else if (typeof(ProtoBuf.IExtensible).IsAssignableFrom(type))
             {
                 //stream.WriteString(arg.GetType().FullName);
 
@@ -153,7 +153,7 @@ namespace GameBox.Service
                 //Buffer.BlockCopy(stream.Buf, 0, buf, 0, stream.WPos);
                 //stream.WriteBytes(buf);
             }
-            else if (arg is IDictionary)
+            else if (typeof(IDictionary).IsAssignableFrom(type))
             {
                 var dict = (arg as IDictionary);
                 stream.WriteUInt16((ushort)dict.Count);
@@ -164,28 +164,28 @@ namespace GameBox.Service
                     var itemKey = item.GetType().GetProperty("Key").GetValue(item, null);
                     var itemValue = item.GetType().GetProperty("Value").GetValue(item, null);
 
-                    doPack(stream, itemKey);
-                    doPack(stream, itemValue);
+                    doPack(stream, itemKey.GetType(), itemKey);
+                    doPack(stream, itemValue.GetType(), itemValue);
                 }
                 //var buf = new byte[stream.WPos];
                 //Buffer.BlockCopy(stream.Buf, 0, buf, 0, stream.WPos);
                 //stream.WriteBytes(buf);
             }
-            else if (arg is IList)
+            else if (typeof(IList).IsAssignableFrom(type))
             {
                 var list = (arg as IList);
                 stream.WriteUInt16((ushort)list.Count);
                 for (var i = 0; i < list.Count; i++)
                 {
                     var listitem = list[i];
-                    doPack(stream, listitem);
+                    doPack(stream, listitem.GetType(), listitem);
                 }
 
                 //var buf = new byte[stream.WPos];
                 //Buffer.BlockCopy(newstream.Buf, 0, buf, 0, newstream.WPos);
                 //stream.WriteBytes(buf);
             }
-            else if (arg.GetType().IsArray)
+            else if (type.IsArray)
             {
                 var fields = arg.GetType().GetFields();
 
@@ -195,18 +195,18 @@ namespace GameBox.Service
                 {
                     var field = fields[i];
                     //var index = arg.GetType().IsArray ? new object[] { i } : null;
-                    doPack(stream, field.GetValue(arg));
+                    doPack(stream, field.FieldType, field.GetValue(arg));
                 }
             }
-            else if (arg.GetType().IsEnum)
+            else if (type.IsEnum)
             {
                 var fields = arg.GetType().GetFields();
 
                 var field = fields[0];
                 //var index = arg.GetType().IsArray ? new object[] { i } : null;
-                doPack(stream, field.GetValue(arg));
+                doPack(stream, field.FieldType, field.GetValue(arg));
             }
-            else if (arg.GetType().IsValueType || arg.GetType().IsClass)
+            else if (type.IsValueType || type.IsClass)
             {
                 //if (arg.GetType().IsArray)
                 //{
@@ -229,7 +229,7 @@ namespace GameBox.Service
                 {
                     var field = fields[i];
                     //var index = arg.GetType().IsArray ? new object[] { i } : null;
-                    doPack(stream, field.GetValue(arg));
+                    doPack(stream, field.FieldType, field.GetValue(arg));
                 }
 
                 //var buf = new byte[newstream.WPos];
