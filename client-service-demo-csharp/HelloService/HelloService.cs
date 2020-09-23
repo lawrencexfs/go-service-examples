@@ -78,7 +78,7 @@ namespace HelloService
         private void sendLoginMsg(string token, ulong uid)
         {
             var loginreq = new LoginReq();
-            loginreq.account = "fengge";
+            loginreq.account = "fenggege";
             loginreq.token = token;
             loginreq.uid = uid;
             loginreq.version = "1.0.0.0";
