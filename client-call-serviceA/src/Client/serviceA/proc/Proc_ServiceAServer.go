@@ -3,10 +3,10 @@ package proc
 import (
 	assert "github.com/aurelien-rainone/assertgo"
 	log "github.com/cihub/seelog"
-	"github.com/giant-tech/go-service/base/net/inet"
 	"github.com/giant-tech/go-service/framework/idata"
 	"github.com/giant-tech/go-service/framework/msgdef"
 	"github.com/giant-tech/go-service/framework/msghandler"
+	"github.com/giant-tech/go-service/framework/net/inet"
 )
 
 // Interface to clt.Client.

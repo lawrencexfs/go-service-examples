@@ -5,11 +5,11 @@ import (
 
 	"github.com/cihub/seelog"
 	log "github.com/cihub/seelog"
-	"github.com/giant-tech/go-service/base/net/inet"
 	"github.com/giant-tech/go-service/framework/errormsg"
 	"github.com/giant-tech/go-service/framework/idata"
 	"github.com/giant-tech/go-service/framework/iserver"
 	"github.com/giant-tech/go-service/framework/msgdef"
+	"github.com/giant-tech/go-service/framework/net/inet"
 	"github.com/giant-tech/go-service/logic/gatewaybase"
 	"github.com/giant-tech/go-service/logic/gatewaybase/igateway"
 	"github.com/giant-tech/go-service/logic/gatewaybase/userbase"

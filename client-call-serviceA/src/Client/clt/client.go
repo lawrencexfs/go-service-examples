@@ -6,12 +6,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/giant-tech/go-service/base/net/client"
-	"github.com/giant-tech/go-service/base/net/inet"
 	"github.com/giant-tech/go-service/base/serializer"
 	"github.com/giant-tech/go-service/framework/idata"
 	"github.com/giant-tech/go-service/framework/msgdef"
 	"github.com/giant-tech/go-service/framework/msghandler"
+	"github.com/giant-tech/go-service/framework/net/client"
+	"github.com/giant-tech/go-service/framework/net/inet"
 
 	"go.uber.org/atomic"
 

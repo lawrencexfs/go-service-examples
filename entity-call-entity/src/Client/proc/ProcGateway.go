@@ -1,9 +1,9 @@
 package proc
 
 import (
-	"github.com/giant-tech/go-service/base/net/inet"
 	"github.com/giant-tech/go-service/framework/idata"
 	"github.com/giant-tech/go-service/framework/msghandler"
+	"github.com/giant-tech/go-service/framework/net/inet"
 
 	assert "github.com/aurelien-rainone/assertgo"
 	log "github.com/cihub/seelog"

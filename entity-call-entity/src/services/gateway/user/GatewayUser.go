@@ -2,7 +2,7 @@ package user
 
 import (
 	"github.com/cihub/seelog"
-	"github.com/giant-tech/go-service/base/net/inet"
+	"github.com/giant-tech/go-service/framework/net/inet"
 	"github.com/giant-tech/go-service/logic/gatewaybase/igateway"
 	"github.com/giant-tech/go-service/logic/gatewaybase/userbase"
 
