@@ -34,6 +34,8 @@ github.com/giant-tech/go-service v0.0.7 h1:Z/cRcc62vuiFevl2CrfaPVgLfHu9Sb1SihqYd
 github.com/giant-tech/go-service v0.0.7/go.mod h1:H6jz1Jq6E0ht3gF889tXulh37ROTwUSLrhAuRxO2vb8=
 github.com/giant-tech/go-service v0.0.8 h1:vjofZed04Z+Lp53DvSJlnh/DYhqZchopNeXqjFXFEOk=
 github.com/giant-tech/go-service v0.0.8/go.mod h1:H6jz1Jq6E0ht3gF889tXulh37ROTwUSLrhAuRxO2vb8=
+github.com/giant-tech/go-service v0.0.9 h1:GxOrGRlepKuDNYWVks5NfmYWJgqmualJNq92d6GwK2s=
+github.com/giant-tech/go-service v0.0.9/go.mod h1:H6jz1Jq6E0ht3gF889tXulh37ROTwUSLrhAuRxO2vb8=
 github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8 h1:DujepqpGd1hyOd7aW59XpK7Qymp8iy83xq74fLr21is=
 github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8/go.mod h1:xkRDCp4j0OGD1HRkm4kmhM+pmpv3AKq5SU7GMg4oO/Q=
 github.com/go-kit/kit v0.8.0/go.mod h1:xBxKIO96dXMWWy0MnWVtmwkA9/13aqxPnvrjFYMA2as=

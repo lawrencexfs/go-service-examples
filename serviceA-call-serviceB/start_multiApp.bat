@@ -2,16 +2,6 @@
 
 call stop.bat
 
-rem set ZEUS=zeus_v2@v0.0.1
-set ZEUS=zeus
-if not exist %GOPATH%/pkg/mod/github.com/tech/public/go-service/%ZEUS% (
-	echo "get zeus start" 
-	set GOPROXY=
-	git config http.extraheader "PRIVATE-TOKEN: AiyKkDd3XFzxmnQjXGgt"
-	go get -v -insecure github.com/tech/public/go-service/%ZEUS%
-	echo "get zeus stop"
-)
-
 set GOPROXY=https://goproxy.io
 set GOBIN=%~dp0bin
 
