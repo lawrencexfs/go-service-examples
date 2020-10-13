@@ -1,0 +1,18 @@
+2020-10-12 17:31:58.974 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-10-12 17:31:58.974 [INF] [app.go:205] services[serviceA]
+2020-10-12 17:31:59.139 [DBG] [app.go:126] App.init, appID: 4294967390
+2020-10-12 17:31:59.14 [INF] [serviceA.go:27] ServiceA OnInit
+2020-10-12 17:31:59.14 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2020-10-12 17:31:59.141 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2020-10-12 17:31:59.141 [DBG] [localService.go:68] service check : serviceA
+2020-10-12 17:31:59.141 [DBG] [localService.go:96] service check success: serviceA
+2020-10-12 17:31:59.141 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA sid: 4294967391
+2020-10-12 17:31:59.141 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967391 2 4294967390 map[]}
+2020-10-12 17:31:59.145 [DBG] [localService.go:218] run service , serviceName: serviceA, serviceType: 2, ServerID: 4294967391 tickMS: 2000
+2020-10-12 17:32:02.308 [DBG] [ProcGateway.go:46] Begin MsgProcLoginReq, UID: 1, sess: 0xc000251980
+2020-10-12 17:32:02.308 [INF] [serviceA.go:68] ServiceA OnLoginHandler, msg.UID = 1
+2020-10-12 17:32:02.308 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName:  , selectPropsmap[coin:1 exp:1 level:1 rating:1]
+2020-10-12 17:32:07.31 [DBG] [dbservice.go:53] connect failed,no reachable servers
+2020-10-12 17:32:07.31 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-10-12 17:32:07.312 [DBG] [ServiceAUser.go:19] ServiceAUser.OnInit, entityID: 1
+2020-10-12 17:32:07.312 [DBG] [ServiceAUserRpcProc.go:12] RPCHello, name: hello world, id: 1

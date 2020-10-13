@@ -1,0 +1,55 @@
+2020-09-18 17:21:17.623 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-09-18 17:21:17.624 [INF] [app.go:205] services[gateway team]
+2020-09-18 17:21:17.663 [DBG] [app.go:126] App.init, appID: 4294967297
+2020-09-18 17:21:17.663 [INF] [gatewayService.go:28] GatewayService OnInit
+2020-09-18 17:21:17.663 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2020-09-18 17:21:17.663 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2020-09-18 17:21:17.664 [DBG] [localService.go:68] service check : gateway
+2020-09-18 17:21:17.664 [DBG] [localService.go:96] service check success: gateway
+2020-09-18 17:21:17.664 [DBG] [localServiceMgr.go:56] App InitLocalService, name: gateway sid: 4294967298
+2020-09-18 17:21:17.664 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967298 2 4294967297 map[]}
+2020-09-18 17:21:17.664 [DBG] [teamService.go:22] ServiceBService.OnInit
+2020-09-18 17:21:17.664 [DBG] [localService.go:68] service check : team
+2020-09-18 17:21:17.664 [DBG] [localService.go:96] service check success: team
+2020-09-18 17:21:17.664 [DBG] [localServiceMgr.go:56] App InitLocalService, name: team sid: 4294967299
+2020-09-18 17:21:17.664 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967299 3 4294967297 map[]}
+2020-09-18 17:21:17.666 [DBG] [localService.go:218] run service , serviceName: gateway, serviceType: 2, ServerID: 4294967298 tickMS: 2000
+2020-09-18 17:21:17.667 [DBG] [localService.go:218] run service , serviceName: team, serviceType: 3, ServerID: 4294967299 tickMS: 2000
+2020-09-18 17:21:17.667 [INF] [gatewayService.go:58] GatewayService OnConnected, infovec = [0xc00010a700]
+2020-09-18 17:21:20.448 [DBG] [ProcGateway.go:46] Begin MsgProcLoginReq, UID: 1, sess: 0xc000210440
+2020-09-18 17:21:20.448 [INF] [gatewayService.go:65] GatewayService OnLoginHandler, msg.UID = 1
+2020-09-18 17:21:20.449 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName:  , selectPropsmap[Coin:1 Friends:1 Hero:1 Level:1 rating:1]
+2020-09-18 17:21:25.451 [DBG] [dbservice.go:53] connect failed,no reachable servers
+2020-09-18 17:21:25.451 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-09-18 17:21:25.455 [DBG] [GatewayUser.go:22] GatewayUser.OnInit, dbid: 1
+2020-09-18 17:21:25.456 [DBG] [GatewayUserRpc.go:28] RPCHello, name: hello world, id: 1
+2020-09-18 17:21:25.456 [DBG] [GatewayUserRpc.go:70] RPCCreateTeam, name: TestTeam
+2020-09-18 17:21:25.458 [DBG] [GatewayUserRpc.go:38] RPCModifyAttr, name: change attr, index: 1 val: 2
+2020-09-18 17:21:25.461 [DBG] [teamServiceRPC.go:17] RPCCreateTeam: 
+2020-09-18 17:21:25.467 [DBG] [Team.go:26] TeamName: test
+2020-09-18 17:21:25.467 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName:  , selectPropsmap[Level:1]
+2020-09-18 17:21:30.461 [DBG] [dbservice.go:53] connect failed,no reachable servers
+2020-09-18 17:21:30.461 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-09-18 17:21:30.461 [DBG] [GatewayUserRpc.go:63] RPCModifyAttr, name: change attr, index: 1 val: 2 ,selectProps: map[Friends:1] ,ret: map[] ,friends: <nil> ,heros: <nil>
+2020-09-18 17:21:30.465 [DBG] [Entity_Props.go:182] SyncProps len: 2
+2020-09-18 17:21:30.465 [DBG] [Entity_Props.go:131] SendPropsSyncMsg, syncType: 3
+2020-09-18 17:21:30.465 [ERR] [Entity.go:652] AsyncCall GetEntitySrvID error: Entity srvType [3] not existed, methodName: SyncProps
+2020-09-18 17:21:30.469 [DBG] [Entity_Props.go:290] SyncProps len: 2
+2020-09-18 17:21:30.471 [INF] [Entity_Props.go:301] prop saveMap: map[Friends:<nil> Level:2]
+2020-09-18 17:21:30.471 [DBG] [dbservice.go:53] connect failed,no reachable servers
+2020-09-18 17:21:30.478 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-09-18 17:21:30.478 [DBG] [TeamUser.go:25] PlayerName: Jim
+2020-09-18 17:21:30.478 [DBG] [Team.go:33] Team.OnLoop
+2020-09-18 17:21:30.478 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-09-18 17:21:31.668 [DBG] [Team.go:33] Team.OnLoop
+2020-09-18 17:21:31.668 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-09-18 17:21:33.668 [DBG] [Team.go:33] Team.OnLoop
+2020-09-18 17:21:33.668 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-09-18 17:21:35.471 [DBG] [dbservice.go:53] connect failed,no reachable servers
+2020-09-18 17:21:35.471 [ERR] [mongodboperate.go:126] session nil, not connect or auth
+2020-09-18 17:21:35.471 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2020-09-18 17:21:35.476 [DBG] [GatewayUserRpc.go:83] RPCCreateTeamResult, teamID: 4294967300
+2020-09-18 17:21:35.668 [DBG] [Team.go:33] Team.OnLoop
+2020-09-18 17:21:35.668 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-09-18 17:21:37.667 [DBG] [Team.go:33] Team.OnLoop
+2020-09-18 17:21:37.667 [DBG] [TeamUser.go:31] TeamUser.OnLoop

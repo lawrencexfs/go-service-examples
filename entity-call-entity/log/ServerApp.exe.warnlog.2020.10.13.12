@@ -1,0 +1,8 @@
+2020-10-13 12:01:59.354 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-10-13 12:02:04.358 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-10-13 12:02:04.364 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-10-13 12:02:09.365 [ERR] [mongodboperate.go:126] session nil, not connect or auth
+2020-10-13 12:02:25.241 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2020-10-13 12:02:25.244 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2020-10-13 12:10:25.424 [ERR] [session.go:299] recvLoop error error: need verify message ID 1, but got 5, remoteAddr: 127.0.0.1:51380,  localAddr: 127.0.0.1:17000, sessionid: 1
+2020-10-13 12:32:38.897 [ERR] [session.go:299] recvLoop error error: need verify message ID 1, but got 5, remoteAddr: 127.0.0.1:61154,  localAddr: 127.0.0.1:17000, sessionid: 1

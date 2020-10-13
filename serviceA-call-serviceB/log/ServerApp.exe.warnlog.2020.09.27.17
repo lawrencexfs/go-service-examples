@@ -1,0 +1,1 @@
+2020-09-27 17:58:27.093 [ERR] [session.go:299] recvLoop error error: read tcp 127.0.0.1:54384->127.0.0.1:17012: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:17012,  localAddr: 127.0.0.1:54384, sessionid: 1

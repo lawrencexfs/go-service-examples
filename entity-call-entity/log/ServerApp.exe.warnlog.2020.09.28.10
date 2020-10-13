@@ -1,0 +1,1 @@
+2020-09-28 10:55:25.174 [ERR] [mongodboperate.go:89] session nil, not connect or auth

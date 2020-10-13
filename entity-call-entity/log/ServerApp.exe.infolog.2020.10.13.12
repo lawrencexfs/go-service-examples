@@ -1,0 +1,122 @@
+2020-10-13 12:01:51.027 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-10-13 12:01:51.027 [INF] [app.go:205] services[gateway team]
+2020-10-13 12:01:51.094 [DBG] [app.go:126] App.init, appID: 4294967297
+2020-10-13 12:01:51.094 [INF] [gatewayService.go:28] GatewayService OnInit
+2020-10-13 12:01:51.094 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2020-10-13 12:01:51.096 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2020-10-13 12:01:51.096 [DBG] [localService.go:68] service check : gateway
+2020-10-13 12:01:51.096 [DBG] [localService.go:96] service check success: gateway
+2020-10-13 12:01:51.096 [DBG] [localServiceMgr.go:56] App InitLocalService, name: gateway sid: 4294967298
+2020-10-13 12:01:51.096 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967298 2 4294967297 map[]}
+2020-10-13 12:01:51.097 [DBG] [teamService.go:22] ServiceBService.OnInit
+2020-10-13 12:01:51.098 [DBG] [localService.go:68] service check : team
+2020-10-13 12:01:51.098 [DBG] [localService.go:96] service check success: team
+2020-10-13 12:01:51.098 [DBG] [localServiceMgr.go:56] App InitLocalService, name: team sid: 4294967299
+2020-10-13 12:01:51.098 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967299 3 4294967297 map[]}
+2020-10-13 12:01:51.101 [DBG] [localService.go:218] run service , serviceName: team, serviceType: 3, ServerID: 4294967299 tickMS: 2000
+2020-10-13 12:01:51.103 [DBG] [localService.go:218] run service , serviceName: gateway, serviceType: 2, ServerID: 4294967298 tickMS: 2000
+2020-10-13 12:01:51.103 [INF] [gatewayService.go:58] GatewayService OnConnected, infovec = [0xc000113020]
+2020-10-13 12:01:54.349 [DBG] [ProcGateway.go:46] Begin MsgProcLoginReq, UID: 1, sess: 0xc000406480
+2020-10-13 12:01:54.349 [INF] [gatewayService.go:65] GatewayService OnLoginHandler, msg.UID = 1
+2020-10-13 12:01:54.349 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName:  , selectPropsmap[Coin:1 Friends:1 Hero:1 Level:1 rating:1]
+2020-10-13 12:01:59.354 [DBG] [dbservice.go:53] connect failed,no reachable servers
+2020-10-13 12:01:59.354 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-10-13 12:01:59.355 [DBG] [GatewayUser.go:22] GatewayUser.OnInit, dbid: 1
+2020-10-13 12:01:59.355 [DBG] [GatewayUserRpc.go:28] RPCHello, name: hello world, id: 1
+2020-10-13 12:01:59.355 [DBG] [GatewayUserRpc.go:70] RPCCreateTeam, name: TestTeam
+2020-10-13 12:01:59.355 [DBG] [teamServiceRPC.go:17] RPCCreateTeam: 
+2020-10-13 12:01:59.356 [DBG] [Team.go:26] TeamName: test
+2020-10-13 12:01:59.357 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName:  , selectPropsmap[Level:1]
+2020-10-13 12:01:59.363 [DBG] [GatewayUserRpc.go:38] RPCModifyAttr, name: change attr, index: 1 val: 2
+2020-10-13 12:02:04.358 [DBG] [dbservice.go:53] connect failed,no reachable servers
+2020-10-13 12:02:04.358 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-10-13 12:02:04.359 [DBG] [TeamUser.go:25] PlayerName: Jim
+2020-10-13 12:02:04.359 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:04.359 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:04.364 [DBG] [dbservice.go:53] connect failed,no reachable servers
+2020-10-13 12:02:04.364 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-10-13 12:02:04.364 [DBG] [GatewayUserRpc.go:63] RPCModifyAttr, name: change attr, index: 1 val: 2 ,selectProps: map[Friends:1] ,ret: map[] ,friends: <nil> ,heros: <nil>
+2020-10-13 12:02:04.364 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2020-10-13 12:02:04.365 [DBG] [GatewayUserRpc.go:83] RPCCreateTeamResult, teamID: 4294967300
+2020-10-13 12:02:04.365 [DBG] [Entity_Props.go:182] SyncProps len: 2
+2020-10-13 12:02:04.365 [DBG] [Entity_Props.go:131] SendPropsSyncMsg, syncType: 3
+2020-10-13 12:02:04.365 [DBG] [Entity_Props.go:290] SyncProps len: 2
+2020-10-13 12:02:04.365 [INF] [Entity_Props.go:301] prop saveMap: map[Friends:<nil> Level:2]
+2020-10-13 12:02:04.366 [DBG] [Entity_MsgProc.go:17] RPCSyncProps, ID: 1
+2020-10-13 12:02:05.102 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:05.102 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:07.102 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:07.102 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:09.102 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:09.102 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:09.365 [DBG] [dbservice.go:53] connect failed,no reachable servers
+2020-10-13 12:02:09.365 [ERR] [mongodboperate.go:126] session nil, not connect or auth
+2020-10-13 12:02:11.102 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:11.102 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:13.102 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:13.102 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:15.102 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:15.102 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:17.102 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:17.102 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:19.102 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:19.102 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:21.103 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:21.103 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:23.102 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:23.102 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:25.102 [DBG] [Team.go:33] Team.OnLoop
+2020-10-13 12:02:25.102 [DBG] [TeamUser.go:31] TeamUser.OnLoop
+2020-10-13 12:02:25.238 [DBG] [app.go:159] App.destory
+2020-10-13 12:02:25.238 [DBG] [teamService.go:36] ServiceBService.OnDestroy
+2020-10-13 12:02:25.239 [DBG] [Team.go:38] OnDestroy
+2020-10-13 12:02:25.24 [DBG] [TeamUser.go:35] OnDestroy
+2020-10-13 12:02:25.24 [INF] [gatewayService.go:47] GatewayService OnDestroy
+2020-10-13 12:02:25.24 [INF] [GatewayBase.go:60] GatewayBase OnDestroy
+2020-10-13 12:02:25.24 [DBG] [Entity_MsgProc.go:10] RPCSyncSrvInfo, ID: 1
+2020-10-13 12:02:25.241 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2020-10-13 12:02:25.242 [DBG] [serviceProxyMgr.go:60] SProxyMgr, DelServiceByAppID : 4294967297
+2020-10-13 12:02:25.242 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967298
+2020-10-13 12:02:25.242 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967298
+2020-10-13 12:02:25.242 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967299
+2020-10-13 12:02:25.242 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967299
+2020-10-13 12:02:25.242 [INF] [GateUserBase.go:105] Logout(), id: 1
+2020-10-13 12:02:25.244 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection
+2020-10-13 12:10:21.904 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-10-13 12:10:21.904 [INF] [app.go:205] services[gateway team]
+2020-10-13 12:10:21.971 [DBG] [app.go:126] App.init, appID: 4294967297
+2020-10-13 12:10:21.972 [INF] [gatewayService.go:28] GatewayService OnInit
+2020-10-13 12:10:21.972 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2020-10-13 12:10:21.973 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2020-10-13 12:10:21.973 [DBG] [localService.go:68] service check : gateway
+2020-10-13 12:10:21.973 [DBG] [localService.go:96] service check success: gateway
+2020-10-13 12:10:21.973 [DBG] [localServiceMgr.go:56] App InitLocalService, name: gateway sid: 4294967298
+2020-10-13 12:10:21.973 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967298 2 4294967297 map[]}
+2020-10-13 12:10:21.974 [DBG] [teamService.go:22] ServiceBService.OnInit
+2020-10-13 12:10:21.974 [DBG] [localService.go:68] service check : team
+2020-10-13 12:10:21.974 [DBG] [localService.go:96] service check success: team
+2020-10-13 12:10:21.974 [DBG] [localServiceMgr.go:56] App InitLocalService, name: team sid: 4294967299
+2020-10-13 12:10:21.974 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967299 3 4294967297 map[]}
+2020-10-13 12:10:21.979 [DBG] [localService.go:218] run service , serviceName: team, serviceType: 3, ServerID: 4294967299 tickMS: 2000
+2020-10-13 12:10:21.979 [DBG] [localService.go:218] run service , serviceName: gateway, serviceType: 2, ServerID: 4294967298 tickMS: 2000
+2020-10-13 12:10:21.979 [INF] [gatewayService.go:58] GatewayService OnConnected, infovec = [0xc000488fa0]
+2020-10-13 12:10:25.424 [ERR] [session.go:299] recvLoop error error: need verify message ID 1, but got 5, remoteAddr: 127.0.0.1:51380,  localAddr: 127.0.0.1:17000, sessionid: 1
+2020-10-13 12:32:35.526 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-10-13 12:32:35.526 [INF] [app.go:205] services[gateway team]
+2020-10-13 12:32:35.592 [DBG] [app.go:126] App.init, appID: 4294967297
+2020-10-13 12:32:35.593 [INF] [gatewayService.go:28] GatewayService OnInit
+2020-10-13 12:32:35.593 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2020-10-13 12:32:35.594 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2020-10-13 12:32:35.594 [DBG] [localService.go:68] service check : gateway
+2020-10-13 12:32:35.594 [DBG] [localService.go:96] service check success: gateway
+2020-10-13 12:32:35.594 [DBG] [localServiceMgr.go:56] App InitLocalService, name: gateway sid: 4294967298
+2020-10-13 12:32:35.594 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967298 2 4294967297 map[]}
+2020-10-13 12:32:35.595 [DBG] [teamService.go:22] ServiceBService.OnInit
+2020-10-13 12:32:35.595 [DBG] [localService.go:68] service check : team
+2020-10-13 12:32:35.595 [DBG] [localService.go:96] service check success: team
+2020-10-13 12:32:35.595 [DBG] [localServiceMgr.go:56] App InitLocalService, name: team sid: 4294967299
+2020-10-13 12:32:35.595 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967299 3 4294967297 map[]}
+2020-10-13 12:32:35.6 [DBG] [localService.go:218] run service , serviceName: team, serviceType: 3, ServerID: 4294967299 tickMS: 2000
+2020-10-13 12:32:35.6 [DBG] [localService.go:218] run service , serviceName: gateway, serviceType: 2, ServerID: 4294967298 tickMS: 2000
+2020-10-13 12:32:35.6 [INF] [gatewayService.go:58] GatewayService OnConnected, infovec = [0xc0003182e0]
+2020-10-13 12:32:38.897 [ERR] [session.go:299] recvLoop error error: need verify message ID 1, but got 5, remoteAddr: 127.0.0.1:61154,  localAddr: 127.0.0.1:17000, sessionid: 1

@@ -1,0 +1,4 @@
+2020-10-12 14:42:46.014 [ERR] [session.go:299] recvLoop error error: EOF, remoteAddr: 127.0.0.1:63333,  localAddr: 127.0.0.1:17000, sessionid: 1
+2020-10-12 14:52:30.57 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-10-12 14:52:38.521 [ERR] [arq_listener.go:162] accept connection error accept tcp [::]:17000: use of closed network connection
+2020-10-12 14:52:38.523 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17010: use of closed network connection

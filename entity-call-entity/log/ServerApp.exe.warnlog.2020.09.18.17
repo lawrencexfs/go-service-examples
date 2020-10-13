@@ -1,0 +1,5 @@
+2020-09-18 17:21:25.451 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-09-18 17:21:30.461 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-09-18 17:21:30.465 [ERR] [Entity.go:652] AsyncCall GetEntitySrvID error: Entity srvType [3] not existed, methodName: SyncProps
+2020-09-18 17:21:30.478 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-09-18 17:21:35.471 [ERR] [mongodboperate.go:126] session nil, not connect or auth

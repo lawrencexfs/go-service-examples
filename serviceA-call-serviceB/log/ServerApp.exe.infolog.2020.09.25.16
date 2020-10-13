@@ -1,0 +1,327 @@
+2020-09-25 16:36:59.769 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-09-25 16:36:59.769 [INF] [app.go:205] services[serviceA serviceB]
+2020-09-25 16:36:59.827 [DBG] [app.go:126] App.init, appID: 4294967355
+2020-09-25 16:36:59.828 [INF] [serviceA.go:23] ServiceA OnInit
+2020-09-25 16:36:59.828 [DBG] [localService.go:68] service check : serviceA
+2020-09-25 16:36:59.828 [DBG] [localService.go:96] service check success: serviceA
+2020-09-25 16:36:59.828 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA sid: 4294967356
+2020-09-25 16:36:59.828 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967356 101 4294967355 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:36:59.828 [DBG] [serviceB.go:19] ServiceBService.OnInit
+2020-09-25 16:36:59.829 [DBG] [localService.go:68] service check : serviceB
+2020-09-25 16:36:59.829 [DBG] [localService.go:96] service check success: serviceB
+2020-09-25 16:36:59.829 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceB sid: 4294967357
+2020-09-25 16:36:59.829 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967357 102 4294967355 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:36:59.833 [DBG] [localService.go:218] run service , serviceName: serviceB, serviceType: 102, ServerID: 4294967357 tickMS: 2000
+2020-09-25 16:36:59.833 [DBG] [localService.go:218] run service , serviceName: serviceA, serviceType: 101, ServerID: 4294967356 tickMS: 2000
+2020-09-25 16:36:59.833 [INF] [serviceB.go:49] ServiceB OnConnected, infovec = {4294967356 101 4294967355 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:36:59.834 [INF] [serviceA.go:88] ServiceA OnConnected, infovec = {4294967357 102 4294967355 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:36:59.834 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:36:59.834 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:36:59.837 [DBG] [serviceA.go:99] SyncCall result:call success
+2020-09-25 16:36:59.837 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:37:01.833 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:37:01.833 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:37:01.833 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:37:01.833 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:37:03.834 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:37:03.834 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:37:03.834 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:37:03.834 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:37:05.833 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:37:05.833 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:37:05.833 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:37:05.833 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:37:07.833 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:37:07.833 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:37:07.833 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:37:07.837 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:37:09.834 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:37:09.834 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:37:09.834 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:37:09.834 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:39:37.712 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-09-25 16:39:37.712 [INF] [app.go:205] services[serviceA serviceB]
+2020-09-25 16:39:37.773 [DBG] [app.go:126] App.init, appID: 4294967358
+2020-09-25 16:39:37.773 [INF] [serviceA.go:23] ServiceA OnInit
+2020-09-25 16:39:37.773 [DBG] [localService.go:68] service check : serviceA
+2020-09-25 16:39:37.773 [DBG] [localService.go:96] service check success: serviceA
+2020-09-25 16:39:37.773 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA sid: 4294967359
+2020-09-25 16:39:37.773 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967359 101 4294967358 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:39:37.774 [DBG] [serviceB.go:19] ServiceBService.OnInit
+2020-09-25 16:39:37.774 [DBG] [localService.go:68] service check : serviceB
+2020-09-25 16:39:37.774 [DBG] [localService.go:96] service check success: serviceB
+2020-09-25 16:39:37.774 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceB sid: 4294967360
+2020-09-25 16:39:37.774 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967360 102 4294967358 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:39:37.777 [DBG] [localService.go:218] run service , serviceName: serviceB, serviceType: 102, ServerID: 4294967360 tickMS: 2000
+2020-09-25 16:39:37.778 [INF] [serviceB.go:49] ServiceB OnConnected, infovec = {4294967359 101 4294967358 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:39:37.778 [DBG] [localService.go:218] run service , serviceName: serviceA, serviceType: 101, ServerID: 4294967359 tickMS: 2000
+2020-09-25 16:39:37.778 [INF] [serviceA.go:88] ServiceA OnConnected, infovec = {4294967360 102 4294967358 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:39:37.778 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:39:37.779 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:39:37.779 [DBG] [serviceA.go:99] SyncCall result:call success
+2020-09-25 16:39:37.779 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:39:39.779 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:39:39.779 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:39:39.779 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:39:39.785 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:39:41.778 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:39:41.778 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:39:41.778 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:39:41.778 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:39:51.56 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-09-25 16:39:51.56 [INF] [app.go:205] services[serviceA serviceB]
+2020-09-25 16:39:51.623 [DBG] [app.go:126] App.init, appID: 4294967361
+2020-09-25 16:39:51.623 [INF] [serviceA.go:23] ServiceA OnInit
+2020-09-25 16:39:51.623 [DBG] [localService.go:68] service check : serviceA
+2020-09-25 16:39:51.623 [DBG] [localService.go:96] service check success: serviceA
+2020-09-25 16:39:51.623 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA sid: 4294967362
+2020-09-25 16:39:51.623 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967362 101 4294967361 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:39:51.623 [DBG] [serviceB.go:19] ServiceBService.OnInit
+2020-09-25 16:39:51.624 [DBG] [localService.go:68] service check : serviceB
+2020-09-25 16:39:51.624 [DBG] [localService.go:96] service check success: serviceB
+2020-09-25 16:39:51.624 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceB sid: 4294967363
+2020-09-25 16:39:51.624 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967363 102 4294967361 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:39:51.629 [DBG] [localService.go:218] run service , serviceName: serviceB, serviceType: 102, ServerID: 4294967363 tickMS: 2000
+2020-09-25 16:39:51.629 [DBG] [localService.go:218] run service , serviceName: serviceA, serviceType: 101, ServerID: 4294967362 tickMS: 2000
+2020-09-25 16:39:51.629 [INF] [serviceB.go:49] ServiceB OnConnected, infovec = {4294967362 101 4294967361 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:39:51.63 [INF] [serviceA.go:88] ServiceA OnConnected, infovec = {4294967363 102 4294967361 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:39:51.63 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:39:51.63 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:39:51.632 [DBG] [serviceA.go:99] SyncCall result:call success
+2020-09-25 16:39:51.632 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:40:53.386 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-09-25 16:40:53.386 [INF] [app.go:205] services[serviceA serviceB]
+2020-09-25 16:40:53.444 [DBG] [app.go:126] App.init, appID: 4294967364
+2020-09-25 16:40:53.445 [INF] [serviceA.go:23] ServiceA OnInit
+2020-09-25 16:40:53.445 [DBG] [localService.go:68] service check : serviceA
+2020-09-25 16:40:53.445 [DBG] [localService.go:96] service check success: serviceA
+2020-09-25 16:40:53.445 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA sid: 4294967365
+2020-09-25 16:40:53.445 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967365 101 4294967364 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:40:53.445 [DBG] [serviceB.go:19] ServiceBService.OnInit
+2020-09-25 16:40:53.446 [DBG] [localService.go:68] service check : serviceB
+2020-09-25 16:40:53.446 [DBG] [localService.go:96] service check success: serviceB
+2020-09-25 16:40:53.446 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceB sid: 4294967366
+2020-09-25 16:40:53.446 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967366 102 4294967364 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:40:53.449 [DBG] [localService.go:218] run service , serviceName: serviceA, serviceType: 101, ServerID: 4294967365 tickMS: 2000
+2020-09-25 16:40:53.45 [INF] [serviceA.go:88] ServiceA OnConnected, infovec = {4294967366 102 4294967364 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:40:53.45 [DBG] [localService.go:218] run service , serviceName: serviceB, serviceType: 102, ServerID: 4294967366 tickMS: 2000
+2020-09-25 16:40:53.45 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:40:53.45 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:40:53.451 [INF] [serviceB.go:49] ServiceB OnConnected, infovec = {4294967365 101 4294967364 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:40:53.451 [DBG] [serviceA.go:99] SyncCall result:call success
+2020-09-25 16:40:53.451 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:40:55.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:40:55.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:40:55.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:40:55.449 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:40:57.449 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:40:57.449 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:40:57.449 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:40:57.454 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:43:54.184 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-09-25 16:43:54.184 [INF] [app.go:205] services[serviceA]
+2020-09-25 16:43:54.244 [DBG] [app.go:126] App.init, appID: 4294967367
+2020-09-25 16:43:54.244 [INF] [serviceA.go:23] ServiceA OnInit
+2020-09-25 16:43:54.244 [DBG] [localService.go:68] service check : serviceA
+2020-09-25 16:43:54.244 [DBG] [localService.go:96] service check success: serviceA
+2020-09-25 16:43:54.244 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA sid: 4294967368
+2020-09-25 16:43:54.244 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967368 101 4294967367 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:43:54.247 [DBG] [localService.go:218] run service , serviceName: serviceA, serviceType: 101, ServerID: 4294967368 tickMS: 2000
+2020-09-25 16:43:57.444 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-09-25 16:43:57.444 [INF] [app.go:205] services[serviceB]
+2020-09-25 16:43:57.503 [INF] [app.go:326] listen tcp :58080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2020-09-25 16:43:57.505 [DBG] [app.go:126] App.init, appID: 4294967369
+2020-09-25 16:43:57.505 [DBG] [serviceB.go:19] ServiceBService.OnInit
+2020-09-25 16:43:57.505 [DBG] [localService.go:68] service check : serviceB
+2020-09-25 16:43:57.505 [DBG] [localService.go:96] service check success: serviceB
+2020-09-25 16:43:57.505 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceB sid: 4294967370
+2020-09-25 16:43:57.505 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967370 102 4294967369 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:43:57.509 [DBG] [localService.go:218] run service , serviceName: serviceB, serviceType: 102, ServerID: 4294967370 tickMS: 2000
+2020-09-25 16:43:59.249 [DBG] [appProc.go:56] MsgProcClientVerifyReq, token: 4294967369
+2020-09-25 16:43:59.249 [INF] [appNet.go:381] InsertSrvSess  4294967367
+2020-09-25 16:43:59.259 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967368 101 4294967367 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:43:59.259 [INF] [serviceB.go:49] ServiceB OnConnected, infovec = {4294967368 101 4294967367 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:43:59.26 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:43:59.26 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:43:59.248 [DBG] [client.go:19] Dial protocol: tcp, addr: 127.0.0.1:17012
+2020-09-25 16:43:59.248 [INF] [appNet.go:324] SrvNet try connect to 4294967369
+2020-09-25 16:43:59.249 [INF] [appProc.go:94] BPClient.MsgProcClientVerifyResp: 
+2020-09-25 16:43:59.249 [INF] [appNet.go:353] Connected to Server succeed !!!  4294967369
+2020-09-25 16:43:59.259 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967370 102 4294967369 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:43:59.259 [INF] [serviceA.go:88] ServiceA OnConnected, infovec = {4294967370 102 4294967369 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:43:59.26 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:1
+2020-09-25 16:43:59.261 [DBG] [serviceA.go:99] SyncCall result:call success
+2020-09-25 16:43:59.261 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:00.248 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:00.249 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:00.25 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:2
+2020-09-25 16:44:00.25 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:00.251 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:02.247 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:02.247 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:02.247 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:3
+2020-09-25 16:44:02.247 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:02.247 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:04.247 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:04.247 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:04.247 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:4
+2020-09-25 16:44:04.247 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:04.247 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:06.247 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:06.247 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:06.247 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:5
+2020-09-25 16:44:06.247 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:06.247 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:08.247 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:08.247 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:08.247 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:6
+2020-09-25 16:44:08.247 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:08.247 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:10.248 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:10.248 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:10.248 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:7
+2020-09-25 16:44:10.248 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:10.248 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:12.247 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:12.247 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:12.247 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:8
+2020-09-25 16:44:12.247 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:12.247 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:14.247 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:14.247 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:14.247 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:9
+2020-09-25 16:44:14.247 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:14.247 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:16.247 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:16.247 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:16.247 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:10
+2020-09-25 16:44:16.247 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:16.247 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:18.247 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:18.247 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:18.247 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:11
+2020-09-25 16:44:18.247 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:18.247 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:20.247 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:20.247 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:20.247 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:12
+2020-09-25 16:44:20.247 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:20.247 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:21.485 [ERR] [session.go:299] recvLoop error error: read tcp 127.0.0.1:17012->127.0.0.1:56546: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56546,  localAddr: 127.0.0.1:17012, sessionid: 1
+2020-09-25 16:44:21.485 [INF] [appProc.go:45] OnClosed sessID:1, remote addr:127.0.0.1:56546
+2020-09-25 16:44:21.486 [DBG] [serviceProxyMgr.go:60] SProxyMgr, DelServiceByAppID : 4294967367
+2020-09-25 16:44:21.486 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967368
+2020-09-25 16:44:21.486 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967368
+2020-09-25 16:44:21.486 [INF] [serviceB.go:40] ServiceB OnDisconnected, infovec = {4294967368 101 4294967367 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:44:33.52 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-09-25 16:44:33.52 [INF] [app.go:205] services[serviceA]
+2020-09-25 16:44:33.579 [DBG] [app.go:126] App.init, appID: 4294967371
+2020-09-25 16:44:33.579 [INF] [serviceA.go:23] ServiceA OnInit
+2020-09-25 16:44:33.579 [DBG] [localService.go:68] service check : serviceA
+2020-09-25 16:44:33.579 [DBG] [localService.go:96] service check success: serviceA
+2020-09-25 16:44:33.579 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA sid: 4294967372
+2020-09-25 16:44:33.579 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967372 101 4294967371 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:44:33.583 [DBG] [localService.go:218] run service , serviceName: serviceA, serviceType: 101, ServerID: 4294967372 tickMS: 2000
+2020-09-25 16:44:36.541 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-09-25 16:44:36.541 [INF] [app.go:205] services[serviceB]
+2020-09-25 16:44:36.6 [INF] [app.go:326] listen tcp :58080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2020-09-25 16:44:36.602 [DBG] [app.go:126] App.init, appID: 4294967373
+2020-09-25 16:44:36.602 [DBG] [serviceB.go:19] ServiceBService.OnInit
+2020-09-25 16:44:36.602 [DBG] [localService.go:68] service check : serviceB
+2020-09-25 16:44:36.602 [DBG] [localService.go:96] service check success: serviceB
+2020-09-25 16:44:36.602 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceB sid: 4294967374
+2020-09-25 16:44:36.602 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967374 102 4294967373 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:44:36.606 [DBG] [localService.go:218] run service , serviceName: serviceB, serviceType: 102, ServerID: 4294967374 tickMS: 2000
+2020-09-25 16:44:38.585 [DBG] [client.go:19] Dial protocol: tcp, addr: 127.0.0.1:17012
+2020-09-25 16:44:38.586 [INF] [appNet.go:324] SrvNet try connect to 4294967373
+2020-09-25 16:44:38.586 [INF] [appProc.go:94] BPClient.MsgProcClientVerifyResp: 
+2020-09-25 16:44:38.587 [INF] [appNet.go:353] Connected to Server succeed !!!  4294967373
+2020-09-25 16:44:38.588 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967374 102 4294967373 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:44:38.588 [INF] [serviceA.go:88] ServiceA OnConnected, infovec = {4294967374 102 4294967373 map[OS:Linux Version:1.0.2]}
+2020-09-25 16:44:38.591 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:1
+2020-09-25 16:44:38.592 [DBG] [serviceA.go:99] SyncCall result:call success
+2020-09-25 16:44:38.592 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:38.586 [DBG] [appProc.go:56] MsgProcClientVerifyReq, token: 4294967373
+2020-09-25 16:44:38.586 [INF] [appNet.go:381] InsertSrvSess  4294967371
+2020-09-25 16:44:38.588 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967372 101 4294967371 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:44:38.588 [INF] [serviceB.go:49] ServiceB OnConnected, infovec = {4294967372 101 4294967371 map[OS:Windows Version:1.0.1]}
+2020-09-25 16:44:38.589 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:38.591 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:39.586 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:2
+2020-09-25 16:44:39.586 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:39.586 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:39.584 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:39.584 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:41.585 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:3
+2020-09-25 16:44:41.585 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:41.585 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:41.583 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:41.583 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:43.588 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:4
+2020-09-25 16:44:43.588 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:43.589 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:43.585 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:43.586 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:45.585 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:5
+2020-09-25 16:44:45.585 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:45.585 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:45.583 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:45.583 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:47.583 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:6
+2020-09-25 16:44:47.583 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:47.583 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:47.583 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:47.583 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:49.586 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:7
+2020-09-25 16:44:49.586 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:49.586 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:49.584 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:49.584 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:51.583 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:8
+2020-09-25 16:44:51.583 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:51.583 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:51.583 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:51.583 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:53.587 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:9
+2020-09-25 16:44:53.587 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:53.587 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:53.583 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:53.584 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:55.583 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:10
+2020-09-25 16:44:55.583 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:55.583 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:55.583 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:55.583 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:57.585 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:11
+2020-09-25 16:44:57.585 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:57.585 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:57.583 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:57.583 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:44:59.585 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:12
+2020-09-25 16:44:59.585 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:44:59.585 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:44:59.585 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:44:59.585 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:45:01.583 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:13
+2020-09-25 16:45:01.583 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:45:01.583 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:45:01.583 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:45:01.583 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:45:03.583 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:14
+2020-09-25 16:45:03.583 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:45:03.583 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:45:03.583 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:45:03.583 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:45:05.583 [INF] [appProc.go:155] MsgProcCallRespMsg ErrString:, Seq:15
+2020-09-25 16:45:05.583 [DBG] [serviceA.go:63] SyncCall result:call success
+2020-09-25 16:45:05.583 [DBG] [serviceARPCProc.go:15] RPCHello: hello World
+2020-09-25 16:45:05.583 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:45:05.583 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:45:07.583 [DBG] [serviceBRPCProc.go:20] RPCHello: hello World
+2020-09-25 16:45:07.583 [DBG] [serviceBRPCProc.go:31] RPCSyncCall: 
+2020-09-25 16:45:07.614 [ERR] [session.go:299] recvLoop error error: read tcp 127.0.0.1:17012->127.0.0.1:56592: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:56592,  localAddr: 127.0.0.1:17012, sessionid: 1
+2020-09-25 16:45:07.614 [INF] [appProc.go:45] OnClosed sessID:1, remote addr:127.0.0.1:56592
+2020-09-25 16:45:07.614 [DBG] [serviceProxyMgr.go:60] SProxyMgr, DelServiceByAppID : 4294967371
+2020-09-25 16:45:07.614 [DBG] [serviceProxyMgr.go:121] DelServiceByID, serviceID: 4294967372
+2020-09-25 16:45:07.614 [DBG] [serviceProxyMgr.go:129] DelServiceByID succeed, serviceID: 4294967372
+2020-09-25 16:45:07.614 [INF] [serviceB.go:40] ServiceB OnDisconnected, infovec = {4294967372 101 4294967371 map[OS:Windows Version:1.0.1]}
