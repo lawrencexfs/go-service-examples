@@ -1,0 +1,2 @@
+2020-09-28 16:02:28.086 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-09-28 16:02:45.327 [ERR] [session.go:299] recvLoop error error: read tcp 127.0.0.1:17000->127.0.0.1:63911: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:63911,  localAddr: 127.0.0.1:17000, sessionid: 1

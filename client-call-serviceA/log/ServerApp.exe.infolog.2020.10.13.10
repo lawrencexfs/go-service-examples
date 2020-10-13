@@ -1,0 +1,37 @@
+2020-10-13 10:41:53.299 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-10-13 10:41:53.299 [INF] [app.go:205] services[serviceA]
+2020-10-13 10:41:53.362 [DBG] [app.go:126] App.init, appID: 4294967392
+2020-10-13 10:41:53.363 [INF] [serviceA.go:27] ServiceA OnInit
+2020-10-13 10:41:53.363 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2020-10-13 10:41:53.364 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2020-10-13 10:41:53.364 [DBG] [localService.go:68] service check : serviceA
+2020-10-13 10:41:53.364 [DBG] [localService.go:96] service check success: serviceA
+2020-10-13 10:41:53.364 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA sid: 4294967393
+2020-10-13 10:41:53.364 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967393 2 4294967392 map[]}
+2020-10-13 10:41:53.369 [DBG] [localService.go:218] run service , serviceName: serviceA, serviceType: 2, ServerID: 4294967393 tickMS: 2000
+2020-10-13 10:41:56.764 [DBG] [ProcGateway.go:46] Begin MsgProcLoginReq, UID: 1, sess: 0xc0000052e0
+2020-10-13 10:41:56.764 [INF] [serviceA.go:68] ServiceA OnLoginHandler, msg.UID = 1
+2020-10-13 10:41:56.765 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName:  , selectPropsmap[coin:1 exp:1 level:1 rating:1]
+2020-10-13 10:42:39.483 [INF] [app.go:324] Start pprof http://:58080/debug/pprof
+2020-10-13 10:42:39.483 [INF] [app.go:205] services[serviceA]
+2020-10-13 10:42:39.547 [DBG] [app.go:126] App.init, appID: 4294967394
+2020-10-13 10:42:39.548 [INF] [serviceA.go:27] ServiceA OnInit
+2020-10-13 10:42:39.548 [INF] [GatewayBase.go:25] GatewayBase OnInit
+2020-10-13 10:42:39.549 [DBG] [GatewayBase.go:51] outer addr: 127.0.0.1:17000
+2020-10-13 10:42:39.549 [DBG] [localService.go:68] service check : serviceA
+2020-10-13 10:42:39.549 [DBG] [localService.go:96] service check success: serviceA
+2020-10-13 10:42:39.549 [DBG] [localServiceMgr.go:56] App InitLocalService, name: serviceA sid: 4294967395
+2020-10-13 10:42:39.549 [DBG] [serviceProxyMgr.go:77] AddServiceProxy, serviceInfo: &{4294967395 2 4294967394 map[]}
+2020-10-13 10:42:39.565 [DBG] [localService.go:218] run service , serviceName: serviceA, serviceType: 2, ServerID: 4294967395 tickMS: 2000
+2020-10-13 10:42:42.816 [DBG] [ProcGateway.go:46] Begin MsgProcLoginReq, UID: 1, sess: 0xc0002da6c0
+2020-10-13 10:42:42.816 [INF] [serviceA.go:68] ServiceA OnLoginHandler, msg.UID = 1
+2020-10-13 10:42:42.816 [DBG] [Entity_Props.go:241] loadFromDB MongoDBQueryOneWithSelect:  , PropDBName: game , PropTableName:  , selectPropsmap[coin:1 exp:1 level:1 rating:1]
+2020-10-13 10:42:47.817 [DBG] [dbservice.go:53] connect failed,no reachable servers
+2020-10-13 10:42:47.817 [ERR] [mongodboperate.go:89] session nil, not connect or auth
+2020-10-13 10:42:47.818 [DBG] [ServiceAUser.go:19] ServiceAUser.OnInit, entityID: 1
+2020-10-13 10:42:47.819 [DBG] [ServiceAUserRpcProc.go:12] RPCHello, name: hello world, id: 1
+2020-10-13 10:43:12.944 [ERR] [session.go:299] recvLoop error error: read tcp 127.0.0.1:17000->127.0.0.1:54413: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:54413,  localAddr: 127.0.0.1:17000, sessionid: 1
+2020-10-13 10:43:12.944 [DBG] [ProcGateway.go:110] PGatewayServer OnClosed, ID: 1, sess: 0xc0002da6c0
+2020-10-13 10:43:12.945 [INF] [GateUserBase.go:105] Logout(), id: 1
+2020-10-13 10:43:12.948 [DBG] [ServiceAUser.go:30] ServiceAUser.OnDestroy, dbid: 1
+2020-10-13 10:43:17.971 [DBG] [GateUserBase.go:74] gate user goroutine end, uid: 1

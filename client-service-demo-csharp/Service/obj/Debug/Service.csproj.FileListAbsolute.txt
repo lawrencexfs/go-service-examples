@@ -1,0 +1,12 @@
+E:\work\go-service-examples\client-service-demo-csharp\Service\bin\Debug\Service.dll
+E:\work\go-service-examples\client-service-demo-csharp\Service\bin\Debug\Service.pdb
+E:\work\go-service-examples\client-service-demo-csharp\Service\bin\Debug\GameBox.Channel.dll
+E:\work\go-service-examples\client-service-demo-csharp\Service\bin\Debug\GameBox.Core.dll
+E:\work\go-service-examples\client-service-demo-csharp\Service\bin\Debug\GameBox.Network.dll
+E:\work\go-service-examples\client-service-demo-csharp\Service\bin\Debug\GameBox.Socket.dll
+E:\work\go-service-examples\client-service-demo-csharp\Service\bin\Debug\protobuf-net.dll
+E:\work\go-service-examples\client-service-demo-csharp\Service\obj\Debug\Service.csprojAssemblyReference.cache
+E:\work\go-service-examples\client-service-demo-csharp\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+E:\work\go-service-examples\client-service-demo-csharp\Service\obj\Debug\Service.csproj.CopyComplete
+E:\work\go-service-examples\client-service-demo-csharp\Service\obj\Debug\Service.dll
+E:\work\go-service-examples\client-service-demo-csharp\Service\obj\Debug\Service.pdb
