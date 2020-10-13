@@ -1,2 +1,0 @@
-2020-09-18 16:07:43.504 [ERR] [arq_listener.go:162] accept connection error accept tcp 127.0.0.1:17011: use of closed network connection
-2020-09-18 16:07:43.518 [ERR] [session.go:298] recvLoop error error: read tcp 127.0.0.1:17012->127.0.0.1:51568: wsarecv: An existing connection was forcibly closed by the remote host., remoteAddr: 127.0.0.1:51568,  localAddr: 127.0.0.1:17012, sessionid: 1
