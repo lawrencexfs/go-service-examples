@@ -205,30 +205,6 @@ func (cli *Client) GetSeq() uint64 {
 	return cli.seq.Inc()
 }
 
-// Verify verify
-func (cli *Client) Verify() {
-	// Todo 获使用Token登录LobbyServer
-	/*log.Debug("verify")
-
-	/*var clientVersion string
-	verData, ok := excel.GetSystem("cli_ver")
-	if ok {
-		clientVersion = verData.Value
-	}*/
-	/*srvID := 1
-	msg := &msgdef.ClientVerifyReq{
-		ServerID:   srvID,
-		ServerType: 1,
-		Token:      fmt.Sprintf("%d", srvID),
-	}
-
-	if cli.lobbySession == nil {
-		panic("lobbySession is nil")
-	}
-
-	cli.lobbySession.Send(msg)*/
-}
-
 // Login login
 func (cli *Client) Login() {
 
