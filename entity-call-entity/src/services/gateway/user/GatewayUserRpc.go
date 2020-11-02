@@ -9,8 +9,8 @@ import (
 	"github.com/giant-tech/go-service/framework/iserver"
 
 	log "github.com/cihub/seelog"
-	"github.com/globalsign/mgo/bson"
 	dbservice "github.com/giant-tech/go-service/base/mongodbservice"
+	"github.com/globalsign/mgo/bson"
 
 	"entity-call-entity/src/entitydef"
 )
@@ -19,6 +19,13 @@ import (
 type FriendsInfo struct {
 	MyFriendsDbid    []uint64 `bson:"MyFriendsDbid"`
 	ApplyFriendsDbid []uint64 `bson:"ApplyFriendsDbid"`
+}
+
+type Modifystruct struct {
+	Index uint32
+	Val   uint32
+	//MyFriendsDbid []uint64
+	Friends map[uint32]uint32
 }
 
 // RPCHello hello
@@ -32,8 +39,8 @@ func (gu *GatewayUser) RPCHello(name string, id uint32) {
 }
 
 // RPCModifyAttr 修改rpc attr
-func (gu *GatewayUser) RPCModifyAttr(name string, index uint32, val uint32) {
-	log.Debug("RPCModifyAttr, name: ", name, ", index: ", index, " val: ", val)
+func (gu *GatewayUser) RPCModifyAttr(name string, index uint32, val uint32, modifystru *Modifystruct) {
+	log.Debug("RPCModifyAttr, name: ", name, ", index: ", index, " val: ", val, ", modifystru.index = ", modifystru.Index, ", modifysru.val = ", modifystru.Val, ",Friends[1]=", modifystru.Friends[1], ",Friends[2]=", modifystru.Friends[111])
 
 	gu.SetLevel(val)
 
@@ -41,6 +48,7 @@ func (gu *GatewayUser) RPCModifyAttr(name string, index uint32, val uint32) {
 	selectProps["Friends"] = 1
 
 	ret := bson.M{}
+	//todo: 根据dbtype去存储
 	dbservice.MongoDBQueryOneWithSelect("game", "player", bson.M{"dbid": 1}, selectProps, ret)
 
 	friends := gu.GetFriends()
