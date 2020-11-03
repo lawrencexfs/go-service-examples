@@ -520,6 +520,7 @@ namespace GameBox.Service
             }
 
             RpcMsg req = new RpcMsg();
+            req.SType = 2;
             //req.rpcType = rpctype;
             req.methodeName = methodname;
             req.data = bytes;
