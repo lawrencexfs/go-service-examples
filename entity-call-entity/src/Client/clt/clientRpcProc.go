@@ -32,7 +32,7 @@ func (p *ServiceAUserRpcProc) RPCHello(name string, id uint32) {
 	modifys.Friends = make(map[uint32]uint32)
 	modifys.Friends[1] = 2
 	modifys.Friends[111] = 2111
-	p.Cli.AsyncCall(servicetype.ServiceTypeGateway, "ModifyAttr", "change attr", int32(1), int32(2), &modifys)
+	p.Cli.AsyncCall(servicetype.ServiceTypeGateway, "ModifyAttr", "change attr", int32(1), int32(3), &modifys)
 }
 
 // RPCCreateTeamResult 创建队伍结果

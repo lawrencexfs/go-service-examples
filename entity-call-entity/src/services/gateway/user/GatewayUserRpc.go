@@ -30,7 +30,7 @@ type Modifystruct struct {
 
 // RPCHello hello
 func (gu *GatewayUser) RPCHello(name string, id uint32) {
-	log.Debug("RPCHello, name: ", name, ", id: ", id)
+	log.Debug("GatewayUser::RPCHello, name: ", name, ", id: ", id)
 
 	err := gu.AsyncCall(servicetype.ServiceTypeClient, "Hello", name, id)
 	if err != nil {
@@ -39,10 +39,10 @@ func (gu *GatewayUser) RPCHello(name string, id uint32) {
 }
 
 // RPCModifyAttr 修改rpc attr
-func (gu *GatewayUser) RPCModifyAttr(name string, index uint32, val uint32, modifystru *Modifystruct) {
-	log.Debug("RPCModifyAttr, name: ", name, ", index: ", index, " val: ", val, ", modifystru.index = ", modifystru.Index, ", modifysru.val = ", modifystru.Val, ",Friends[1]=", modifystru.Friends[1], ",Friends[2]=", modifystru.Friends[111])
+func (gu *GatewayUser) RPCModifyAttr(name string, index uint32, level uint32, modifystru *Modifystruct) {
+	log.Debug("GatewayUser::RPCModifyAttr(send from client), name: ", name, ", index: ", index, " level: ", level, ", modifystru.index = ", modifystru.Index, ", modifysru.val = ", modifystru.Val, ",Friends[1]=", modifystru.Friends[1], ",Friends[2]=", modifystru.Friends[111])
 
-	gu.SetLevel(val)
+	gu.SetLevel(level)
 
 	selectProps := bson.M{}
 	selectProps["Friends"] = 1
@@ -66,13 +66,13 @@ func (gu *GatewayUser) RPCModifyAttr(name string, index uint32, val uint32, modi
 	//(*heros)["yekoufeng"] = info
 	//gu.SetHero(heros)
 
-	log.Debug("RPCModifyAttr, name: ", name, ", index: ", index, " val: ", val, " ,selectProps: ", selectProps, " ,ret: ", ret, " ,friends: ", friends, " ,heros: ", heros)
+	log.Debug("GatewayUser::RPCModifyAttr, name: ", name, ", index: ", index, " val: ", level, " ,selectProps: ", selectProps, " ,ret: ", ret, " ,friends: ", friends, " ,heros: ", heros)
 
 }
 
 // RPCCreateTeam 创建队伍
 func (gu *GatewayUser) RPCCreateTeam(name string) {
-	log.Debug("RPCCreateTeam, name: ", name)
+	log.Debug("GatewayUser::RPCCreateTeam, name: ", name)
 
 	//通过自定义函数删选所需的服务
 	proxy := iserver.GetServiceProxyMgr().GetRandService(servicetype.ServiceTypeTeam)
@@ -86,7 +86,7 @@ func (gu *GatewayUser) RPCCreateTeam(name string) {
 
 // RPCCreateTeamResult 创建结果队伍
 func (gu *GatewayUser) RPCCreateTeamResult(teamID uint64) {
-	log.Debug("RPCCreateTeamResult, teamID: ", teamID)
+	log.Debug("GatewayUser::RPCCreateTeamResult, teamID: ", teamID)
 
 	gu.AsyncCall(idata.ServiceClient, "CreateTeamResult", teamID)
 }

@@ -11,7 +11,7 @@ import (
 
 // RPCCreateTeam 创建队伍
 func (ts *TeamService) RPCCreateTeam(teamData *teamdata.CreateTeamData) {
-	log.Debug("RPCCreateTeam: ")
+	log.Debug("TeamService::RPCCreateTeam: ")
 
 	//创建队伍
 	e, err := ts.CreateEntity("Team", 0, teamData, true, 0)
