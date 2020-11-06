@@ -4,6 +4,8 @@ import (
 	"entity-call-entity/src/services/servicetype"
 
 	log "github.com/cihub/seelog"
+
+	protoMsg "entity-call-entity/src/pb"
 )
 
 // ServiceAUserRpcProc LobbyUser的消息处理函数
@@ -32,7 +34,12 @@ func (p *ServiceAUserRpcProc) RPCHello(name string, id uint32) {
 	modifys.Friends = make(map[uint32]uint32)
 	modifys.Friends[1] = 2
 	modifys.Friends[111] = 2111
-	p.Cli.AsyncCall(servicetype.ServiceTypeGateway, "ModifyAttr", "change attr", int32(1), int32(3), &modifys)
+
+	var changebulletreq protoMsg.ChangeBulletReq
+	changebulletreq.Full = true
+	changebulletreq.Pos = 999
+
+	p.Cli.AsyncCall(servicetype.ServiceTypeGateway, "ModifyAttr", "change attr", int32(1), int32(3), &modifys, &changebulletreq)
 }
 
 // RPCCreateTeamResult 创建队伍结果

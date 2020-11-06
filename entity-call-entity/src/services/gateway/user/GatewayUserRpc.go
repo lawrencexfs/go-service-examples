@@ -13,6 +13,8 @@ import (
 	"github.com/globalsign/mgo/bson"
 
 	"entity-call-entity/src/entitydef"
+
+	protoMsg "entity-call-entity/src/pb"
 )
 
 // FriendsInfo 好友信息 临时数据结构
@@ -39,9 +41,10 @@ func (gu *GatewayUser) RPCHello(name string, id uint32) {
 }
 
 // RPCModifyAttr 修改rpc attr
-func (gu *GatewayUser) RPCModifyAttr(name string, index uint32, level uint32, modifystru *Modifystruct) {
+func (gu *GatewayUser) RPCModifyAttr(name string, index uint32, level uint32, modifystru *Modifystruct, changebulletreq *protoMsg.ChangeBulletReq) {
 	log.Debug("GatewayUser::RPCModifyAttr(send from client), name: ", name, ", index: ", index, " level: ", level, ", modifystru.index = ", modifystru.Index, ", modifysru.val = ", modifystru.Val, ",Friends[1]=", modifystru.Friends[1], ",Friends[2]=", modifystru.Friends[111])
 
+	log.Debug("GatewayUser::RPCModifyAttr, protoMsg changebulletreq.Full= ", changebulletreq.GetFull(), ", protomsg changebulletreq.pos=", changebulletreq.GetPos())
 	gu.SetLevel(level)
 
 	selectProps := bson.M{}

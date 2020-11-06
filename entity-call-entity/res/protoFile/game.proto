@@ -1,0 +1,279 @@
+syntax = "proto2";
+
+package protoMsg;
+
+//s-->c 玩家主数据
+message UserMainDataNotify {
+	optional uint64 uid = 1;
+	optional string name = 2;
+	optional uint64 coins = 3;
+	optional uint64 diams = 4;
+}
+
+//坐标
+message Vector3 {
+	optional float x = 1;
+	optional float y = 2;
+	optional float z = 3;
+}
+
+message T_Object {
+	optional uint32 baseid 	= 1;
+	optional uint64 thisid 	= 2;
+	optional uint32 count 	= 3;
+	repeated uint32 gunreform = 4;	//枪支改造列表
+	optional uint32 bullet 	= 5;	//子弹数量
+	optional uint32 reducedam = 6;	//防具减伤
+}
+
+//玩家地图数据
+message ChracterMapDataInfo {
+	optional uint64 uid = 1;
+	optional string name = 2;
+	optional uint32 level = 3;
+	optional Vector3 pos = 4;
+	optional float mvspeed = 5;
+	optional uint32 maxhp = 6;
+	optional uint32 hp = 7;
+	optional float orientation = 8;
+	optional T_Object weapon = 9;
+	optional T_Object secweapon = 10;
+	repeated uint32 armors = 11;	//防具列表
+}
+
+
+//s-->c 公告
+message ChatNotify {
+	optional string content = 1;
+	optional uint32 type = 2;  //0:击杀公告 1:屏幕中间公告 2.连杀公告
+}
+
+//s-->c 区域通知
+message ZoneNotify {
+	optional uint32 type = 1;	//0:安全区 1:轰炸区
+	optional Vector3 center = 2;
+	optional float radius = 3;
+	optional uint32 interval = 4;
+}
+
+//c-->s 换弹
+message ChangeBulletReq {
+	optional bool full = 1;  //0:一个
+	optional uint32 pos = 2; //1:
+}
+
+//s-->c 换弹
+message ChangeBulletRet {
+	optional uint64 uid = 1;
+	optional uint32 bullet = 2;
+}
+
+message TeamMemberInfo {
+	optional uint64 uid			= 1;
+	optional string name 		= 2;
+	optional uint32 memState	= 3;	// 成员状态 0.未准备状态 1.已装备状态
+	optional uint64 modelid		= 4;	// 玩家模型id 
+	optional int64  intotime    = 5;
+	optional uint32 slot        = 6;    //槽位
+}
+
+//s-->c 同步组队信息
+message SyncTeamInfoRet {
+	optional uint64 id					= 1;	
+	optional uint32 teamState			= 2;	// 组队状态 0、正在组队状态 1、匹配状态
+	repeated TeamMemberInfo memberinfo 	= 3;	// 队伍成员信息
+	optional uint64 leaderid 			= 4;
+	optional uint32 teamtype 			= 5; 	//0:双排  1:四排
+	optional uint32 automatch 			= 6;
+	optional uint32 mapid 				= 7;
+}
+
+
+// 副本中组队玩家信息
+message SyncRoomTeamPlayerItem {	
+	optional uint64  id		= 1;		
+	optional uint32  hp	 	= 2;	// 血量
+	optional Vector3 pos	= 3;	// 位置
+	optional uint32	 state	= 4;	// 玩家状态
+	optional Vector3 rota   = 5;	// 玩家朝向
+}
+
+//s-->c Room场景中初始化组队信息
+message SymcRoomTeamInfoRet {
+	repeated SyncRoomTeamPlayerItem item	= 1;
+}
+
+
+//s-->c 场景道具
+message ItemProp {
+	optional uint32 baseid 	= 1;
+	optional uint64 id 		= 2;
+	optional uint32 num     = 3;
+}
+
+//s-->c 刷新补给箱内道具
+message RefreshBoxObjNotify {
+	optional uint64 id = 1;
+	repeated ItemProp data = 2;
+}
+
+message HeadProp {
+	optional uint32 baseid = 1;
+	optional uint32 reducedam = 2;
+	optional uint32 maxreduce = 3;
+}
+
+message BodyProp {
+	optional uint32 baseid = 1;
+	optional uint32 reducedam = 2;
+	optional uint32 maxreduce = 3;
+}
+
+message BackPackProp {
+	optional uint32 baseid = 1;
+}
+
+// TLog 玩家注册消息
+message PlayerRegister {
+	optional string GameSvrID = 1;
+	optional string DtEventTime = 2;
+	optional string VGameAppID = 3;
+	optional uint32 PlatID = 4;
+	optional uint32 IZoneAreaID = 5;
+	optional string VOpenID = 6;
+	optional string TelecomOper = 7;
+	optional string RegChannel = 8;
+	optional uint32 LoginChannel = 9;
+}
+
+// TLog 玩家登录消息
+message PlayerLogin {
+	optional string GameSvrID = 1;
+	optional string DtEventTime = 2;
+	optional string VGameAppID = 3;
+	optional uint32 PlatID = 4;
+	optional uint32 IZoneAreaID = 5;
+	optional string VOpenID = 6;
+	optional uint32 Level = 7;
+	optional uint32 PlayerFriendsNum = 8;
+	optional string ClientVersion = 9;
+	optional string SystemHardware = 10;
+	optional string TelecomOper = 11;
+	optional string Network = 12;
+	optional uint32 LoginChannel = 13;
+	optional string VRoleID = 14;
+	optional string VRoleName = 15;
+	optional string RegChannel = 16;
+}
+
+// TLog 玩家登出消息
+message PlayerLogout {
+	optional string GameSvrID = 1;
+	optional string DtEventTime = 2;
+	optional string VGameAppID = 3;
+	optional uint32 PlatID = 4;
+	optional uint32 IZoneAreaID = 5;
+	optional string VOpenID = 6;
+	optional uint32 OnlineTime = 7;
+	optional uint32 Level = 8;
+	optional uint32 PlayerFriendsNum = 9;
+	optional string ClientVersion = 10;
+	optional string SystemHardware = 11;
+	optional string TelecomOper = 12;
+	optional string Network = 13;
+}
+
+message MailObject {
+	optional uint32 id = 1;
+	optional uint32 num = 2;
+}
+message MailInfo {
+	optional uint64 mailid = 1;
+	optional uint32 mailtype = 2;	//0:系统邮件
+	optional uint64 gettime = 3;
+	optional bool   haveread = 4;
+	optional string title = 5;
+	optional string text = 6;
+	optional string url = 7;
+	repeated MailObject objs = 8;
+	optional bool 	haveget = 9;   //附件领取标识
+	optional string button = 10;
+}
+
+//获取邮件列表
+message ReqGetMailList {
+}
+
+//返回邮件列表
+message RetMailList {
+	repeated MailInfo mails = 1;
+}
+
+//查看邮件
+message ReqMailInfo {
+	optional uint64 mailid = 1;
+}
+
+//返回邮件信息
+message RetMailInfo {
+	optional MailInfo mail = 1;
+}
+
+
+// 公告信息
+message AnnuonceInfo {
+	optional uint64 id           = 1;	
+	optional int64 startTime     = 2;	// 开始时间
+	optional int64 endTime       = 3;	// 结束时间
+	optional int64 internalTime  = 4;	// 间隔时间
+	optional string content      = 5;   // 显示公告信息
+}
+
+
+//s-->c 初始化公告信息
+message InitAnnuonceInfoRet {
+	repeated AnnuonceInfo item	= 1;
+}
+
+// 好友信息
+message FriendInfo {
+	optional uint64 id = 1;
+	optional string name = 2;
+	optional uint32	state = 3;	// 好友状态 0、离线 1、游戏中 2、空闲 3、匹配中 
+	optional uint32  time = 4;	// 状态使用时间
+	optional string url = 5;	// 好友头像url
+	optional string enterplat = 6; // 登录平台
+	optional uint32  qqvip = 7;  // qqVip信息
+	optional string nickname = 8; //  昵称
+}
+
+//c-->s 请求平台好友状态
+message PlatFriendStateReq {
+	repeated string openid = 1;
+}
+
+
+
+//组队的队员的槽位信息
+message LobboySceneMemberSlot
+{
+	optional uint64 uid	= 1; //玩家uid
+	optional uint32 slotIdx = 2;	//玩家在大厅场景所展示的槽位的Index
+	optional string roleModel = 3;  //角色模型
+}
+
+//同步队员槽位信息
+message SyncLobboySceneMembersSlotsInfo
+{
+	optional uint64 id = 1;
+	repeated LobboySceneMemberSlot soltList = 2;
+}
+
+//请求交换大厅槽位
+message ReqChangeLobboySceneMemberSlot
+{
+	optional uint32 slotIdx = 1;//需要交换到的新槽位
+	optional uint64 teamID = 2; //所在队伍id
+}
+
+
