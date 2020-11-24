@@ -8,10 +8,14 @@ import (
 	"time"
 
 	log "github.com/cihub/seelog"
+	"github.com/giant-tech/go-service/base/zlog"
 	"github.com/giant-tech/go-service/framework/idata"
 )
 
 func main() {
+
+	// 设置Seelog
+	zlog.InitDefault()
 
 	cl := &clt.Client{}
 	cl.ActC = make(chan func(), 1024)

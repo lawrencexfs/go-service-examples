@@ -10,10 +10,13 @@ import (
 	"client-call-serviceA/src/services/servicetype"
 
 	log "github.com/cihub/seelog"
+	"github.com/giant-tech/go-service/base/zlog"
 )
 
 func main() {
 
+	// 设置Seelog
+	zlog.InitDefault()
 	cl := &clt.Client{}
 	cl.ActC = make(chan func(), 1024)
 	//cl.newClient()
