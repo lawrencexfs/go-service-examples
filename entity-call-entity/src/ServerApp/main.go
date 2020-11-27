@@ -7,6 +7,5 @@ import (
 func main() {
 	// 注册所有服务
 	regAllServices()
-
 	app.Run("")
 }

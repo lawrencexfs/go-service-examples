@@ -79,19 +79,39 @@ func (p *PlayerDef) GetHero() *HEROS {
 	return &tempV
 }
 
-// SetLevel 设置 Level
-func (p *PlayerDef) SetLevel(v uint32) {
-	p.ip.SetProp("Level", v)
+// Setexp 设置 exp
+func (p *PlayerDef) Setexp(v uint32) {
+	p.ip.SetProp("exp", v)
 }
 
-// SetLevelDirty 设置Level被修改
-func (p *PlayerDef) SetLevelDirty() {
-	p.ip.PropDirty("Level")
+// SetexpDirty 设置exp被修改
+func (p *PlayerDef) SetexpDirty() {
+	p.ip.PropDirty("exp")
 }
 
-// GetLevel 获取 Level
-func (p *PlayerDef) GetLevel() uint32 {
-	v := p.ip.GetProp("Level")
+// Getexp 获取 exp
+func (p *PlayerDef) Getexp() uint32 {
+	v := p.ip.GetProp("exp")
+	if v == nil {
+		return uint32(0)
+	}
+
+	return v.(uint32)
+}
+
+// Setlevel 设置 level
+func (p *PlayerDef) Setlevel(v uint32) {
+	p.ip.SetProp("level", v)
+}
+
+// SetlevelDirty 设置level被修改
+func (p *PlayerDef) SetlevelDirty() {
+	p.ip.PropDirty("level")
+}
+
+// Getlevel 获取 level
+func (p *PlayerDef) Getlevel() uint32 {
+	v := p.ip.GetProp("level")
 	if v == nil {
 		return uint32(0)
 	}
@@ -129,9 +149,12 @@ type IPlayerDef interface {
 	SetHero(v HEROS)
 	SetHeroDirty()
 	GetHero() HEROS
-	SetLevel(v uint32)
-	SetLevelDirty()
-	GetLevel() uint32
+	Setexp(v uint32)
+	SetexpDirty()
+	Getexp() uint32
+	Setlevel(v uint32)
+	SetlevelDirty()
+	Getlevel() uint32
 	Setrating(v int32)
 	SetratingDirty()
 	Getrating() int32

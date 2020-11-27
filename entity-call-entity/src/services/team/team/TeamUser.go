@@ -29,7 +29,7 @@ func (tu *TeamUser) OnInit(initData interface{}) error {
 
 // OnLoop 每帧调用
 func (tu *TeamUser) OnLoop() {
-	log.Debug("TeamUser.OnLoop,level=", tu.GetLevel())
+	log.Debug("TeamUser.OnLoop,level=", tu.Getlevel())
 }
 
 func (tu *TeamUser) OnDestroy() {

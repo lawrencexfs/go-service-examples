@@ -4,6 +4,8 @@ import (
 	"entity-call-entity/src/services/servicetype"
 	"entity-call-entity/src/services/team/teamdata"
 
+	"github.com/giant-tech/go-service/framework/entity"
+
 	"github.com/giant-tech/go-service/framework/idata"
 
 	"github.com/giant-tech/go-service/framework/iserver"
@@ -45,15 +47,20 @@ func (gu *GatewayUser) RPCModifyAttr(name string, index uint32, level uint32, mo
 	log.Debug("GatewayUser::RPCModifyAttr(send from client), name: ", name, ", index: ", index, " level: ", level, ", modifystru.index = ", modifystru.Index, ", modifysru.val = ", modifystru.Val, ",Friends[1]=", modifystru.Friends[1], ",Friends[2]=", modifystru.Friends[111])
 
 	log.Debug("GatewayUser::RPCModifyAttr, protoMsg changebulletreq.Full= ", changebulletreq.GetFull(), ", protomsg changebulletreq.pos=", changebulletreq.GetPos())
-	gu.SetLevel(level)
+	gu.Setlevel(level)
 
 	selectProps := bson.M{}
 	selectProps["Friends"] = 1
 
 	ret := bson.M{}
 	//todo: 根据dbtype去存储
-	dbservice.MongoDBQueryOneWithSelect("game", "player", bson.M{"dbid": 1}, selectProps, ret)
 
+	dbtype := entity.GetDBType()
+	if dbtype == "mysql" {
+		log.Debug("load from mysql, dbtype= ", dbtype)
+	} else {
+		dbservice.MongoDBQueryOneWithSelect("game", "player", bson.M{"dbid": 1}, selectProps, ret)
+	}
 	friends := gu.GetFriends()
 
 	//friends.MyFriendsName = "yekoufeng"
