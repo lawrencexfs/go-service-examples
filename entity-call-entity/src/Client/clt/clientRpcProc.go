@@ -39,7 +39,7 @@ func (p *ServiceAUserRpcProc) RPCHello(name string, id uint32) {
 	changebulletreq.Full = true
 	changebulletreq.Pos = 999
 
-	p.Cli.AsyncCall(servicetype.ServiceTypeGateway, "ModifyAttr", "change attr", int32(1), int32(3), &modifys, &changebulletreq)
+	p.Cli.AsyncCall(servicetype.ServiceTypeGateway, "ModifyAttr", "change attr", uint32(1), uint32(3), &modifys, &changebulletreq)
 }
 
 // RPCCreateTeamResult 创建队伍结果

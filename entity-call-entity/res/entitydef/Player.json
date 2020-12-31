@@ -13,6 +13,12 @@
             "desc": "经验",
 			"default":"1"
         },
+        "name": {
+            "type": "string",
+            "save": "1",
+            "desc": "名字",
+			"default":"1"
+        },
 		"rating": {
             "type": "int32",
             "save": "0",
@@ -48,6 +54,7 @@
             "props": [
                 "level",
                 "exp",
+                "name",
 				"rating",
 				"Coin",
 				"Friends",
