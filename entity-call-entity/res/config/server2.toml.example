@@ -29,25 +29,27 @@ IsEncrypt = false
 #性能监控http端口
 pprof-port = 58080
 #加载的服务, 服务名与下面的标签必须一致
-Services = "serviceA, serviceB"
+Services = "gateway, team"
 
 
-
-[serviceA]
-SvrListenAddr = ":17010"
+[gateway]
+#:号之前不需要填，默认监听即可
+SvrListenAddr = ":17000"
+#外网ip,根据实际生产情况填写
 OuterIP="127.0.0.1"
 VerifyMsgID = 0
 # TickInterval 单位毫秒
 TickInterval = 1000 
 EntityMultiThread = true
 
-[serviceB]
-ListenAddr = ":18011"
+[team]
+ListenAddr = ":18001"
 OuterIP="127.0.0.1"
-EntityMultiThread = true
+EntityMultiThread = false
 
 
 [DB]
+#服务发现用的db
 Addr = "127.0.0.1:6379"
 MaxIdle = 50
 IdleTimeout = 10
@@ -64,9 +66,18 @@ Password = ""
 Index = 0
 
 
-[MongoDB]
+[DataDB]
+#游戏数据存储用的db
+DBType = "mysql"
+#实体是否自动加载保存数据库
+IsAutoLoadSave = true
 GameDBName = "game"
-Addr = "mongodb://game:123456@192.168.133.33:27017/game"
+Addr = "root:123456@tcp(10.23.25.22:3306)/test_db?charset=utf8&parseTime=True&loc=Local"
 #Addr = "mongodb://mail:Zwp0K4h4zAjZQwkzdOH6fWIdPA6xieXmQpps@211.159.201.75:27017,211.159.201.76:27017/testM"
 #Addr = "mongodb://127.0.0.1:27017"
 Timeout = 5
+# 数据库连接空闲最大时间(单位小时)
+MaxIdleTime = 1
+# 数据库连接
+MaxIdleConn = 20
+MaxOpenConn = 200
