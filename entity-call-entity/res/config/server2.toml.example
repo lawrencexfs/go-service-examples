@@ -43,8 +43,6 @@ TickInterval = 1000
 EntityMultiThread = true
 
 [team]
-ListenAddr = ":18001"
-OuterIP="127.0.0.1"
 EntityMultiThread = false
 
 
