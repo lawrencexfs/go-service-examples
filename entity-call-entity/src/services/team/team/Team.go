@@ -21,7 +21,7 @@ func (t *Team) OnInit(initData interface{}) error {
 		return fmt.Errorf("initData is not teamdata.CreateTeamData")
 	}
 
-	log.Debug("TeamName: ", teamData.TeamName)
+	log.Debug("Team OnInit, TeamName: ", teamData.TeamName, "teamData: ", teamData)
 
 	return nil
 }

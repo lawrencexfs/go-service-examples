@@ -22,7 +22,7 @@ func (tu *TeamUser) OnInit(initData interface{}) error {
 		return fmt.Errorf("initData is not TeamPlayerInfo")
 	}
 
-	log.Debug("PlayerName: ", playerInfo.PlayerName)
+	log.Debug("TeamUser OnInit PlayerName: ", playerInfo.PlayerName)
 
 	return nil
 }
@@ -33,5 +33,5 @@ func (tu *TeamUser) OnLoop() {
 }
 
 func (tu *TeamUser) OnDestroy() {
-	log.Debug("OnDestroy")
+	log.Debug("TeamUser OnDestroy")
 }
