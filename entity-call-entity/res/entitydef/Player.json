@@ -15,7 +15,7 @@
         },
         "name": {
             "type": "string",
-            "save": "1",
+            "save": "0",
             "desc": "名字",
 			"default":"1"
         },
@@ -29,6 +29,11 @@
             "type": "uint32",
             "save": "0",
             "desc": "金币"
+        },
+        "bullet":{
+            "type": "protoMsg.ChangeBulletReq",
+            "save": "1",
+            "desc": "子弹"
         },
 		"Friends": {
             "type": "FRIENDS",
@@ -56,9 +61,8 @@
                 "exp",
                 "name",
 				"rating",
-				"Coin",
-				"Friends",
-				"Hero"
+                "Coin",
+                "bullet"
 			]
         },
         "3": {

@@ -1,10 +1,5 @@
 package entitydef
 
-type FRIENDS struct {
-	MyFriendsDbid	[]uint64 `bson:"MyFriendsDbid"` 
-	ApplyFriendsDbid	[]int32 `bson:"ApplyFriendsDbid"` 
-	MyFriendsName	string `bson:"MyFriendsName"` 
-}
 type HEROINFO struct {
 	HeroName	string `bson:"HeroName"` 
 	HeroID	int32 `bson:"HeroID"` 
@@ -15,3 +10,8 @@ type HEROINFO struct {
 }
 type HEROS = map[string]HEROINFO
 
+type FRIENDS struct {
+	MyFriendsDbid	[]uint64 `bson:"MyFriendsDbid"` 
+	ApplyFriendsDbid	[]int32 `bson:"ApplyFriendsDbid"` 
+	MyFriendsName	string `bson:"MyFriendsName"` 
+}

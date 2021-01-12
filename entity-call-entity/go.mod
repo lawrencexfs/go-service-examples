@@ -10,9 +10,9 @@ require (
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
 	github.com/go-sql-driver/mysql v1.5.0 // indirect
 	github.com/gogo/protobuf v1.2.1
+	github.com/golang/protobuf v1.3.1
 	github.com/jmoiron/sqlx v1.2.0 // indirect
 	go.uber.org/atomic v1.7.0
 )
-
 
 replace github.com/giant-tech/go-service v0.0.9 => ../../go-service

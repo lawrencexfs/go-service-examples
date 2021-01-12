@@ -1,8 +1,11 @@
 package entitydef
 
 import (
+	protoMsg "entity-call-entity/src/pb"
+
 	"github.com/giant-tech/go-service/framework/iserver"
 	"github.com/globalsign/mgo/bson"
+	proto "github.com/golang/protobuf/proto"
 )
 
 // PlayerDef 自动生成的属性包装代码
@@ -79,6 +82,28 @@ func (p *PlayerDef) GetHero() *HEROS {
 	return &tempV
 }
 
+// Setbullet 设置 bullet
+func (p *PlayerDef) Setbullet(v *protoMsg.ChangeBulletReq) {
+	p.ip.SetProp("bullet", v)
+}
+
+// SetbulletDirty 设置bullet被修改
+func (p *PlayerDef) SetbulletDirty() {
+	p.ip.PropDirty("bullet")
+}
+
+// Getbullet 获取 bullet
+func (p *PlayerDef) Getbullet() *protoMsg.ChangeBulletReq {
+	v := p.ip.GetProp("bullet")
+	if v == nil {
+		return nil
+	}
+
+	var tempV protoMsg.ChangeBulletReq
+	proto.Unmarshal(v.([]byte), &tempV)
+	return &tempV
+}
+
 // Setexp 设置 exp
 func (p *PlayerDef) Setexp(v uint32) {
 	p.ip.SetProp("exp", v)
@@ -119,6 +144,26 @@ func (p *PlayerDef) Getlevel() uint32 {
 	return v.(uint32)
 }
 
+// Setname 设置 name
+func (p *PlayerDef) Setname(v string) {
+	p.ip.SetProp("name", v)
+}
+
+// SetnameDirty 设置name被修改
+func (p *PlayerDef) SetnameDirty() {
+	p.ip.PropDirty("name")
+}
+
+// Getname 获取 name
+func (p *PlayerDef) Getname() string {
+	v := p.ip.GetProp("name")
+	if v == nil {
+		return ""
+	}
+
+	return v.(string)
+}
+
 // Setrating 设置 rating
 func (p *PlayerDef) Setrating(v int32) {
 	p.ip.SetProp("rating", v)
@@ -149,12 +194,18 @@ type IPlayerDef interface {
 	SetHero(v HEROS)
 	SetHeroDirty()
 	GetHero() HEROS
+	Setbullet(v protoMsg.ChangeBulletReq)
+	SetbulletDirty()
+	Getbullet() protoMsg.ChangeBulletReq
 	Setexp(v uint32)
 	SetexpDirty()
 	Getexp() uint32
 	Setlevel(v uint32)
 	SetlevelDirty()
 	Getlevel() uint32
+	Setname(v string)
+	SetnameDirty()
+	Getname() string
 	Setrating(v int32)
 	SetratingDirty()
 	Getrating() int32
