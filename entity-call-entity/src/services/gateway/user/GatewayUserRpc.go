@@ -76,6 +76,10 @@ func (gu *GatewayUser) RPCModifyAttr(name string, index uint32, level uint32, mo
 	//gu.SetHero(heros)
 
 	//带protobuf类型测试
+
+	bulletFromDB := gu.Getbullet()
+	log.Debug("GatewayUser  bulletFromDB:= ", bulletFromDB)
+
 	var bullet protoMsg.ChangeBulletReq
 	bullet.Full = true
 	bullet.Pos = 2
