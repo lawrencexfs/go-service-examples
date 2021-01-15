@@ -1,10 +1,9 @@
 package entitydef
 
 import (
-	protoMsg "entity-call-entity/src/pb"
-
 	"github.com/giant-tech/go-service/framework/iserver"
 	"github.com/globalsign/mgo/bson"
+	protoMsg "entity-call-entity/src/pb"
 	proto "github.com/golang/protobuf/proto"
 )
 
