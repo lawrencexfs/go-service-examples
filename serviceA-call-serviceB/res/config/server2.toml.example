@@ -31,7 +31,7 @@ pprof-port = 58080
 #加载的服务, 服务名与下面的标签必须一致
 Services = "serviceB"
 #不会连接的服务,一对用冒号隔开，多对之间用逗号分隔
-#"NotConnect" = "s1:s2, s3:s4"
+#NotConnect = "s1:s2, s3:s4"
 
 
 

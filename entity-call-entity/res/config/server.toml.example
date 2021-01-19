@@ -30,6 +30,8 @@ IsEncrypt = false
 pprof-port = 58080
 #加载的服务, 服务名与下面的标签必须一致
 Services = "gateway, team"
+#不会连接的服务,一对用冒号隔开，多对之间用逗号分隔
+NotConnect = "serviceA:serviceB"
 
 
 
