@@ -13,7 +13,7 @@ type ServiceB struct {
 
 // OnInit 初始化
 func (srv *ServiceB) OnInit() error {
-	log.Debug("ServiceBService.OnInit")
+	log.Debug("ServiceB Service.OnInit")
 
 	//设置服务的额外属性
 	srv.SetMetadata("OS", "Linux")

@@ -46,7 +46,7 @@ func (srv *ServiceA) OnTick() {
 	//获取指定类型的随机服务
 	randProxy := iserver.GetServiceProxyMgr().GetRandService(servicetype.ServiceTypeB)
 	if randProxy.IsValid() {
-		err := randProxy.AsyncCall("Hello", "hello World")
+		err := randProxy.AsyncCall("Hello", "hello World from ServiceA")
 		if err != nil {
 			log.Error("AsyncCall: ", err)
 		}
@@ -79,7 +79,7 @@ func (srv *ServiceA) OnDisconnected(infovec []*idata.ServiceInfo) {
 	}
 }
 
-// OnConnected 和别的服务建立链接
+// OnConnected 和别的服务建立连接
 func (srv *ServiceA) OnConnected(infovec []*idata.ServiceInfo) {
 
 	for _, s := range infovec {

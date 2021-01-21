@@ -18,7 +18,7 @@ func (p *ServiceBRPCProc) RPCHello(str string) {
 	log.Debug("RPCHello: ", str)
 
 	randProxy := iserver.GetServiceProxyMgr().GetRandService(servicetype.ServiceTypeA)
-	err := randProxy.AsyncCall("Hello", "hello World")
+	err := randProxy.AsyncCall("Hello", "hello World from ServiceB")
 	if err != nil {
 		log.Error("AsyncCall: ", err)
 	}
@@ -26,7 +26,7 @@ func (p *ServiceBRPCProc) RPCHello(str string) {
 
 // RPCSyncCall synccall
 func (p *ServiceBRPCProc) RPCSyncCall() string {
-	log.Debug("RPCSyncCall: ")
+	log.Debug("RPCSyncCall: from ServiceA")
 
-	return "call success"
+	return "ServiceA call ServiceB success"
 }
