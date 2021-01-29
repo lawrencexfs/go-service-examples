@@ -1,1 +1,0 @@
-{"project-name":"198","autoupdate":true,"packages":["GameBox.Channel","GameBox.Core","GameBox.Socket","GameBox.Network","GameBox.Pioneer","GameBox.LoopDriver","GameBox.MonoDriver","GameBox.ObjectPool","ProtobufNet","EPPlus","GameBox.Excel2X","GameBox.AssetDepot"]}

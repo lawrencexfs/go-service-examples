@@ -1,1 +1,0 @@
-python %cd%\main.py

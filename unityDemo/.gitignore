@@ -1,5 +1,0 @@
-*.exe
-/server/pkg
-/client/Temp
-/client/Library
-/server/bin/*.exe~

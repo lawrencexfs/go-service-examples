@@ -1,6 +1,9 @@
 package main
 
 import (
+	"runtime"
+	"runtime/debug"
+
 	"github.com/giant-tech/go-service/framework/app"
 )
 
@@ -9,4 +12,6 @@ func main() {
 	regAllServices()
 
 	app.Run("")
+	runtime.GC()
+	debug.FreeOSMemory()
 }

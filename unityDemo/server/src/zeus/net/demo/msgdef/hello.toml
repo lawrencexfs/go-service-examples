@@ -1,7 +1,0 @@
-[ClientToServer]
-# 服务器用来生成 MsgProc
-11001 = "zeus.net.demo.proto.test.SayRequest"
-
-[ServerToClient]
-# 客户端用来生成 MsgProc
-11002 = "zeus.net.demo.proto.test.SayResponse"
